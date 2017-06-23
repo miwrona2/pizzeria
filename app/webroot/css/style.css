@@ -1,0 +1,146 @@
+@charset "utf-8";
+/**
+ * Generic CSS for CakePHP
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @package       app.webroot.css
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ */
+
+.salsa{
+    width: 60px;
+    height: 60px;
+    background-color: #fff; 
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+*, :after, :before{
+    box-sizing: border-box;
+}
+
+body{
+    background: url('../img/pattern.png');
+    background-image: url('../img/bordo.jpg');
+    font-family: 'Open Sans', "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.42857;
+}
+
+h3{
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+a{
+    text-decoration: none;
+    color: #337ab7;
+    background-color: transparent;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+img {
+    border: 0;
+    vertical-align: middle; 
+    max-width: 100%;
+}
+
+.button{
+    background-color: #8c6537;
+}
+
+strong {
+    font-weight: 700;
+}
+
+#header{
+    background: linear-gradient(#2c1107 1%,#2c1107 80%,#9c3627 81%,#9c3627 100%);
+}
+
+.container{
+    width: 1170px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.header .restaurant-name h1{
+    margin: 0;
+    line-height: 30px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.header .restaurant-name a{
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.header .restaurant-name p{
+    margin: 0;
+}
+
+.header .logo-container a{
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    padding: 10px;
+    border: 1px solid;
+    z-index: 100;
+    box-shadow: 0 0 8px rgba(0,0,0,.3);
+    background: #fff;
+}
+
+.logo{
+    max-width: 140px;
+}
+
+.row{
+    position: relative;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+#header .header{
+    height: 80px;
+}
+
+.caret{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    /*border-top: 4px solid\9;*/
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+
+.col-xs-12{
+    padding: 0 15px;
+}
+
+.text-centered{
+    text-align: center;
+}

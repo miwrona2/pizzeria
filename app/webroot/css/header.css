@@ -1,0 +1,87 @@
+@charset "utf-8";
+/**
+ * Generic CSS for CakePHP
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @package       app.webroot.css
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ */
+
+.navigation{
+    display: flex;
+    background-color: #f6f4f4;
+    height: 50px;
+    box-shadow: 0 -3px 10px rgba(0,0,0,.5);
+    box-sizing: border-box;
+}
+
+.navigation>ul{
+    box-sizing: border-box;
+    margin: 0 0 0 200px;
+}
+
+.navigation>ul>li{
+    float: left;
+    color: black;
+    background: appworkspace;
+    list-style-type: none;
+    line-height: 50px;
+    box-sizing: border-box;
+}
+
+.navigation>ul>li>a{
+    display: inline-block;
+    color: #5c393a ; 
+    font-weight: normal;
+    padding: 0 16px;
+    border-right: 1px solid #dcd8d9;
+    background-color: #f6f4f4;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+.navigation>ul>li:first-of-type>a{
+    border-left: 1px solid #dcd8d9;
+}
+
+.dropdown{
+    
+/*    background: pink !important ;*/
+}
+
+.dropdown-menu{
+    flex-wrap: wrap;
+    line-height: 20px;
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    border-radius: 4px;
+    list-style: none;
+    min-width: inherit;
+    margin:  2px 2px 0 0;
+    background: #fff;
+    padding: 5px 0;
+}
+
+.dropdown-menu>li:hover{
+    background-color: #9c3627;
+}
+
+.dropdown-menu>li>a{
+    padding: 3px 20px;  
+    white-space: nowrap;
+    display: block;
+    color: #5c393a;
+}
+
+.dropdown-menu>li>a:hover{
+    color: white;
+}

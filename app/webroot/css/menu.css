@@ -1,0 +1,196 @@
+@charset "utf-8";
+/**
+ * Generic CSS for CakePHP
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @package       app.webroot.css
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ */
+
+#cart_navbar {
+    color: #fff;
+    background-color: #2c1107;
+}
+
+.affixed {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+.navbar{
+}
+
+.navbar:after{
+    display: table;
+    content: " ";
+    clear: both;
+}
+
+.container-fluid h4 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.container-fluid ul {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+    
+.container-fluid ul {
+    display: block;
+    list-style-type: none;
+}
+
+.container-fluid ul li {
+    float: left;
+    margin: 17px 0 10px;
+}
+
+.container-fluid ul li a {
+    color: #fff;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.menu-promotions {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #9c3627;
+    color: #fff;
+
+}
+
+.menu-promotions-item {
+    padding: 10px 5px;
+    border-right: 1px solid #7c2918;
+    width: 33%;
+    text-align: center;
+}
+
+.last-promotion {
+    border: none;
+}
+
+.menu-promotions-item h4 {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.restaurant-menu .m-flex-layout__content {
+    background-color: #fff;
+}
+
+.m-flex-layout {
+    display: flex;
+}
+
+.m-flex-layout__aside {
+    flex: 0 0 23%;
+    max-width: 280px;
+}
+
+.m-flex-layout__aside ul {
+    list-style-type: none;
+}
+
+.m-flex-layout__aside ul li {
+    background-color: #9c3627;
+}
+
+.m-flex-layout__aside ul li a {
+    color: #fff;
+    padding: .7em 1.2em;
+    display: block;
+}
+
+.m-flex-layout__aside ul li:hover {
+    background-color: #2c1107;
+}
+
+.m-flex-layout__content {
+    flex: 1 1 77%;
+}
+
+.m-list__list {
+    list-style-type: none;
+}
+
+.m-item--list .m-item__col-header {
+    display: table-cell;
+    padding: 0 .5em 0 0;
+}
+
+.m-item__col-group-info {
+    display: inline-block;
+    padding: .125em .5em 0 0;
+}   
+
+.m-item__size-info {
+    vertical-align: middle;
+    text-align: center;
+    font-weight: 700;
+    font-size: .75em;
+    display: inline-block;
+}
+
+.m-item--list .m-item__col-group-info--secondary {
+    width: 7%;
+}
+
+.m-item--list .m-item__col-group-info {
+    display: table-cell;
+    text-align: center;
+}
+
+.m-list__item {
+    padding: 20px 15px;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+
+.m-item--list .m-item__col--secondary {
+    display: table-cell;
+}
+.m-item__title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.btn-group a {
+    background-color: #9c3627;
+    display: block;
+}
+
+.m-item--list .m-item__col--secondary{
+    width: 14%;
+    padding-left: .5em;
+}
+.m-item--list .m-item__col {
+    display: table-cell;
+    text-align: center;
+}
+
+.m-item__row {
+    display: table;
+    width: 100%;
+}
+
+.add-button {
+    font-weight: 700;
+}
+
+#m-section {
+    margin: 0 0 50px 0 ;
+}

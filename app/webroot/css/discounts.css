@@ -1,0 +1,126 @@
+@charset "utf-8";
+/**
+ * Generic CSS for CakePHP
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @package       app.webroot.css
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ */
+
+.content-content {
+    box-shadow: 0 1px 1px rgba(0,0,0,.3);
+}
+
+.content-content ul {
+    margin-bottom: 10px;
+}
+
+.promotion-rules{
+    text-align: center;
+}
+
+.promotions {
+    padding: 20px;
+    background: #fff;
+    margin-bottom: 20px;
+}
+
+.promotions:after{
+    clear: both;
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.promotions>.promotion {
+    border: 1px solid #e2e2e2;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.promotion>.promotion-image {
+    float: left;
+    width: 193px;
+    height: 193px;
+}
+
+.promotions .promotion-content{
+    margin-left: 200px;
+    padding: 20px;
+}
+
+td>i{
+    color: #3c763d;
+    font-style: italic;
+    padding: 8px;
+    margin: 0 0.2em;
+}
+
+.table>thead>tr>th {
+    padding: 8px;
+    vertical-align: bottom;
+    border-bottom: 2px solid #ddd;
+    border-bottom-width: 1px;
+}
+
+h2 {
+    font-weight: 500;
+    line-height: 1.1;
+    font-size: 17px;
+        
+}
+
+.table>thead:first-child>tr:first-child>th {
+    border-top: 0;
+}
+
+table {
+     border-collapse: collapse; 
+     border-spacing: 0; 
+     width: 100%;
+}
+
+.promotion .promotion-content .table {
+    max-width: 75%;
+    float: left;
+}
+
+th {
+    text-align: left;
+}
+
+.promotions .promotion-content .button {
+    background: #2c1107;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    padding: 5px 25px;
+    float: right;
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+
+.promotion-content strong{
+    color: #9c3627;;
+}
+
+.clearfix:before{
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.clearfix:after{
+    clear: both;
+    display: table;
+    content: "";
+    line-height: 0;
+}

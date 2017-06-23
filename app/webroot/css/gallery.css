@@ -1,0 +1,81 @@
+@charset "utf-8";
+/**
+ * Generic CSS for CakePHP
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @package       app.webroot.css
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ */
+
+.page-header .background.pizza {
+    background: url(../img/pizza1.jpg) center center no-repeat;
+}
+
+.page-header .background {
+    height: 150px;
+}
+
+.content-header{
+    padding: 10px;
+    background-color: #000;
+}
+
+.content-header h1{
+    font-size: 18px;
+    color: #fff;
+    line-height: 22px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.content-content{
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.media{
+    margin-top: 25px;
+}
+
+.media-object{
+    border: 1px solid #105d5a;
+    vertical-align: bottom; 
+}
+
+.media>[class*=float-][class*="-left"] {
+    padding-right: 15px;
+}
+.media>[class*=float-] {
+    display: inline-block;
+}
+
+.media-body{
+    display: table-cell;
+    width: 10000px;
+}
+
+.float-sm-left{
+    float: left!important;
+}
+
+.media-body h4{
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.highlight{
+    color: #337ab7;
+}
+
+.gallery .media a.highlight {
+    margin: 20px;
+}

@@ -1,0 +1,73 @@
+@charset "utf-8";
+/**
+ * Generic CSS for CakePHP
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @package       app.webroot.css
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ */
+
+.carousel{
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.carousel-inner img{
+    height: 400px;
+    box-sizing: border-box;
+}
+
+.carousel-indicators{
+    bottom: -40px;
+    right: 48%;
+    top: auto;
+    position: absolute;
+    left: 50%;
+    z-index: 15;
+    width: 60%;
+    margin-left: -30%;
+    padding-left: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.carousel-indicators li{
+    color: #fff; 
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 1px;
+    /*text-indent: -999px;*/
+    border-radius: 10px;
+    border: 1px solid #fff;
+}
+
+.carousel-indicators li:hover{
+    background: white;
+}
+
+.carousel-indicators li:active{
+    background: gray;
+}
+
+
+.carousel-inner{
+    position: relative;
+}
+
+.newsSlider{
+    background: lemonchiffon;
+}
+
+.w3-white{
+    color: #000!important;
+    background-color: #fff!important;
+}

@@ -1,0 +1,102 @@
+@charset "utf-8";
+/**
+ * Generic CSS for CakePHP
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @package       app.webroot.css
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ */
+
+.reviews{
+    margin-top: 10px;
+}
+
+.review{
+    margin-bottom: 20px;
+}
+
+.review-rating{
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.review-rating .rating{
+    min-width: 27%;
+}
+
+.rating small{
+    margin-right: 10px;
+}
+
+.review-rating hr{
+    display: inline-block;
+    width: 900px;
+    border: none;
+    border-top: 1px solid #105d5a;
+    max-width: 80%;
+    margin: 0 10px 0 0;
+    vertical-align: middle;
+}
+
+.review-image{
+    width: 75px;
+    height: 75px;
+    float: left;
+    border: 1px solid #105d5a;
+}
+
+.review-calendar{
+    width: 75px;
+    height: 77px;
+    background: #9c3627;
+    margin: 0 10px;
+    text-align: center;
+    float: left;
+    display: inline-block;
+    position: relative;
+}
+
+.review-calendar i {
+    vertical-align: middle;
+    display: block;
+    font-size: 1.9em;
+    padding: 5px;
+}
+
+.review-calendar .day{
+    position: absolute;
+    top: 32px;
+    left: 29px;
+    color: #fff;
+}
+
+.review-calendar .wday{
+    text-transform: uppercase;
+}
+
+.review-calendar .month-year{
+    font-size: 10px;
+}
+
+.wday, .month-year{
+    color: #fff;
+    font-size: 10px;
+}
+
+.icon-3x{
+    font-size: 3em;
+    color: #fff;
+}
+
+.stars{
+    color: #ffe315;
+    text-shadow: 0 1px 0 #9b9494;
+}
