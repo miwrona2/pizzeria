@@ -21,8 +21,8 @@
                         <a class="pull-right">zobacz więcej opini...</a>
                     </div>
                     <blockquote>
-                        <p>Brawo dostawca Maciek :)</p>
-                        <cite class="pull-right">Marek</cite>
+                        <p><?= $displayLastOpinion['Opinion']['content']; ?></p>
+                        <cite class="pull-right"><?= $displayLastOpinion['Opinion']['nickname'];?></cite>
                     </blockquote>
                 </div>
             <div class="section curly">

@@ -45,7 +45,16 @@ class PagesController extends AppController {
  * @throws NotFoundException When the view file could not be found
  *   or MissingViewException in debug mode.
  */
+        public function lastOpinion(){
+                $this->loadmodel('Opinion');
+                $displayLastOpinion = $this->Opinion->find('first', array(
+                    'order' => array('Opinion.modified' => 'desc')
+                    ));
+                $this->set('displayLastOpinion', $displayLastOpinion);
+        }
 	public function display() {
+                $this->lastOpinion();
+                
 		$path = func_get_args();
 
 		$count = count($path);

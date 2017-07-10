@@ -8,7 +8,6 @@
     echo $this->Form->input('id'); 
     echo $this->Form->input('content'); 
     echo $this->Form->input('rate'); 
-    echo $this->Form->input('date'); 
     echo $this->Form->input('modified'); 
     echo $this->Form->input('nickname'); 
     ?>
