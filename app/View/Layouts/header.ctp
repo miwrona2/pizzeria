@@ -7,7 +7,7 @@
  */-->
 
 <div id="header">
-    <div class="header container">
+<!--    <div class="header container">
         <div class="row">
             <div class="logo-container"><?php echo $this->Html->link($this->Html->image('1411672961.png', array('class' => 'logo')), 
                     array('controller' => 'things', 'action' => 'index'), array('escape' => false)); ?></div>
@@ -18,9 +18,11 @@
                 ?>
             </div>
         </div>
-    </div>
+    </div>-->
     <div class="navigation container">
         <ul>
+            <li><?php echo $this->Html->link($this->Html->image('logo.png', array('class' => 'logo')), 
+                    array('controller' => 'things', 'action' => 'index'), array('escape' => false)); ?></li>
             <li class="dropdown"><?php echo $this->Html->link('START <span class="caret"></span>', '#', 
                     array('class' => 'dropdown-toggle', 'escape' => false)); ?>
                 <ul class="dropdown-menu"> 
@@ -34,7 +36,6 @@
             <li><?php echo $this->Html->link('KONTAKT', array('controller' => 'things', 'action' => 'contact')); ?></li>
             <li><?php echo $this->Html->link('GALERIA', array('controller' => 'things', 'action' => 'gallery')); ?></li>
             <li><?php echo $this->Html->link('ALERGENY', array('controller' => 'things', 'action' => 'allergens')); ?></li>
-            <li><?php echo $this->Html->link('Koszyk', array('controller' => 'things', 'action' => 'box')); ?></li>
         </ul>
     </div>
 </div>  
