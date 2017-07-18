@@ -4,11 +4,14 @@
             <li class="visible">
                 <h4>Salsa Lublin</h4>
             </li>
+            
+            <li><p style="color: green; padding-left: 50px;">Branch: AJAX</p></li>
+            
         </ul>
         <ul class="nav navbar-nav pull-right list-inline">
             <li><i class="fa fa-phone" aria-hidden="true"></i><a> 81 454... <small>więcej</small></a></li>
             <li><a>Koszyk jest pusty</a></li>
-            <li><a>Koszyk</a></li>
+            <li><?php echo $this->Html->link('Koszyk', array('controller' => 'things' ,'action' => 'box'))?></li>
         </ul>
         <div class="div-zmienny" style="color: green; float: left;">
 
