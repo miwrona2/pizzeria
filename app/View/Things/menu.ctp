@@ -9,9 +9,22 @@
             
         </ul>
         <ul class="nav navbar-nav pull-right list-inline">
+            <div class="parent">
+                <?php include 'cart.ctp';?>
+            </div>    
             <li><i class="fa fa-phone" aria-hidden="true"></i><a> 81 454... <small>więcej</small></a></li>
             <li><a>Koszyk jest pusty</a></li>
-            <li><?php echo $this->Html->link('Koszyk', array('controller' => 'things' ,'action' => 'box'))?></li>
+            <li><?php echo $this->Html->link(
+                    '<i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp; Koszyk'. '<span class="item-counter">'.$counter.'</span>'. '<span class="item-counter2">&nbsp  '.$counter2.'</span>',
+                    array('action' => 'menu'), 
+                    array('id' => 'switchCart',
+                        'escape' => false)
+                )?></li>
+<?php echo $this->Form->create('Cart',array('id'=>'add-form','url'=>array('controller'=>'things','action'=>'add ')));?>
+<?php echo $this->Form->hidden('product_id',array('value'=> 7))?>
+<?php echo $this->Form->submit('Add to cart',array('class'=>'btn'));?>
+<?php echo $this->Form->end();?>
+<span class="badge" id="cart-counter"><?php echo $count?></span>
         </ul>
         <div class="div-zmienny" style="color: green; float: left;">
 
@@ -47,12 +60,12 @@
             <div class="m-flex-layout__aside">
                 <ul>
                     <li><a href="#">Pizza</a></li>
-                    <li><a href="#" id="this">Zestawy Promocyjne z Pizzą</a></li>
-                    <li><a href="#" id="this1">Sałatki</a></li>
-                    <li><a href="#" id="this2">Kebab</a></li>
-                    <li><a href="#" id="this3">Dodatki</a></li>
-                    <li><a href="#" id="this4">Sosy</a></li>
-                    <li><a href="#" id="this5">Napoje</a></li>
+                    <li><a href="#">Zestawy Promocyjne z Pizzą</a></li>
+                    <li><a href="#">Sałatki</a></li>
+                    <li><a href="#">Kebab</a></li>
+                    <li><a href="#">Dodatki</a></li>
+                    <li><a href="#">Sosy</a></li>
+                    <li><a href="#">Napoje</a></li>
                 </ul>
             </div>
             <div class="m-flex-layout__content">
@@ -97,13 +110,50 @@
                                             </div>
                                             <div class="m-item__col m-item__col--secondary actions"> 
                                                 <div class="btn-group">
-                                                    <?php echo $this->Html->link('Do koszyka', array('action' => 'menu') , array('class' => 'btn add-button', 
-                                                        'id' => $pizza['Pizza']['id'],
-                                                        'onclick' => 'innaFunkcja('.$pizza['Pizza']['id'].')'
-                                                        )
-                                                            
-                                                            ); ?>
-                                                    <!--<a href="#" class="btn add-button">Do koszyka<span class="caret"></span></a>-->
+                                                    <?php 
+//                                                        echo $this->Html->link('Do koszyka <span class="caret"></span>', 
+//                                                                                    array('action' => 'menu'), 
+//                                                                                    array('class' => 'btn add-button', 
+//                                                                                        'id' => $pizza['Pizza']['id'],
+//                                                                                        'onclick' => "addToBox('".$pizza['Pizza']['id']."', '".$pizza['Pizza']['name']."')",
+//                                                                                        'escape' => false
+//                                                                                         )
+//                                                                                 ); 
+                                                    ?>
+                                                    <?php 
+                                                        echo $this->Html->link('Do koszyka <span class="caret"></span>', 
+                                                                array('action' => false), 
+                                                                array('class' => 'btn add-button',
+                                                                    'id' => $pizza['Pizza']['id'], 
+                                                                    'onclick' => "togglePizzaSize('".$pizza['Pizza']['id']."')", 
+                                                                    'escape' => false))
+                                                    ?>
+                                                    <ul class="pizza-size-list" id="id_<?php echo $pizza['Pizza']['id'] ?>">
+                                                        <li><?php echo $this->Html->link('Duża - 30 cm - '.$pizza['Pizza']['sprice'].' zł',
+                                                                                array('action' => 'menu'), 
+                                                                                array('class' => 'list-element',
+                                                                                    'id' => $pizza['Pizza']['id'],
+                                                                                    'onclick' => "addToBox('".$pizza['Pizza']['id']."', '".$pizza['Pizza']['name']."', 1, '".$pizza['Pizza']['sprice']."')",
+                                                                                    'escape' => false)
+                                                                             ); 
+                                                            ?>      
+                                                        </li>
+                                                        <li></li>
+                                                        <li><?php echo $this->Html->link('Max - 42 cm - '.$pizza['Pizza']['bprice'].' zł',
+                                                                                array('action' => 'menu'), 
+                                                                                array('class' => 'list-element',
+                                                                                    'id' => $pizza['Pizza']['id'],
+                                                                                    'onclick' => "addToBox('".$pizza['Pizza']['id']."', '".$pizza['Pizza']['name']."', 2, '".$pizza['Pizza']['bprice']."')",
+                                                                                    'escape' => false)
+                                                                             ); 
+                                                            ?>      
+                                                        </li>
+                                                        <li><?php echo $this->Form->create('Thing',array('id'=>'add-form2', 'class'=> 'sas','url'=>array('controller'=>'things','action'=>'addToBoxSesja')));?>
+                                                            <?php echo $this->Form->hidden('product_id',array('value'=> $pizza['Pizza']['id']))?>
+                                                            <?php echo $this->Form->submit('Max - 42 cm - 28.90 zł',array('class'=>'btnAddToCart', 'onclick' =>"addToBox('".$pizza['Pizza']['id']."', '".$pizza['Pizza']['name']."', 1, '".$pizza['Pizza']['sprice']."')" ));?>
+                                                            <?php echo $this->Form->end();?>
+                                                        </li>
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
@@ -128,30 +178,78 @@
             }
         });
     });
+    
+    function prevent_add_btn_Link_Redirect(){
+        for(i=1;i<=<?=$pizza['Pizza']['id']?>;i++){
+            document.getElementById(i).addEventListener("click", function(e){
+            e.preventDefault(i);
+        });
+        }
+    }
+    
+//    var dl = document.getElementsByClassName("list-element").length;
+//    for(j = 0; j < dl; j++){
+//        document.getElementsByClassName("list-element")[j].addEventListener("click", function(e){
+//            e.preventDefault();
+//        }); 
+//    }
+
+    window.onload = prevent_add_btn_Link_Redirect();
+    
+    function addToBox(id, name, size, price){
+                $.ajax(
+                {
+                    url: "<?= $this->Html->url('addToBoxAjax/') ?>" + id + "/" + name + "/" + size + "/" + price ,
+                    success: function () {
+                        $(document).ready(function(){
+                            $(".pizza-size-list").hide();
+                        });
+                        $(document).ready(function(){
+                            $(".box").fadeIn();
+                        });  
+
+                    }
+                }); 
+    } 
+    
+    $(document).ready(function(){
+        $(".pizza-size-list").hide();
+    });
+
+    
+function togglePizzaSize(toggleId) {
+    var x = document.getElementById("id_"+toggleId);
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+        ///to jest chyba do niczego nie potrzebne
+        prevent_Link();
+    }
+}
+
 </script>
 
- <script>
-
-
-
-    $(document).ready(function(){
-        $("#this1").on('click',function(){
-        
-                $("#this2").toggle();
-        });
-    }); 
-    
-    for(i=1;i<=<?=$pizza['Pizza']['id']?>;i++){
-    document.getElementById(i).addEventListener("click", function(e){
-    e.preventDefault(i)
-    });
-    console.log(i);
-    }
-
-    function innaFunkcja(id){
-        console.log(id);
-        alert('Dodano do koszyka pizze o id: ' + id);
-        $('#' + id).css('background', 'red');
-    }
-
-</script>   
+<script>
+$(document).ready(function(){
+	$('#add-form').submit(function(e){
+		e.preventDefault();
+//		var tis = $(this);
+		$.post($(this).attr('action'),$(this).serialize(),function(idFromPost){
+			$('#cart-counter').text(idFromPost);
+		});
+//                alert('działa alert i php działa'+"<?php echo $count;?>");
+	});
+});
+</script>
+<script>
+$(document).ready(function(){
+	$('.sas').submit(function(e){
+		e.preventDefault();
+		$.post($(this).attr('action'),$(this).serialize(),function(idFromPost){
+			$('.item-counter').text(idFromPost);
+		});
+                
+	});
+});
+</script>

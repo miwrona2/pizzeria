@@ -1,0 +1,146 @@
+@charset "utf-8";
+/**
+ * Generic CSS for CakePHP
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @package       app.webroot.css
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ */
+.parent {
+    position: relative;
+} 
+
+.box{
+    background-color: #EDEDED;
+    width: 500px;
+    border: solid gray 1px;
+    position: absolute; 
+    top: 25px;
+    right: 65px;
+    font-family: sans-serif;
+    display: none;
+    z-index:1;
+}
+
+.box-header{
+    display: block;
+    padding: 6px 6px 6px 20px;
+    line-height: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    z-index: 2;
+}
+
+h5{
+    font-size: 16.8px;
+    font-size: 1.2em;
+    display: inline-block;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.close-cart{
+    float: right;
+    color: #337ab7;
+    text-decoration: none;  
+    font-size: 1.5em;
+    line-height: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    padding-top: 8px;
+    padding-right: 8px;
+}
+
+.close-cart:hover {
+    color: #23527c;
+}
+
+.cart-items{
+    padding-left: 10px;
+    padding-right: 10px;
+    color: black;
+}
+
+.dishName {
+    font-weight: 700;
+}
+
+.empty{
+    font-size: 20px; 
+    display: block;
+    padding: 20px;
+    text-align: center;
+    opacity: .5;
+}
+
+.notempty{
+    font-size: 16px; 
+    padding: 20px;
+    text-align: center;
+}
+
+.deleteCartItem{
+    color: red;
+    float: right;
+    text-decoration: none;
+}
+
+.total{
+    color: aqua;
+}
+
+.delivery{
+    border-top: 1px solid rgba(0,0,0,.1);
+    border-bottom: 1px dotted #d3d3d3;
+    /*        min-height: 30px;*/
+    display: block;
+    padding: 10px 20px
+}
+
+.delivery a{
+    color: #337ab7;
+    font-family: 'Open Sans', "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.atcions{
+    align-items: center;
+    padding: 10px;
+}
+
+.multi-column{
+    column-count: 2;
+}
+.btn-box{ 
+    color: #333;
+    border: 1px solid #ccc;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    padding: 6px 12px;
+    margin: 5px;
+    font-family: 'Open Sans', "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.btn-box:hover{
+    border: 1px solid #adadad;
+    background-color: #e6e6e6;
+    color: #333;
+}
+
+.box-body{
+    background-color: #fff;
+    position: relative;
+    z-index: -1;
+}
