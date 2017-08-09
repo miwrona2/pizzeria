@@ -231,19 +231,19 @@ function togglePizzaSize(toggleId) {
 </script>
 
 <script>
-$(document).ready(function(){
+$(document).ready(function testowaDoPojedynczegoPrzycisku(){
 	$('#add-form').submit(function(e){
 		e.preventDefault();
 //		var tis = $(this);
-		$.post($(this).attr('action'),$(this).serialize(),function(idFromPost){
-			$('#cart-counter').text(idFromPost);
-		});
-//                alert('działa alert i php działa'+"<?php echo $count;?>");
+//		$.post($(this).attr('action'),$(this).serialize(),function(idFromPost){
+//			$('#cart-counter').text(idFromPost);
+//		});
+                $('#add-form').text($.post);
 	});
 });
 </script>
 <script>
-$(document).ready(function(){
+$(document).ready(function counterAmount(){
 	$('.sas').submit(function(e){
 		e.preventDefault();
 		$.post($(this).attr('action'),$(this).serialize(),function(idFromPost){
