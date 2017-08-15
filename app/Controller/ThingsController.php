@@ -36,6 +36,7 @@ class ThingsController extends AppController {
         //działa ale to jest do poprawki
         $dishesInCart = $this->CartItem->find('all');
         $this->set('dishesInCart', $dishesInCart);  
+        return $pizzas;
     }
      
     public function discount() {
@@ -53,24 +54,38 @@ class ThingsController extends AppController {
     public function gallery() {
 
     }
+    
     public function allergens() {
 //        $this->layout = 'admin';
     }
     
-public function add() {
-        $this->autoRender = false;
-        if ($this->request->is('post')) {
-                 $this->Thing->addProduct($this->request->data['Cart']['product_id']);
-        } 
-         echo $this->Thing->getCount();
-}
-public function addToBoxSesja() {
-        $this->autoRender = false;
-        if ($this->request->is('post')) {
-                 $this->Thing->addProduct($this->request->data['Thing']['product_id']);
-        } 
-         echo $this->Thing->getCount();
-}
+    public function add() {
+            $this->autoRender = false;
+            if ($this->request->is('post')) {
+                     $this->Thing->addProduct($this->request->data['Cart']['product_id']);
+            } 
+             echo $this->Thing->getCount();
+    }
+    
+    public function addToBoxSesja() {
+            $this->autoRender = false;
+           if ($this->request->is('post')) {
+                    $par1 = $this->request->data['Thing']['product_id'];
+//                    $par2 = $this->request->data['Thing']['item_name'];
+//                    $par3 = $this->request->data['Thing']['price'];
+//                    $par4 = $this->request->data['Thing']['size'];
+                     $this->Thing->addProduct($this->request->data['Thing']['product_id']);
+            } 
+             $GetCount = $this->Thing->getCount();
+             //echo $GetCount;
+                 //    print_r($this->request->data);
+             //$zwroc = $this->request->data['Thing']['item_name'];
+             //$arrayPizza = json_encode(array($this->Thing->addProduct($par1, $par2), $GetCount, $par1, $par2, $par3, $par4));
+                     //$arrayPizza = json_encode(array("1"=> $this->request->data, "2"=> $this->Thing->getCount()));
+             //var_dump('sadasjhdadsahdsajdsaj');
+              //print_r(serialize($this->request->data['Thing']['item_name']));
+              return json_encode(array("key0" => $par1,"key1" => $GetCount, "key2" => $this->request->data['Thing']['item_name']));
+    }
 
     public function addToBoxAjax($id, $name, $size, $price){
         $this->autoRender = false;
@@ -93,4 +108,18 @@ public function addToBoxSesja() {
 //    $this->redirect(array('action' => 'menu'));
     }
        
+    public function clearSession() {
+    $this->autoRender = false;
+    $this->Thing->clearSessionInModel();
+    $this->redirect('menu');
+    }
+
+    public function wywalJSONwConsoli() {
+        $this->autoRender = false;
+        //$this->loadModel('Pizza');
+        //$pizzas = $this->Pizza->find('all');
+        //$this->set('pizzas', $pizzas); 
+        $pizzas = $this->menu('pizzas');
+        echo json_encode(array($pizzas)); 
+    }
 }

@@ -6,7 +6,6 @@
             </li>
             
             <li><p style="color: green; padding-left: 50px;">Branch: AJAX</p></li>
-            
         </ul>
         <ul class="nav navbar-nav pull-right list-inline">
             <div class="parent">
@@ -20,6 +19,7 @@
                     array('id' => 'switchCart',
                         'escape' => false)
                 )?></li>
+<?= $this->Html->link('Clear Session!', array('action' => 'clearSession'));?>
 <?php echo $this->Form->create('Cart',array('id'=>'add-form','url'=>array('controller'=>'things','action'=>'add ')));?>
 <?php echo $this->Form->hidden('product_id',array('value'=> 7))?>
 <?php echo $this->Form->submit('Add to cart',array('class'=>'btn'));?>
@@ -150,6 +150,9 @@
                                                         </li>
                                                         <li><?php echo $this->Form->create('Thing',array('id'=>'add-form2', 'class'=> 'sas','url'=>array('controller'=>'things','action'=>'addToBoxSesja')));?>
                                                             <?php echo $this->Form->hidden('product_id',array('value'=> $pizza['Pizza']['id']))?>
+                                                            <?php echo $this->Form->hidden('item_name',array('value'=> $pizza['Pizza']['name']))?>
+                                                            <?php echo $this->Form->hidden('price',array('value'=> $pizza['Pizza']['bprice']))?>
+                                                            <?php echo $this->Form->hidden('size',array('value'=> 2))?>
                                                             <?php echo $this->Form->submit('Max - 42 cm - 28.90 zł',array('class'=>'btnAddToCart', 'onclick' =>"addToBox('".$pizza['Pizza']['id']."', '".$pizza['Pizza']['name']."', 1, '".$pizza['Pizza']['sprice']."')" ));?>
                                                             <?php echo $this->Form->end();?>
                                                         </li>
@@ -244,12 +247,31 @@ $(document).ready(function testowaDoPojedynczegoPrzycisku(){
 </script>
 <script>
 $(document).ready(function counterAmount(){
-	$('.sas').submit(function(e){
-		e.preventDefault();
-		$.post($(this).attr('action'),$(this).serialize(),function(idFromPost){
-			$('.item-counter').text(idFromPost);
-		});
-                
-	});
+    $('.sas').submit(function(e){
+        e.preventDefault();
+        $.post($(this).attr('action'),$(this).serialize(),function(daneZPosta){
+                $('.item-counter').text(daneZPosta.key1);
+                console.log(daneZPosta)
+        },"json");
+//        $.post($(this).attr('action'),$(this).serialize(),function(daneZPosta){
+//                $('#wKoszyku').text(daneZPosta);
+//                console.log(daneZPosta.klucz1);
+//        });
+//        $.post( "addToBoxSesja",$(this).serialize(), function( data ) {
+//          console.log(data); // John
+//        },"json");
+    });
 });
+
+//    $.post( "addToBoxSesja", function( data ) {
+//      console.log(data); // John
+//
+//    },"json");
+
 </script>
+
+    <!--            <script>
+                $.post( "wywalJSONwConsoli", function( data ) {
+                console.log(data[0][0].Pizza.name +" \nSkładniki:"+ data[0][0].Pizza.ingredients);
+                },"json");
+                </script>-->

@@ -17,12 +17,11 @@ class Thing extends AppModel {
             } else {
                     $allProducts[$productId] = 1;
             }
-
             $this->saveProduct($allProducts);
-            // echo 'true';
-            // debug($this->readProduct());
-            //debug($this->$allProducts->find('count'));
-
+            //print_r($allProducts);
+                    //$tuPodajeArray= array('klucz1'=>$this->getCount(), 'klucz2'=>$item_name);
+           //$this->saveArray($tuPodajeArray);
+            //return ($tuPodajeArray);
     }
 
     public function getCount() {
@@ -36,7 +35,6 @@ class Thing extends AppModel {
             foreach ($allProducts as $product) {
                     $count=$count+$product;
             }
-
             return $count;
     }
 
@@ -46,6 +44,10 @@ class Thing extends AppModel {
     public function saveProduct($data) {
             return CakeSession::write('cart',$data);
     }
+    
+    public function saveArray($array) {
+            return CakeSession::write('cart',$array);
+    }
 
     /*
      * read cart data from session
@@ -53,5 +55,8 @@ class Thing extends AppModel {
     public function readProduct() {
             return CakeSession::read('cart');
     }
-
+        
+    public function clearSessionInModel() {
+            return CakeSession::delete('cart');
+    }
 }

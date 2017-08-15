@@ -15,6 +15,10 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
+#tymczasowy {
+    color: yellowgreen;
+}
+
 #cart_navbar {
     color: #fff;
     background-color: #2c1107;

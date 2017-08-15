@@ -23,6 +23,7 @@
                     else { echo 'UNDEFINED PIZZA SIZE';}
                     ?>
                     <br>
+                    <div id="wKoszyku" style="background: #dff0d8">koszyk</div>
                 <?php endforeach;
             } else {
             echo '<span class="empty">
