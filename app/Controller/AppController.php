@@ -37,6 +37,9 @@ class AppController extends Controller {
 		$this->loadModel('Thing');
 		
 		$this->set('count',$this->Thing->getCount());
+                $array = $this->Thing->readArray();
+		$this->set('array', $array);
 		$this->set('counter2',$this->Thing->getCount());
+                return $array;
 	}
 }

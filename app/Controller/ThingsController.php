@@ -34,8 +34,10 @@ class ThingsController extends AppController {
         $this->set('counter', $counter);
         
         //działa ale to jest do poprawki
-        $dishesInCart = $this->CartItem->find('all');
-        $this->set('dishesInCart', $dishesInCart);  
+        //$dishesInCart = $this->CartItem->find('all');
+        //$this->set('dishesInCart', $dishesInCart); 
+                $dishesInCart = $this->beforeFilter('array');
+        $this->set('dishesInCart', $dishesInCart); 
         return $pizzas;
     }
      
@@ -71,10 +73,11 @@ class ThingsController extends AppController {
             $this->autoRender = false;
            if ($this->request->is('post')) {
                     $par1 = $this->request->data['Thing']['product_id'];
-//                    $par2 = $this->request->data['Thing']['item_name'];
-//                    $par3 = $this->request->data['Thing']['price'];
-//                    $par4 = $this->request->data['Thing']['size'];
-                     $this->Thing->addProduct($this->request->data['Thing']['product_id']);
+                    $par2 = $this->request->data['Thing']['item_name'];
+                    $par3 = $this->request->data['Thing']['price'];
+                    $par4 = $this->request->data['Thing']['size'];
+                    $this->Thing->addProduct($par1);
+                    $this->Thing->putItemInSession($par1,$par2, $par3, $par4);
             } 
              $GetCount = $this->Thing->getCount();
              //echo $GetCount;
@@ -84,7 +87,8 @@ class ThingsController extends AppController {
                      //$arrayPizza = json_encode(array("1"=> $this->request->data, "2"=> $this->Thing->getCount()));
              //var_dump('sadasjhdadsahdsajdsaj');
               //print_r(serialize($this->request->data['Thing']['item_name']));
-              return json_encode(array("key0" => $par1,"key1" => $GetCount, "key2" => $this->request->data['Thing']['item_name']));
+            $arrayPizza = array("key0" => $GetCount,"key1" => $par1, "key2" => $par2,"key3" => $par3,"key4" => $par4);
+            return json_encode($arrayPizza);
     }
 
     public function addToBoxAjax($id, $name, $size, $price){

@@ -27,7 +27,9 @@
 <span class="badge" id="cart-counter"><?php echo $count?></span>
         </ul>
         <div class="div-zmienny" style="color: green; float: left;">
-
+            array: <p><?php
+   
+            ?></p>
         </div>
     </div>
 </div>
@@ -129,31 +131,20 @@
                                                                     'escape' => false))
                                                     ?>
                                                     <ul class="pizza-size-list" id="id_<?php echo $pizza['Pizza']['id'] ?>">
-                                                        <li><?php echo $this->Html->link('Duża - 30 cm - '.$pizza['Pizza']['sprice'].' zł',
-                                                                                array('action' => 'menu'), 
-                                                                                array('class' => 'list-element',
-                                                                                    'id' => $pizza['Pizza']['id'],
-                                                                                    'onclick' => "addToBox('".$pizza['Pizza']['id']."', '".$pizza['Pizza']['name']."', 1, '".$pizza['Pizza']['sprice']."')",
-                                                                                    'escape' => false)
-                                                                             ); 
-                                                            ?>      
-                                                        </li>
-                                                        <li></li>
-                                                        <li><?php echo $this->Html->link('Max - 42 cm - '.$pizza['Pizza']['bprice'].' zł',
-                                                                                array('action' => 'menu'), 
-                                                                                array('class' => 'list-element',
-                                                                                    'id' => $pizza['Pizza']['id'],
-                                                                                    'onclick' => "addToBox('".$pizza['Pizza']['id']."', '".$pizza['Pizza']['name']."', 2, '".$pizza['Pizza']['bprice']."')",
-                                                                                    'escape' => false)
-                                                                             ); 
-                                                            ?>      
+                                                        <li><?php echo $this->Form->create('Thing',array('id'=>'add-form2', 'class'=> 'sas','url'=>array('controller'=>'things','action'=>'addToBoxSesja')));?>
+                                                            <?php echo $this->Form->hidden('product_id',array('value'=> $pizza['Pizza']['id']))?>
+                                                            <?php echo $this->Form->hidden('item_name',array('value'=> $pizza['Pizza']['name']))?>
+                                                            <?php echo $this->Form->hidden('price',array('value'=> $pizza['Pizza']['sprice']))?>
+                                                            <?php echo $this->Form->hidden('size',array('value'=> 1))?>
+                                                            <?php echo $this->Form->submit('Duża - 30 cm - '.$pizza['Pizza']['sprice'].'',array('class'=>'btnAddToCart'));?>
+                                                            <?php echo $this->Form->end();?>
                                                         </li>
                                                         <li><?php echo $this->Form->create('Thing',array('id'=>'add-form2', 'class'=> 'sas','url'=>array('controller'=>'things','action'=>'addToBoxSesja')));?>
                                                             <?php echo $this->Form->hidden('product_id',array('value'=> $pizza['Pizza']['id']))?>
                                                             <?php echo $this->Form->hidden('item_name',array('value'=> $pizza['Pizza']['name']))?>
                                                             <?php echo $this->Form->hidden('price',array('value'=> $pizza['Pizza']['bprice']))?>
                                                             <?php echo $this->Form->hidden('size',array('value'=> 2))?>
-                                                            <?php echo $this->Form->submit('Max - 42 cm - 28.90 zł',array('class'=>'btnAddToCart', 'onclick' =>"addToBox('".$pizza['Pizza']['id']."', '".$pizza['Pizza']['name']."', 1, '".$pizza['Pizza']['sprice']."')" ));?>
+                                                            <?php echo $this->Form->submit('Max - 42 cm - '.$pizza['Pizza']['bprice'].'',array('class'=>'btnAddToCart'));?>
                                                             <?php echo $this->Form->end();?>
                                                         </li>
                                                     </ul>
@@ -250,9 +241,22 @@ $(document).ready(function counterAmount(){
     $('.sas').submit(function(e){
         e.preventDefault();
         $.post($(this).attr('action'),$(this).serialize(),function(daneZPosta){
-                $('.item-counter').text(daneZPosta.key1);
-                console.log(daneZPosta)
+                $('.item-counter').text(daneZPosta.key0);
+                console.log(daneZPosta);
+                $('.div-zmienny').text(daneZPosta);
+                var size;
+                if(Number(daneZPosta.key4) === 1){size="Mała";}
+                else if (Number(daneZPosta.key4) === 2)
+                {size = "Duża";} else {size = "jakas inna";}
+                $('#wKoszyku').html(daneZPosta.key1 + daneZPosta.key2 + daneZPosta.key3 + size);
+
         },"json");
+        $(document).ready(function(){
+            $(".pizza-size-list").hide();
+        });
+        $(document).ready(function(){
+            $(".box").fadeIn();
+        });  
 //        $.post($(this).attr('action'),$(this).serialize(),function(daneZPosta){
 //                $('#wKoszyku').text(daneZPosta);
 //                console.log(daneZPosta.klucz1);

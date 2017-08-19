@@ -13,17 +13,18 @@
     </div>
     <div class="box-body">
         <div class="cart-items">
+                    <div id="wKoszyku" style="background: #dff0d8">koszyk</div>
             <?php echo '<br>'; 
             if(!empty($dishesInCart)){
                 foreach ($dishesInCart as $dishInCart):?>
-                    <div class="dishName"><?= $dishInCart['CartItem']['pizzaid'].'-';?><?= $dishInCart['CartItem']['item_name'];?></div>
-                    <?=  '&nbsp&nbsp&nbsp&nbsp&nbsp'.$dishInCart['CartItem']['price'];?>
-                    <?php  if($dishInCart['CartItem']['size'] == 1){echo 'mala';}
-                    else if($dishInCart['CartItem']['size'] == 2){echo 'duza';}
-                    else { echo 'UNDEFINED PIZZA SIZE';}
-                    ?>
-                    <br>
-                    <div id="wKoszyku" style="background: #dff0d8">koszyk</div>
+            <div class="dishName"><strong><?= $dishInCart['id'].'-';?><?= $dishInCart['itemName'];?></strong>
+            <?php  if($dishInCart['size'] == 1){echo 'mala';}
+            else if($dishInCart['size'] == 2){echo 'duza';}
+            else { echo 'UNDEFINED PIZZA SIZE';}
+            ?>
+                <div style="float: right"><?= $dishInCart['price'] ?></div>
+            </div>
+            <br>
                 <?php endforeach;
             } else {
             echo '<span class="empty">

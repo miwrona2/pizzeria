@@ -23,6 +23,15 @@ class Thing extends AppModel {
            //$this->saveArray($tuPodajeArray);
             //return ($tuPodajeArray);
     }
+    public function putItemInSession($id, $itemName, $price, $size) {
+                $allItems = $this->readArray();
+//                $allItems['id'] = $id;
+//                $allItems['itemName'] = $itemName;
+//                $allItems['price'] = $price;
+//                $allItems['size'] = $size;
+                $allItems[] = array('id' => $id, 'itemName' => $itemName, 'price' => $price, 'size' => $size);
+                $this->saveArray($allItems);
+    }
 
     public function getCount() {
             $allProducts = $this->readProduct();
@@ -46,7 +55,7 @@ class Thing extends AppModel {
     }
     
     public function saveArray($array) {
-            return CakeSession::write('cart',$array);
+            return CakeSession::write('array',$array);
     }
 
     /*
@@ -55,8 +64,11 @@ class Thing extends AppModel {
     public function readProduct() {
             return CakeSession::read('cart');
     }
+    public function readArray() {
+            return CakeSession::read('array');
+    }
         
     public function clearSessionInModel() {
-            return CakeSession::delete('cart');
+            return CakeSession::destroy();
     }
 }
