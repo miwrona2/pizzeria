@@ -13,26 +13,27 @@
     </div>
     <div class="box-body">
         <div class="cart-items">
-                    <div id="wKoszyku" style="background: #dff0d8">koszyk</div>
-            <?php echo '<br>'; 
-            if(!empty($dishesInCart)){
-                foreach ($dishesInCart as $dishInCart):?>
-            <div class="dishName"><strong><?= $dishInCart['id'].'-';?><?= $dishInCart['itemName'];?></strong>
-            <?php  if($dishInCart['size'] == 1){echo 'mala';}
-            else if($dishInCart['size'] == 2){echo 'duza';}
-            else { echo 'UNDEFINED PIZZA SIZE';}
-            ?>
-                <div style="float: right"><?= $dishInCart['price'] ?></div>
+            <div id="inCart">
+                <?php echo '<br>'; 
+                if(!empty($dishesInCart)){
+                    foreach ($dishesInCart as $dishInCart):?>
+                        <div class="dishName"><strong><?= $dishInCart['id'].'-';?><?= $dishInCart['itemName'];?></strong>
+                        <?php  if($dishInCart['size'] == 1){echo 'mala';}
+                        else if($dishInCart['size'] == 2){echo 'duza';}
+                        else { echo 'UNDEFINED PIZZA SIZE';}
+                        ?>
+                            <div class="right"><?= $dishInCart['price'] ?></div>
+                        </div>
+                        <br>
+                    <?php endforeach;
+                } else {
+                echo '<span class="empty">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                Koszyk jest pusty
+                </span>';
+                }
+                ?>
             </div>
-            <br>
-                <?php endforeach;
-            } else {
-            echo '<span class="empty">
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-            Koszyk jest pusty
-            </span>';
-            }
-            ?>
         </div>
         <div class="delivery"><?php echo $this->Html->link('Zamów', array('controller' => 'orders', 'action' => 'create'), array('class' => '')); ?></div>
         <div class="atcions">

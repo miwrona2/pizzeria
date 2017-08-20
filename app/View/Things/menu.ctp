@@ -14,23 +14,13 @@
             <li><i class="fa fa-phone" aria-hidden="true"></i><a> 81 454... <small>więcej</small></a></li>
             <li><a>Koszyk jest pusty</a></li>
             <li><?php echo $this->Html->link(
-                    '<i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp; Koszyk'. '<span class="item-counter">'.$counter.'</span>'. '<span class="item-counter2">&nbsp  '.$counter2.'</span>',
+                    '<i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp; Koszyk'. '<span class="item-counter">'.$count.'</span>'. '<span class="item-counter2">&nbsp  '.$counter2.'</span>',
                     array('action' => 'menu'), 
                     array('id' => 'switchCart',
                         'escape' => false)
-                )?></li>
-<?= $this->Html->link('Clear Session!', array('action' => 'clearSession'));?>
-<?php echo $this->Form->create('Cart',array('id'=>'add-form','url'=>array('controller'=>'things','action'=>'add ')));?>
-<?php echo $this->Form->hidden('product_id',array('value'=> 7))?>
-<?php echo $this->Form->submit('Add to cart',array('class'=>'btn'));?>
-<?php echo $this->Form->end();?>
-<span class="badge" id="cart-counter"><?php echo $count?></span>
-        </ul>
-        <div class="div-zmienny" style="color: green; float: left;">
-            array: <p><?php
-   
-            ?></p>
-        </div>
+                )?>
+            </li>
+            <li><?php echo $this->Html->link('Clear Session!', array('action' => 'clearSession'), array('id' => 'adsadafa' ,'style' => 'font-weight:bold; font-size:15px; color: lightblue'))?></li>
     </div>
 </div>
 <div id="m-section">
@@ -113,16 +103,6 @@
                                             <div class="m-item__col m-item__col--secondary actions"> 
                                                 <div class="btn-group">
                                                     <?php 
-//                                                        echo $this->Html->link('Do koszyka <span class="caret"></span>', 
-//                                                                                    array('action' => 'menu'), 
-//                                                                                    array('class' => 'btn add-button', 
-//                                                                                        'id' => $pizza['Pizza']['id'],
-//                                                                                        'onclick' => "addToBox('".$pizza['Pizza']['id']."', '".$pizza['Pizza']['name']."')",
-//                                                                                        'escape' => false
-//                                                                                         )
-//                                                                                 ); 
-                                                    ?>
-                                                    <?php 
                                                         echo $this->Html->link('Do koszyka <span class="caret"></span>', 
                                                                 array('action' => false), 
                                                                 array('class' => 'btn add-button',
@@ -131,7 +111,7 @@
                                                                     'escape' => false))
                                                     ?>
                                                     <ul class="pizza-size-list" id="id_<?php echo $pizza['Pizza']['id'] ?>">
-                                                        <li><?php echo $this->Form->create('Thing',array('id'=>'add-form2', 'class'=> 'sas','url'=>array('controller'=>'things','action'=>'addToBoxSesja')));?>
+                                                        <li><?php echo $this->Form->create('Thing',array('id'=>'add-form2', 'class'=> 'callFunctionAddToBoxSession','url'=>array('controller'=>'things','action'=>'addToBoxSession')));?>
                                                             <?php echo $this->Form->hidden('product_id',array('value'=> $pizza['Pizza']['id']))?>
                                                             <?php echo $this->Form->hidden('item_name',array('value'=> $pizza['Pizza']['name']))?>
                                                             <?php echo $this->Form->hidden('price',array('value'=> $pizza['Pizza']['sprice']))?>
@@ -139,7 +119,7 @@
                                                             <?php echo $this->Form->submit('Duża - 30 cm - '.$pizza['Pizza']['sprice'].'',array('class'=>'btnAddToCart'));?>
                                                             <?php echo $this->Form->end();?>
                                                         </li>
-                                                        <li><?php echo $this->Form->create('Thing',array('id'=>'add-form2', 'class'=> 'sas','url'=>array('controller'=>'things','action'=>'addToBoxSesja')));?>
+                                                        <li><?php echo $this->Form->create('Thing',array('id'=>'add-form2', 'class'=> 'callFunctionAddToBoxSession','url'=>array('controller'=>'things','action'=>'addToBoxSession')));?>
                                                             <?php echo $this->Form->hidden('product_id',array('value'=> $pizza['Pizza']['id']))?>
                                                             <?php echo $this->Form->hidden('item_name',array('value'=> $pizza['Pizza']['name']))?>
                                                             <?php echo $this->Form->hidden('price',array('value'=> $pizza['Pizza']['bprice']))?>
@@ -212,44 +192,28 @@
 
     
 function togglePizzaSize(toggleId) {
+    var w = document.getElementsByClassName("pizza-size-list");
+    for (p=0; p<w.length; p++){
+        w[p].style.display = 'none';
+    }
     var x = document.getElementById("id_"+toggleId);
     if (x.style.display === 'none') {
         x.style.display = 'block';
     } else {
         x.style.display = 'none';
-        ///to jest chyba do niczego nie potrzebne
-        prevent_Link();
     }
 }
-
-</script>
-
-<script>
-$(document).ready(function testowaDoPojedynczegoPrzycisku(){
-	$('#add-form').submit(function(e){
-		e.preventDefault();
-//		var tis = $(this);
-//		$.post($(this).attr('action'),$(this).serialize(),function(idFromPost){
-//			$('#cart-counter').text(idFromPost);
-//		});
-                $('#add-form').text($.post);
-	});
-});
-</script>
-<script>
-$(document).ready(function counterAmount(){
-    $('.sas').submit(function(e){
+    
+$(document).ready(function addToBoxAjax(){
+    $('.callFunctionAddToBoxSession').submit(function(e){
         e.preventDefault();
-        $.post($(this).attr('action'),$(this).serialize(),function(daneZPosta){
-                $('.item-counter').text(daneZPosta.key0);
-                console.log(daneZPosta);
-                $('.div-zmienny').text(daneZPosta);
+        $.post($(this).attr('action'),$(this).serialize(),function(dataFromRequest){
+                $('.item-counter').text(dataFromRequest.counter);
                 var size;
-                if(Number(daneZPosta.key4) === 1){size="Mała";}
-                else if (Number(daneZPosta.key4) === 2)
-                {size = "Duża";} else {size = "jakas inna";}
-                $('#wKoszyku').html(daneZPosta.key1 + daneZPosta.key2 + daneZPosta.key3 + size);
-
+                if(Number(dataFromRequest.size) === 1){size="Mała";}
+                else if (Number(dataFromRequest.size) === 2)
+                {size = "Duża";} else {size = "Undefined size of pizza!";}
+                $('#inCart').append("<div><strong>"+dataFromRequest.id+"-"+dataFromRequest.name+"</strong>&nbsp;"+size+"<div class='right'>"+dataFromRequest.price+"</div></div><br>");
         },"json");
         $(document).ready(function(){
             $(".pizza-size-list").hide();
@@ -257,21 +221,8 @@ $(document).ready(function counterAmount(){
         $(document).ready(function(){
             $(".box").fadeIn();
         });  
-//        $.post($(this).attr('action'),$(this).serialize(),function(daneZPosta){
-//                $('#wKoszyku').text(daneZPosta);
-//                console.log(daneZPosta.klucz1);
-//        });
-//        $.post( "addToBoxSesja",$(this).serialize(), function( data ) {
-//          console.log(data); // John
-//        },"json");
     });
 });
-
-//    $.post( "addToBoxSesja", function( data ) {
-//      console.log(data); // John
-//
-//    },"json");
-
 </script>
 
     <!--            <script>

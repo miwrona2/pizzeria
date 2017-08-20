@@ -36,7 +36,7 @@ class ThingsController extends AppController {
         //działa ale to jest do poprawki
         //$dishesInCart = $this->CartItem->find('all');
         //$this->set('dishesInCart', $dishesInCart); 
-                $dishesInCart = $this->beforeFilter('array');
+        $dishesInCart = $this->beforeFilter('array');
         $this->set('dishesInCart', $dishesInCart); 
         return $pizzas;
     }
@@ -69,25 +69,18 @@ class ThingsController extends AppController {
              echo $this->Thing->getCount();
     }
     
-    public function addToBoxSesja() {
+    public function addToBoxSession() {
             $this->autoRender = false;
            if ($this->request->is('post')) {
-                    $par1 = $this->request->data['Thing']['product_id'];
-                    $par2 = $this->request->data['Thing']['item_name'];
-                    $par3 = $this->request->data['Thing']['price'];
-                    $par4 = $this->request->data['Thing']['size'];
-                    $this->Thing->addProduct($par1);
-                    $this->Thing->putItemInSession($par1,$par2, $par3, $par4);
+                    $id = $this->request->data['Thing']['product_id'];
+                    $name = $this->request->data['Thing']['item_name'];
+                    $price = $this->request->data['Thing']['price'];
+                    $size = $this->request->data['Thing']['size'];
+                    $this->Thing->addProduct($id);
+                    $this->Thing->putItemInSession($id,$name, $price, $size);
             } 
-             $GetCount = $this->Thing->getCount();
-             //echo $GetCount;
-                 //    print_r($this->request->data);
-             //$zwroc = $this->request->data['Thing']['item_name'];
-             //$arrayPizza = json_encode(array($this->Thing->addProduct($par1, $par2), $GetCount, $par1, $par2, $par3, $par4));
-                     //$arrayPizza = json_encode(array("1"=> $this->request->data, "2"=> $this->Thing->getCount()));
-             //var_dump('sadasjhdadsahdsajdsaj');
-              //print_r(serialize($this->request->data['Thing']['item_name']));
-            $arrayPizza = array("key0" => $GetCount,"key1" => $par1, "key2" => $par2,"key3" => $par3,"key4" => $par4);
+            $getCount = $this->Thing->getCount();
+            $arrayPizza = array("counter" => $getCount,"id" => $id, "name" => $name,"price" => $price,"size" => $size);
             return json_encode($arrayPizza);
     }
 
