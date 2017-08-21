@@ -14,13 +14,12 @@
             <li><i class="fa fa-phone" aria-hidden="true"></i><a> 81 454... <small>więcej</small></a></li>
             <li><a>Koszyk jest pusty</a></li>
             <li><?php echo $this->Html->link(
-                    '<i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp; Koszyk'. '<span class="item-counter">'.$count.'</span>'. '<span class="item-counter2">&nbsp  '.$counter2.'</span>',
+                    '<i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp; Koszyk'. '<span class="item-counter">'.$count.'</span>',
                     array('action' => 'menu'), 
                     array('id' => 'switchCart',
                         'escape' => false)
                 )?>
             </li>
-            <li><?php echo $this->Html->link('Clear Session!', array('action' => 'clearSession'), array('id' => 'adsadafa' ,'style' => 'font-weight:bold; font-size:15px; color: lightblue'))?></li>
     </div>
 </div>
 <div id="m-section">
@@ -192,15 +191,15 @@
 
     
 function togglePizzaSize(toggleId) {
-    var w = document.getElementsByClassName("pizza-size-list");
-    for (p=0; p<w.length; p++){
-        w[p].style.display = 'none';
+    var pizzaSizeList = document.getElementsByClassName("pizza-size-list");
+    for (p=0; p<pizzaSizeList.length; p++){
+        pizzaSizeList[p].style.display = 'none';
     }
-    var x = document.getElementById("id_"+toggleId);
-    if (x.style.display === 'none') {
-        x.style.display = 'block';
+    var id_pizzaSizeList = document.getElementById("id_"+toggleId);
+    if (id_pizzaSizeList.style.display === 'none') {
+        id_pizzaSizeList.style.display = 'block';
     } else {
-        x.style.display = 'none';
+        id_pizzaSizeList.style.display = 'none';
     }
 }
     
@@ -214,6 +213,7 @@ $(document).ready(function addToBoxAjax(){
                 else if (Number(dataFromRequest.size) === 2)
                 {size = "Duża";} else {size = "Undefined size of pizza!";}
                 $('#inCart').append("<div><strong>"+dataFromRequest.id+"-"+dataFromRequest.name+"</strong>&nbsp;"+size+"<div class='right'>"+dataFromRequest.price+"</div></div><br>");
+                document.getElementsByClassName("empty")[0].style.display = 'none';
         },"json");
         $(document).ready(function(){
             $(".pizza-size-list").hide();
@@ -224,9 +224,3 @@ $(document).ready(function addToBoxAjax(){
     });
 });
 </script>
-
-    <!--            <script>
-                $.post( "wywalJSONwConsoli", function( data ) {
-                console.log(data[0][0].Pizza.name +" \nSkładniki:"+ data[0][0].Pizza.ingredients);
-                },"json");
-                </script>-->

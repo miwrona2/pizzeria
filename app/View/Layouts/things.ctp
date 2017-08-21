@@ -18,7 +18,6 @@
 
 <html lang="pl-PL">
     <head>
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Raleway" rel="stylesheet">
         <?php echo $this->Html->charset(); ?>
         <?php
         echo $this->Html->meta('icon');

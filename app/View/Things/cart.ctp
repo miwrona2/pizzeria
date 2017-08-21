@@ -1,15 +1,14 @@
 <div class="box">
     <div class="box-header">
         <h5>Koszyk</h5>
-        <?= $this->Html->link('Wyczyść', array('action' => false), array('id' => 'clearCart','onclick' => "clearCart()" ,'escape' => false)); ?>
+        <?= $this->Html->link('Wyczyść', array('action' => 'clearSession'), array('id' => 'clearCart')); ?>
         <?php
-        echo $this->Html->link('x', 
+        echo $this->Html->link('<i class="fa fa-close" aria-hidden="true"></i>', 
                 array('action' => 'menu'), 
                 array('class' => 'close-cart' ,
                     'id' => 'close-cart',
                     'escape' => false));
         ?>
-        <!--<a href="#" class="close-cart"><i class="fa fa-close" aria-hidden="true"></i></a>-->
     </div>
     <div class="box-body">
         <div class="cart-items">
@@ -74,13 +73,4 @@
     window.onload = blockLinkRedirect();
     });
     
-    function clearCart(){
-            $.ajax(
-            {
-                url: "<?= $this->Html->url('AjaxClearCart/') ?>",
-                success: function () {
-                    alert('Udało się wyczyścić koszyk!');
-                }
-            });
-    }
 </script>   

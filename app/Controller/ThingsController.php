@@ -38,7 +38,6 @@ class ThingsController extends AppController {
         //$this->set('dishesInCart', $dishesInCart); 
         $dishesInCart = $this->beforeFilter('array');
         $this->set('dishesInCart', $dishesInCart); 
-        return $pizzas;
     }
      
     public function discount() {
@@ -83,40 +82,11 @@ class ThingsController extends AppController {
             $arrayPizza = array("counter" => $getCount,"id" => $id, "name" => $name,"price" => $price,"size" => $size);
             return json_encode($arrayPizza);
     }
-
-    public function addToBoxAjax($id, $name, $size, $price){
-        $this->autoRender = false;
-        $this->loadModel('CartItem');
-        $this->CartItem->read(null);
-                
-        $this->CartItem->set(array(
-            'pizzaid' => $id,
-            'item_name' => $name,
-            'price' => $price,
-            'size' => $size
-        ));
-        $this->CartItem->save();
-    }
-    
-    public function AjaxClearCart(){
-    $this->autoRender = false;
-    $this->loadModel('CartItem');
-    $this->CartItem->query('TRUNCATE TABLE cart_items');
-//    $this->redirect(array('action' => 'menu'));
-    }
-       
+      
     public function clearSession() {
     $this->autoRender = false;
     $this->Thing->clearSessionInModel();
     $this->redirect('menu');
     }
 
-    public function wywalJSONwConsoli() {
-        $this->autoRender = false;
-        //$this->loadModel('Pizza');
-        //$pizzas = $this->Pizza->find('all');
-        //$this->set('pizzas', $pizzas); 
-        $pizzas = $this->menu('pizzas');
-        echo json_encode(array($pizzas)); 
-    }
 }
