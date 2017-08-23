@@ -13,23 +13,36 @@
     <div class="box-body">
         <div class="cart-items">
             <div id="inCart">
+                <?php ob_start(); ?>
+                    <span class="empty">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    Koszyk jest pusty
+                    </span>
+                <?php $emptyCartInfo = ob_get_clean(); ?>
+                
                 <?php echo '<br>'; 
                 if(!empty($dishesInCart)){
                     foreach ($dishesInCart as $dishInCart):?>
-                        <div class="dishName"><strong><?= $dishInCart['id'].'-';?><?= $dishInCart['itemName'];?></strong>
-                        <?php  if($dishInCart['size'] == 1){echo 'mala';}
-                        else if($dishInCart['size'] == 2){echo 'duza';}
-                        else { echo 'UNDEFINED PIZZA SIZE';}
-                        ?>
-                            <div class="right"><?= $dishInCart['price'] ?></div>
+                        <div class="dishName">
+                            <div class="info">
+                            <strong><?= $dishInCart['id'].'-';?><?= $dishInCart['itemName'];?></strong>
+                            <?php  
+                            if($dishInCart['size'] == 1){echo 'Mała';}
+                            else if($dishInCart['size'] == 2){echo 'Duża';}
+                            else {echo 'UNDEFINED SIZE OF PIZZA';}
+                            ?>
+                            </div>
+                                <div class="quantity">
+                                <?= $this->Html->link('-&nbsp', array('action' => '#'), array('id' => 'prevent', 'class' => 'decrement', 'escape' => false)); ?>
+                                <?php echo $this->Form->input('amount', array('type' => 'number', 'label' => false, 'class' => 'cartInput', 'value' => 3)) ?>
+                                <?= $this->Html->link('&nbsp+', array('action' => '#'), array('class' => 'increment', 'escape' => false)); ?>
+                                </div>
+                            <div class="subtotal"><?= $dishInCart['price'] ?></div>
                         </div>
                         <br>
                     <?php endforeach;
                 } else {
-                echo '<span class="empty">
-                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                Koszyk jest pusty
-                </span>';
+                echo $emptyCartInfo;
                 }
                 ?>
             </div>
@@ -51,6 +64,15 @@
             $('.box').fadeOut(500);
         });
     });
+    
+
+    
+//    document.getElementsByClassName("decrement")[0].addEventListener("click", function(event){
+//        event.preventDefault();
+//    });
+//    document.getElementsByClassName("increment")[0].addEventListener("click", function(event){
+//        event.preventDefault();
+//    });
     
     document.getElementById("close-cart").addEventListener("click", function(event){
         event.preventDefault();

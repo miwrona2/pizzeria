@@ -5,7 +5,7 @@
                 <h4>Salsa Lublin</h4>
             </li>
             
-            <li><p style="color: green; padding-left: 50px;">Branch: AJAX</p></li>
+            <li><p style="color: green; padding-left: 50px;">Branch: AJAX - TEST</p></li>
         </ul>
         <ul class="nav navbar-nav pull-right list-inline">
             <div class="parent">
@@ -169,21 +169,6 @@
 
     window.onload = prevent_add_btn_Link_Redirect();
     
-    function addToBox(id, name, size, price){
-                $.ajax(
-                {
-                    url: "<?= $this->Html->url('addToBoxAjax/') ?>" + id + "/" + name + "/" + size + "/" + price ,
-                    success: function () {
-                        $(document).ready(function(){
-                            $(".pizza-size-list").hide();
-                        });
-                        $(document).ready(function(){
-                            $(".box").fadeIn();
-                        });  
-
-                    }
-                }); 
-    } 
     
     $(document).ready(function(){
         $(".pizza-size-list").hide();
@@ -203,6 +188,10 @@ function togglePizzaSize(toggleId) {
     }
 }
     
+function emptyCartInfoDisappear() {
+    document.getElementsByClassName("empty")[0].style.display = 'none';
+}   
+    
 $(document).ready(function addToBoxAjax(){
     $('.callFunctionAddToBoxSession').submit(function(e){
         e.preventDefault();
@@ -213,7 +202,7 @@ $(document).ready(function addToBoxAjax(){
                 else if (Number(dataFromRequest.size) === 2)
                 {size = "Duża";} else {size = "Undefined size of pizza!";}
                 $('#inCart').append("<div><strong>"+dataFromRequest.id+"-"+dataFromRequest.name+"</strong>&nbsp;"+size+"<div class='right'>"+dataFromRequest.price+"</div></div><br>");
-                document.getElementsByClassName("empty")[0].style.display = 'none';
+                emptyCartInfoDisappear();
         },"json");
         $(document).ready(function(){
             $(".pizza-size-list").hide();

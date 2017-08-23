@@ -58,16 +58,8 @@ class ThingsController extends AppController {
     
     public function allergens() {
 //        $this->layout = 'admin';
-    }
-    
-    public function add() {
-            $this->autoRender = false;
-            if ($this->request->is('post')) {
-                     $this->Thing->addProduct($this->request->data['Cart']['product_id']);
-            } 
-             echo $this->Thing->getCount();
-    }
-    
+    } 
+   
     public function addToBoxSession() {
             $this->autoRender = false;
            if ($this->request->is('post')) {
@@ -76,10 +68,10 @@ class ThingsController extends AppController {
                     $price = $this->request->data['Thing']['price'];
                     $size = $this->request->data['Thing']['size'];
                     $this->Thing->addProduct($id);
-                    $this->Thing->putItemInSession($id,$name, $price, $size);
+                    $this->Thing->putItemInSession($id, $name, $price, $size);
             } 
             $getCount = $this->Thing->getCount();
-            $arrayPizza = array("counter" => $getCount,"id" => $id, "name" => $name,"price" => $price,"size" => $size);
+            $arrayPizza = array("counter" => $getCount, "id" => $id, "name" => $name, "price" => $price, "size" => $size);
             return json_encode($arrayPizza);
     }
       
@@ -88,5 +80,5 @@ class ThingsController extends AppController {
     $this->Thing->clearSessionInModel();
     $this->redirect('menu');
     }
-
+    
 }

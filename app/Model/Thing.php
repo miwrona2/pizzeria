@@ -25,12 +25,26 @@ class Thing extends AppModel {
     }
     public function putItemInSession($id, $itemName, $price, $size) {
                 $allItems = $this->readArray();
-//                $allItems['id'] = $id;
-//                $allItems['itemName'] = $itemName;
-//                $allItems['price'] = $price;
-//                $allItems['size'] = $size;
                 $allItems[] = array('id' => $id, 'itemName' => $itemName, 'price' => $price, 'size' => $size);
-                $this->saveArray($allItems);
+                $this->saveArray($allItems);   
+                //var_dump($allItems[0]['id']);
+                //$green = CakeSession::read('array', array('conditions' => array('id')) );
+                $green = CakeSession::read('array');
+                $policz = count($green);
+                
+                for($k=0; $k<$policz; $k++){
+                        echo '<pre>';
+                        var_dump($green[$k]["id"]);
+                        $bolean = in_array($id, $green[$k]);
+                        var_dump($bolean);
+                        echo '</pre>';
+                        if ($bolean){
+                            return 'hvhufhfahffdsdsd';
+                        }else{
+                            echo 'szukałem weszędzie i dupa';}
+      
+
+                }
     }
 
     public function getCount() {
