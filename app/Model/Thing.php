@@ -25,40 +25,30 @@ class Thing extends AppModel {
     }
     public function putItemInSession($id, $itemName, $price, $size) {
                 $allItems = $this->readArray();
-                //$allItems[] = array('id' => $id, 'itemName' => $itemName, 'price' => $price, 'size' => $size);
-                //$this->saveArray($allItems);   
-                //var_dump($allItems[0]['id']);
-                $green = CakeSession::read('array');
-                $policz = count($green);
+                $itemsAmountInCart = count($allItems);
                 
-                $flaga = false;
-                for($k=0; $k<$policz; $k++){
-                    echo '<pre>';
-                    var_dump($green[$k]);
-                    $bolean = in_array($id, array($green[$k]['id']));
-                    
-                    echo '</pre>';
-                    if ($bolean){
-                        //echo 'id sie zgadza, KONIEC PETLI - NIE DODAWAJ DO KOSZYKA PIZZY';
-                        $flaga = true;
+                $flag = false;
+                //comparison of given id with id's of particular items inside the cart
+                for($i=0; $i<$itemsAmountInCart; $i++){
+                    $itemExistInCart = in_array($id, array($allItems[$i]['id']));
+                    if ($itemExistInCart){
+                        //item with this id already exist in cart, stop the loop and DON'T ADD this item to cart
+                        $flag = true;
                         break;
                     }else{
-                        //echo 'tutaj id sie rozni, petla dalej leci';
-                        $flaga = false;
+                        $flag = false;
+                        //given id doesn't match to this particular item's id from cart, carry on looping
                     }
                 }
-                if ($flaga == true){
-                    echo 'Pętla po wszystkich rekordach przeleciała, w jednym miejscu flaga była TRUE, pętla się zatrzymała - nie dodajemy do koszyka';
+                if ($flag == true){
+                    //launch 'increment' method
                 } else {
-                    echo 'wszystkie warunki w petli byly FALSE - nie ma pizzy w koszyku - DODAJEMY DO KOSZYKA';
+                    //$flag is set on FALSE 
+                    //any item from the cart doesn't match to given item so there is no as item in cart 
+                    //ADD GIVEN ITEM TO THE CART
                     $allItems[] = array('id' => $id, 'itemName' => $itemName, 'price' => $price, 'size' => $size);
                     $this->saveArray($allItems);   
                 }
-                var_dump($flaga);
-                    //var_dump($bolean);
-//                if($flaga){
-//                    $allItems[] = array('id' => $id, 'itemName' => $itemName, 'price' => $price, 'size' => $size);
-//                } else { echo 'Przykro mi, pizza nie zostanie dodana, bo już jest w koszyku...';}
     }
 
     public function getCount() {
