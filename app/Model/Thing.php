@@ -25,26 +25,40 @@ class Thing extends AppModel {
     }
     public function putItemInSession($id, $itemName, $price, $size) {
                 $allItems = $this->readArray();
-                $allItems[] = array('id' => $id, 'itemName' => $itemName, 'price' => $price, 'size' => $size);
-                $this->saveArray($allItems);   
+                //$allItems[] = array('id' => $id, 'itemName' => $itemName, 'price' => $price, 'size' => $size);
+                //$this->saveArray($allItems);   
                 //var_dump($allItems[0]['id']);
-                //$green = CakeSession::read('array', array('conditions' => array('id')) );
                 $green = CakeSession::read('array');
                 $policz = count($green);
                 
+                $flaga = false;
                 for($k=0; $k<$policz; $k++){
-                        echo '<pre>';
-                        var_dump($green[$k]["id"]);
-                        $bolean = in_array($id, $green[$k]);
-                        var_dump($bolean);
-                        echo '</pre>';
-                        if ($bolean){
-                            return 'hvhufhfahffdsdsd';
-                        }else{
-                            echo 'szukałem weszędzie i dupa';}
-      
-
+                    echo '<pre>';
+                    var_dump($green[$k]);
+                    $bolean = in_array($id, array($green[$k]['id']));
+                    
+                    echo '</pre>';
+                    if ($bolean){
+                        //echo 'id sie zgadza, KONIEC PETLI - NIE DODAWAJ DO KOSZYKA PIZZY';
+                        $flaga = true;
+                        break;
+                    }else{
+                        //echo 'tutaj id sie rozni, petla dalej leci';
+                        $flaga = false;
+                    }
                 }
+                if ($flaga == true){
+                    echo 'Pętla po wszystkich rekordach przeleciała, w jednym miejscu flaga była TRUE, pętla się zatrzymała - nie dodajemy do koszyka';
+                } else {
+                    echo 'wszystkie warunki w petli byly FALSE - nie ma pizzy w koszyku - DODAJEMY DO KOSZYKA';
+                    $allItems[] = array('id' => $id, 'itemName' => $itemName, 'price' => $price, 'size' => $size);
+                    $this->saveArray($allItems);   
+                }
+                var_dump($flaga);
+                    //var_dump($bolean);
+//                if($flaga){
+//                    $allItems[] = array('id' => $id, 'itemName' => $itemName, 'price' => $price, 'size' => $size);
+//                } else { echo 'Przykro mi, pizza nie zostanie dodana, bo już jest w koszyku...';}
     }
 
     public function getCount() {
