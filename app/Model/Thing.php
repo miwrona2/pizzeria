@@ -29,25 +29,27 @@ class Thing extends AppModel {
                 
                 $flag = false;
                 //comparison of given id with id's of particular items inside the cart
-                for($i=0; $i<$itemsAmountInCart; $i++){
+                for ($i=0; $i<$itemsAmountInCart; $i++) {
                     $itemExistInCart = in_array($id, array($allItems[$i]['id']));
                     if ($itemExistInCart){
                         //item with this id already exist in cart, stop the loop and DON'T ADD this item to cart
                         $flag = true;
                         break;
-                    }else{
+                    } else {
                         $flag = false;
                         //given id doesn't match to this particular item's id from cart, carry on looping
                     }
                 }
-                if ($flag == true){
+                if ($flag == true) {
+                    //DON'T ADD this item to cart
                     //launch 'increment' method
-                } else {
-                    //$flag is set on FALSE 
+                } elseif ($flag == false) {
                     //any item from the cart doesn't match to given item so there is no as item in cart 
                     //ADD GIVEN ITEM TO THE CART
                     $allItems[] = array('id' => $id, 'itemName' => $itemName, 'price' => $price, 'size' => $size);
                     $this->saveArray($allItems);   
+                } else {
+                    echo 'Undefined $allitems'; 
                 }
     }
 
