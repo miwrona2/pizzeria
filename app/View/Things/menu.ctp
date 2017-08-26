@@ -188,9 +188,9 @@ function togglePizzaSize(toggleId) {
     }
 }
     
-function emptyCartInfoDisappear() {
-    document.getElementsByClassName("empty")[0].style.display = 'none';
-}   
+//function emptyCartInfoDisappear() {
+//    document.getElementsByClassName("empty")[0].style.display = 'none';
+//}   
     
 $(document).ready(function addToBoxAjax(){
     $('.callFunctionAddToBoxSession').submit(function(e){
@@ -202,7 +202,7 @@ $(document).ready(function addToBoxAjax(){
                 else if (Number(dataFromRequest.size) === 2)
                 {size = "Duża";} else {size = "Undefined size of pizza!";}
                 $('#inCart').append("<div><strong>"+dataFromRequest.id+"-"+dataFromRequest.name+"</strong>&nbsp;"+size+"<div class='right'>"+dataFromRequest.price+"</div></div><br>");
-                emptyCartInfoDisappear();
+                //emptyCartInfoDisappear();
         },"json");
         $(document).ready(function(){
             $(".pizza-size-list").hide();

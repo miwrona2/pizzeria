@@ -1,3 +1,4 @@
+<?php// debug($_SESSION); ?>
 <div class="box">
     <div class="box-header">
         <h5>Koszyk</h5>
@@ -31,10 +32,11 @@
                             else if($dishInCart['size'] == 2){echo 'Duża';}
                             else {echo 'UNDEFINED SIZE OF PIZZA';}
                             ?>
+                            <?php echo $this->Html->link('increment', array('action' => 'incrementController', $dishInCart['id']));?>
                             </div>
                                 <div class="quantity">
                                 <?= $this->Html->link('-&nbsp', array('action' => '#'), array('id' => 'prevent', 'class' => 'decrement', 'escape' => false)); ?>
-                                <?php echo $this->Form->input('amount', array('type' => 'number', 'label' => false, 'class' => 'cartInput', 'value' => 3)) ?>
+                                <?php echo $this->Form->input('amount', array('type' => 'number', 'label' => false, 'class' => 'cartInput', 'value' => $dishInCart['amount'])) ?>
                                 <?= $this->Html->link('&nbsp+', array('action' => '#'), array('class' => 'increment', 'escape' => false)); ?>
                                 </div>
                             <div class="subtotal"><?= $dishInCart['price'] ?></div>

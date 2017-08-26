@@ -81,4 +81,14 @@ class ThingsController extends AppController {
     $this->redirect('menu');
     }
     
+            public function incrementController($id) {
+                $this->autoRender = false;
+                $this->Thing->increment($id);
+                        $this->redirect(array('action' => 'menu'));
+            }
+            
+            public function showAmount() {
+                        $this->set('one', 'dana');
+            }
+    
 }

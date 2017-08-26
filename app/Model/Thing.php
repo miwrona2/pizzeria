@@ -46,7 +46,7 @@ class Thing extends AppModel {
                 } elseif ($flag == false) {
                     //any item from the cart doesn't match to given item so there is no as item in cart 
                     //ADD GIVEN ITEM TO THE CART
-                    $allItems[] = array('id' => $id, 'itemName' => $itemName, 'price' => $price, 'size' => $size);
+                    $allItems[] = array('id' => $id, 'itemName' => $itemName, 'price' => $price, 'size' => $size, 'amount' => 1);
                     $this->saveArray($allItems);   
                 } else {
                     echo 'Undefined $allitems'; 
@@ -91,4 +91,21 @@ class Thing extends AppModel {
     public function clearSessionInModel() {
             return CakeSession::destroy();
     }
+    
+    public function increment($par) {
+        $tabelaArrayZSesji = $this->readArray();
+        
+        $itemsAmountInCart = count($tabelaArrayZSesji);       
+        for ($i=0; $i<$itemsAmountInCart; $i++) {
+            $itemExistInCart = in_array($par, array($tabelaArrayZSesji[$i]['id']));
+            if ($itemExistInCart){
+                $tabelaArrayZSesji[$i]['amount'] = $tabelaArrayZSesji[$i]['amount']+1;
+                $this->saveArray($tabelaArrayZSesji);   
+                break;  
+            }
+        }
+
+
+    }
+
 }
