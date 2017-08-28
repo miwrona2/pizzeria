@@ -102,10 +102,25 @@ class Thing extends AppModel {
                 $tabelaArrayZSesji[$i]['amount'] = $tabelaArrayZSesji[$i]['amount']+1;
                 $this->saveArray($tabelaArrayZSesji);   
                 break;  
+            } else {echo "Item doesn't exist in cart";}
+        }
+    }
+    
+    public function decrement($par) {
+        $tabelaArrayZSesji = $this->readArray();
+        
+        $itemsAmountInCart = count($tabelaArrayZSesji);       
+        for ($i=0; $i<$itemsAmountInCart; $i++) {
+            $itemExistInCart = in_array($par, array($tabelaArrayZSesji[$i]['id']));
+            if ($itemExistInCart && ($tabelaArrayZSesji[$i]['amount'] > 0)){
+                $tabelaArrayZSesji[$i]['amount'] = $tabelaArrayZSesji[$i]['amount'] - 1;
+                $this->saveArray($tabelaArrayZSesji);   
+                break;  
+            } else {
+                //echo "Item doesn't exist in cart";
+                $tabelaArrayZSesji[$i]['amount'] = end($tabelaArrayZSesji[$i]);
+                $this->saveArray($tabelaArrayZSesji);   
             }
         }
-
-
     }
-
 }
