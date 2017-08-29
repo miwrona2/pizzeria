@@ -17,9 +17,9 @@
 
 .navigation{
     display: flex;
-    background-color: #f6f4f4;
+    /*background-color: #2e6015;*/
     height: 50px;
-    box-shadow: 0 -3px 10px rgba(0,0,0,.5);
+    /*box-shadow: 0 -3px 10px rgba(0,0,0,.5);*/
     box-sizing: border-box;
 }
 
@@ -39,11 +39,11 @@
 
 .navigation>ul>li>a{
     display: inline-block;
-    color: #5c393a ; 
+    color: #fff ; 
     font-weight: normal;
     padding: 0 16px;
     border-right: 1px solid #dcd8d9;
-    background-color: #f6f4f4;
+    background-color: #8e181c;
     box-sizing: border-box;
     font-size: 12px;
 }

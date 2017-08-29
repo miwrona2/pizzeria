@@ -14,11 +14,15 @@
  * @package       app.webroot.css
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-
+mark {
+    background-color: white;
+    color: black;
+    padding: 0 10px;
+}
 .salsa{
     width: 60px;
     height: 60px;
-    background-color: #fff; 
+    /*background-color: #fff;*/ 
     position: absolute;
     top: 10px;
     left: 10px;
@@ -32,11 +36,12 @@
 }
 
 body{
-    background: url('../img/pattern.png');
-    background-image: url('../img/bordo.jpg');
+    /*background-color: #fff;*/
+    /*background: url('../img/pattern.png');*/
+    background-image: url('../img/tuscany-685110_1920.jpg');
     font-family: 'Open Sans', "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
-    color: #333;
+    color: #3d7110;
     line-height: 1.42857;
 }
 
@@ -71,11 +76,10 @@ strong {
 }
 
 #header{
-    background: linear-gradient(#2c1107 1%,#2c1107 80%,#9c3627 81%,#9c3627 100%);
+    background: #b31f24;
 }
 
 .container{
-    width: 1170px;
     margin-right: auto;
     margin-left: auto;
     padding-left: 15px;

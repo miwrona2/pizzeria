@@ -9,14 +9,6 @@
 <div id="header">
     <div class="header container">
         <div class="row">
-            <div class="logo-container"><?php echo $this->Html->link($this->Html->image('1411672961.png', array('class' => 'logo')), 
-                    array('controller' => 'things', 'action' => 'index'), array('escape' => false)); ?></div>
-            <div class="restaurant-name">
-                <?php
-                echo $this->Html->link('<p>Restauracja &amp; Pizzeria</p>'
-                        . '<h1>Pizzeria Salsa</h1>', array('controller' => 'things', 'action' => 'index'), array('escape' => false));
-                ?>
-            </div>
         </div>
     </div>
     <div class="navigation container">
