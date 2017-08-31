@@ -31,12 +31,12 @@
                             else if($dishInCart['size'] == 2){echo 'Duża';}
                             else {echo 'UNDEFINED SIZE OF PIZZA';}
                             ?>
-                            <?php echo $this->Html->link('increment', array('action' => 'incrementController', $dishInCart['id']));?>
+                            <?php echo $this->Html->link('increment', array('action' => 'incrementController', $dishInCart['id']), array('class' => 'IdChroniony'));?>
                             </div>
                                 <div class="quantity">
                                 <?= $this->Html->link('-&nbsp', array('action' => 'decrementController', $dishInCart['id']), array('class' => 'decrement', 'escape' => false)); ?>
-                                <?php echo $this->Form->input('amount', array('type' => 'tekst', 'label' => false, 'class' => 'cartInput', 'value' => $dishInCart['amount'])) ?>
-                                <?= $this->Html->link('&nbsp+', array('action' => 'incrementController', $dishInCart['id']), array('class' => 'increment', 'escape' => false)); ?>
+                                <?php echo $this->Form->input('amount', array('type' => 'text', 'label' => false, 'class' => 'cartInput','id' => 'prefix'.$dishInCart['id']  ,'value' => $dishInCart['amount'])) ?>
+                                <?= $this->Html->link('&nbsp+', array('action' => '#'), array('onclick'=>"incrementAjax('".$dishInCart['id']."')",'id'=>'prefix'.$dishInCart['id'], 'class' => 'increment', 'escape' => false)); ?>
                                 </div>
                             <div class="subtotal"><?= $dishInCart['price'] ?></div>
                         </div>
@@ -66,15 +66,27 @@
         });
     });
     
+    /**
+     * don't redirect after click on +
+     */ 
+    for(var o=0; o< <?php echo count($array)?>; o++){
+        document.getElementsByClassName("increment")[o].addEventListener("click", function(to){
+            to.preventDefault(); 
+        });
+    }
+    /**
+     * perform increment function without reloading page (using ajax)
+     */
+    function incrementAjax(checkedPizza_ID) {
+        $.ajax({
+            url: "<?= $this->Html->url('incrementController/') ?>" + checkedPizza_ID,
+            success: function (amount) {
+                $(".cartInput#prefix"+checkedPizza_ID).val(amount);
+            }
+        }); 
+    }
+    
 
-    
-//    document.getElementsByClassName("decrement")[0].addEventListener("click", function(event){
-//        event.preventDefault();
-//    });
-//    document.getElementsByClassName("increment")[0].addEventListener("click", function(event){
-//        event.preventDefault();
-//    });
-    
     document.getElementById("close-cart").addEventListener("click", function(event){
         event.preventDefault();
     });
@@ -95,5 +107,4 @@
         });
     window.onload = blockLinkRedirect();
     });
-    
 </script>   

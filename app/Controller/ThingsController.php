@@ -83,13 +83,13 @@ class ThingsController extends AppController {
     
     public function incrementController($id) {
         $this->autoRender = false;
-        $this->Thing->increment($id);
-                $this->redirect(array('action' => 'menu'));
+        $valueAfterIncrement = $this->Thing->increment($id);
+        return $valueAfterIncrement;
     }
             
     public function decrementController($id) {
         $this->autoRender = false;
         $this->Thing->decrement($id);
-                $this->redirect(array('action' => 'menu'));
+        $this->redirect(array('action' => 'menu'));
     }
 }
