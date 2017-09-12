@@ -34,7 +34,7 @@
                                 <?php echo $this->Html->link('increment', array('action' => 'incrementController', $dishInCart['id']), array('class' => 'IdChroniony'));?>
                             </div>
                             <div class="quantity">
-                                <?= $this->Html->link('-&nbsp', array('action' => 'decrementController', $dishInCart['id']), array('class' => 'decrement', 'escape' => false)); ?>
+                                <?= $this->Html->link('-&nbsp', array('action' => '#'), array('onclick'=>"decrementAjax('".$dishInCart['id']."')",'id'=>'prefix'.$dishInCart['id'], 'class' => 'decrement', 'escape' => false)); ?>
                                 <?php echo $this->Form->input('amount', array('type' => 'text', 'label' => false, 'class' => 'cartInput','id' => 'prefix'.$dishInCart['id']  ,'value' => $dishInCart['amount'])) ?>
                                 <?= $this->Html->link('&nbsp+', array('action' => '#'), array('onclick'=>"incrementAjax('".$dishInCart['id']."')",'id'=>'prefix'.$dishInCart['id'], 'class' => 'increment', 'escape' => false)); ?>
                             </div>
@@ -70,16 +70,38 @@
      * don't redirect after click on +
      */ 
     for(var o=0; o< <?php echo count($array)?>; o++){
-        document.getElementsByClassName("increment")[o].addEventListener("click", function(to){
-            to.preventDefault(); 
+        document.getElementsByClassName("increment")[o].addEventListener("click", function(o){
+            o.preventDefault(); 
         });
     }
+    
+    /**
+     * don't redirect after click on -
+     */ 
+    for(var d=0; d< <?php echo count($array)?>; d++){
+        document.getElementsByClassName("decrement")[d].addEventListener("click", function(d){
+            d.preventDefault(); 
+        });
+    }
+    
     /**
      * perform increment function without reloading page (using ajax)
      */
     function incrementAjax(checkedPizza_ID) {
         $.ajax({
             url: "<?= $this->Html->url('incrementController/') ?>" + checkedPizza_ID,
+            success: function (amount) {
+                $(".cartInput#prefix"+checkedPizza_ID).val(amount);
+            }
+        }); 
+    }
+    
+    /**
+     * perform decrement function without reloading page (using ajax)
+     */
+    function decrementAjax(checkedPizza_ID) {
+        $.ajax({
+            url: "<?= $this->Html->url('decrementController/') ?>" + checkedPizza_ID,
             success: function (amount) {
                 $(".cartInput#prefix"+checkedPizza_ID).val(amount);
             }

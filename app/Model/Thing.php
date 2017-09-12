@@ -122,11 +122,11 @@ class Thing extends AppModel {
             if ($itemExistInCart && ($tabelaArrayZSesji[$i]['amount'] > 0)){
                 $tabelaArrayZSesji[$i]['amount'] = $tabelaArrayZSesji[$i]['amount'] - 1;
                 $this->saveArray($tabelaArrayZSesji);   
-                break;  
+                //break;  
+                return $tabelaArrayZSesji[$i]['amount'];
             } else {
                 //echo "Item doesn't exist in cart";
                 $tabelaArrayZSesji[$i]['amount'] = end($tabelaArrayZSesji[$i]);
-                $this->saveArray($tabelaArrayZSesji);   
             }
         }
     }

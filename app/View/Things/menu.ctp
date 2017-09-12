@@ -197,7 +197,7 @@ function updateInputValue(id){
     $.ajax({
         url: "<?= $this->Html->url('readUpdatedArrayFromSession/') ?>"+id,
         success: function (dataZtymId) {
-            $('#prefix'+id).val(dataZtymId);
+            $('.cartInput#prefix'+id).val(dataZtymId);
         }
     }); 
 }
