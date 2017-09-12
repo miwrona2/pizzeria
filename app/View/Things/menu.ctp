@@ -177,32 +177,58 @@
     
 function togglePizzaSize(toggleId) {
     var pizzaSizeList = document.getElementsByClassName("pizza-size-list");
-    for (p=0; p<pizzaSizeList.length; p++){
-        pizzaSizeList[p].style.display = 'none';
-    }
+
     var id_pizzaSizeList = document.getElementById("id_"+toggleId);
     if (id_pizzaSizeList.style.display === 'none') {
+        for (p=0; p<pizzaSizeList.length; p++){
+            pizzaSizeList[p].style.display = 'none';
+        }
         id_pizzaSizeList.style.display = 'block';
     } else {
         id_pizzaSizeList.style.display = 'none';
     }
 }
     
-//function emptyCartInfoDisappear() {
-//    document.getElementsByClassName("empty")[0].style.display = 'none';
-//}   
-    
+function emptyCartInfoDisappear() {
+    $('.empty').hide();
+}  
+
+function updateInputValue(id){
+    $.ajax({
+        url: "<?= $this->Html->url('readUpdatedArrayFromSession/') ?>"+id,
+        success: function (dataZtymId) {
+            $('#prefix'+id).val(dataZtymId);
+        }
+    }); 
+}
+
+
 $(document).ready(function addToBoxAjax(){
     $('.callFunctionAddToBoxSession').submit(function(e){
         e.preventDefault();
         $.post($(this).attr('action'),$(this).serialize(),function(dataFromRequest){
+                var decrement = "<a href=\"/things/decrementController/"+dataFromRequest.id+"\" class=\"decrement\">-&nbsp</a>";
+                var inputAmount = "<div class=\"input text\"><input name=\"data[amount]\" class=\"cartInput\" id=\"prefix"+dataFromRequest.id+"\" value=\"<?= 1 ?>\" type=\"text\"/></div>";
+                var increment = "<a href=\"/things/incrementController/"+dataFromRequest.id+"\" class=\"increment\">&nbsp+</a>";
+                
                 $('.item-counter').text(dataFromRequest.counter);
                 var size;
                 if(Number(dataFromRequest.size) === 1){size="Mała";}
                 else if (Number(dataFromRequest.size) === 2)
                 {size = "Duża";} else {size = "Undefined size of pizza!";}
-                $('#inCart').append("<div><strong>"+dataFromRequest.id+"-"+dataFromRequest.name+"</strong>&nbsp;"+size+"<div class='right'>"+dataFromRequest.price+"</div></div><br>");
-                //emptyCartInfoDisappear();
+
+                if(dataFromRequest.boolean === false){
+                    updateInputValue(dataFromRequest.id);
+                }
+                else if(dataFromRequest.boolean === true) {
+                    //display new item inside the cart
+                    emptyCartInfoDisappear();
+                    $('#inCart').append("<div class=\"dishName\"><div class='info'><strong>"+dataFromRequest.id+"-"+dataFromRequest.name+"</strong>&nbsp;"+size+
+                        "</div><div class=\"quantity\">"+decrement+inputAmount+increment+"</div><div class='subtotal'>"+dataFromRequest.price+"</div></div><br>");
+                }
+                else {
+                    alert("Sorry! Something went wrong.Try to put product in cart later");
+                }
         },"json");
         $(document).ready(function(){
             $(".pizza-size-list").hide();

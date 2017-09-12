@@ -43,11 +43,15 @@ class Thing extends AppModel {
                 if ($flag == true) {
                     //DON'T ADD this item to cart
                     //launch 'increment' method
+                    $this->increment($id);
+                    return false;
                 } elseif ($flag == false) {
                     //any item from the cart doesn't match to given item so there is no as item in cart 
                     //ADD GIVEN ITEM TO THE CART
                     $allItems[] = array('id' => $id, 'itemName' => $itemName, 'price' => $price, 'size' => $size, 'amount' => 1);
-                    $this->saveArray($allItems);   
+                    $this->saveArray($allItems);    
+                    //$true = $this->returnTrue();
+                    return true;
                 } else {
                     echo 'Undefined $allitems'; 
                 }

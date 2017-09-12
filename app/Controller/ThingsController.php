@@ -68,10 +68,11 @@ class ThingsController extends AppController {
                     $price = $this->request->data['Thing']['price'];
                     $size = $this->request->data['Thing']['size'];
                     $this->Thing->addProduct($id);
-                    $this->Thing->putItemInSession($id, $name, $price, $size);
+                    $putItemInSession = $this->Thing->putItemInSession($id, $name, $price, $size);
             } 
+
             $getCount = $this->Thing->getCount();
-            $arrayPizza = array("counter" => $getCount, "id" => $id, "name" => $name, "price" => $price, "size" => $size);
+            $arrayPizza = array("counter" => $getCount, "id" => $id, "name" => $name, "price" => $price, "size" => $size, "boolean" => $putItemInSession);
             return json_encode($arrayPizza);
     }
       
@@ -89,7 +90,33 @@ class ThingsController extends AppController {
             
     public function decrementController($id) {
         $this->autoRender = false;
-        $this->Thing->decrement($id);
-        $this->redirect(array('action' => 'menu'));
+        $valueAfterDecrement = $this->Thing->decrement($id);
+        return $valueAfterDecrement;
     }
+    
+    public function readUpdatedArrayFromSession($id){
+    $this->autoRender = false;
+    $updatedArray = $this->Thing->readArray();
+    $itemsAmountInCart = count($updatedArray);
+
+
+        for ($i=0; $i<$itemsAmountInCart; $i++) {
+            $itemExistInCart = in_array($id, array($updatedArray[$i]['id']));
+            if ($itemExistInCart){
+                return json_encode($updatedArray[$i]['amount']);
+            } else {
+                //do nothing
+            }
+        }
+    }
+        
+        public function haystack(){
+            $this->autoRender = false;
+            return json_encode($this->Thing->readArray());
+        }
+        
+        public function check($id){
+        $this->autoRender = false;   
+        $this->Thing->checkLogic($id);
+        }
 }
