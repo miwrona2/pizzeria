@@ -202,14 +202,22 @@ function updateInputValue(id){
     }); 
 }
 
-
+function incrementAppendedElements(checkedPizza_ID) {
+    $.ajax({
+        url: "<?= $this->Html->url('incrementController/') ?>" + checkedPizza_ID,
+        success: function (amount) {
+            $(".cartInput#prefix"+checkedPizza_ID).val(amount);
+        }
+    }); 
+}
+    
 $(document).ready(function addToBoxAjax(){
     $('.callFunctionAddToBoxSession').submit(function(e){
         e.preventDefault();
         $.post($(this).attr('action'),$(this).serialize(),function(dataFromRequest){
                 var decrement = "<a href=\"/things/decrementController/"+dataFromRequest.id+"\" class=\"decrement\">-&nbsp</a>";
                 var inputAmount = "<div class=\"input text\"><input name=\"data[amount]\" class=\"cartInput\" id=\"prefix"+dataFromRequest.id+"\" value=\"<?= 1 ?>\" type=\"text\"/></div>";
-                var increment = "<a href=\"/things/incrementController/"+dataFromRequest.id+"\" class=\"increment\">&nbsp+</a>";
+                var increment = "<a onclick=\"incrementAppendedElements("+dataFromRequest.id+")\"  class=\"increment appendedElements\">&nbsp+</a>";
                 
                 $('.item-counter').text(dataFromRequest.counter);
                 var size;
