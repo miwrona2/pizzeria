@@ -202,22 +202,14 @@ function updateInputValue(id){
     }); 
 }
 
-function incrementAppendedElements(checkedPizza_ID) {
-    $.ajax({
-        url: "<?= $this->Html->url('incrementController/') ?>" + checkedPizza_ID,
-        success: function (amount) {
-            $(".cartInput#prefix"+checkedPizza_ID).val(amount);
-        }
-    }); 
-}
     
 $(document).ready(function addToBoxAjax(){
     $('.callFunctionAddToBoxSession').submit(function(e){
         e.preventDefault();
         $.post($(this).attr('action'),$(this).serialize(),function(dataFromRequest){
-                var decrement = "<a href=\"/things/decrementController/"+dataFromRequest.id+"\" class=\"decrement\">-&nbsp</a>";
+                var decrement = "<a onclick=\"decrementAjax("+dataFromRequest.id+")\" class=\"decrement appendedElements\">-&nbsp</a>";
                 var inputAmount = "<div class=\"input text\"><input name=\"data[amount]\" class=\"cartInput\" id=\"prefix"+dataFromRequest.id+"\" value=\"<?= 1 ?>\" type=\"text\"/></div>";
-                var increment = "<a onclick=\"incrementAppendedElements("+dataFromRequest.id+")\"  class=\"increment appendedElements\">&nbsp+</a>";
+                var increment = "<a onclick=\"incrementAjax("+dataFromRequest.id+")\"  class=\"increment appendedElements\">&nbsp+</a>";
                 
                 $('.item-counter').text(dataFromRequest.counter);
                 var size;
