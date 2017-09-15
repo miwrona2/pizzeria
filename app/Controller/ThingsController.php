@@ -94,7 +94,10 @@ class ThingsController extends AppController {
     public function decrementController($id) {
         $this->autoRender = false;
         $valueAfterDecrement = $this->Thing->decrement($id);
-        return $valueAfterDecrement;
+        $this->Thing->subtractProduct($id);
+        $count = $this->Thing->getCount();
+        
+        return json_encode(array("amount" => $valueAfterDecrement, "count" => $count ));
     }
     
     public function readUpdatedArrayFromSession($id){

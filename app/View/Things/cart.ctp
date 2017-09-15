@@ -103,9 +103,11 @@
      */
     function decrementAjax(checkedPizza_ID) {
         $.ajax({
+            dataType: 'json',
             url: "<?= $this->Html->url('decrementController/') ?>" + checkedPizza_ID,
-            success: function (amount) {
-                $(".cartInput#prefix"+checkedPizza_ID).val(amount);
+            success: function (afterDecrement) {
+                $(".cartInput#prefix"+checkedPizza_ID).val(afterDecrement.amount);
+                $('.item-counter').text(afterDecrement.count);
             }
         }); 
     }

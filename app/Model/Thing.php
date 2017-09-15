@@ -20,6 +20,18 @@ class Thing extends AppModel {
             $this->saveProduct($allProducts);
     }
     
+    public function subtractProduct($productId) {
+            $allProducts = $this->readProduct();
+                    if (array_key_exists($productId, $allProducts)) {
+                        while ($allProducts[$productId]>0) {
+                            $allProducts[$productId] --;
+                            break;
+                        }
+                    }
+            
+            $this->saveProduct($allProducts);
+    }
+    
     public function putItemInSession($id, $itemName, $price, $size) {
                 $allItems = $this->readArray();
                 $itemsAmountInCart = count($allItems);
