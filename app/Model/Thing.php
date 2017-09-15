@@ -18,11 +18,8 @@ class Thing extends AppModel {
                     $allProducts[$productId] = 1;
             }
             $this->saveProduct($allProducts);
-            //print_r($allProducts);
-                    //$tuPodajeArray= array('klucz1'=>$this->getCount(), 'klucz2'=>$item_name);
-           //$this->saveArray($tuPodajeArray);
-            //return ($tuPodajeArray);
     }
+    
     public function putItemInSession($id, $itemName, $price, $size) {
                 $allItems = $this->readArray();
                 $itemsAmountInCart = count($allItems);

@@ -89,9 +89,11 @@
      */
     function incrementAjax(checkedPizza_ID) {
         $.ajax({
+            dataType: 'json',
             url: "<?= $this->Html->url('incrementController/') ?>" + checkedPizza_ID,
-            success: function (amount) {
-                $(".cartInput#prefix"+checkedPizza_ID).val(amount);
+            success: function (afterIncrement) {
+                $(".cartInput#prefix"+checkedPizza_ID).val(afterIncrement.amount);
+                $('.item-counter').text(afterIncrement.count);
             }
         }); 
     }

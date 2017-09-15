@@ -85,7 +85,10 @@ class ThingsController extends AppController {
     public function incrementController($id) {
         $this->autoRender = false;
         $valueAfterIncrement = $this->Thing->increment($id);
-        return $valueAfterIncrement;
+        $this->Thing->addProduct($id);
+        $count = $this->Thing->getCount();
+        
+        return json_encode(array("amount" => $valueAfterIncrement, "count" => $count ));
     }
             
     public function decrementController($id) {
