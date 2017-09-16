@@ -4,7 +4,7 @@
             <li class="visible">
                 <h4>Salsa Lublin</h4>
             </li>
-            
+
             <li><p style="color: green; padding-left: 50px;">Branch: AJAX - TEST</p></li>
         </ul>
         <ul class="nav navbar-nav pull-right list-inline">

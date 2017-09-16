@@ -137,4 +137,25 @@ class Thing extends AppModel {
             else if ($itemExistInCart && ($tabelaArrayZSesji[$i]['amount'] == 0)){return 0;}
         }
     }
+    
+    public function remove($id) {
+            $array = $this->readArray();
+            
+            for($i = 0; $i < count($array); $i++){
+                if(in_array($id, array($array[$i]['id']))){
+                    $name = "array.{$i}";
+                    return CakeSession::delete($name);
+                }
+            }
+    }
+    
+    public function sortById($array){
+        function posortujRosnaca($item1,$item2)
+        {
+            if ($item1['id'] == $item2['id']) return 0;
+            return ($item1['id'] > $item2['id']) ? 1 : -1;
+        }
+        usort($array, 'posortujRosnaca');
+        $this->saveArray($array);
+    }
 }

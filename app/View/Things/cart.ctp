@@ -31,7 +31,7 @@
                                 else if($dishInCart['size'] == 2){echo 'Duża';}
                                 else {echo 'UNDEFINED SIZE OF PIZZA';}
                                 ?>
-                                <?php echo $this->Html->link('increment', array('action' => 'incrementController', $dishInCart['id']), array('class' => 'IdChroniony'));?>
+                                <?php echo $this->Html->link('remove', array('action' => 'removeController', $dishInCart['id']), array('class' => 'IdChroniony'));?>
                             </div>
                             <div class="quantity">
                                 <?= $this->Html->link('-&nbsp', array('action' => false), array('onclick'=>"decrementAjax('".$dishInCart['id']."')",'id'=>'prefix'.$dishInCart['id'], 'class' => 'decrement', 'escape' => false)); ?>

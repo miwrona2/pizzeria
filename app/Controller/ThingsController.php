@@ -125,4 +125,12 @@ class ThingsController extends AppController {
         $this->autoRender = false;   
         $this->Thing->checkLogic($id);
         }
+        
+        public function removeController($id){
+            $this->autoRender = false;
+            $this->Thing->remove($id);
+            $this->Thing->sortById($this->Thing->readArray());
+            $this->redirect('menu');
+        }
 }
+
