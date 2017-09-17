@@ -129,7 +129,7 @@ class Thing extends AppModel {
         for ($i=0; $i<$itemsAmountInCart; $i++) {
             $itemExistInCart = in_array($par, array($tabelaArrayZSesji[$i]['id']));
             if ($itemExistInCart && ($tabelaArrayZSesji[$i]['amount'] > 0)){
-                $tabelaArrayZSesji[$i]['amount'] = $tabelaArrayZSesji[$i]['amount'] - 1;
+                $tabelaArrayZSesji[$i]['amount'] --;
                 $this->saveArray($tabelaArrayZSesji);   
                 //break;  
                 return $tabelaArrayZSesji[$i]['amount'];

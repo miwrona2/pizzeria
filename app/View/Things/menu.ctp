@@ -1,5 +1,5 @@
 <div id="cart_navbar" class="navbar">
-    <div class="container-fluid">
+    <div class="container-fluid">   
         <ul class="nav navbar-nav pull-left">
             <li class="visible">
                 <h4>Salsa Lublin</h4>

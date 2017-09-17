@@ -108,6 +108,7 @@
             success: function (afterDecrement) {
                 $(".cartInput#prefix"+checkedPizza_ID).val(afterDecrement.amount);
                 $('.item-counter').text(afterDecrement.count);
+                $("#inCart").load("menu #inCart");
             }
         }); 
     }
