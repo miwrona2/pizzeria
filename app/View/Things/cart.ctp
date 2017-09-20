@@ -36,9 +36,9 @@
                             <div class="quantity">
                                 <?= $this->Html->link('-&nbsp', array('action' => false), array('onclick'=>"decrementAjax('".$dishInCart['id']."')",'id'=>'prefix'.$dishInCart['id'], 'class' => 'decrement', 'escape' => false)); ?>
                                 <?php echo $this->Form->input('amount', array('type' => 'text', 'label' => false, 'class' => 'cartInput','id' => 'prefix'.$dishInCart['id']  ,'value' => $dishInCart['amount'])) ?>
-                                <?= $this->Html->link('&nbsp+', array('action' => false), array('onclick'=>"incrementAjax('".$dishInCart['id']."')",'id'=>'prefix'.$dishInCart['id'], 'class' => 'increment', 'escape' => false)); ?>
+                                <?= $this->Html->link('&nbsp+', array('action' => false), array('onclick'=>"incrementAjax('".$dishInCart['id']."', '".$dishInCart['price']."')",'id'=>'prefix'.$dishInCart['id'], 'class' => 'increment', 'escape' => false)); ?>
                             </div>
-                            <div class="subtotal"><?= $dishInCart['price'] ?></div>
+                            <div class="subtotal"><?= number_format($dishInCart['price']*$dishInCart['amount'], 2); ?></div>
                         </div>
                     <?php endforeach;
                 } else {
@@ -86,14 +86,17 @@
     /**
      * perform increment function without reloading page (using ajax)
      */
-    function incrementAjax(selectedPizza_ID) {
+    function incrementAjax(selectedPizza_ID, price) {
         $.ajax({
             dataType: 'json',
-            url: "<?= $this->Html->url('incrementController/') ?>" + selectedPizza_ID,
+            url: "<?= $this->Html->url('incrementController/') ?>" + selectedPizza_ID + "/" + price,
             success: function (afterIncrement) {
+                console.log(afterIncrement);
                 $(".cartInput#prefix"+selectedPizza_ID).val(afterIncrement.amount);
                 $(".item-counter").text(afterIncrement.count);
-            }
+                var totalPrice = afterIncrement.price * afterIncrement.amount;
+                $("#dishId"+selectedPizza_ID+" .subtotal").text(totalPrice.toFixed(2));
+            }   
         }); 
     }
     
