@@ -34,7 +34,7 @@
                                 <?php echo $this->Html->link('remove', array('action' => 'removeController', $dishInCart['id']), array('class' => 'IdChroniony'));?>
                             </div>
                             <div class="quantity">
-                                <?= $this->Html->link('-&nbsp', array('action' => false), array('onclick'=>"decrementAjax('".$dishInCart['id']."')",'id'=>'prefix'.$dishInCart['id'], 'class' => 'decrement', 'escape' => false)); ?>
+                                <?= $this->Html->link('-&nbsp', array('action' => false), array('onclick'=>"decrementAjax('".$dishInCart['id']."', '".$dishInCart['price']."')",'id'=>'prefix'.$dishInCart['id'], 'class' => 'decrement', 'escape' => false)); ?>
                                 <?php echo $this->Form->input('amount', array('type' => 'text', 'label' => false, 'class' => 'cartInput','id' => 'prefix'.$dishInCart['id']  ,'value' => $dishInCart['amount'])) ?>
                                 <?= $this->Html->link('&nbsp+', array('action' => false), array('onclick'=>"incrementAjax('".$dishInCart['id']."', '".$dishInCart['price']."')",'id'=>'prefix'.$dishInCart['id'], 'class' => 'increment', 'escape' => false)); ?>
                             </div>
@@ -103,13 +103,15 @@
     /**
      * perform decrement function without reloading page (using ajax)
      */
-    function decrementAjax(selectedPizza_ID) {
+    function decrementAjax(selectedPizza_ID, price) {
         $.ajax({
             dataType: 'json',
-            url: "<?= $this->Html->url('decrementController/') ?>" + selectedPizza_ID,
+            url: "<?= $this->Html->url('decrementController/') ?>" + selectedPizza_ID +"/"+ price,
             success: function (afterDecrement) {
                 $(".cartInput#prefix"+selectedPizza_ID).val(afterDecrement.amount);
                 $(".item-counter").text(afterDecrement.count);
+                var totalPrice = afterDecrement.price * afterDecrement.amount;
+                $("#dishId"+selectedPizza_ID+" .subtotal").text(totalPrice.toFixed(2));
                 if(afterDecrement.amount < 1) {
                     $("#dishId" + selectedPizza_ID).remove();
                     if ($(".dishName").length === 0){
