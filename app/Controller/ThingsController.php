@@ -82,13 +82,13 @@ class ThingsController extends AppController {
     $this->redirect('menu');
     }
     
-    public function incrementController($id) {
+    public function incrementController($id, $price) {
         $this->autoRender = false;
         $valueAfterIncrement = $this->Thing->increment($id);
         $this->Thing->addProduct($id);
         $count = $this->Thing->getCount();
         
-        return json_encode(array("amount" => $valueAfterIncrement, "count" => $count ));
+        return json_encode(array("amount" => $valueAfterIncrement, "count" => $count, "price" => $price ));
     }
             
     public function decrementController($id) {

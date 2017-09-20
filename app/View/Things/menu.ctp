@@ -209,7 +209,7 @@ $(document).ready(function addToBoxAjax(){
         $.post($(this).attr('action'),$(this).serialize(),function(dataFromRequest){
                 var decrement = "<a onclick=\"decrementAjax("+dataFromRequest.id+")\" class=\"decrement appendedElements\">-&nbsp</a>";
                 var inputAmount = "<div class=\"input text\"><input name=\"data[amount]\" class=\"cartInput\" id=\"prefix"+dataFromRequest.id+"\" value=\"<?= 1 ?>\" type=\"text\"/></div>";
-                var increment = "<a onclick=\"incrementAjax("+dataFromRequest.id+")\"  class=\"increment appendedElements\">&nbsp+</a>";
+                var increment = "<a onclick=\"incrementAjax("+dataFromRequest.id+", "+dataFromRequest.price+")\"  class=\"increment appendedElements\">&nbsp+</a>";
                 
                 $('.item-counter').text(dataFromRequest.counter);
                 var size;
