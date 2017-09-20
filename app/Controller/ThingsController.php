@@ -110,7 +110,7 @@ class ThingsController extends AppController {
         for ($i=0; $i<$itemsAmountInCart; $i++) {
             $itemExistInCart = in_array($id, array($updatedArray[$i]['id']));
             if ($itemExistInCart){
-                return json_encode($updatedArray[$i]['amount']);
+                return json_encode(array("amount" => $updatedArray[$i]['amount'], "price" => $updatedArray[$i]['price']));
             } else {
                 //do nothing
             }

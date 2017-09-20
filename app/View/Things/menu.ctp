@@ -195,9 +195,12 @@ function emptyCartInfoDisappear() {
 
 function updateInputValue(id){
     $.ajax({
+        dataType: "json",
         url: "<?= $this->Html->url('readUpdatedArrayFromSession/') ?>"+id,
-        success: function (dataZtymId) {
-            $('.cartInput#prefix'+id).val(dataZtymId);
+        success: function (updatedData) {
+            $('.cartInput#prefix'+id).val(updatedData.amount);
+            var totalPrice = updatedData.price * updatedData.amount;
+            $("#dishId"+id+" .subtotal").text(totalPrice.toFixed(2));
         }
     }); 
 }
