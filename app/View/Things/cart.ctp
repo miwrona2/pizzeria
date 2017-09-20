@@ -20,10 +20,10 @@
                     </span>
                 <?php $emptyCartInfo = ob_get_clean(); ?>
                 
-                <?php echo '<br>'; 
+                <?php 
                 if(!empty($dishesInCart)){
                     foreach ($dishesInCart as $dishInCart):?>
-                        <div class="dishName">
+                        <div class="dishName" id="dishId<?= $dishInCart['id'];?>">
                             <div class="info">
                                 <strong><?= $dishInCart['id'].'-';?><?= $dishInCart['itemName'];?></strong>
                                 <?php  
@@ -40,7 +40,6 @@
                             </div>
                             <div class="subtotal"><?= $dishInCart['price'] ?></div>
                         </div>
-                        <br>
                     <?php endforeach;
                 } else {
                 echo $emptyCartInfo;
@@ -87,13 +86,13 @@
     /**
      * perform increment function without reloading page (using ajax)
      */
-    function incrementAjax(checkedPizza_ID) {
+    function incrementAjax(selectedPizza_ID) {
         $.ajax({
             dataType: 'json',
-            url: "<?= $this->Html->url('incrementController/') ?>" + checkedPizza_ID,
+            url: "<?= $this->Html->url('incrementController/') ?>" + selectedPizza_ID,
             success: function (afterIncrement) {
-                $(".cartInput#prefix"+checkedPizza_ID).val(afterIncrement.amount);
-                $('.item-counter').text(afterIncrement.count);
+                $(".cartInput#prefix"+selectedPizza_ID).val(afterIncrement.amount);
+                $(".item-counter").text(afterIncrement.count);
             }
         }); 
     }
@@ -101,14 +100,19 @@
     /**
      * perform decrement function without reloading page (using ajax)
      */
-    function decrementAjax(checkedPizza_ID) {
+    function decrementAjax(selectedPizza_ID) {
         $.ajax({
             dataType: 'json',
-            url: "<?= $this->Html->url('decrementController/') ?>" + checkedPizza_ID,
+            url: "<?= $this->Html->url('decrementController/') ?>" + selectedPizza_ID,
             success: function (afterDecrement) {
-                $(".cartInput#prefix"+checkedPizza_ID).val(afterDecrement.amount);
-                $('.item-counter').text(afterDecrement.count);
-                $("#inCart").load("menu #inCart");
+                $(".cartInput#prefix"+selectedPizza_ID).val(afterDecrement.amount);
+                $(".item-counter").text(afterDecrement.count);
+                if(afterDecrement.amount < 1) {
+                    $("#dishId" + selectedPizza_ID).remove();
+                    if ($(".dishName").length === 0){
+                        $("#inCart").append("<span class='empty'><i class='fa fa-shopping-cart' aria-hidden='true'></i> Koszyk jest pusty</span>");
+                    }
+                }
             }
         }); 
     }

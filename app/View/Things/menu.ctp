@@ -223,8 +223,8 @@ $(document).ready(function addToBoxAjax(){
                 else if(dataFromRequest.boolean === true) {
                     //display new item inside the cart
                     emptyCartInfoDisappear();
-                    $('#inCart').append("<div class=\"dishName\"><div class='info'><strong>"+dataFromRequest.id+"-"+dataFromRequest.name+"</strong>&nbsp;"+size+
-                        "</div><div class=\"quantity\">"+decrement+inputAmount+increment+"</div><div class='subtotal'>"+dataFromRequest.price+"</div></div><br>");
+                    $('#inCart').append("<div class=\"dishName\" id=\"dishId"+dataFromRequest.id+"\"><div class='info'><strong>"+dataFromRequest.id+"-"+dataFromRequest.name+"</strong>&nbsp;"+size+
+                        "</div><div class=\"quantity\">"+decrement+inputAmount+increment+"</div><div class='subtotal'>"+dataFromRequest.price+"</div></div>");
                 }
                 else {
                     alert("Sorry! Something went wrong.Try to put product in cart later");
