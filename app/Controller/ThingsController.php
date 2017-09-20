@@ -91,14 +91,14 @@ class ThingsController extends AppController {
         return json_encode(array("amount" => $valueAfterIncrement, "count" => $count, "price" => $price ));
     }
             
-    public function decrementController($id) {
+    public function decrementController($id, $price) {
         $this->autoRender = false;
         $valueAfterDecrement = $this->Thing->decrement($id);
         $this->Thing->subtractProduct($id);
         $count = $this->Thing->getCount();
         if($valueAfterDecrement === 0 ){$this->removeController($id);}
         
-        return json_encode(array("amount" => $valueAfterDecrement, "count" => $count ));
+        return json_encode(array("amount" => $valueAfterDecrement, "count" => $count, "price" => $price ));
     }
     
     public function readUpdatedArrayFromSession($id){
