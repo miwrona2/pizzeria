@@ -159,6 +159,16 @@ h5{
     color: #333;
 }
 
+.atcions > button {
+    background: #9c3627;
+    color: #fff;
+}
+.atcions > button:hover {
+    background: #571e16;
+    color: #fff;
+    cursor: pointer;
+}
+
 .box-body{
     background-color: #fff;
     position: relative;

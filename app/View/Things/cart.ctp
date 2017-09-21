@@ -51,6 +51,7 @@
         <div class="atcions">
             <?php echo $this->Html->link('Ukryj koszyk', false, 
                     array('class' => 'btn-box', 'id' => 'btn-hide-box')); ?>
+            <button class="btn-box nowy" style="display: none">button</button>
         </div>
     </div>
 </div>

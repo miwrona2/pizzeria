@@ -158,4 +158,9 @@ class Thing extends AppModel {
         usort($array, 'posortujRosnaca');
         $this->saveArray($array);
     }
+    
+    public function countTotatalOrderPrice(){
+        $value = $this->readArray();
+        return $value;
+    }
 }

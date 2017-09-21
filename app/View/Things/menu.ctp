@@ -205,6 +205,28 @@ function updateInputValue(id){
     }); 
 }
 
+function displayOrderButton() {
+    $.ajax({
+        dataType: "json",
+        url: "<?= $this->Html->url('total/') ?>",
+        success: function(json){
+            var count = 0;
+            json.forEach(myFunction);
+            function myFunction(record) {
+                  count = count + record.amount*record.price;                                                                                                          
+            }
+            $(".nowy").html("Zamów ( " + count.toFixed(2) + " zł )");
+
+        }
+    });
+    $('.btn-box').show();
+//    $(".atcions").append("<button class='btn-box'>order</button>");
+    $(".btn-box").css({"width" : "50%"});
+    $(".atcions").css({"display": "flex"});
+}
+
+    //$('.btn-box').hide();
+  
     
 $(document).ready(function addToBoxAjax(){
     $('.callFunctionAddToBoxSession').submit(function(e){
@@ -225,6 +247,7 @@ $(document).ready(function addToBoxAjax(){
                 }
                 else if(dataFromRequest.boolean === true) {
                     //display new item inside the cart
+                    displayOrderButton();
                     emptyCartInfoDisappear();
                     $('#inCart').append("<div class=\"dishName\" id=\"dishId"+dataFromRequest.id+"\"><div class='info'><strong>"+dataFromRequest.id+"-"+dataFromRequest.name+"</strong>&nbsp;"+size+
                         "</div><div class=\"quantity\">"+decrement+inputAmount+increment+"</div><div class='subtotal'>"+dataFromRequest.price+"</div></div>");

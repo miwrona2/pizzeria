@@ -132,5 +132,10 @@ class ThingsController extends AppController {
             $this->Thing->remove($id);
             $this->Thing->sortById($this->Thing->readArray());
         }
+        
+        public function total() {
+            $this->autoRender = false;
+            return json_encode($this->Thing->countTotatalOrderPrice());
+        }
 }
 
