@@ -132,7 +132,7 @@ h5{
     font-size: 14px;
 }
 
-.atcions{
+.cart-summary{
     align-items: center;
     padding: 10px;
 }
@@ -159,11 +159,11 @@ h5{
     color: #333;
 }
 
-.atcions > button {
+.cart-summary > button {
     background: #9c3627;
     color: #fff;
 }
-.atcions > button:hover {
+.cart-summary > button:hover {
     background: #571e16;
     color: #fff;
     cursor: pointer;

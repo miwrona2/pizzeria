@@ -48,10 +48,10 @@
             </div>
         </div>
         <div class="delivery"><?php echo $this->Html->link('Zamów', array('controller' => 'orders', 'action' => 'create'), array('class' => '')); ?></div>
-        <div class="atcions">
+        <div class="cart-summary">
             <?php echo $this->Html->link('Ukryj koszyk', false, 
                     array('class' => 'btn-box', 'id' => 'btn-hide-box')); ?>
-            <button class="btn-box nowy" style="display: none">button</button>
+            <button class="btn-box order-btn" style="display: none">button</button>
         </div>
     </div>
 </div>
@@ -97,6 +97,7 @@
                 $(".item-counter").text(afterIncrement.count);
                 var totalPrice = afterIncrement.price * afterIncrement.amount;
                 $("#dishId"+selectedPizza_ID+" .subtotal").text(totalPrice.toFixed(2));
+                displayOrderButton();
             }   
         }); 
     }
@@ -113,6 +114,7 @@
                 $(".item-counter").text(afterDecrement.count);
                 var totalPrice = afterDecrement.price * afterDecrement.amount;
                 $("#dishId"+selectedPizza_ID+" .subtotal").text(totalPrice.toFixed(2));
+                displayOrderButton();
                 if(afterDecrement.amount < 1) {
                     $("#dishId" + selectedPizza_ID).remove();
                     if ($(".dishName").length === 0){

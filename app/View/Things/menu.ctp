@@ -211,18 +211,18 @@ function displayOrderButton() {
         url: "<?= $this->Html->url('total/') ?>",
         success: function(json){
             var count = 0;
-            json.forEach(myFunction);
-            function myFunction(record) {
+            json.forEach(countRecords);
+            function countRecords(record) {
                   count = count + record.amount*record.price;                                                                                                          
             }
-            $(".nowy").html("Zamów ( " + count.toFixed(2) + " zł )");
+            $(".order-btn").html("Zamów ( " + count.toFixed(2) + " zł )");
 
         }
     });
     $('.btn-box').show();
-//    $(".atcions").append("<button class='btn-box'>order</button>");
+//    $(".cart-summary").append("<button class='btn-box'>order</button>");
     $(".btn-box").css({"width" : "50%"});
-    $(".atcions").css({"display": "flex"});
+    $(".cart-summary").css({"display": "flex"});
 }
 
     //$('.btn-box').hide();
@@ -243,7 +243,9 @@ $(document).ready(function addToBoxAjax(){
                 {size = "Duża";} else {size = "Undefined size of pizza!";}
 
                 if(dataFromRequest.boolean === false){
+                    //item already exists in cart
                     updateInputValue(dataFromRequest.id);
+                    displayOrderButton();
                 }
                 else if(dataFromRequest.boolean === true) {
                     //display new item inside the cart
