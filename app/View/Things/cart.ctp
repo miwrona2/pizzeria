@@ -118,6 +118,7 @@
                 if(afterDecrement.amount < 1) {
                     $("#dishId" + selectedPizza_ID).remove();
                     if ($(".dishName").length === 0){
+                        hideOrderButton();
                         $("#inCart").append("<span class='empty'><i class='fa fa-shopping-cart' aria-hidden='true'></i> Koszyk jest pusty</span>");
                     }
                 }

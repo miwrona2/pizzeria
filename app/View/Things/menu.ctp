@@ -220,12 +220,15 @@ function displayOrderButton() {
         }
     });
     $('.btn-box').show();
-//    $(".cart-summary").append("<button class='btn-box'>order</button>");
     $(".btn-box").css({"width" : "50%"});
     $(".cart-summary").css({"display": "flex"});
 }
 
-    //$('.btn-box').hide();
+function hideOrderButton(){
+    $(".order-btn").hide();
+    $(".btn-box").css({"width" : ""});
+    $(".cart-summary").css({"display": "block"});
+}
   
     
 $(document).ready(function addToBoxAjax(){
