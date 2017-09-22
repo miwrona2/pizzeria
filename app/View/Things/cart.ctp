@@ -27,8 +27,8 @@
                             <div class="info">
                                 <strong><?= $dishInCart['id'].'-';?><?= $dishInCart['itemName'];?></strong>
                                 <?php  
-                                if($dishInCart['size'] == 1){echo 'Mała';}
-                                else if($dishInCart['size'] == 2){echo 'Duża';}
+                                if($dishInCart['size'] == 1){echo 'Duża';}
+                                else if($dishInCart['size'] == 2){echo 'Max';}
                                 else {echo 'UNDEFINED SIZE OF PIZZA';}
                                 ?>
                                 <?php echo $this->Html->link('remove', array('action' => 'removeController', $dishInCart['id']), array('class' => 'IdChroniony'));?>

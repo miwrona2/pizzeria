@@ -72,7 +72,7 @@ class ThingsController extends AppController {
             } 
 
             $getCount = $this->Thing->getCount();
-            $arrayPizza = array("counter" => $getCount, "id" => $id, "name" => $name, "price" => $price, "size" => $size, "boolean" => $putItemInSession);
+            $arrayPizza = array("counter" => $getCount, "id" => $id, "name" => $name, "price" => $price, "size" => $size, "itemInCart" => $putItemInSession);
             return json_encode($arrayPizza);
     }
       

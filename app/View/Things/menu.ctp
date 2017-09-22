@@ -241,16 +241,16 @@ $(document).ready(function addToBoxAjax(){
                 
                 $('.item-counter').text(dataFromRequest.counter);
                 var size;
-                if(Number(dataFromRequest.size) === 1){size="Mała";}
+                if(Number(dataFromRequest.size) === 1){size="Duża";}
                 else if (Number(dataFromRequest.size) === 2)
-                {size = "Duża";} else {size = "Undefined size of pizza!";}
+                {size = "Max";} else {size = "Undefined size of pizza!";}
 
-                if(dataFromRequest.boolean === false){
+                if(dataFromRequest.itemInCart === true){
                     //item already exists in cart
                     updateInputValue(dataFromRequest.id);
                     displayOrderButton();
                 }
-                else if(dataFromRequest.boolean === true) {
+                else if(dataFromRequest.itemInCart === false) {
                     //display new item inside the cart
                     displayOrderButton();
                     emptyCartInfoDisappear();

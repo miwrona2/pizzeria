@@ -33,14 +33,14 @@ class Thing extends AppModel {
     }
     
     public function putItemInSession($id, $itemName, $price, $size) {
-                $allItems = $this->readArray();
-                $itemsAmountInCart = count($allItems);
+                $allMeals = $this->readArray();
+                $itemsAmountInCart = count($allMeals);
                 
                 $flag = false;
                 //comparison of given id with id's of particular items inside the cart
                 for ($i=0; $i<$itemsAmountInCart; $i++) {
-                    $itemExistInCart = in_array($id, array($allItems[$i]['id']));
-                    if ($itemExistInCart){
+                    $itemExistsInCart = in_array($id, array($allMeals[$i]['id']));
+                    if ($itemExistsInCart){
                         //item with this id already exist in cart, stop the loop and DON'T ADD this item to cart
                         $flag = true;
                         break;
@@ -53,16 +53,16 @@ class Thing extends AppModel {
                     //DON'T ADD this item to cart
                     //launch 'increment' method
                     $this->increment($id);
-                    return false;
+                    return true;
                 } elseif ($flag == false) {
                     //any item from the cart doesn't match to given item so there is no as item in cart 
                     //ADD GIVEN ITEM TO THE CART
-                    $allItems[] = array('id' => $id, 'itemName' => $itemName, 'price' => $price, 'size' => $size, 'amount' => 1);
-                    $this->saveArray($allItems);    
+                    $allMeals[] = array('id' => $id, 'itemName' => $itemName, 'price' => $price, 'size' => $size, 'amount' => 1);
+                    $this->saveArray($allMeals);    
                     //$true = $this->returnTrue();
-                    return true;
+                    return false;
                 } else {
-                    echo 'Undefined $allitems'; 
+                    echo 'Undefined $allMeals'; 
                 }
     }
 
@@ -110,8 +110,8 @@ class Thing extends AppModel {
         
         $itemsAmountInCart = count($tabelaArrayZSesji);       
         for ($i=0; $i<$itemsAmountInCart; $i++) {
-            $itemExistInCart = in_array($par, array($tabelaArrayZSesji[$i]['id']));
-            if ($itemExistInCart){
+            $itemExistsInCart = in_array($par, array($tabelaArrayZSesji[$i]['id']));
+            if ($itemExistsInCart){
                 $tabelaArrayZSesji[$i]['amount'] = $tabelaArrayZSesji[$i]['amount']+1;
                 $this->saveArray($tabelaArrayZSesji);   
                 //break;  
@@ -127,14 +127,14 @@ class Thing extends AppModel {
         
         $itemsAmountInCart = count($tabelaArrayZSesji);       
         for ($i=0; $i<$itemsAmountInCart; $i++) {
-            $itemExistInCart = in_array($par, array($tabelaArrayZSesji[$i]['id']));
-            if ($itemExistInCart && ($tabelaArrayZSesji[$i]['amount'] > 0)){
+            $itemExistsInCart = in_array($par, array($tabelaArrayZSesji[$i]['id']));
+            if ($itemExistsInCart && ($tabelaArrayZSesji[$i]['amount'] > 0)){
                 $tabelaArrayZSesji[$i]['amount'] --;
                 $this->saveArray($tabelaArrayZSesji);   
                 //break;  
                 return $tabelaArrayZSesji[$i]['amount'];
             } 
-            else if ($itemExistInCart && ($tabelaArrayZSesji[$i]['amount'] == 0)){return 0;}
+            else if ($itemExistsInCart && ($tabelaArrayZSesji[$i]['amount'] == 0)){return 0;}
         }
     }
     
