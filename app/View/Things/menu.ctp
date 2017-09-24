@@ -193,14 +193,14 @@ function emptyCartInfoDisappear() {
     $('.empty').hide();
 }  
 
-function updateInputValue(id){
+function updateInputValue(id, size){
     $.ajax({
         dataType: "json",
-        url: "<?= $this->Html->url('readUpdatedArrayFromSession/') ?>"+id,
+        url: "<?= $this->Html->url('readUpdatedArrayFromSession/') ?>" + id + "/" + size,
         success: function (updatedData) {
-            $('.cartInput#prefix'+id).val(updatedData.amount);
+            $('.cartInput#prefix' + id + size).val(updatedData.amount);
             var totalPrice = updatedData.price * updatedData.amount;
-            $("#dishId"+id+" .subtotal").text(totalPrice.toFixed(2));
+            $("#dishId" + id + size + " .subtotal").text(totalPrice.toFixed(2));
         }
     }); 
 }
@@ -235,11 +235,13 @@ $(document).ready(function addToBoxAjax(){
     $('.callFunctionAddToBoxSession').submit(function(e){
         e.preventDefault();
         $.post($(this).attr('action'),$(this).serialize(),function(dataFromRequest){
-                var decrement = "<a onclick=\"decrementAjax("+dataFromRequest.id+", "+dataFromRequest.price+")\" class=\"decrement appendedElements\">-&nbsp</a>";
-                var inputAmount = "<div class=\"input text\"><input name=\"data[amount]\" class=\"cartInput\" id=\"prefix"+dataFromRequest.id+"\" value=\"<?= 1 ?>\" type=\"text\"/></div>";
-                var increment = "<a onclick=\"incrementAjax("+dataFromRequest.id+", "+dataFromRequest.price+")\"  class=\"increment appendedElements\">&nbsp+</a>";
+            
+                var decrement = "<a onclick=\"decrementAjax("+dataFromRequest.id+", "+dataFromRequest.price+", "+dataFromRequest.size+")\" class=\"decrement appendedElements\">-&nbsp</a>";
+                var inputAmount = "<div class=\"input text\"><input name=\"data[amount]\" class=\"cartInput\" id=\"prefix"+dataFromRequest.id+dataFromRequest.size+"\" value=\"<?= 1 ?>\" type=\"text\"/></div>";
+                var increment = "<a onclick=\"incrementAjax("+dataFromRequest.id+", "+dataFromRequest.price+", "+dataFromRequest.size+")\"  class=\"increment appendedElements\">&nbsp+</a>";
                 
                 $('.item-counter').text(dataFromRequest.counter);
+                
                 var size;
                 if(Number(dataFromRequest.size) === 1){size="Duża";}
                 else if (Number(dataFromRequest.size) === 2)
@@ -247,14 +249,14 @@ $(document).ready(function addToBoxAjax(){
 
                 if(dataFromRequest.itemInCart === true){
                     //item already exists in cart
-                    updateInputValue(dataFromRequest.id);
+                    updateInputValue(dataFromRequest.id, dataFromRequest.size);
                     displayOrderButton();
                 }
                 else if(dataFromRequest.itemInCart === false) {
                     //display new item inside the cart
                     displayOrderButton();
                     emptyCartInfoDisappear();
-                    $('#inCart').append("<div class=\"dishName\" id=\"dishId"+dataFromRequest.id+"\"><div class='info'><strong>"+dataFromRequest.id+"-"+dataFromRequest.name+"</strong>&nbsp;"+size+
+                    $('#inCart').append("<div class=\"dishName\" id=\"dishId"+dataFromRequest.id+dataFromRequest.size+"\"><div class='info'><strong>"+dataFromRequest.id+"-"+dataFromRequest.name+"</strong>&nbsp;"+size+
                         "</div><div class=\"quantity\">"+decrement+inputAmount+increment+"</div><div class='subtotal'>"+dataFromRequest.price+"</div></div>");
                 }
                 else {

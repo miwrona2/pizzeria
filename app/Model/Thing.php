@@ -40,7 +40,8 @@ class Thing extends AppModel {
                 //comparison of given id with id's of particular items inside the cart
                 for ($i=0; $i<$itemsAmountInCart; $i++) {
                     $itemExistsInCart = in_array($id, array($allMeals[$i]['id']));
-                    if ($itemExistsInCart){
+                    $sizeMatch = in_array($size, array($allMeals[$i]['size']));
+                    if ($itemExistsInCart && $sizeMatch){
                         //item with this id already exist in cart, stop the loop and DON'T ADD this item to cart
                         $flag = true;
                         break;
@@ -52,7 +53,7 @@ class Thing extends AppModel {
                 if ($flag == true) {
                     //DON'T ADD this item to cart
                     //launch 'increment' method
-                    $this->increment($id);
+                    $this->increment($id, $size);
                     return true;
                 } elseif ($flag == false) {
                     //any item from the cart doesn't match to given item so there is no as item in cart 
@@ -105,13 +106,14 @@ class Thing extends AppModel {
             return CakeSession::destroy();
     }
     
-    public function increment($par) {
+    public function increment($par, $size) {
         $tabelaArrayZSesji = $this->readArray();
         
         $itemsAmountInCart = count($tabelaArrayZSesji);       
         for ($i=0; $i<$itemsAmountInCart; $i++) {
             $itemExistsInCart = in_array($par, array($tabelaArrayZSesji[$i]['id']));
-            if ($itemExistsInCart){
+            $sizeMatch = in_array($size, array($tabelaArrayZSesji[$i]['size']));
+            if ($itemExistsInCart && $sizeMatch){
                 $tabelaArrayZSesji[$i]['amount'] = $tabelaArrayZSesji[$i]['amount']+1;
                 $this->saveArray($tabelaArrayZSesji);   
                 //break;  
@@ -122,13 +124,14 @@ class Thing extends AppModel {
         }
     }
     
-    public function decrement($par) {
+    public function decrement($par, $size) {
         $tabelaArrayZSesji = $this->readArray();
         
         $itemsAmountInCart = count($tabelaArrayZSesji);       
         for ($i=0; $i<$itemsAmountInCart; $i++) {
             $itemExistsInCart = in_array($par, array($tabelaArrayZSesji[$i]['id']));
-            if ($itemExistsInCart && ($tabelaArrayZSesji[$i]['amount'] > 0)){
+            $sizeMatch = in_array($size, array($tabelaArrayZSesji[$i]['size']));
+            if ($itemExistsInCart && $sizeMatch && ($tabelaArrayZSesji[$i]['amount'] > 0)){
                 $tabelaArrayZSesji[$i]['amount'] --;
                 $this->saveArray($tabelaArrayZSesji);   
                 //break;  
@@ -138,11 +141,12 @@ class Thing extends AppModel {
         }
     }
     
-    public function remove($id) {
+    public function remove($id, $size) {
             $array = $this->readArray();
             
             for($i = 0; $i < count($array); $i++){
-                if(in_array($id, array($array[$i]['id']))){
+            $sizeMatch = in_array($size, array($array[$i]['size']));
+                if(in_array($id, array($array[$i]['id'])) && $sizeMatch){
                     $name = "array.{$i}";
                     return CakeSession::delete($name);
                 }

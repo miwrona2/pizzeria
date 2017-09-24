@@ -82,26 +82,26 @@ class ThingsController extends AppController {
     $this->redirect('menu');
     }
     
-    public function incrementController($id, $price) {
+    public function incrementController($id, $price, $size) {
         $this->autoRender = false;
-        $valueAfterIncrement = $this->Thing->increment($id);
+        $valueAfterIncrement = $this->Thing->increment($id, $size);
         $this->Thing->addProduct($id);
         $count = $this->Thing->getCount();
         
         return json_encode(array("amount" => $valueAfterIncrement, "count" => $count, "price" => $price ));
     }
             
-    public function decrementController($id, $price) {
+    public function decrementController($id, $price, $size) {
         $this->autoRender = false;
-        $valueAfterDecrement = $this->Thing->decrement($id);
+        $valueAfterDecrement = $this->Thing->decrement($id, $size);
         $this->Thing->subtractProduct($id);
         $count = $this->Thing->getCount();
-        if($valueAfterDecrement === 0 ){$this->removeController($id);}
+        if($valueAfterDecrement === 0 ){$this->removeController($id, $size);}
         
         return json_encode(array("amount" => $valueAfterDecrement, "count" => $count, "price" => $price ));
     }
     
-    public function readUpdatedArrayFromSession($id){
+    public function readUpdatedArrayFromSession($id, $size){
     $this->autoRender = false;
     $updatedArray = $this->Thing->readArray();
     $itemsAmountInCart = count($updatedArray);
@@ -109,7 +109,8 @@ class ThingsController extends AppController {
 
         for ($i=0; $i<$itemsAmountInCart; $i++) {
             $itemExistInCart = in_array($id, array($updatedArray[$i]['id']));
-            if ($itemExistInCart){
+            $sizeMatch = in_array($size, array($updatedArray[$i]['size']));
+            if ($itemExistInCart && $sizeMatch){
                 return json_encode(array("amount" => $updatedArray[$i]['amount'], "price" => $updatedArray[$i]['price']));
             } else {
                 //do nothing
@@ -127,9 +128,9 @@ class ThingsController extends AppController {
         $this->Thing->checkLogic($id);
         }
         
-        public function removeController($id){
+        public function removeController($id, $size){
             $this->autoRender = false;
-            $this->Thing->remove($id);
+            $this->Thing->remove($id, $size);
             $this->Thing->sortById($this->Thing->readArray());
         }
         

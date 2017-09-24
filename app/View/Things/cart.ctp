@@ -23,7 +23,7 @@
                 <?php 
                 if(!empty($dishesInCart)){
                     foreach ($dishesInCart as $dishInCart):?>
-                        <div class="dishName" id="dishId<?= $dishInCart['id'];?>">
+                        <div class="dishName" id="dishId<?= $dishInCart['id'].$dishInCart['size'];?>">
                             <div class="info">
                                 <strong><?= $dishInCart['id'].'-';?><?= $dishInCart['itemName'];?></strong>
                                 <?php  
@@ -34,9 +34,9 @@
                                 <?php echo $this->Html->link('remove', array('action' => 'removeController', $dishInCart['id']), array('class' => 'IdChroniony'));?>
                             </div>
                             <div class="quantity">
-                                <?= $this->Html->link('-&nbsp', array('action' => false), array('onclick'=>"decrementAjax('".$dishInCart['id']."', '".$dishInCart['price']."')",'id'=>'prefix'.$dishInCart['id'], 'class' => 'decrement', 'escape' => false)); ?>
-                                <?php echo $this->Form->input('amount', array('type' => 'text', 'label' => false, 'class' => 'cartInput','id' => 'prefix'.$dishInCart['id']  ,'value' => $dishInCart['amount'])) ?>
-                                <?= $this->Html->link('&nbsp+', array('action' => false), array('onclick'=>"incrementAjax('".$dishInCart['id']."', '".$dishInCart['price']."')",'id'=>'prefix'.$dishInCart['id'], 'class' => 'increment', 'escape' => false)); ?>
+                                <?= $this->Html->link('-&nbsp', array('action' => false), array('onclick'=>"decrementAjax('".$dishInCart['id']."', '".$dishInCart['price']."', '".$dishInCart['size']."')",'id'=>'prefix'.$dishInCart['id'], 'class' => 'decrement', 'escape' => false)); ?>
+                                <?php echo $this->Form->input('amount', array('type' => 'text', 'label' => false, 'class' => 'cartInput','id' => 'prefix'.$dishInCart['id'].$dishInCart['size']  ,'value' => $dishInCart['amount'])) ?>
+                                <?= $this->Html->link('&nbsp+', array('action' => false), array('onclick'=>"incrementAjax('".$dishInCart['id']."', '".$dishInCart['price']."', '".$dishInCart['size']."')",'id'=>'prefix'.$dishInCart['id'], 'class' => 'increment', 'escape' => false)); ?>
                             </div>
                             <div class="subtotal"><?= number_format($dishInCart['price']*$dishInCart['amount'], 2); ?></div>
                         </div>
@@ -87,16 +87,16 @@
     /**
      * perform increment function without reloading page (using ajax)
      */
-    function incrementAjax(selectedPizza_ID, price) {
+    function incrementAjax(selectedPizza_ID, price, size) {
         $.ajax({
             dataType: 'json',
-            url: "<?= $this->Html->url('incrementController/') ?>" + selectedPizza_ID + "/" + price,
+            url: "<?= $this->Html->url('incrementController/') ?>" + selectedPizza_ID + "/" + price+"/"+ size,
             success: function (afterIncrement) {
                 console.log(afterIncrement);
-                $(".cartInput#prefix"+selectedPizza_ID).val(afterIncrement.amount);
+                $(".cartInput#prefix"+selectedPizza_ID+size).val(afterIncrement.amount);
                 $(".item-counter").text(afterIncrement.count);
                 var totalPrice = afterIncrement.price * afterIncrement.amount;
-                $("#dishId"+selectedPizza_ID+" .subtotal").text(totalPrice.toFixed(2));
+                $("#dishId"+selectedPizza_ID+size+" .subtotal").text(totalPrice.toFixed(2));
                 displayOrderButton();
             }   
         }); 
@@ -105,18 +105,18 @@
     /**
      * perform decrement function without reloading page (using ajax)
      */
-    function decrementAjax(selectedPizza_ID, price) {
+    function decrementAjax(selectedPizza_ID, price, size) {
         $.ajax({
             dataType: 'json',
-            url: "<?= $this->Html->url('decrementController/') ?>" + selectedPizza_ID +"/"+ price,
+            url: "<?= $this->Html->url('decrementController/') ?>" + selectedPizza_ID +"/"+ price+"/"+ size,
             success: function (afterDecrement) {
-                $(".cartInput#prefix"+selectedPizza_ID).val(afterDecrement.amount);
+                $(".cartInput#prefix"+selectedPizza_ID+size).val(afterDecrement.amount);
                 $(".item-counter").text(afterDecrement.count);
                 var totalPrice = afterDecrement.price * afterDecrement.amount;
-                $("#dishId"+selectedPizza_ID+" .subtotal").text(totalPrice.toFixed(2));
+                $("#dishId"+selectedPizza_ID+size+" .subtotal").text(totalPrice.toFixed(2));
                 displayOrderButton();
                 if(afterDecrement.amount < 1) {
-                    $("#dishId" + selectedPizza_ID).remove();
+                    $("#dishId" + selectedPizza_ID + size).remove();
                     if ($(".dishName").length === 0){
                         hideOrderButton();
                         $("#inCart").append("<span class='empty'><i class='fa fa-shopping-cart' aria-hidden='true'></i> Koszyk jest pusty</span>");
