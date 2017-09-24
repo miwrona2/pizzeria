@@ -47,12 +47,26 @@
                 ?>
             </div>
         </div>
-        <div class="delivery"><?php echo $this->Html->link('Zamów', array('controller' => 'orders', 'action' => 'create'), array('class' => '')); ?></div>
+<!--        <div class="delivery"><?php echo $this->Html->link('Zamów', array('controller' => 'orders', 'action' => 'create'), array('class' => '')); ?></div>
         <div class="cart-summary">
             <?php echo $this->Html->link('Ukryj koszyk', false, 
                     array('class' => 'btn-box', 'id' => 'btn-hide-box')); ?>
             <button class="btn-box order-btn" style="display: none">button</button>
-        </div>
+        </div>-->
+        <div class="delivery"><?php echo $this->Html->link('Zamów', array('controller' => 'orders', 'action' => 'create'), array('class' => '')); ?></div>
+            <?php if(!empty($dishesInCart)): ?>
+                <div class="cart-summary" style="display: flex;">
+                <?php echo $this->Html->link('Ukryj koszyk', false, 
+                        array('class' => 'btn-box', 'id' => 'btn-hide-box', 'style' => "width: 50%;")) ?>
+                <button class="btn-box order-btn" style="width: 50%;"><?php echo "Zamów ( ". number_format($dana, 2). " zł )";?></button>
+                </div>
+            <?php else: ?>
+                <div class="cart-summary">
+                    <?php echo $this->Html->link('Ukryj koszyk', false, 
+                            array('class' => 'btn-box', 'id' => 'btn-hide-box')) ?>
+                    <button class="btn-box order-btn" style="display: none;"></button>
+                </div>
+            <?php endif; ?>
     </div>
 </div>
 
@@ -92,7 +106,6 @@
             dataType: 'json',
             url: "<?= $this->Html->url('incrementController/') ?>" + selectedPizza_ID + "/" + price+"/"+ size,
             success: function (afterIncrement) {
-                console.log(afterIncrement);
                 $(".cartInput#prefix"+selectedPizza_ID+size).val(afterIncrement.amount);
                 $(".item-counter").text(afterIncrement.count);
                 var totalPrice = afterIncrement.price * afterIncrement.amount;

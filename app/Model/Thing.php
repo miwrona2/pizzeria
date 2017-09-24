@@ -167,4 +167,15 @@ class Thing extends AppModel {
         $value = $this->readArray();
         return $value;
     }
+    
+        public function countTotatalOrderPrice1(){
+        $value = $this->readArray();
+                if (isset($value)){
+        $e = 0;
+        foreach($value as $row){
+            $e = $e + $row["amount"] * $row["price"];
+        }
+          return $e;
+                }
+    }
 }
