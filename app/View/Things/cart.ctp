@@ -150,7 +150,7 @@
     
     $(document).ready(function displayShoppingCart(){
         $("#switchCart").on('click',function(){
-            $(".box").fadeIn();
+            $(".box").toggle();
         });
     window.onload = blockLinkRedirect();
     });

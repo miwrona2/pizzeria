@@ -159,13 +159,6 @@
         });
         }
     }
-    
-//    var dl = document.getElementsByClassName("list-element").length;
-//    for(j = 0; j < dl; j++){
-//        document.getElementsByClassName("list-element")[j].addEventListener("click", function(e){
-//            e.preventDefault();
-//        }); 
-//    }
 
     window.onload = prevent_add_btn_Link_Redirect();
     

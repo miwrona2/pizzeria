@@ -219,16 +219,6 @@
     padding: 3px 20px;  
 }
 
-.list-element {
-    background: #fff !important;
-    color: #5c393a;
-}
-
-.list-element:hover {
-    background: #9c3627!important;
-    color: #fff;
-}
-
 #m-section {
     margin: 0 0 50px 0 ;
 }
