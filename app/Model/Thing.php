@@ -141,12 +141,13 @@ class Thing extends AppModel {
         }
     }
     
-    public function remove($id, $size) {
+    public function removeRecordFromArray($id, $size) {
             $array = $this->readArray();
             
             for($i = 0; $i < count($array); $i++){
+            $itemExistsInCart = in_array($id, array($array[$i]['id']));
             $sizeMatch = in_array($size, array($array[$i]['size']));
-                if(in_array($id, array($array[$i]['id'])) && $sizeMatch){
+                if($itemExistsInCart && $sizeMatch){
                     $name = "array.{$i}";
                     return CakeSession::delete($name);
                 }

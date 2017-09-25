@@ -96,7 +96,7 @@ class ThingsController extends AppController {
         $valueAfterDecrement = $this->Thing->decrement($id, $size);
         $this->Thing->subtractProduct($id);
         $count = $this->Thing->getCount();
-        if($valueAfterDecrement === 0 ){$this->removeController($id, $size);}
+        if($valueAfterDecrement === 0 ){$this->removeInController($id, $size);}
         
         return json_encode(array("amount" => $valueAfterDecrement, "count" => $count, "price" => $price ));
     }
@@ -118,9 +118,9 @@ class ThingsController extends AppController {
         }
     }
         
-    public function removeController($id, $size){
+    public function removeInController($id, $size){
         $this->autoRender = false;
-        $this->Thing->remove($id, $size);
+        $this->Thing->removeRecordFromArray($id, $size);
         $this->Thing->sortById($this->Thing->readArray());
     }
         
