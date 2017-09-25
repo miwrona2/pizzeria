@@ -118,25 +118,15 @@ class ThingsController extends AppController {
         }
     }
         
-        public function haystack(){
-            $this->autoRender = false;
-            return json_encode($this->Thing->readArray());
-        }
+    public function removeController($id, $size){
+        $this->autoRender = false;
+        $this->Thing->remove($id, $size);
+        $this->Thing->sortById($this->Thing->readArray());
+    }
         
-        public function check($id){
-        $this->autoRender = false;   
-        $this->Thing->checkLogic($id);
-        }
-        
-        public function removeController($id, $size){
-            $this->autoRender = false;
-            $this->Thing->remove($id, $size);
-            $this->Thing->sortById($this->Thing->readArray());
-        }
-        
-        public function total() {
-            $this->autoRender = false;
-            return json_encode(number_format($this->Thing->countTotatalOrderPrice(),2));
-        }
+    public function total() {
+        $this->autoRender = false;
+        return json_encode(number_format($this->Thing->countTotatalOrderPrice(),2));
+    }
 }
 
