@@ -34,10 +34,10 @@ class ThingsController extends AppController {
         $this->set('counter', $counter);
         
         //działa ale to jest do poprawki
-        //$dishesInCart = $this->CartItem->find('all');
-        //$this->set('dishesInCart', $dishesInCart); 
-        $dishesInCart = $this->beforeFilter('array');
-        $this->set('dishesInCart', $dishesInCart); 
+        //$mealsInCart = $this->CartItem->find('all');
+        //$this->set('mealsInCart', $mealsInCart); 
+        $mealsInCart = $this->beforeFilter('array');
+        $this->set('mealsInCart', $mealsInCart); 
     }
      
     public function discount() {
@@ -72,7 +72,7 @@ class ThingsController extends AppController {
             } 
 
             $getCount = $this->Thing->getCount();
-            $arrayPizza = array("counter" => $getCount, "id" => $id, "name" => $name, "price" => $price, "size" => $size, "itemInCart" => $putItemInSession);
+            $arrayPizza = array("counter" => $getCount, "id" => $id, "name" => $name, "price" => $price, "size" => $size, "whetherItemInCart" => $putItemInSession);
             return json_encode($arrayPizza);
     }
       

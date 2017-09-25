@@ -21,24 +21,24 @@
                 <?php $emptyCartInfo = ob_get_clean(); ?>
                 
                 <?php 
-                if(!empty($dishesInCart)){
-                    foreach ($dishesInCart as $dishInCart):?>
-                        <div class="dishName" id="dishId<?= $dishInCart['id'].$dishInCart['size'];?>">
+                if(!empty($mealsInCart)){
+                    foreach ($mealsInCart as $mealInCart):?>
+                        <div class="dishName" id="dishId<?= $mealInCart['id'].$mealInCart['size'];?>">
                             <div class="info">
-                                <strong><?= $dishInCart['id'].'-';?><?= $dishInCart['itemName'];?></strong>
+                                <strong><?= $mealInCart['id'].'-';?><?= $mealInCart['itemName'];?></strong>
                                 <?php  
-                                if($dishInCart['size'] == 1){echo 'Duża';}
-                                else if($dishInCart['size'] == 2){echo 'Max';}
+                                if($mealInCart['size'] == 1){echo 'Duża';}
+                                else if($mealInCart['size'] == 2){echo 'Max';}
                                 else {echo 'UNDEFINED SIZE OF PIZZA';}
                                 ?>
-                                <?php echo $this->Html->link('remove', array('action' => 'removeController', $dishInCart['id']), array('class' => 'IdChroniony'));?>
+                                <?php echo $this->Html->link('remove', array('action' => 'removeController', $mealInCart['id']), array('class' => 'IdChroniony'));?>
                             </div>
                             <div class="quantity">
-                                <?= $this->Html->link('-&nbsp', array('action' => false), array('onclick'=>"decrementAjax('".$dishInCart['id']."', '".$dishInCart['price']."', '".$dishInCart['size']."')",'id'=>'prefix'.$dishInCart['id'], 'class' => 'decrement', 'escape' => false)); ?>
-                                <?php echo $this->Form->input('amount', array('type' => 'text', 'label' => false, 'class' => 'cartInput','id' => 'prefix'.$dishInCart['id'].$dishInCart['size']  ,'value' => $dishInCart['amount'])) ?>
-                                <?= $this->Html->link('&nbsp+', array('action' => false), array('onclick'=>"incrementAjax('".$dishInCart['id']."', '".$dishInCart['price']."', '".$dishInCart['size']."')",'id'=>'prefix'.$dishInCart['id'], 'class' => 'increment', 'escape' => false)); ?>
+                                <?= $this->Html->link('-&nbsp', array('action' => false), array('onclick'=>"decrementAjax('".$mealInCart['id']."', '".$mealInCart['price']."', '".$mealInCart['size']."')",'id'=>'prefix'.$mealInCart['id'], 'class' => 'decrement', 'escape' => false)); ?>
+                                <?php echo $this->Form->input('amount', array('type' => 'text', 'label' => false, 'class' => 'cartInput','id' => 'prefix'.$mealInCart['id'].$mealInCart['size']  ,'value' => $mealInCart['amount'])) ?>
+                                <?= $this->Html->link('&nbsp+', array('action' => false), array('onclick'=>"incrementAjax('".$mealInCart['id']."', '".$mealInCart['price']."', '".$mealInCart['size']."')",'id'=>'prefix'.$mealInCart['id'], 'class' => 'increment', 'escape' => false)); ?>
                             </div>
-                            <div class="subtotal"><?= number_format($dishInCart['price']*$dishInCart['amount'], 2); ?></div>
+                            <div class="subtotal"><?= number_format($mealInCart['price']*$mealInCart['amount'], 2); ?></div>
                         </div>
                     <?php endforeach;
                 } else {
@@ -47,14 +47,8 @@
                 ?>
             </div>
         </div>
-<!--        <div class="delivery"><?php echo $this->Html->link('Zamów', array('controller' => 'orders', 'action' => 'create'), array('class' => '')); ?></div>
-        <div class="cart-summary">
-            <?php echo $this->Html->link('Ukryj koszyk', false, 
-                    array('class' => 'btn-box', 'id' => 'btn-hide-box')); ?>
-            <button class="btn-box order-btn" style="display: none">button</button>
-        </div>-->
         <div class="delivery"><?php echo $this->Html->link('Zamów', array('controller' => 'orders', 'action' => 'create'), array('class' => '')); ?></div>
-            <?php if(!empty($dishesInCart)): ?>
+            <?php if(!empty($mealsInCart)): ?>
                 <div class="cart-summary" style="display: flex;">
                 <?php echo $this->Html->link('Ukryj koszyk', false, 
                         array('class' => 'btn-box', 'id' => 'btn-hide-box', 'style' => "width: 50%;")) ?>

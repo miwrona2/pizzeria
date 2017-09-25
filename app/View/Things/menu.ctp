@@ -245,12 +245,12 @@
                     else if (Number(dataFromRequest.size) === 2)
                     {size = "Max";} else {size = "Undefined size of pizza!";}
 
-                    if(dataFromRequest.itemInCart === true){
+                    if(dataFromRequest.whetherItemInCart === true){
                         //item already exists in cart
                         updateInputValue(dataFromRequest.id, dataFromRequest.size);
                         displayOrderButton();
                     }
-                    else if(dataFromRequest.itemInCart === false) {
+                    else if(dataFromRequest.whetherItemInCart === false) {
                         //display new item inside the cart
                         displayOrderButton();
                         emptyCartInfoDisappear();
