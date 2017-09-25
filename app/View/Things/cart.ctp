@@ -58,7 +58,7 @@
                 <div class="cart-summary" style="display: flex;">
                 <?php echo $this->Html->link('Ukryj koszyk', false, 
                         array('class' => 'btn-box', 'id' => 'btn-hide-box', 'style' => "width: 50%;")) ?>
-                <button class="btn-box order-btn" style="width: 50%;"><?php echo "Zamów ( ". number_format($dana, 2). " zł )";?></button>
+                <button class="btn-box order-btn" style="width: 50%;"><?php echo "Zamów ( ". number_format($finalOrderPrice, 2). " zł )";?></button>
                 </div>
             <?php else: ?>
                 <div class="cart-summary">

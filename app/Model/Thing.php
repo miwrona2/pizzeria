@@ -106,38 +106,38 @@ class Thing extends AppModel {
             return CakeSession::destroy();
     }
     
-    public function increment($par, $size) {
-        $tabelaArrayZSesji = $this->readArray();
+    public function increment($id, $size) {
+        $array = $this->readArray();
         
-        $itemsAmountInCart = count($tabelaArrayZSesji);       
+        $itemsAmountInCart = count($array);       
         for ($i=0; $i<$itemsAmountInCart; $i++) {
-            $itemExistsInCart = in_array($par, array($tabelaArrayZSesji[$i]['id']));
-            $sizeMatch = in_array($size, array($tabelaArrayZSesji[$i]['size']));
+            $itemExistsInCart = in_array($id, array($array[$i]['id']));
+            $sizeMatch = in_array($size, array($array[$i]['size']));
             if ($itemExistsInCart && $sizeMatch){
-                $tabelaArrayZSesji[$i]['amount'] = $tabelaArrayZSesji[$i]['amount']+1;
-                $this->saveArray($tabelaArrayZSesji);   
+                $array[$i]['amount'] = $array[$i]['amount']+1;
+                $this->saveArray($array);   
                 //break;  
-                return $tabelaArrayZSesji[$i]['amount'];
+                return $array[$i]['amount'];
             } else {
                 //do nothing
             }
         }
     }
     
-    public function decrement($par, $size) {
-        $tabelaArrayZSesji = $this->readArray();
+    public function decrement($id, $size) {
+        $array = $this->readArray();
         
-        $itemsAmountInCart = count($tabelaArrayZSesji);       
+        $itemsAmountInCart = count($array);       
         for ($i=0; $i<$itemsAmountInCart; $i++) {
-            $itemExistsInCart = in_array($par, array($tabelaArrayZSesji[$i]['id']));
-            $sizeMatch = in_array($size, array($tabelaArrayZSesji[$i]['size']));
-            if ($itemExistsInCart && $sizeMatch && ($tabelaArrayZSesji[$i]['amount'] > 0)){
-                $tabelaArrayZSesji[$i]['amount'] --;
-                $this->saveArray($tabelaArrayZSesji);   
+            $itemExistsInCart = in_array($id, array($array[$i]['id']));
+            $sizeMatch = in_array($size, array($array[$i]['size']));
+            if ($itemExistsInCart && $sizeMatch && ($array[$i]['amount'] > 0)){
+                $array[$i]['amount'] --;
+                $this->saveArray($array);   
                 //break;  
-                return $tabelaArrayZSesji[$i]['amount'];
+                return $array[$i]['amount'];
             } 
-            else if ($itemExistsInCart && ($tabelaArrayZSesji[$i]['amount'] == 0)){return 0;}
+            else if ($itemExistsInCart && ($array[$i]['amount'] == 0)){return 0;}
         }
     }
     
@@ -164,18 +164,14 @@ class Thing extends AppModel {
     }
     
     public function countTotatalOrderPrice(){
-        $value = $this->readArray();
-        return $value;
-    }
-    
-        public function countTotatalOrderPrice1(){
-        $value = $this->readArray();
-                if (isset($value)){
-        $e = 0;
-        foreach($value as $row){
-            $e = $e + $row["amount"] * $row["price"];
+        $array = $this->readArray();
+        
+        if (isset($array)){
+            $sum = 0;
+            foreach($array as $row){
+                $sum += $row["amount"] * $row["price"];
+            }
+            return $sum;
         }
-          return $e;
-                }
     }
 }

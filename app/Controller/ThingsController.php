@@ -136,7 +136,7 @@ class ThingsController extends AppController {
         
         public function total() {
             $this->autoRender = false;
-            return json_encode($this->Thing->countTotatalOrderPrice());
+            return json_encode(number_format($this->Thing->countTotatalOrderPrice(),2));
         }
 }
 

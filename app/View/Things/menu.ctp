@@ -175,100 +175,98 @@
     });
 
     
-function togglePizzaSize(toggleId) {
-    var pizzaSizeList = document.getElementsByClassName("pizza-size-list");
+    function togglePizzaSize(toggleId) {
+        var pizzaSizeList = document.getElementsByClassName("pizza-size-list");
 
-    var id_pizzaSizeList = document.getElementById("id_"+toggleId);
-    if (id_pizzaSizeList.style.display === 'none') {
-        for (p=0; p<pizzaSizeList.length; p++){
-            pizzaSizeList[p].style.display = 'none';
-        }
-        id_pizzaSizeList.style.display = 'block';
-    } else {
-        id_pizzaSizeList.style.display = 'none';
-    }
-}
-    
-function emptyCartInfoDisappear() {
-    $('.empty').hide();
-}  
-
-function updateInputValue(id, size){
-    $.ajax({
-        dataType: "json",
-        url: "<?= $this->Html->url('readUpdatedArrayFromSession/') ?>" + id + "/" + size,
-        success: function (updatedData) {
-            $('.cartInput#prefix' + id + size).val(updatedData.amount);
-            var totalPrice = updatedData.price * updatedData.amount;
-            $("#dishId" + id + size + " .subtotal").text(totalPrice.toFixed(2));
-        }
-    }); 
-}
-
-function displayOrderButton() {
-    $.ajax({
-        dataType: "json",
-        url: "<?= $this->Html->url('total/') ?>",
-        success: function(json){
-            var count = 0;
-            json.forEach(countRecords);
-            function countRecords(record) {
-                  count = count + record.amount*record.price;                                                                                                          
+        var id_pizzaSizeList = document.getElementById("id_"+toggleId);
+        if (id_pizzaSizeList.style.display === 'none') {
+            for (p=0; p<pizzaSizeList.length; p++){
+                pizzaSizeList[p].style.display = 'none';
             }
-            $(".order-btn").html("Zamów ( " + count.toFixed(2) + " zł )");
-
+            id_pizzaSizeList.style.display = 'block';
+        } else {
+            id_pizzaSizeList.style.display = 'none';
         }
-    });
-    $('.btn-box').show();
-    $(".btn-box").css({"width" : "50%"});
-    $(".cart-summary").css({"display": "flex"});
-}
+    }
 
-function hideOrderButton(){
-    $(".order-btn").hide();
-    $(".btn-box").css({"width" : ""});
-    $(".cart-summary").css({"display": "block"});
-}
-  
-    
-$(document).ready(function addToBoxAjax(){
-    $('.callFunctionAddToBoxSession').submit(function(e){
-        e.preventDefault();
-        $.post($(this).attr('action'),$(this).serialize(),function(dataFromRequest){
-            
-                var decrement = "<a onclick=\"decrementAjax("+dataFromRequest.id+", "+dataFromRequest.price+", "+dataFromRequest.size+")\" class=\"decrement appendedElements\">-&nbsp</a>";
-                var inputAmount = "<div class=\"input text\"><input name=\"data[amount]\" class=\"cartInput\" id=\"prefix"+dataFromRequest.id+dataFromRequest.size+"\" value=\"<?= 1 ?>\" type=\"text\"/></div>";
-                var increment = "<a onclick=\"incrementAjax("+dataFromRequest.id+", "+dataFromRequest.price+", "+dataFromRequest.size+")\"  class=\"increment appendedElements\">&nbsp+</a>";
-                
-                $('.item-counter').text(dataFromRequest.counter);
-                
-                var size;
-                if(Number(dataFromRequest.size) === 1){size="Duża";}
-                else if (Number(dataFromRequest.size) === 2)
-                {size = "Max";} else {size = "Undefined size of pizza!";}
+    function emptyCartInfoDisappear() {
+        $('.empty').hide();
+    }  
 
-                if(dataFromRequest.itemInCart === true){
-                    //item already exists in cart
-                    updateInputValue(dataFromRequest.id, dataFromRequest.size);
-                    displayOrderButton();
-                }
-                else if(dataFromRequest.itemInCart === false) {
-                    //display new item inside the cart
-                    displayOrderButton();
-                    emptyCartInfoDisappear();
-                    $('#inCart').append("<div class=\"dishName\" id=\"dishId"+dataFromRequest.id+dataFromRequest.size+"\"><div class='info'><strong>"+dataFromRequest.id+"-"+dataFromRequest.name+"</strong>&nbsp;"+size+
-                        "</div><div class=\"quantity\">"+decrement+inputAmount+increment+"</div><div class='subtotal'>"+dataFromRequest.price+"</div></div>");
-                }
-                else {
-                    alert("Sorry! Something went wrong.Try to put product in cart later");
-                }
-        },"json");
-        $(document).ready(function(){
-            $(".pizza-size-list").hide();
+    function updateInputValue(id, size){
+        $.ajax({
+            dataType: "json",
+            url: "<?= $this->Html->url('readUpdatedArrayFromSession/') ?>" + id + "/" + size,
+            success: function (updatedData) {
+                $('.cartInput#prefix' + id + size).val(updatedData.amount);
+                var totalPrice = updatedData.price * updatedData.amount;
+                $("#dishId" + id + size + " .subtotal").text(totalPrice.toFixed(2));
+            }
+        }); 
+    }
+
+    function displayOrderButton() {
+        final_price();
+        $('.btn-box').show();
+        $(".btn-box").css({"width" : "50%"});
+        $(".cart-summary").css({"display": "flex"});
+    }
+
+    function final_price(){
+        $.ajax({
+            dataType: "json",
+            url: "<?= $this->Html->url('total/') ?>",
+            success: function(jsonFinalPrice){
+                $(".order-btn").html("Zamów ( " + jsonFinalPrice + " zł )");
+            }
         });
-        $(document).ready(function(){
-            $(".box").fadeIn();
-        });  
+    } 
+
+    function hideOrderButton(){
+        $(".order-btn").hide();
+        $(".btn-box").css({"width" : ""});
+        $(".cart-summary").css({"display": "block"});
+    }
+
+
+    $(document).ready(function addToBoxAjax(){
+        $('.callFunctionAddToBoxSession').submit(function(e){
+            e.preventDefault();
+            $.post($(this).attr('action'),$(this).serialize(),function(dataFromRequest){
+
+                    var decrement = "<a onclick=\"decrementAjax("+dataFromRequest.id+", "+dataFromRequest.price+", "+dataFromRequest.size+")\" class=\"decrement appendedElements\">-&nbsp</a>";
+                    var inputAmount = "<div class=\"input text\"><input name=\"data[amount]\" class=\"cartInput\" id=\"prefix"+dataFromRequest.id+dataFromRequest.size+"\" value=\"<?= 1 ?>\" type=\"text\"/></div>";
+                    var increment = "<a onclick=\"incrementAjax("+dataFromRequest.id+", "+dataFromRequest.price+", "+dataFromRequest.size+")\"  class=\"increment appendedElements\">&nbsp+</a>";
+
+                    $('.item-counter').text(dataFromRequest.counter);
+
+                    var size;
+                    if(Number(dataFromRequest.size) === 1){size="Duża";}
+                    else if (Number(dataFromRequest.size) === 2)
+                    {size = "Max";} else {size = "Undefined size of pizza!";}
+
+                    if(dataFromRequest.itemInCart === true){
+                        //item already exists in cart
+                        updateInputValue(dataFromRequest.id, dataFromRequest.size);
+                        displayOrderButton();
+                    }
+                    else if(dataFromRequest.itemInCart === false) {
+                        //display new item inside the cart
+                        displayOrderButton();
+                        emptyCartInfoDisappear();
+                        $('#inCart').append("<div class=\"dishName\" id=\"dishId"+dataFromRequest.id+dataFromRequest.size+"\"><div class='info'><strong>"+dataFromRequest.id+"-"+dataFromRequest.name+"</strong>&nbsp;"+size+
+                            "</div><div class=\"quantity\">"+decrement+inputAmount+increment+"</div><div class='subtotal'>"+dataFromRequest.price+"</div></div>");
+                    }
+                    else {
+                        alert("Sorry! Something went wrong.Try to put product in cart later");
+                    }
+            },"json");
+            $(document).ready(function(){
+                $(".pizza-size-list").hide();
+            });
+            $(document).ready(function(){
+                $(".box").fadeIn();
+            });  
+        });
     });
-});
 </script>

@@ -36,8 +36,8 @@ class AppController extends Controller {
         public function beforeFilter() {
 		$this->loadModel('Thing');
                 
-                $var = $this->Thing->countTotatalOrderPrice1();
-                $this->set('dana', json_encode($var));
+                $finalOrderPrice = $this->Thing->countTotatalOrderPrice();
+                $this->set('finalOrderPrice', json_encode($finalOrderPrice));
                         
 		$this->set('count',$this->Thing->getCount());
                 $array = $this->Thing->readArray();
