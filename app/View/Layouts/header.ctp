@@ -26,7 +26,8 @@
             <li><?php echo $this->Html->link('KONTAKT', array('controller' => 'things', 'action' => 'contact')); ?></li>
             <li><?php echo $this->Html->link('GALERIA', array('controller' => 'things', 'action' => 'gallery')); ?></li>
             <li><?php echo $this->Html->link('ALERGENY', array('controller' => 'things', 'action' => 'allergens')); ?></li>
-            <li><?php echo $this->Html->link('Koszyk', array('controller' => 'things', 'action' => 'box')); ?></li>
+            <li><?php echo $this->Html->link('Product', array('controller' => 'products', 'action' => 'index')); ?></li>
+            <li><?php echo $this->Html->link('BoxItems', array('controller' => 'BoxItems', 'action' => 'index')); ?></li>
         </ul>
     </div>
 </div>  

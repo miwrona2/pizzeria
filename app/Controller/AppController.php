@@ -31,5 +31,17 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-         public $components = array('DebugKit.Toolbar');
+        public $components = array('DebugKit.Toolbar');
+         
+        public function beforeFilter() {
+		$this->loadModel('Thing');
+                
+                $finalOrderPrice = $this->Thing->countTotatalOrderPrice();
+                $this->set('finalOrderPrice', json_encode($finalOrderPrice));
+                        
+		$this->set('count',$this->Thing->getCount());
+                $array = $this->Thing->readArray();
+		$this->set('array', $array);
+                return $array;
+	}
 }

@@ -74,5 +74,8 @@ class Product extends AppModel {
 			'counterQuery' => ''
 		)
 	);
-
+    
+    public function nazwaFunkcji() {
+     $this->Product->BoxItem->find('count');
+    }
 }

@@ -21,7 +21,6 @@
         <?php echo $this->Html->charset(); ?>
         <?php
         echo $this->Html->meta('icon');
-
         echo $this->Html->css('font-awesome.min');
         echo $this->Html->css('style');
         echo $this->Html->css('header');
@@ -34,6 +33,7 @@
         echo $this->Html->css('menu');
         echo $this->Html->css('discounts');
         echo $this->Html->css('contact');
+        echo $this->Html->css('cart');
         echo $this->Html->script('jquery-3.2.1');
 
         echo $this->fetch('meta');
