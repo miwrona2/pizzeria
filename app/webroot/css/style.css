@@ -36,13 +36,15 @@ mark {
 }
 
 body{
-    /*background-color: #fff;*/
+    /*background-color: #252624;*/
+    background-color: #fff;
     /*background: url('../img/pattern.png');*/
-    background-image: url('../img/tuscany-685110_1920.jpg');
+    /*background-image: url('../img/pizza4.jpg');*/
     font-family: 'Open Sans', "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     color: #3d7110;
     line-height: 1.42857;
+    padding: 0;
 }
 
 h3{
@@ -86,8 +88,7 @@ strong {
 .container{
     margin-right: auto;
     margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+
 }
 
 .header .restaurant-name h1{
@@ -125,8 +126,6 @@ strong {
 
 .row{
     position: relative;
-    margin-left: -15px;
-    margin-right: -15px;
 }
 
 #header .header{
@@ -146,7 +145,7 @@ strong {
 }
 
 .col-xs-12{
-    padding: 0 15px;
+    padding: 0;
 }
 
 .text-centered{

@@ -138,6 +138,7 @@
 .m-list__list {
     list-style-type: none;
     border: 1px solid white;
+    background: #fff;
 }
 
 .m-item--list .m-item__col-header {
@@ -215,7 +216,7 @@
 
 .pizza-size-list {
     position: absolute;
-    right: 30px;
+    right: 330px;
     list-style-type: none;
     padding: 5px 0;
     background: #fff;
@@ -230,7 +231,7 @@
 }
 
 #m-section {
-    margin: 0 400px 50px 100px ;
+    margin: 0 300px 50px 100px ;
 }
 
 .item-counter{
@@ -259,5 +260,51 @@
     cursor: pointer;
     color: #fff;
     width: 100%;
+}
+
+
+
+
+
+
+
+.kontener {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+ 
+section.module.treść {
+  padding: 60px 0;
+  text-align: left;
+}
+ 
+section.module.parallax {
+  height: 800px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+ 
+section.module.parallax h1 {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 48px;
+  line-height: 800px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+ 
+section.module.parallax-1 {
+  background-image: url('../img/obrazek1.jpg');
+}
+ 
+section.module.parallax-2 {
+  background-image: url('../img/obrazek3.jpg');
+}
+ 
+section.module.parallax-3 {
+  background-image: url('../img/obrazek2.jpg');
 }
 

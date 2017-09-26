@@ -1,3 +1,8 @@
+<section class="module parallax parallax-1">
+  <div class="kontener">
+    <h1>Menu</h1>
+  </div>
+</section>
 <div id="m-section">
 
     <div class="restaurant-menu">
@@ -118,6 +123,11 @@
         </div>
     </div>
 </div>
+<section class="module parallax parallax-3">
+  <div class="kontener">
+    <h1>The End</h1>
+  </div>
+</section>  
 
 <script>
     $(document).ready(function () {
