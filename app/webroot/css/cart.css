@@ -43,7 +43,7 @@
 } 
 
 .box{
-    background-color: #EDEDED;
+    background-color: #fff;
     width: 500px;
     border: solid gray 1px;
     position: absolute; 
@@ -52,6 +52,7 @@
     font-family: sans-serif;
     display: none;
     z-index:1;
+    border-radius: 10px;
 }
 
 .box-header{
@@ -177,4 +178,5 @@ h5{
     background-color: #fff;
     position: relative;
     z-index: -1;
+    border-radius: 10px;
 }
