@@ -151,22 +151,26 @@ h5{
     font-family: 'Open Sans', "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 400;
     font-size: 14px;
+    border-radius: 5px;
 }
 
 .btn-box:hover{
     border: 1px solid #adadad;
     background-color: #e6e6e6;
     color: #333;
+    border-radius: 5px;
 }
 
 .cart-summary > button {
-    background: #9c3627;
+    background: #8e181c;
     color: #fff;
+    border-radius: 5px;
 }
 .cart-summary > button:hover {
-    background: #571e16;
+    background: #721518;
     color: #fff;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .box-body{

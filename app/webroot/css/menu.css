@@ -208,10 +208,12 @@
 
 .add-button {
     font-weight: 700;
+    border-radius: 5px;
 }
 
 .add-button:hover{
-    background-color: #571e16;
+    background-color: #721518;
+    border-radius: 5px;
 }
 
 .pizza-size-list {
@@ -235,7 +237,7 @@
 }
 
 .item-counter{
-    background: #9c3627;
+    background: #8e181c;
     position: relative;
 /*    top: 160px;
     right: 22px;*/
