@@ -33,7 +33,6 @@
                 </div>
             <?php endforeach; ?>
         </div>
-        <?php echo $this->Html->link('dodaj_opinie' ,array('controller' => 'opinions', 'action'=> 'add_opinion'), array('class' => 'button btn')) ?>
     </div>
 </div>
     

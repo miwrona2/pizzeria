@@ -9,17 +9,6 @@ class ThingsController extends AppController {
         $this->redirect(array('controller' => 'pages', 'action' => 'home'));
     }
     
-    public function opinions() {
-        $this->layout = 'things';
-          
-        $this->loadmodel('Opinion');
-        $record = $this->Opinion->find('first');
-        $this->set('record', $record);
-    
-        $records = $this->Opinion->find('all');
-        $this->set('records', $records);
-    }
-    
     public function menu() {
         $this->layout = 'things';
         $this->loadModel('Pizza');
