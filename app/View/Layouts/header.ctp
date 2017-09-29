@@ -21,13 +21,11 @@
     </div>
     <div class="navigation container">
         <ul>
-            <li><?php echo $this->Html->link($this->Html->image('logo.png', array('class' => 'logo')), 
-                    array('controller' => 'things', 'action' => 'index'), array('escape' => false)); ?></li>
             <li class="dropdown"><?php echo $this->Html->link('START <span class="caret"></span>', '#', 
                     array('class' => 'dropdown-toggle', 'escape' => false)); ?>
                 <ul class="dropdown-menu"> 
                     <li><?php echo $this->Html->link('STRONA GŁÓWNA', array('controller' => 'things', 'action' => 'index')); ?></li>
-                    <li><?php echo $this->Html->link('OPINIE', array('controller' => 'things', 'action' => 'opinions')); ?></li>
+                    <li><?php echo $this->Html->link('OPINIE', array('controller' => 'opinions', 'action' => 'opinions')); ?></li>
                 </ul>
             </li>
             <li><?php echo $this->Html->link('MENU', array('controller' => 'things', 'action' => 'menu')); ?></li>
