@@ -45,12 +45,14 @@
             <?php echo $this->Form->create('Opinion'); ?>
             <?php 
             echo $this->Form->input('id'); 
-            echo $this->Form->input('content'); 
+            echo $this->Form->input('content', array('class' => 'form-control')); 
             echo $this->Form->input('rate'); 
-            echo $this->Form->input('modified'); 
+            echo $this->Form->input('modified', array('value' => time(),'style' => 'display: none')); 
             echo $this->Form->input('nickname'); 
             ?>
             <?php echo $this->Form->end('Wyslij'); ?>
+        <?php echo date('Y'); ?>
+        <?php echo $this->Time->convert(time(), 'Asia/Jakarta'); ?>
         </div>
     </div>
 
