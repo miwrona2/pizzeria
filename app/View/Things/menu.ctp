@@ -110,7 +110,7 @@
                                                                     'escape' => false))
                                                     ?>
                                                     <ul class="pizza-size-list" id="id_<?php echo $pizza['Pizza']['id'] ?>">
-                                                        <li><?php echo $this->Form->create('Thing',array('id'=>'add-form2', 'class'=> 'callFunctionAddToBoxSession','url'=>array('controller'=>'things','action'=>'addToBoxSession')));?>
+                                                        <li><?php echo $this->Form->create('Thing',array('id'=>'add-form-action', 'class'=> 'callFunctionAddToBoxSession','url'=>array('controller'=>'things','action'=>'addToBoxSession')));?>
                                                             <?php echo $this->Form->hidden('product_id',array('value'=> $pizza['Pizza']['id']))?>
                                                             <?php echo $this->Form->hidden('item_name',array('value'=> $pizza['Pizza']['name']))?>
                                                             <?php echo $this->Form->hidden('price',array('value'=> $pizza['Pizza']['sprice']))?>
@@ -118,7 +118,7 @@
                                                             <?php echo $this->Form->submit('Duża - 30 cm - '.$pizza['Pizza']['sprice'].'',array('class'=>'btnAddToCart'));?>
                                                             <?php echo $this->Form->end();?>
                                                         </li>
-                                                        <li><?php echo $this->Form->create('Thing',array('id'=>'add-form2', 'class'=> 'callFunctionAddToBoxSession','url'=>array('controller'=>'things','action'=>'addToBoxSession')));?>
+                                                        <li><?php echo $this->Form->create('Thing',array('id'=>'add-form-action', 'class'=> 'callFunctionAddToBoxSession','url'=>array('controller'=>'things','action'=>'addToBoxSession')));?>
                                                             <?php echo $this->Form->hidden('product_id',array('value'=> $pizza['Pizza']['id']))?>
                                                             <?php echo $this->Form->hidden('item_name',array('value'=> $pizza['Pizza']['name']))?>
                                                             <?php echo $this->Form->hidden('price',array('value'=> $pizza['Pizza']['bprice']))?>
@@ -142,15 +142,26 @@
 </div>
 
 <script>
-    $(document).ready(function () {
-        $(window).scroll(function () {
-            if ($(document).scrollTop() > 200) {
-                $("#cart_navbar").addClass("affixed");
-            } else {
-                $("#cart_navbar").removeClass("affixed");
-            }
+
+    launch_functions_onload();
+    
+    function launch_functions_onload(){
+        sticky_cart_navbar();
+        prevent_add_btn_Link_Redirect();
+        $(".pizza-size-list").hide();
+    }
+
+    function sticky_cart_navbar(){
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(document).scrollTop() > 200) {
+                    $("#cart_navbar").addClass("affixed");
+                } else {
+                    $("#cart_navbar").removeClass("affixed");
+                }
+            });
         });
-    });
+    }
     
     function prevent_add_btn_Link_Redirect(){
         for(i=1;i<=<?=$pizza['Pizza']['id']?>;i++){
@@ -160,14 +171,6 @@
         }
     }
 
-    window.onload = prevent_add_btn_Link_Redirect();
-    
-    
-    $(document).ready(function(){
-        $(".pizza-size-list").hide();
-    });
-
-    
     function togglePizzaSize(toggleId) {
         var pizzaSizeList = document.getElementsByClassName("pizza-size-list");
 
@@ -181,46 +184,6 @@
             id_pizzaSizeList.style.display = 'none';
         }
     }
-
-    function emptyCartInfoDisappear() {
-        $('.empty').hide();
-    }  
-
-    function updateInputValue(id, size){
-        $.ajax({
-            dataType: "json",
-            url: "<?= $this->Html->url('readUpdatedArrayFromSession/') ?>" + id + "/" + size,
-            success: function (updatedData) {
-                $('.cartInput#prefix' + id + size).val(updatedData.amount);
-                var totalPrice = updatedData.price * updatedData.amount;
-                $("#dishId" + id + size + " .subtotal").text(totalPrice.toFixed(2));
-            }
-        }); 
-    }
-
-    function displayOrderButton() {
-        final_price();
-        $('.btn-box').show();
-        $(".btn-box").css({"width" : "50%"});
-        $(".cart-summary").css({"display": "flex"});
-    }
-
-    function final_price(){
-        $.ajax({
-            dataType: "json",
-            url: "<?= $this->Html->url('total/') ?>",
-            success: function(jsonFinalPrice){
-                $(".order-btn").html("Zamów ( " + jsonFinalPrice + " zł )");
-            }
-        });
-    } 
-
-    function hideOrderButton(){
-        $(".order-btn").hide();
-        $(".btn-box").css({"width" : ""});
-        $(".cart-summary").css({"display": "block"});
-    }
-
 
     $(document).ready(function addToBoxAjax(){
         $('.callFunctionAddToBoxSession').submit(function(e){

@@ -73,28 +73,23 @@
             $('.box').fadeOut(500);
         });
     });
-    
-    /**
-     * don't redirect after click on +
-     */ 
+
+    //don't redirect after click on +
     for(var o=0; o< <?php echo count($array)?>; o++){
         document.getElementsByClassName("increment")[o].addEventListener("click", function(o){
             o.preventDefault(); 
         });
     }
     
-    /**
-     * don't redirect after click on -
-     */ 
+    //don't redirect after click on -
     for(var d=0; d< <?php echo count($array)?>; d++){
         document.getElementsByClassName("decrement")[d].addEventListener("click", function(d){
             d.preventDefault(); 
         });
     }
     
-    /**
-     * perform increment function without reloading page (using ajax)
-     */
+
+    //perform increment function without reloading page (using ajax)
     function incrementAjax(selectedPizza_ID, price, size) {
         $.ajax({
             dataType: 'json',
@@ -109,9 +104,8 @@
         }); 
     }
     
-    /**
-     * perform decrement function without reloading page (using ajax)
-     */
+
+    //perform decrement function without reloading page (using ajax)
     function decrementAjax(selectedPizza_ID, price, size) {
         $.ajax({
             dataType: 'json',
@@ -133,6 +127,44 @@
         }); 
     }
     
+    function emptyCartInfoDisappear() {
+        $('.empty').hide();
+    }  
+
+    function updateInputValue(id, size){
+        $.ajax({
+            dataType: "json",
+            url: "<?= $this->Html->url('readUpdatedArrayFromSession/') ?>" + id + "/" + size,
+            success: function (updatedData) {
+                $('.cartInput#prefix' + id + size).val(updatedData.amount);
+                var totalPrice = updatedData.price * updatedData.amount;
+                $("#dishId" + id + size + " .subtotal").text(totalPrice.toFixed(2));
+            }
+        }); 
+    }
+
+    function displayOrderButton() {
+        final_price();
+        $('.btn-box').show();
+        $(".btn-box").css({"width" : "50%"});
+        $(".cart-summary").css({"display": "flex"});
+    }
+
+    function final_price(){
+        $.ajax({
+            dataType: "json",
+            url: "<?= $this->Html->url('total/') ?>",
+            success: function(jsonFinalPrice){
+                $(".order-btn").html("Zamów ( " + jsonFinalPrice + " zł )");
+            }
+        });
+    } 
+
+    function hideOrderButton(){
+        $(".order-btn").hide();
+        $(".btn-box").css({"width" : ""});
+        $(".cart-summary").css({"display": "block"});
+    }
 
     document.getElementById("close-cart").addEventListener("click", function(event){
         event.preventDefault();
