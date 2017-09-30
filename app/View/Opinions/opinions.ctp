@@ -42,17 +42,23 @@
         </div>
 
         <div class="content-content">
-            <?php echo $this->Form->create('Opinion'); ?>
-            <?php 
-            echo $this->Form->input('id'); 
-            echo $this->Form->input('content', array('class' => 'form-control')); 
-            echo $this->Form->input('rate'); 
-            echo $this->Form->input('modified', array('value' => time(),'style' => 'display: none')); 
-            echo $this->Form->input('nickname'); 
-            ?>
-            <?php echo $this->Form->end('Wyslij'); ?>
-        <?php echo date('Y'); ?>
-        <?php echo $this->Time->convert(time(), 'Asia/Jakarta'); ?>
+            <div class="form-center">
+                
+                <?= $this->Form->create('Opinion',array('inputDefaults' => array('label' => false))); ?>
+                
+                <?= $this->Form->input('id'); ?>
+                <?= $this->Form->label(null, 'Komentarz: ', 'm-form_label'); ?>
+                <?= $this->Form->input('content', array('class' => 'form-control')); ?>
+                <?= $this->Form->label(null, 'Ocena: ', 'm-form_label'); ?>
+                <?= $this->Form->input('rate',  array('class'=> 'form-control')); ?>
+                <?php //  echo $this->Form->label(null, 'Przesłano: ', 'm-form_label'); ?>
+                <?php //  echo $this->Form->input('modified', array('value' => time())); ?>
+                <?= $this->Form->label(null, 'Imię / Nick: ', 'm-form_label'); ?>
+                <?= $this->Form->input('nickname', array('class' => 'form-control')); ?>
+                <?php echo $this->Form->error('nickname', 'error message',array('escape' => true)); ?>
+                                
+                <?php echo $this->Form->end(array('label' => 'Wyślij', 'class' => 'btn btn-opinion')); ?>
+            </div>
         </div>
     </div>
 
