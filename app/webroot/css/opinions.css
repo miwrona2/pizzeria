@@ -122,3 +122,8 @@
     background-color: #69261c;
     border: #69261c 1px solid; 
 }
+
+.error-message {
+    color: #9E2424;
+    background: #FFDACC;
+}

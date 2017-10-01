@@ -3,8 +3,7 @@
 App::uses('AppController', 'Controller');
 
 class OpinionsController extends AppController {
-    
-    
+
         public function opinions() {
         $this->layout = 'things';
           
@@ -16,11 +15,13 @@ class OpinionsController extends AppController {
         $this->set('records', $records);
         
         if ($this->request->is('post')){
-            $this->Opinion->create();
+            
+            $this->Opinion->set($this->request->data);
+
             if($this->Opinion->save($this->request->data)){
                 return $this->redirect(array('action' => 'opinions'));
-            }
-        } 
+            }   
+        }
     }
 
 }

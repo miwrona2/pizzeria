@@ -48,14 +48,16 @@
                 
                 <?= $this->Form->input('id'); ?>
                 <?= $this->Form->label(null, 'Komentarz: ', 'm-form_label'); ?>
-                <?= $this->Form->input('content', array('class' => 'form-control')); ?>
+                
+                <?= $this->Form->input('content', array('class' => 'form-control', 'cols' => '100', 'rows' => '5')); ?>
                 <?= $this->Form->label(null, 'Ocena: ', 'm-form_label'); ?>
-                <?= $this->Form->input('rate',  array('class'=> 'form-control')); ?>
-                <?php //  echo $this->Form->label(null, 'Przesłano: ', 'm-form_label'); ?>
-                <?php //  echo $this->Form->input('modified', array('value' => time())); ?>
+                
+                <?= $this->Form->input('rate',  array('class'=> 'form-control', 'type' => 'select',
+                    'options' => array(1, 2, 3, 4, 5),
+                    'empty' => '(choose one)')); ?>
                 <?= $this->Form->label(null, 'Imię / Nick: ', 'm-form_label'); ?>
+               
                 <?= $this->Form->input('nickname', array('class' => 'form-control')); ?>
-                <?php echo $this->Form->error('nickname', 'error message',array('escape' => true)); ?>
                                 
                 <?php echo $this->Form->end(array('label' => 'Wyślij', 'class' => 'btn btn-opinion')); ?>
             </div>
