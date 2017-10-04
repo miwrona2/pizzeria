@@ -39,10 +39,14 @@ body{
     /*background-color: #252624;*/
     background-color: #fff;
     /*background: url('../img/pattern.png');*/
-    /*background-image: url('../img/pizza4.jpg');*/
+    /*background-image: url('../img/opinions.jpg');*/
+    background: #f4f6f7;
+    background: #f3fff9;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;  
     font-family: 'Open Sans', "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
-    color: #3d7110;
+    color: #333;
     line-height: 1.42857;
     padding: 0;
 }

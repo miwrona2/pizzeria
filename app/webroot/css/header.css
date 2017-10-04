@@ -19,16 +19,15 @@
     display: flex;
     /*background-color: #2e6015;*/
     height: 50px;
-    /*box-shadow: 0 -3px 10px rgba(0,0,0,.5);*/
+    /*box-shadow: 0 -3px 10px rgba(0,0,0,.5);*/  
     box-sizing: border-box;
     position: absolute;
     top: 0;
     z-index: 1;
-    padding: 0 23%;
+    /*padding: 0 23%;*/
 }
 
 .navigation>ul{
-    
     box-sizing: border-box;
 }
 
@@ -47,10 +46,10 @@
     padding: 0 16px;
     border-right: 1px solid #dcd8d9;
     /*background-color: #8e181c;*/
-    background-color: #513a3b;
+    background-color: #141D2F;
     box-sizing: border-box;
     font-size: 12px;
-    opacity: 0.8;
+    opacity: 0.2;
 }
 
 .navigation>ul>li:first-of-type>a{

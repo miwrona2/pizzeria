@@ -25,7 +25,9 @@
 
 .content-header{
     padding: 10px;
-    background-color: #000;
+    background-color: #8e181c;
+    opacity: 0.4;
+    border-radius: 10px 10px 0 0;
 }
 
 .content-header h1{

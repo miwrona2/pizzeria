@@ -15,6 +15,12 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
+.opinions {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .reviews{
     margin-top: 10px;
 }
@@ -51,6 +57,7 @@
     height: 75px;
     float: left;
     border: 1px solid #105d5a;
+    margin-right: 15px;
 }
 
 .review-calendar{
@@ -101,15 +108,16 @@
     text-shadow: 0 1px 0 #9b9494;
 }
 
+.nickname {
+    font-weight: bold;
+    color: blueviolet;
+    text-transform: capitalize;
+}
+
 .form-center {
     display: flex;
     justify-content: center
 
-}
-
-#OpinionOpinionsForm {
-    background-color: wheat;
-    padding: 0 100px;
 }
 
 .btn-opinion {
