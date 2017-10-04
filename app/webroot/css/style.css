@@ -14,11 +14,15 @@
  * @package       app.webroot.css
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-
+mark {
+    background-color: white;
+    color: black;
+    padding: 0 10px;
+}
 .salsa{
     width: 60px;
     height: 60px;
-    background-color: #fff; 
+    /*background-color: #fff;*/ 
     position: absolute;
     top: 10px;
     left: 10px;
@@ -32,12 +36,15 @@
 }
 
 body{
-    background: url('../img/pattern.png');
-    background-image: url('../img/bordo.jpg');
+    /*background-color: #252624;*/
+    background-color: #fff;
+    /*background: url('../img/pattern.png');*/
+    /*background-image: url('../img/pizza4.jpg');*/
     font-family: 'Open Sans', "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
-    color: #333;
+    color: #3d7110;
     line-height: 1.42857;
+    padding: 0;
 }
 
 h3{
@@ -75,15 +82,13 @@ strong {
 }
 
 #header{
-    background: linear-gradient(#2c1107 1%,#2c1107 80%,#9c3627 81%,#9c3627 100%);
+    background: #b31f24;
 }
 
 .container{
-    width: 1170px;
     margin-right: auto;
     margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+
 }
 
 .header .restaurant-name h1{
@@ -121,8 +126,6 @@ strong {
 
 .row{
     position: relative;
-    margin-left: -15px;
-    margin-right: -15px;
 }
 
 #header .header{
@@ -142,7 +145,7 @@ strong {
 }
 
 .col-xs-12{
-    padding: 0 15px;
+    padding: 0;
 }
 
 .text-centered{

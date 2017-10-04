@@ -16,7 +16,7 @@
 ?>
 <!DOCTYPE html>
 
-<div class="page-header">
+<!--<div class="page-header">
     <div class="background pizza">
     </div>
-</div>
+</div>-->

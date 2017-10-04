@@ -16,11 +16,11 @@
  */
 
 .page-header .background.pizza {
-    background: url(../img/pizza1.jpg) center center no-repeat;
+      /*background: url(../img/pizza1.jpg) center center no-repeat;*/
 }
 
 .page-header .background {
-    height: 150px;
+    height: 50px;
 }
 
 .content-header{

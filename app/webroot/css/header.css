@@ -17,21 +17,24 @@
 
 .navigation{
     display: flex;
-    background-color: #f6f4f4;
+    /*background-color: #2e6015;*/
     height: 50px;
-    box-shadow: 0 -3px 10px rgba(0,0,0,.5);
+    /*box-shadow: 0 -3px 10px rgba(0,0,0,.5);*/
     box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    padding: 0 23%;
 }
 
 .navigation>ul{
+    
     box-sizing: border-box;
-    margin: 0 0 0 200px;
 }
 
 .navigation>ul>li{
     float: left;
     color: black;
-    background: appworkspace;
     list-style-type: none;
     line-height: 50px;
     box-sizing: border-box;
@@ -39,13 +42,15 @@
 
 .navigation>ul>li>a{
     display: inline-block;
-    color: #5c393a ; 
+    color: #fff ; 
     font-weight: normal;
     padding: 0 16px;
     border-right: 1px solid #dcd8d9;
-    background-color: #f6f4f4;
+    /*background-color: #8e181c;*/
+    background-color: #513a3b;
     box-sizing: border-box;
     font-size: 12px;
+    opacity: 0.8;
 }
 
 .navigation>ul>li:first-of-type>a{
