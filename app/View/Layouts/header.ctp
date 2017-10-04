@@ -21,7 +21,7 @@
                     array('class' => 'dropdown-toggle', 'escape' => false)); ?>
                 <ul class="dropdown-menu"> 
                     <li><?php echo $this->Html->link('STRONA GŁÓWNA', array('controller' => 'things', 'action' => 'index')); ?></li>
-                    <li><?php echo $this->Html->link('OPINIE', array('controller' => 'things', 'action' => 'opinions')); ?></li>
+                    <li><?php echo $this->Html->link('OPINIE', array('controller' => 'opinions', 'action' => 'opinions')); ?></li>
                 </ul>
             </li>
             <li><?php echo $this->Html->link('MENU', array('controller' => 'things', 'action' => 'menu')); ?></li>

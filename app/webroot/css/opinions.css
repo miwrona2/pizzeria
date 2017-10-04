@@ -100,3 +100,30 @@
     color: #ffe315;
     text-shadow: 0 1px 0 #9b9494;
 }
+
+.form-center {
+    display: flex;
+    justify-content: center
+
+}
+
+#OpinionOpinionsForm {
+    background-color: wheat;
+    padding: 0 100px;
+}
+
+.btn-opinion {
+    margin: 10px 33%;
+    background-color: #9c3627;
+    border: #69261c 1px solid; 
+}
+
+.btn-opinion:hover {
+    background-color: #69261c;
+    border: #69261c 1px solid; 
+}
+
+.error-message {
+    color: #9E2424;
+    background: #FFDACC;
+}

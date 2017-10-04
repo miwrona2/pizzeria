@@ -11,18 +11,7 @@ class ThingsController extends AppController {
         $this->redirect(array('controller' => 'pages', 'action' => 'home'));
     }
     
-    public function opinions() {
-        $this->layout = 'things';
-          
-        $this->loadmodel('Opinion');
-        $record = $this->Opinion->find('first');
-        $this->set('record', $record);
-    
-        $records = $this->Opinion->find('all');
-        $this->set('records', $records);
-    }
-      
-    public function menu() {
+        public function menu() {
         $this->layout = 'things';
        
         $this->loadModel('Pizza');
@@ -33,7 +22,7 @@ class ThingsController extends AppController {
         $counter = $this->CartItem->find('count');
         $this->set('counter', $counter);
         
-        //dziaÅ‚a ale to jest do poprawki
+        //dzia³a ale to jest do poprawki
         //$mealsInCart = $this->CartItem->find('all');
         //$this->set('mealsInCart', $mealsInCart); 
         $mealsInCart = $this->beforeFilter('array');
@@ -57,6 +46,7 @@ class ThingsController extends AppController {
     }
     
     public function allergens() {
+
 //        $this->layout = 'admin';
     } 
    
@@ -82,6 +72,7 @@ class ThingsController extends AppController {
     $this->redirect('menu');
     }
     
+
     public function incrementController($id, $price, $size) {
         $this->autoRender = false;
         $valueAfterIncrement = $this->Thing->increment($id, $size);

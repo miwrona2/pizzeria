@@ -33,9 +33,34 @@
                 </div>
             <?php endforeach; ?>
         </div>
-        <?php echo $this->Html->link('dodaj_opinie' ,array('controller' => 'opinions', 'action'=> 'add_opinion'), array('class' => 'button btn')) ?>
     </div>
 </div>
     
-       <?php debug($record)?>
-       <?php debug($records)?>
+    <div class="content delivery">  
+        <div class="content-header">
+            <h1>dodaj opinie</h1>
+        </div>
+
+        <div class="content-content">
+            <div class="form-center">
+                
+                <?= $this->Form->create('Opinion',array('inputDefaults' => array('label' => false))); ?>
+                
+                <?= $this->Form->input('id'); ?>
+                <?= $this->Form->label(null, 'Komentarz: ', 'm-form_label'); ?>
+                
+                <?= $this->Form->input('content', array('class' => 'form-control', 'cols' => '100', 'rows' => '5')); ?>
+                <?= $this->Form->label(null, 'Ocena: ', 'm-form_label'); ?>
+                
+                <?= $this->Form->input('rate',  array('class'=> 'form-control', 'type' => 'select',
+                    'options' => array(1, 2, 3, 4, 5),
+                    'empty' => '(choose one)')); ?>
+                <?= $this->Form->label(null, 'Imię / Nick: ', 'm-form_label'); ?>
+               
+                <?= $this->Form->input('nickname', array('class' => 'form-control')); ?>
+                                
+                <?php echo $this->Form->end(array('label' => 'Wyślij', 'class' => 'btn btn-opinion')); ?>
+            </div>
+        </div>
+    </div>
+
