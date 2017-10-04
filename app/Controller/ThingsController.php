@@ -11,22 +11,33 @@ class ThingsController extends AppController {
         $this->redirect(array('controller' => 'pages', 'action' => 'home'));
     }
     
-        public function menu() {
+    public function menu() {
         $this->layout = 'things';
-       
+
         $this->loadModel('Pizza');
         $pizzas = $this->Pizza->find('all');
         $this->set('pizzas', $pizzas); 
-        
+
         $this->loadModel('CartItem');
         $counter = $this->CartItem->find('count');
         $this->set('counter', $counter);
-        
-        //dzia³a ale to jest do poprawki
+
+        //dziaï¿½a ale to jest do poprawki
         //$mealsInCart = $this->CartItem->find('all');
         //$this->set('mealsInCart', $mealsInCart); 
         $mealsInCart = $this->beforeFilter('array');
         $this->set('mealsInCart', $mealsInCart); 
+    }
+    
+    public function opinions() {
+        $this->layout = 'things';
+          
+        $this->loadmodel('Opinion');
+        $record = $this->Opinion->find('first');
+        $this->set('record', $record);
+    
+        $records = $this->Opinion->find('all');
+        $this->set('records', $records);
     }
      
     public function discount() {
