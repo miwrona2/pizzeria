@@ -17,7 +17,7 @@
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <?php endfor; ?>
                                 <?php for($s = 0; $s < 5 - $kom['Opinion']['rate']; $s++): ?>
-                                <i class="fa fa-star-o empty" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
                                 <?php endfor; ?>
                             </span>
                         </span>

@@ -28,17 +28,6 @@ class ThingsController extends AppController {
         $mealsInCart = $this->beforeFilter('array');
         $this->set('mealsInCart', $mealsInCart); 
     }
-    
-    public function opinions() {
-        $this->layout = 'things';
-          
-        $this->loadmodel('Opinion');
-        $record = $this->Opinion->find('first');
-        $this->set('record', $record);
-    
-        $records = $this->Opinion->find('all');
-        $this->set('records', $records);
-    }
      
     public function discount() {
         $this->layout = 'things';
