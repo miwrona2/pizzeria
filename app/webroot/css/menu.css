@@ -15,6 +15,10 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
+.appendedElements {
+    cursor: pointer;
+}
+
 #cart_navbar {
     color: #fff;
     background-color: #2c1107;
@@ -168,6 +172,10 @@
     font-weight: 500;
 }
 
+.btn-group{
+    
+}
+
 .btn-group a {
     background-color: #9c3627;
     display: block;
@@ -191,6 +199,54 @@
     font-weight: 700;
 }
 
+.add-button:hover{
+    background-color: #571e16;
+}
+
+.pizza-size-list {
+    position: absolute;
+    right: 30px;
+    list-style-type: none;
+    padding: 5px 0;
+    background: #fff;
+    border-radius: 4px;
+    border: solid #ccc .3px;
+    margin:  2px 2px 0 0;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.pizza-size-list>li>a {
+    padding: 3px 20px;  
+}
+
 #m-section {
     margin: 0 0 50px 0 ;
+}
+
+.item-counter{
+    background: #9c3627;
+    position: relative;
+/*    top: 160px;
+    right: 22px;*/
+    top: -10px;
+    left: 4px;
+    padding: 1px 5px;
+    font-size: 14px;
+    border-radius: 100px;
+    font-size: 13px;
+}
+
+.btnAddToCart{
+    background-color: #fff;
+    border: none;
+    padding: 3px 20px;  
+    color: #5c393a;
+    font-size: 14px;
+}
+
+.btnAddToCart:hover {
+    background: #9c3627;
+    cursor: pointer;
+    color: #fff;
+    width: 100%;
 }
