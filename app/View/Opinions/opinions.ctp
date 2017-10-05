@@ -1,5 +1,5 @@
 <div class="opinions">
-    <div class="content" style="padding-top: 100px;">  
+    <div class="content">  
         <div class="content-header">
             <h1>opinie</h1>
         </div>

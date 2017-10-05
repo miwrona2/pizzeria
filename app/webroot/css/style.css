@@ -40,8 +40,6 @@ body{
     background-color: #fff;
     /*background: url('../img/pattern.png');*/
     /*background-image: url('../img/opinions.jpg');*/
-    background: #f4f6f7;
-    background: #f3fff9;
     background-repeat: no-repeat;
     background-size: 100% 100%;  
     font-family: 'Open Sans', "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -86,7 +84,7 @@ strong {
 }
 
 #header{
-    background: #b31f24;
+    background: #8e181c;
 }
 
 .container{

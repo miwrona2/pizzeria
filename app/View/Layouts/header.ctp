@@ -13,9 +13,9 @@
                     array('controller' => 'things', 'action' => 'index'), array('escape' => false)); ?></div>   
         </div>
     </div>-->
+    <div class="kontener1">
     <div class="navigation container">
         <ul>
-            <li><a>nothing</a></li>
             <li><?php echo $this->Html->link($this->Html->image('logo.png', array('class' => 'logo')), 
                     array('controller' => 'things', 'action' => 'index'), array('escape' => false)); ?></li>
             <li class="dropdown"><?php echo $this->Html->link('START <span class="caret"></span>', '#', 
@@ -31,8 +31,8 @@
             <li><?php echo $this->Html->link('KONTAKT', array('controller' => 'things', 'action' => 'contact')); ?></li>
             <li><?php echo $this->Html->link('GALERIA', array('controller' => 'things', 'action' => 'gallery')); ?></li>
             <li><?php echo $this->Html->link('ALERGENY', array('controller' => 'things', 'action' => 'allergens')); ?></li>
-            <li><a>nothing</a></li>
         </ul>
+    </div>
     </div>
 </div>  
 
