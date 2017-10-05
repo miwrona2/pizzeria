@@ -22,7 +22,7 @@
                                 </span>
                             </span>
                         </div>
-                        <div class="review-image"><?= $this->Html->image('avatar.png')?></div>
+                        <div class="review-image"><?= $this->Html->image('avatar1.png')?></div>
 <!--                        <div class="review-calendar">
                             <span class="wday">Piątek</span>
                             <i class="fa fa-calendar-o icon-3x" aria-hidden="true"></i>
@@ -31,6 +31,7 @@
                         </div>-->
                         <div class="review-contetn">
                             <p class="nickname"><?php echo $kom['Opinion']['nickname']; ?></p>
+                            <time class="post-date">Opublikowano: <?php echo $kom['Opinion']['modified']; ?></time>
                             <p><?php echo $kom['Opinion']['content'].'<br>'; ?></p>
                         </div>
                     </div>
@@ -64,6 +65,7 @@
                                 
                 <?php echo $this->Form->end(array('label' => 'Wyślij', 'class' => 'btn btn-opinion')); ?>
             </div>
+            <h3 style="color:red; font-weight: bold">tutaj dodam reCaptchę</h3>
         </div>
     </div>
 </div>
