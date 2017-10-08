@@ -90,7 +90,7 @@
     display: none;
 }
 
-.modal-tresc{
+.modal-content{
     margin: auto;
     width: 90%;
     max-width: 650px;
@@ -98,21 +98,21 @@
     position: relative;
 }
 
-.duzeZdjecie {
+.mainPhoto {
     display: none;
     width: 700px;
     max-height: 433px;
 }
 
-.podpis {
+.caption {
     text-align: center;
     background-color: wheat;
     padding: 2px 16px;
     color: white;
 }
 
-.beforeArrow,
-.nextArrow {
+.arrow-before,
+.arrow-next {
     cursor: pointer;
     position: absolute;
     top: 36%;
@@ -121,37 +121,37 @@
     padding: 10px;
 }
 
-.nextArrow {
+.arrow-next {
     right: 0;
 }
 
-.beforeArrow:hover,
-.nextArrow:hover {
+.arrow-before:hover,
+.arrow-next:hover {
     background: rgba(153, 153, 153, 0.6);
 }
 
-.podpis>p {
+.caption>p {
     margin: 20px 0;
     font-size: 20px;
 }
 
-.kafelek {
+.preview-photo {
     float: left;
     width: 33.333%;
     opacity: 0.9;
 }
 
 
-.kafelek:hover {
+.preview-photo:hover {
     cursor: pointer;
 }
 
-.kafelek>img {
+.preview-photo>img {
     width: 100%;
     max-height: 130px;
 }
 
-.zamknij {
+.close-modal {
     color: white;
     position: absolute;
     top: 10px;
@@ -160,7 +160,7 @@
     font-weight: bold;
 }
 
-.zamknij:hover {
+.close-modal:hover {
     cursor: pointer;
     transform: scale(1.5);
 }

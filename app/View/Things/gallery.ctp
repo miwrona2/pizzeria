@@ -11,7 +11,7 @@
                 </div>
                 <div class="content-content">
                     <div class="media">
-                    <?= $this->Html->image('minigal1.jpg', array('class' => 'media-object', 'onclick' => "wyswietlModal();toZdjPokaz(0)", 'alt' => 'papryka'))?>
+                    <?= $this->Html->image('minigal1.jpg', array('class' => 'media-object', 'onclick' => "displayModal();showThisPhoto(0)", 'alt' => 'papryka'))?>
                         <div class="media-body">
                             <h4 class="media-heading">Wpisz tytuł zdjęcia</h4>
                             <div>Wpisz opis zdjęcia</div>
@@ -19,7 +19,7 @@
                         </div>
                     </div>
                     <div class="media">
-                    <?= $this->Html->image('minigal2.jpg', array('class' => 'media-object', 'onclick' => "wyswietlModal();toZdjPokaz(1)", 'alt' => 'pomidor'))?>
+                    <?= $this->Html->image('minigal2.jpg', array('class' => 'media-object', 'onclick' => "displayModal();showThisPhoto(1)", 'alt' => 'pomidor'))?>
                         <div class="media-body">
                             <h4 class="media-heading">Wpisz tytuł zdjęcia</h4>
                             <div>Wpisz opis zdjęcia</div>
@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <div class="media">
-                    <?= $this->Html->image('minigal3.jpg', array('class' => 'media-object', 'onclick' => "wyswietlModal();toZdjPokaz(2)", 'alt' => 'bazylia'))?>
+                    <?= $this->Html->image('minigal3.jpg', array('class' => 'media-object', 'onclick' => "displayModal();showThisPhoto(2)", 'alt' => 'bazylia'))?>
                         <div class="media-body">
                             <h4 class="media-heading">Wpisz tytuł zdjęcia</h4>
                             <div>Wpisz opis zdjęcia</div>
@@ -40,75 +40,74 @@
     </div>
 </div>
 
-<div id="mójModal" class="Modal">
-    <div class="modal-tresc">
-        <span class="zamknij" onclick="zamknijModal()">&times;</span>
-            <?= $this->Html->image('gal1.jpg', array('class' => 'duzeZdjecie'))?>
-            <?= $this->Html->image('gal2.jpg', array('class' => 'duzeZdjecie'))?>
-            <?= $this->Html->image('gal3.jpg', array('class' => 'duzeZdjecie'))?>
+<div id="theModal" class="Modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="hideModal()">&times;</span>
+            <?= $this->Html->image('gal1.jpg', array('class' => 'mainPhoto'))?>
+            <?= $this->Html->image('gal2.jpg', array('class' => 'mainPhoto'))?>
+            <?= $this->Html->image('gal3.jpg', array('class' => 'mainPhoto'))?>
 
-        <a class="nextArrow" onclick="nastepnySlajd(1)">&gg;</a>
-            <a class="beforeArrow" onclick="nastepnySlajd(-1)">&ll;</a>
+        <a class="arrow-next" onclick="nextSlide(1)">&gg;</a>
+        <a class="arrow-before" onclick="nextSlide(-1)">&ll;</a>
  
-        <div class="podpis"><p>Nazwa Obrazka</p></div>
-        <div class="kafelek"><?= $this->Html->image('minigal1.jpg', array('onclick' => "toZdjPokaz(0)"))?></div>
-        <div class="kafelek"><?= $this->Html->image('minigal2.jpg', array('onclick' => "toZdjPokaz(1)"))?></div>
-        <div class="kafelek"><?= $this->Html->image('minigal3.jpg', array('onclick' => "toZdjPokaz(2)"))?></div>
+        <div class="caption"><p>Nazwa Obrazka</p></div>
+        <div class="preview-photo"><?= $this->Html->image('minigal1.jpg', array('onclick' => "showThisPhoto(0)"))?></div>
+        <div class="preview-photo"><?= $this->Html->image('minigal2.jpg', array('onclick' => "showThisPhoto(1)"))?></div>
+        <div class="preview-photo"><?= $this->Html->image('minigal3.jpg', array('onclick' => "showThisPhoto(2)"))?></div>
     </div>
 </div>
 <script>
-    var zdj = document.getElementsByClassName("duzeZdjecie");
-    var kafelek = document.getElementsByClassName("kafelek");
+    var slide = document.getElementsByClassName("mainPhoto");
+    var tile = document.getElementsByClassName("preview-photo");
     var slideIndex = 1;
-    Pokaz(slideIndex);
+    showPhoto(slideIndex);
     
-    function wyswietlModal() {
-        document.getElementById("mójModal").style.display = "block";
+    function displayModal() {
+        document.getElementById("theModal").style.display = "block";
     }
     
-    function toZdjPokaz(nr) {
-        Pokaz(slideIndex = nr);
+    function showThisPhoto(n) {
+        showPhoto(slideIndex = n);
     }
     
-    function Pokaz(n){
-        if (n > (zdj.length - 1)){
+    function showPhoto(n){
+        if (n > (slide.length - 1)){
             n = 0; 
         }
         if (n < 0) {
-            n = (zdj.length-1);}
-        zniknijPozostałe();
-        zdj[n].style.display = "block";
-        wygasPozostałe();
-        podswietl(n);
+            n = (slide.length-1);}
+        hideOtherSlides();
+        slide[n].style.display = "block";
+        dimOthers();
+        highlight(n);
         return slideIndex = n;
     }
     
-    function nastepnySlajd(incr) {
+    function nextSlide(incr) {
         slideIndex = slideIndex + incr;
-        Pokaz(slideIndex);
-        console.log(slideIndex);
+        showPhoto(slideIndex);
     }
     
-    function podswietl(nr){
-        kafelek[nr].style.opacity = 1;
-        kafelek[nr].style.border = "solid 1px #666";
+    function highlight(n){
+        tile[n].style.opacity = 1;
+        tile[n].style.border = "solid 1px #666";
     }
     
-    function zniknijPozostałe() {
-        for (i=0; i<zdj.length; i++) {
-            zdj[i].style.display = "none";
-            kafelek[i].style.border = "none";
+    function hideOtherSlides() {
+        for (i=0; i<slide.length; i++) {
+            slide[i].style.display = "none";
+            tile[i].style.border = "none";
         }
     }
     
-    function wygasPozostałe() {
-        for (i=0; i<zdj.length; i++) {
-            kafelek[i].style.opacity = 0.5;
+    function dimOthers() {
+        for (i=0; i<slide.length; i++) {
+            tile[i].style.opacity = 0.5;
         }
     }
     
-    function zamknijModal() {
-        document.getElementById("mójModal").style.display = "none";
+    function hideModal() {
+        document.getElementById("theModal").style.display = "none";
     }
 </script>
   
