@@ -15,10 +15,20 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
+.logo-container {
+    position: absolute;
+    z-index: 1;
+    top: 15px;
+    left: 44%;
+    transform: scale(1.5);
+}
+
 .navigation{
     display: flex;
-    height: 50px;
+    height: 200px;
     box-sizing: border-box;
+    position: absolute;
+    z-index: 1;
 }
 
 .kontener1{
@@ -27,6 +37,7 @@
 }
 
 .navigation>ul{
+    margin: auto;
     box-sizing: border-box;
 }
 
@@ -42,20 +53,28 @@
     display: inline-block;
     color: #fff ; 
     font-weight: normal;
-    padding: 0 16px;
-    border-right: 1px solid #dcd8d9;
+    padding: 1px 16px;
     box-sizing: border-box;
-    font-size: 12px;
-    /*opacity: 0.2;*/
+    font-size: 16px;
+}
+.navigation>ul>li[list_el_numb = second]>a:hover{
+    border-left: none;
+    padding: 0 15px 0 16px;    
 }
 
 .navigation>ul>li:first-of-type>a{
-    border-left: 1px solid #dcd8d9;
+    border: 1px white solid;
+    padding: 0 15px;
+
+}
+
+.navigation>ul>li>a:hover {
+    border: 1px white solid;
+    padding: 0 15px;
 }
 
 .dropdown{
-    
-/*    background: pink !important ;*/
+
 }
 
 .dropdown-menu{
