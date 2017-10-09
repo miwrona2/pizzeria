@@ -7,24 +7,25 @@
  */-->
 
 <div id="header">
-    <div class="logo-container"><?php echo $this->Html->link($this->Html->image('logo.png', array('class' => 'logo')), 
-                    array('controller' => 'things', 'action' => 'index'), array('escape' => false)); ?></div>   
-    <div class="kontener1">
-    <div class="navigation container">
-        <ul>
-            <li class="dropdown"><?php echo $this->Html->link('START <span class="caret"></span>', '#', 
-                    array('class' => 'dropdown-toggle', 'escape' => false)); ?>
-                <ul class="dropdown-menu"> 
-                    <li><?php echo $this->Html->link('STRONA GŁÓWNA', array('controller' => 'things', 'action' => 'index')); ?></li>
-                    <li><?php echo $this->Html->link('OPINIE', array('controller' => 'opinions', 'action' => 'opinions')); ?></li>
-                </ul>
-            </li>
-            <li list_el_numb="second"><?php echo $this->Html->link('MENU', array('controller' => 'things', 'action' => 'menu')); ?></li>
-            <li><?php echo $this->Html->link('DOSTAWA', array('controller' => 'things', 'action' => 'delivery')); ?></li>
-            <li><?php echo $this->Html->link('KONTAKT', array('controller' => 'things', 'action' => 'contact')); ?></li>
-            <li><?php echo $this->Html->link('GALERIA', array('controller' => 'things', 'action' => 'gallery')); ?></li>
-        </ul>
-    </div>
+    <div class="header-wrapper">
+        <div class="navigation">
+            <div class="logo-container"><?php echo $this->Html->link($this->Html->image('logo.png', array('class' => 'logo')), 
+                            array('controller' => 'things', 'action' => 'index'), array('escape' => false)); ?>
+            </div>   
+            <ul>
+                <li class="dropdown"><?php echo $this->Html->link('START <span class="caret"></span>', '#', 
+                        array('class' => 'dropdown-toggle', 'escape' => false)); ?>
+                    <ul class="dropdown-menu"> 
+                        <li><?php echo $this->Html->link('STRONA GŁÓWNA', array('controller' => 'things', 'action' => 'index')); ?></li>
+                        <li><?php echo $this->Html->link('OPINIE', array('controller' => 'opinions', 'action' => 'opinions')); ?></li>
+                    </ul>
+                </li>
+                <li list_el_numb="second"><?php echo $this->Html->link('MENU', array('controller' => 'things', 'action' => 'menu')); ?></li>
+                <li><?php echo $this->Html->link('DOSTAWA', array('controller' => 'things', 'action' => 'delivery')); ?></li>
+                <li><?php echo $this->Html->link('KONTAKT', array('controller' => 'things', 'action' => 'contact')); ?></li>
+                <li><?php echo $this->Html->link('GALERIA', array('controller' => 'things', 'action' => 'gallery')); ?></li>
+            </ul>
+        </div>
     </div>
 </div>  
 

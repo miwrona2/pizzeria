@@ -45,4 +45,3 @@
         <?php include 'footer.ctp'; ?>
     </body>
 </html>
-<a href="https://www.pizza-salsa.pl/" target="_blank"><div class="salsa"></div></a>
