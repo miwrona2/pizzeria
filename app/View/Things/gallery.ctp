@@ -11,27 +11,27 @@
                 </div>
                 <div class="content-content">
                     <div class="media">
-                    <?= $this->Html->image('minigal1.jpg', array('class' => 'media-object', 'onclick' => "displayModal();showThisPhoto(0)", 'alt' => 'papryka'))?>
+                    <?= $this->Html->image('minigal1.jpg', array('class' => 'media-object', 'onclick' => "displayModal();showThisPhoto(0)"))?>
                         <div class="media-body">
                             <h4 class="media-heading">Wpisz tytuł zdjęcia</h4>
                             <div>Wpisz opis zdjęcia</div>
-                             <a class="highlight pull-right" href="#">Zobacz menu</a>
+                            <a class="highlight pull-right" href="#">Zobacz menu</a>
                         </div>
                     </div>
                     <div class="media">
-                    <?= $this->Html->image('minigal2.jpg', array('class' => 'media-object', 'onclick' => "displayModal();showThisPhoto(1)", 'alt' => 'pomidor'))?>
+                    <?= $this->Html->image('minigal2.jpg', array('class' => 'media-object', 'onclick' => "displayModal();showThisPhoto(1)"))?>
                         <div class="media-body">
                             <h4 class="media-heading">Wpisz tytuł zdjęcia</h4>
                             <div>Wpisz opis zdjęcia</div>
-                             <a class="highlight pull-right" href="#">Zobacz menu</a>
+                            <a class="highlight pull-right" href="#">Zobacz menu</a>
                         </div>
                     </div>
                     <div class="media">
-                    <?= $this->Html->image('minigal3.jpg', array('class' => 'media-object', 'onclick' => "displayModal();showThisPhoto(2)", 'alt' => 'bazylia'))?>
+                    <?= $this->Html->image('minigal3.jpg', array('class' => 'media-object', 'onclick' => "displayModal();showThisPhoto(2)"))?>
                         <div class="media-body">
                             <h4 class="media-heading">Wpisz tytuł zdjęcia</h4>
                             <div>Wpisz opis zdjęcia</div>
-                             <a class="highlight pull-right" href="#">Zobacz menu</a>
+                            <a class="highlight pull-right" href="#">Zobacz menu</a>
                         </div>
                     </div>
                 </div>
@@ -41,16 +41,16 @@
 </div>
 
 <div id="theModal" class="Modal">
+    <span class="close-modal" onclick="hideModal()">&times;</span>
     <div class="modal-content">
-        <span class="close-modal" onclick="hideModal()">&times;</span>
-            <?= $this->Html->image('gal1.jpg', array('class' => 'mainPhoto'))?>
-            <?= $this->Html->image('gal2.jpg', array('class' => 'mainPhoto'))?>
-            <?= $this->Html->image('gal3.jpg', array('class' => 'mainPhoto'))?>
+            <?= $this->Html->image('gal1.jpg', array('class' => 'mainPhoto', 'alt' => 'papryka'))?>
+            <?= $this->Html->image('gal2.jpg', array('class' => 'mainPhoto', 'alt' => 'pomidor'))?>
+            <?= $this->Html->image('gal3.jpg', array('class' => 'mainPhoto', 'alt' => 'bazylia'))?>
 
         <a class="arrow-next" onclick="nextSlide(1)">&gg;</a>
         <a class="arrow-before" onclick="nextSlide(-1)">&ll;</a>
  
-        <div class="caption"><p>Nazwa Obrazka</p></div>
+        <div class="caption"><p id="caption">Name of current picture</p></div>
         <div class="preview-photo"><?= $this->Html->image('minigal1.jpg', array('onclick' => "showThisPhoto(0)"))?></div>
         <div class="preview-photo"><?= $this->Html->image('minigal2.jpg', array('onclick' => "showThisPhoto(1)"))?></div>
         <div class="preview-photo"><?= $this->Html->image('minigal3.jpg', array('onclick' => "showThisPhoto(2)"))?></div>
@@ -59,6 +59,7 @@
 <script>
     var slide = document.getElementsByClassName("mainPhoto");
     var tile = document.getElementsByClassName("preview-photo");
+    var caption = document.getElementById("caption");
     var slideIndex = 1;
     showPhoto(slideIndex);
     
@@ -80,6 +81,7 @@
         slide[n].style.display = "block";
         dimOthers();
         highlight(n);
+        caption_photo(n);
         return slideIndex = n;
     }
     
@@ -91,6 +93,10 @@
     function highlight(n){
         tile[n].style.opacity = 1;
         tile[n].style.border = "solid 1px #666";
+    }
+    
+    function caption_photo(n){
+        caption.innerHTML = (slide[n].alt);
     }
     
     function hideOtherSlides() {
