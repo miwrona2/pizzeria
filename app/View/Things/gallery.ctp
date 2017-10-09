@@ -41,19 +41,22 @@
 </div>
 
 <div id="theModal" class="Modal">
-    <span class="close-modal" onclick="hideModal()">&times;</span>
     <div class="modal-content">
+        <div class="underlay">
+            <span class="close-modal" onclick="hideModal()">&times;</span>
+
             <?= $this->Html->image('gal1.jpg', array('class' => 'mainPhoto', 'alt' => 'papryka'))?>
             <?= $this->Html->image('gal2.jpg', array('class' => 'mainPhoto', 'alt' => 'pomidor'))?>
             <?= $this->Html->image('gal3.jpg', array('class' => 'mainPhoto', 'alt' => 'bazylia'))?>
 
-        <a class="arrow-next" onclick="nextSlide(1)">&gg;</a>
-        <a class="arrow-before" onclick="nextSlide(-1)">&ll;</a>
- 
-        <div class="caption"><p id="caption">Name of current picture</p></div>
-        <div class="preview-photo"><?= $this->Html->image('minigal1.jpg', array('onclick' => "showThisPhoto(0)"))?></div>
-        <div class="preview-photo"><?= $this->Html->image('minigal2.jpg', array('onclick' => "showThisPhoto(1)"))?></div>
-        <div class="preview-photo"><?= $this->Html->image('minigal3.jpg', array('onclick' => "showThisPhoto(2)"))?></div>
+            <a class="arrow-next" onclick="nextSlide(1)">&gg;</a>
+            <a class="arrow-before" onclick="nextSlide(-1)">&ll;</a>
+
+            <div class="caption"><p id="caption">Name of current picture</p></div>
+            <div class="preview-photo"><?= $this->Html->image('minigal1.jpg', array('onclick' => "showThisPhoto(0)"))?></div>
+            <div class="preview-photo"><?= $this->Html->image('minigal2.jpg', array('onclick' => "showThisPhoto(1)"))?></div>
+            <div class="preview-photo"><?= $this->Html->image('minigal3.jpg', array('onclick' => "showThisPhoto(2)"))?></div>
+        </div>
     </div>
 </div>
 <script>
@@ -108,7 +111,7 @@
     
     function dimOthers() {
         for (i=0; i<slide.length; i++) {
-            tile[i].style.opacity = 0.5;
+            tile[i].style.opacity = 0.9;
         }
     }
     

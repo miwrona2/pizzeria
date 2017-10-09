@@ -81,7 +81,7 @@
 }
 
 .Modal {
-    background-color: rgba(0,0,0, 0.7);
+    background-color: rgba(0,0,0, 0.93);
     height: 100%;
     width: 100%;
     position: fixed;
@@ -98,6 +98,11 @@
     position: relative;
 }
 
+.underlay {
+    box-sizing: content-box;
+    background: #fff;
+}
+
 .mainPhoto {
     display: none;
     width: 700px;
@@ -106,9 +111,8 @@
 
 .caption {
     text-align: center;
-    background-color: wheat;
     padding: 2px 16px;
-    color: white;
+    color: #262626;
 }
 
 .arrow-before,
@@ -146,16 +150,17 @@
     cursor: pointer;
 }
 
-.preview-photo>img {
+.preview-photo > img {
     width: 100%;
     max-height: 130px;
+    padding: 10px;  
 }
 
 .close-modal {
     color: white;
     position: absolute;
-    /*top: 10px;*/
-    right: 50px;
+    top: 10px;
+    right: -40px;
     font-size: 40px;
     font-weight: bold;
 }
