@@ -1,3 +1,6 @@
+<section class="common-part">
+    <h1>dostawa</h1>
+</section>
 <div class="content delivery">  
     <div class="content-header">
         <h1>dostawa</h1>

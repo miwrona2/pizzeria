@@ -1,3 +1,5 @@
+<section class="common-part">
+</section>
 <div class="content delivery">  
     <div class="content-header">
         <h1>kontakt</h1>

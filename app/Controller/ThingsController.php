@@ -42,7 +42,7 @@ class ThingsController extends AppController {
     }
     
     public function gallery() {
-
+        $this->layout = 'things';
     }
     
     public function allergens() {
