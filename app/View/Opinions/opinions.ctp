@@ -1,3 +1,6 @@
+<section class="common-part">
+    <h1>opinie</h1>
+</section>
 <div class="opinions">
     <div class="content">  
         <div class="content-header">

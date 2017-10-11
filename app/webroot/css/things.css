@@ -21,6 +21,17 @@
     background-size: cover;
 }
 
+.common-part > h1 {
+    color: black;
+    font-size: 40px;
+    line-height: 500px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: -5px -2px 7px #ffffff;
+    font-family: courier new;
+}
+
 .page-header .background.pizza {
       /*background: url(../img/pizza1.jpg) center center no-repeat;*/
 }

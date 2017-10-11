@@ -1,5 +1,6 @@
 <section class="common-part">
-</section>  
+    <h1>galeria</h1>
+</section> 
 <div class="content gallery">  
     <div class="content-header">
         <h1>galeria</h1>

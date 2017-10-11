@@ -13,14 +13,9 @@
                             array('controller' => 'things', 'action' => 'index'), array('escape' => false)); ?>
             </div>   
             <ul>
-                <li class="dropdown"><?php echo $this->Html->link('START <span class="caret"></span>', '#', 
-                        array('class' => 'dropdown-toggle', 'escape' => false)); ?>
-                    <ul class="dropdown-menu"> 
-                        <li><?php echo $this->Html->link('STRONA GŁÓWNA', array('controller' => 'things', 'action' => 'index')); ?></li>
-                        <li><?php echo $this->Html->link('OPINIE', array('controller' => 'opinions', 'action' => 'opinions')); ?></li>
-                    </ul>
-                </li>
+                <li><?php echo $this->Html->link('STRONA GŁÓWNA', array('controller' => 'things', 'action' => 'index')); ?></li>
                 <li list_el_numb="second"><?php echo $this->Html->link('MENU', array('controller' => 'things', 'action' => 'menu')); ?></li>
+                <li><?php echo $this->Html->link('OPINIE', array('controller' => 'opinions', 'action' => 'opinions')); ?></li>
                 <li><?php echo $this->Html->link('DOSTAWA', array('controller' => 'things', 'action' => 'delivery')); ?></li>
                 <li><?php echo $this->Html->link('KONTAKT', array('controller' => 'things', 'action' => 'contact')); ?></li>
                 <li><?php echo $this->Html->link('GALERIA', array('controller' => 'things', 'action' => 'gallery')); ?></li>
@@ -28,12 +23,3 @@
         </div>
     </div>
 </div>  
-
-<script>
-$(function()
-{
-    $('.dropdown-toggle').on('click',function(){
-        $('.dropdown-menu').toggle();
-    });
-});
-</script>
