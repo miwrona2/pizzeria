@@ -72,18 +72,12 @@
     box-sizing: border-box;
     font-size: 16px;
 }
-.navigation>ul>li[list_el_numb = second]>a:hover{
-    border-left: none;
-    padding: 0 15px 0 16px;    
-}
-
-.navigation>ul>li:first-of-type>a{
-    border: 1px white solid;
-    padding: 0 15px;
-
-}
 
 .navigation>ul>li>a:hover {
+    background: rgba(255,255,255,0.2);
+}
+ 
+.navigation>ul>li>a.active {
     border: 1px white solid;
     padding: 0 15px;
 }
