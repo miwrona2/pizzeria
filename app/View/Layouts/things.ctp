@@ -42,19 +42,20 @@
         ?>
     </head>
     <body>
-        <?php include 'header.ctp'; ?>
-        <div id="content">
-            <?php echo $this->Flash->render(); ?>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                    <?php echo $this->fetch('content'); ?>
+        <div class="overlay" id="your_div">
+            <?php include 'header.ctp'; ?>
+            <div id="content">
+                <?php echo $this->Flash->render(); ?>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                        <?php echo $this->fetch('content'); ?>
+                        </div>
                     </div>
                 </div>
             </div>
+            <?php include 'footer.ctp'; ?>
         </div>
-        <?php include 'footer.ctp'; ?>
-        
         <?php
 	echo $this->Js->writeBuffer(); // Write cached scripts
 	echo $this->fetch('scriptBottom');  // fetch our scritBottom

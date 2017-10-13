@@ -1,6 +1,6 @@
 <section class="module parallax parallax-1">
-  <div class="kontener">
-    <span id="arrow-down"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span>
+  <div class="kontener" id="hero">
+    <span id="arrow-down" onclick="scrollDown()"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span>
     <h1>Menu</h1>
   </div>
 </section>
@@ -214,4 +214,10 @@
             });
         });
     });
+    
+    function scrollDown(){
+        var objDiv = document.getElementById("your_div");
+        var hero =  document.getElementById("hero");
+        objDiv.scrollTop = hero.scrollHeight;
+    }
 </script>
