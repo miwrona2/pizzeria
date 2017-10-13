@@ -282,7 +282,7 @@ section.module.treść {
 }
  
 section.module.parallax {
-  height: 800px;
+  height: 100vh;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -292,7 +292,7 @@ section.module.parallax {
 section.module.parallax h1 {
   color: rgba(255, 255, 255, 0.7);
   font-size: 48px;
-  line-height: 800px;
+  line-height: 100vh;
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
@@ -313,13 +313,13 @@ section.module.parallax-3 {
 
 #arrow-down {
     position: absolute;
-    top: 100%;
+    top: 100vh;
     left: 50%;
     margin-right: -50%; 
     text-align: center;
     font-size: 50px;
     color: #fff;
     transform: translate(-50%, -100%);
-    padding-bottom: 100px;
+    padding-bottom: 10vh;
     cursor: pointer;
 }

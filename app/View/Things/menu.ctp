@@ -1,5 +1,5 @@
-<section class="module parallax parallax-1">
-  <div class="kontener" id="hero">
+<section class="module parallax parallax-1" id="hero">
+  <div class="kontener">
     <span id="arrow-down" onclick="scrollDown()"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span>
     <h1>Menu</h1>
   </div>
@@ -216,8 +216,9 @@
     });
     
     function scrollDown(){
-        var objDiv = document.getElementById("your_div");
+        var viewport = document.getElementById("viewport");
         var hero =  document.getElementById("hero");
-        objDiv.scrollTop = hero.scrollHeight;
+        viewport.scrollTop = hero.scrollHeight;
+        console.log(hero.scrollHeight);
     }
 </script>

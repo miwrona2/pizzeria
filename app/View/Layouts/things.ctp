@@ -42,7 +42,7 @@
         ?>
     </head>
     <body>
-        <div class="overlay" id="your_div">
+        <div class="overlay" id="viewport">
             <?php include 'header.ctp'; ?>
             <div id="content">
                 <?php echo $this->Flash->render(); ?>
