@@ -215,10 +215,19 @@
         });
     });
     
-    function scrollDown(){
-        var viewport = document.getElementById("viewport");
-        var hero =  document.getElementById("hero");
-        viewport.scrollTop = hero.scrollHeight;
-        console.log(hero.scrollHeight);
-    }
+//    function scrollDown(){
+//        var viewport = document.getElementById("viewport");
+//        var hero =  document.getElementById("hero");
+//        viewport.scrollTop = hero.scrollHeight;
+//        console.log(hero.scrollHeight);        
+//    }
+   
+function scrollDown(){
+    $(document).ready(function(){
+          $('#viewport').animate({
+            scrollTop: $("#m-section").offset().top
+          }, 2000, function(){
+          });
+    });
+}
 </script>
