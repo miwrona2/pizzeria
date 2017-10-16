@@ -214,18 +214,12 @@
             });
         });
     });
-    
-//    function scrollDown(){
-//        var viewport = document.getElementById("viewport");
-//        var hero =  document.getElementById("hero");
-//        viewport.scrollTop = hero.scrollHeight;
-//        console.log(hero.scrollHeight);        
-//    }
-   
+      
 function scrollDown(){
+    var hero =  document.getElementById("hero");
     $(document).ready(function(){
           $('#viewport').animate({
-            scrollTop: $("#m-section").offset().top
+            scrollTop: hero.scrollHeight
           }, 2000, function(){
           });
     });
