@@ -41,4 +41,5 @@
             </div>
         </div>
     </div>
+    <div class="footer-suffix"></div>
 </div>

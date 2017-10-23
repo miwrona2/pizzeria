@@ -46,7 +46,7 @@
 }
 
 .carousel-indicators{
-    bottom: -40px;
+    bottom: 40px;
     right: 48%;
     top: auto;
     position: absolute;

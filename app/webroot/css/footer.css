@@ -16,7 +16,8 @@
  */
 
 .footer-details {
-    background-color: #8e181c;
+    margin-top: 80px;
+    background-color: #696e9e;
     color: #fff;
     padding: 20px 0;
     font-size: 12px;
@@ -34,4 +35,9 @@
 
 .list-unstyled{
     list-style-type: none;
+}
+
+.footer-suffix {
+    height: 20px;
+    background: #3e415b;
 }

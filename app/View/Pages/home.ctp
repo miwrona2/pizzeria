@@ -17,7 +17,7 @@
                     <li class="demo" onclick="currentDiv(5)" style="cursor:pointer;"></li>
                 </ol>
             </div>
-                <div class="section testimonials">
+<!--                <div class="section testimonials">
                     <div class="section-header">
                         <h2 class="pull-left">Co mówią nasi klienci</h2>
                         <a class="pull-right">zobacz więcej opini...</a>
@@ -26,7 +26,71 @@
                         <p><?= $displayLastOpinion['Opinion']['content']; ?></p>
                         <cite class="pull-right"><?= $displayLastOpinion['Opinion']['nickname'];?></cite>
                     </blockquote>
+                </div>-->
+            <div class="section-main">
+                <div class="section-header"> 
+                <h2>Oferujemy</h2>  
+                </div>   
+                <div class="section-content mp-thumbnails">
+                    <div class="mp-thumbnail">
+                        <h3>Pizze</h3>
+                        <?= $this->Html->image('pizza.jpg') ?>
+                    </div>
+                    <div class="mp-thumbnail">
+                        <h3>Pasty</h3>
+                        <?= $this->Html->image('pasta.jpg') ?>
+                    </div>
+                    <div class="mp-thumbnail">
+                        <h3>Sałatki</h3>
+                        <?= $this->Html->image('dennis-klein-123631.jpg') ?>
+                    </div>
                 </div>
+                <div class="redirect-opinion">
+                    <a href="#" class="section-btn">Przejdź do menu</a>  
+                </div>
+            </div>   
+            <div class="section-main">
+                <div class="section-header"> 
+                <h2>opinie o nas</h2>  
+                </div>   
+                <div class="section-content">
+                    <span class="nickname"><?= $displayLastOpinion['Opinion']['nickname'];?></span>
+                    <time class="post-date pull-right"><?= $displayLastOpinion['Opinion']['modified'];?></time>
+                    <p class="post-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div class="redirect-opinion">
+                    <a href="#" class="section-btn">Zobacz Wszystkie Opinie</a>  
+                </div>
+            </div>   
+            <div class="section-main">
+                <div class="section-header"> 
+                <h2>Jak do nas trafić</h2>  
+                </div>   
+                <div class="section-content">
+                    <?= $this->Html->link($this->Html->image('staticmap.png'), '#', array('escape' => false))?>
+                </div>
+                <div class="redirect-opinion">
+                    <a href="#" class="section-btn">Kontakt</a>  
+                </div>
+            </div>   
+            <div class="section-main">
+                <div class="section-header"> 
+                <h2>Zdjęcia</h2>  
+                </div>   
+                <div class="section-content mp-thumbnails">
+                    <div class="mp-thumbnail">
+                        <?= $this->Html->image('joanna-boj-17158.jpg') ?>
+                        <?= $this->Html->image('alex-jones-1246.jpg') ?>
+                        <?= $this->Html->image('Alley-Street-with-Overhanging-Plants.jpg') ?>
+                        <?= $this->Html->image('baehaki-hariri-364652.jpg') ?>
+                        <?= $this->Html->image('clem-onojeghuo-175917.jpg') ?>
+                        <?= $this->Html->image('darren-coleshill-178479.jpg') ?>
+                    </div>
+                </div>
+                <div class="redirect-opinion">
+                    <a href="#" class="section-btn">Galeria</a>  
+                </div>
+            </div>   
             <div class="section curly">
                 <div class="row">
                     <div class="box-column col-md-4">
@@ -66,19 +130,6 @@
                         <a class="pull-right button">Zobacz promocje</a>
                     </div>
                 </div>
-            </div>
-            <div class="section section-contact">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="section-header"><h2>Sprawdź jak do nas dojechać- zapraszamy!</h2></div>
-                        <?= $this->Html->link($this->Html->image('staticmap.png'), '#', array('escape' => false))?>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="section-header"><h2 class="pull-left">Do wyboru, do koloru!</h2><a class="pull-right">galeria</a></div>
-                        <?= $this->Html->link($this->Html->image('0.jpeg'), '#', array('escape' => false, 'class' => 'gallery-link'))?>
-                    </div>
-                </div>
-                
             </div>
         </div>   
     </div>

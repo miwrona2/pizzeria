@@ -21,7 +21,6 @@
 }
 
 .testimonials{
-    color: #fff; 
 }
 
 .testimonials blockquote{
@@ -44,7 +43,7 @@ blockquote{
 }
 
 .section-header{
-    /*padding: 20px 0;*/
+    border-bottom: 1px grey solid;
 }
 
 .section-header a{
@@ -53,9 +52,12 @@ blockquote{
 }
 
 .section-header h2{
-    color: #fff;
     padding: 20px 0;
     
+}
+
+.section-content {
+    padding: 10px;
 }
 
 .pull-left{
@@ -65,7 +67,6 @@ blockquote{
 
 .pull-right{
     float: right!important; 
-    color: #fff; 
     padding: 0;
 }
 
@@ -75,6 +76,7 @@ blockquote{
 
 .curly{
     background: #fff;
+    margin: 15px;
 }
 
 .box-column{
@@ -150,4 +152,57 @@ left: 980px;
 
 .gallery-link img{
     height: 239px;
+}
+
+.section-main {
+    background-color: #fff;
+    padding: 20px;
+    margin: 15px;
+    position: relative;
+}
+
+.post-date {
+    opacity: 0.5;
+    font-size: 0.85em;
+}
+
+.nickname {
+    font-weight: 600;
+}
+
+.post-content {
+    padding-top: 5px;
+}
+
+.redirect-opinion {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.section-btn {
+    background: #8e95dc;
+    padding: 7px 15px;
+    color: #fff;
+    border: .5px solid #333;
+    margin: 10px;
+}
+
+.section-btn:hover {
+    cursor: pointer;
+    background: #696e9e;
+}
+
+.mp-thumbnail > img {
+    padding: 10px;
+    max-height: 400px;
+}
+
+.mp-thumbnail > h3 {
+    margin-left: 20px;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.mp-thumbnails {
+    display: flex;
 }
