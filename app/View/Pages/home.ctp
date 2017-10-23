@@ -2,7 +2,9 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="carousel">
-                <?= $this->Html->image('slider/1.jpg', array('class' => 'mySlides', 'style' => 'width:100%')) ?>
+                <span class="carousel-left">&ll;</span>
+                <span class="carousel-right">&gg;</span>
+                <?= $this->Html->image('jeremy-bishop-151467.jpg', array('class' => 'mySlides', 'style' => 'width:100%')) ?>
                 <?= $this->Html->image('slider/2.jpg', array('class' => 'mySlides', 'style' => 'width:100%')) ?>
                 <?= $this->Html->image('slider/3.jpg', array('class' => 'mySlides', 'style' => 'width:100%')) ?>
                 <?= $this->Html->image('slider/4.jpg', array('class' => 'mySlides', 'style' => 'width:100%')) ?>

@@ -20,6 +20,26 @@
     margin-bottom: 40px;
 }
 
+.carousel img {
+    height: 100vh;
+}
+
+.carousel-left, .carousel-right {
+    position: absolute;
+    top: 50%;
+    color: #fff;
+    transform: translateY(-50%);
+    font-size: 35px;
+}
+
+.carousel-left {
+    left: 4vw;
+}
+
+.carousel-right {
+    right: 4vw;
+}
+
 .carousel-inner img{
     height: 400px;
     box-sizing: border-box;
