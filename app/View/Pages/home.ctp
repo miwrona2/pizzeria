@@ -91,7 +91,7 @@
                     <a href="#" class="section-btn">Galeria</a>  
                 </div>
             </div>   
-            <div class="section curly">
+<!--            <div class="section curly">
                 <div class="row">
                     <div class="box-column col-md-4">
                         <h3>NOWY SPOSÓB ZAMAWIANIA!</h3><br>
@@ -111,8 +111,8 @@
                         <p>Możesz zamówić online i zapłacić kartą lub szybkim przelewem. Poczuj komfort zamawiania przez Internet!</p>
                     </div>
                 </div>
-            </div>
-            <div class="section">
+            </div>-->
+<!--            <div class="section">
                 <div class="section-header">
                     <h2 class="pull-left">Nasze promocje:</h2>
                     <a class="pull-right">zobacz wszystkie promocje...</a>
@@ -130,7 +130,7 @@
                         <a class="pull-right button">Zobacz promocje</a>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>   
     </div>
 </div>
