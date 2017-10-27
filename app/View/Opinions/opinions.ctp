@@ -46,11 +46,10 @@
     
     <div class="content">  
         <div class="content-header">
-            <h2>dodaj opinie</h2>
+            <h2>Dodaj opinię</h2>
         </div>
         <div class="content-content">
             <div class="form-center">
-                
                 <?= $this->Form->create('Opinion',array('inputDefaults' => array('label' => false))); ?>
                 
                 <?= $this->Form->input('id'); ?>
@@ -65,7 +64,12 @@
                 <?= $this->Form->label(null, 'Imię / Nick: ', 'm-form_label'); ?>
                
                 <?= $this->Form->input('nickname', array('class' => 'form-control')); ?>
-                                
+                
+                <?php echo $this->Recaptcha->display();
+                if (isset($error_bot)) {
+                    echo '<div class="error-message">' . $error_bot . '</div>';
+                } ?>
+                
                 <?php echo $this->Form->end(array('label' => 'Wyślij', 'class' => 'btn btn-opinion')); ?>
             </div>
             <h3 style="color:red; font-weight: bold">tutaj dodam reCaptchę</h3>
