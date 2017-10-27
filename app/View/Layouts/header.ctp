@@ -9,7 +9,6 @@
                 <li><?php echo $this->Html->link('STRONA GŁÓWNA', array('controller' => 'pages', 'action' => 'home'),array('class' => 'elements', 'onclick' => "markElement(event)")); ?></li>
                 <li list_el_numb="second"><?php echo $this->Html->link('MENU', array('controller' => 'things', 'action' => 'menu'),array('class' => 'elements', 'onclick' => "markElement(event)")); ?></li>
                 <li><?php echo $this->Html->link('OPINIE', array('controller' => 'opinions', 'action' => 'opinions'),array('class' => 'elements', 'onclick' => "markElement(event)")); ?></li>
-                <li><?php echo $this->Html->link('DOSTAWA', array('controller' => 'things', 'action' => 'delivery'),array('class' => 'elements', 'onclick' => "markElement(event)")); ?></li>
                 <li><?php echo $this->Html->link('KONTAKT', array('controller' => 'things', 'action' => 'contact'),array('class' => 'elements', 'onclick' => "markElement(event)")); ?></li>
                 <li><?php echo $this->Html->link('GALERIA', array('controller' => 'things', 'action' => 'gallery'),array('class' => 'elements', 'onclick' => "markElement(event)")); ?></li>
             </ul>
