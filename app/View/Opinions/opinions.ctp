@@ -1,10 +1,11 @@
 <section class="common-part">
     <h1>opinie</h1>
 </section>
-<div class="opinions">
+ 
+<div class="section-common">
     <div class="content">  
         <div class="content-header">
-            <h1>opinie</h1>
+            <h2>Opinie</h2>
         </div>
         <div class="content-content">
             <div class="reviews">
@@ -45,9 +46,8 @@
     
     <div class="content">  
         <div class="content-header">
-            <h1>dodaj opinie</h1>
+            <h2>dodaj opinie</h2>
         </div>
-
         <div class="content-content">
             <div class="form-center">
                 
@@ -56,7 +56,7 @@
                 <?= $this->Form->input('id'); ?>
                 <?= $this->Form->label(null, 'Komentarz: ', 'm-form_label'); ?>
                 
-                <?= $this->Form->input('content', array('class' => 'form-control', 'cols' => '100', 'rows' => '5')); ?>
+                <?= $this->Form->input('content', array('class' => 'form-control', 'cols' => '140', 'rows' => '5')); ?>
                 <?= $this->Form->label(null, 'Ocena: ', 'm-form_label'); ?>
                 
                 <?= $this->Form->input('rate',  array('class'=> 'form-control', 'type' => 'select',

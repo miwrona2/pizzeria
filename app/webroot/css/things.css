@@ -24,7 +24,7 @@
 
 .common-part {
     height: 500px;
-    background-image: url("../img/alex-jones-1246.jpg");
+    background-image: url("../img/brisbane-night-skyline-1562764-1277x537.jpg");
     background-size: cover;
 }
 
@@ -53,9 +53,13 @@
 
 .content-header{
     padding: 10px;
-    background-color: #009345;
-    border-radius: 10px 10px 0 0;
-    box-shadow: 0 0 1px 1px rgba(0,0,0,.3);
+    background: #fff;
+    margin-bottom: 5px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.3);
+}
+
+.content-header h2{
+    margin: 20px;
 }
 
 .content-header h1{
@@ -64,6 +68,12 @@
     line-height: 22px;
     text-transform: uppercase;
     font-weight: 500;
+}
+
+.section-common {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;    
 }
 
 .content-content{
@@ -77,5 +87,4 @@
     color: #fff;
     padding: 6px 12px; 
 }
-
 

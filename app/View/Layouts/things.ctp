@@ -29,9 +29,7 @@
         echo $this->Html->css('things');
         echo $this->Html->css('delivery');
         echo $this->Html->css('opinions');
-        echo $this->Html->css('opinions');
         echo $this->Html->css('menu');
-        echo $this->Html->css('discounts');
         echo $this->Html->css('contact');
         echo $this->Html->css('cart');
         echo $this->Html->css('cart');
