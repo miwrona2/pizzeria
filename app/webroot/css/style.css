@@ -59,6 +59,10 @@ h5 {
     color: #333;
 }
 
+.input {
+    margin-bottom: 10px;
+}
+
 a{
     text-decoration: none;
     color: #337ab7;

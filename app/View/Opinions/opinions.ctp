@@ -72,7 +72,6 @@
                 
                 <?php echo $this->Form->end(array('label' => 'Wyślij', 'class' => 'btn btn-opinion')); ?>
             </div>
-            <h3 style="color:red; font-weight: bold">tutaj dodam reCaptchę</h3>
         </div>
     </div>
 </div>
