@@ -34,6 +34,8 @@ class AppController extends Controller {
         public $components = array('DebugKit.Toolbar');
          
         public function beforeFilter() {
+                $this->addMail();
+            
 		$this->loadModel('Thing');
                 
                 $finalOrderPrice = $this->Thing->countTotatalOrderPrice();
@@ -44,4 +46,11 @@ class AppController extends Controller {
 		$this->set('array', $array);
                 return $array;
 	}
+        
+        public function addMail() {
+            if ($this->request->is('post')) {
+                $this->loadmodel('Newsletter');
+                $this->Newsletter->save($this->request->data);
+            }
+        }
 }
