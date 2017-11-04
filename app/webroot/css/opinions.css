@@ -117,8 +117,8 @@
 
 .btn-opinion {
     margin: 20px 0;
-    background-color: #009345;
-    border: 1px solid #105d5a;
+    background-color: rgba(255, 64, 0, 0.68);
+    border: 1px solid #fff;
     width: 100px;
     height: 35px;
     border-radius: 5px;
@@ -126,8 +126,8 @@
 }
 
 .btn-opinion:hover {
-    background-color: #005629;
-    border: 1px solid #105d5a;
+    background-color: #ff4000;
+    border: 1px solid #ff4000;
     cursor: pointer;
     border-radius: 5px;
 }

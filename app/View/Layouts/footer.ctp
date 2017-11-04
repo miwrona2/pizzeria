@@ -37,7 +37,7 @@
             </div>
             <div class="col4"> 
                 <p class="footer-header">Dołącz do newslettera</p>
-                <?= $this->Form->input(false, array('class' => 'form-control', 'cols' => '40', 'rows' => '2', 'value' => 'Wpisz tu swojego maila...')); ?>
+                <?= $this->Form->input(false, array('class' => 'form-control', 'cols' => '40', 'rows' => '1', 'value' => 'Wpisz tu swojego maila...')); ?>
                 <?= $this->Form->button('wyślij', array('class' => 'footer-btn'));?>
             </div>
         </div>
