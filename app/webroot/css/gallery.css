@@ -66,3 +66,93 @@
 .gallery .media a.highlight {
     margin: 20px;
 }
+
+.Modal {
+    background-color: rgba(0,0,0, 0.93);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 101;
+    display: none;
+}
+
+.modal-content{
+    margin: auto;
+    width: 90%;
+    max-width: 650px;
+    padding-top: 50px;
+    position: relative;
+}
+
+.underlay {
+    box-sizing: content-box;
+    background: #fff;
+}
+
+.mainPhoto {
+    display: none;
+    width: 700px;
+    max-height: 433px;
+}
+
+.caption {
+    text-align: center;
+    padding: 2px 16px;
+    color: #262626;
+}
+
+.arrow-before,
+.arrow-next {
+    cursor: pointer;
+    position: absolute;
+    top: 36%;
+    font-size: 36px;
+    color: #fff;
+    padding: 10px;
+}
+
+.arrow-next {
+    right: 0;
+}
+
+.arrow-before:hover,
+.arrow-next:hover {
+    background: rgba(153, 153, 153, 0.6);
+}
+
+.caption>p {
+    margin: 20px 0;
+    font-size: 20px;
+}
+
+.preview-photo {
+    float: left;
+    width: 33.333%;
+    opacity: 0.9;
+}
+
+
+.preview-photo:hover {
+    cursor: pointer;
+}
+
+.preview-photo > img {
+    width: 100%;
+    max-height: 130px;
+    padding: 10px;  
+}
+
+.close-modal {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: -40px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.close-modal:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+}
