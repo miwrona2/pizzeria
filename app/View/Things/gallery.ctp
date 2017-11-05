@@ -1,39 +1,31 @@
 <section class="common-part">
     <h1>galeria</h1>
 </section> 
-<div class="content gallery">  
-    <div class="content-header">
-        <h1>galeria</h1>
-    </div>
-    <div class="content-content">
-            <div class="content gallery">  
-                <div class="content-content">
-                    <div class="media">
-                    <?= $this->Html->image('minigal1.jpg', array('class' => 'media-object', 'onclick' => "displayModal();showThisPhoto(0)"))?>
-                        <div class="media-body">
-                            <h4 class="media-heading">Wpisz tytuł zdjęcia</h4>
-                            <div>Wpisz opis zdjęcia</div>
-                        </div>
-                    </div>
-                    <div class="media">
-                    <?= $this->Html->image('minigal2.jpg', array('class' => 'media-object', 'onclick' => "displayModal();showThisPhoto(1)"))?>
-                        <div class="media-body">
-                            <h4 class="media-heading">Wpisz tytuł zdjęcia</h4>
-                            <div>Wpisz opis zdjęcia</div>
-                        </div>
-                    </div>
-                    <div class="media">
-                    <?= $this->Html->image('minigal3.jpg', array('class' => 'media-object', 'onclick' => "displayModal();showThisPhoto(2)"))?>
-                        <div class="media-body">
-                            <h4 class="media-heading">Wpisz tytuł zdjęcia</h4>
-                            <div>Wpisz opis zdjęcia</div>
-                        </div>
-                    </div>
+
+<section class="section-common">
+    <div class="content">
+        <div class="content-header">
+            <h2>Galeria</h2>
+        </div>
+
+        <div class="content gallery">  
+            <div class="content-content">
+                <div class="media">
+                <?= $this->Html->image('minigal1.jpg', array('class' => 'media-object', 'onclick' => "displayModal();showThisPhoto(0)"))?>
+                </div>
+                <div class="media">
+                <?= $this->Html->image('minigal2.jpg', array('class' => 'media-object', 'onclick' => "displayModal();showThisPhoto(1)"))?>
+                </div>
+                <div class="media">
+                <?= $this->Html->image('minigal3.jpg', array('class' => 'media-object', 'onclick' => "displayModal();showThisPhoto(2)"))?>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section> 
+
+
+
 
 <div id="theModal" class="Modal">
     <div class="modal-content">
