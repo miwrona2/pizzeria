@@ -57,6 +57,7 @@
     color: lightslategray;
     padding: 10px;
     border: 1px solid white;
+    margin-right: 14px;
 }
 
 .social>i:hover {
@@ -118,4 +119,8 @@
     cursor: pointer;
     background: #50356a;
     border-radius: 5px;
+}
+
+.subpage {
+    color: #fff;
 }

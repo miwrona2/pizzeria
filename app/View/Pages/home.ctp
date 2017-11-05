@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="redirect-opinion">
-                    <a href="#" class="section-btn">Przejdź do menu</a>  
+                    <?php echo $this->Html->link('Przejdź do menu', array('controller' => 'things', 'action' => 'menu'),array('class' => 'section-btn', 'escape' => false)); ?>
                 </div>
             </div>   
             <div class="section-main">
@@ -59,7 +59,7 @@
                     <p class="post-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 </div>
                 <div class="redirect-opinion">
-                    <a href="#" class="section-btn">Zobacz Wszystkie Opinie</a>  
+                    <?php echo $this->Html->link('Zobacz Wszystkie Opinie', array('controller' => 'opinions', 'action' => 'opinions'),array('class' => 'section-btn', 'escape' => false)); ?>
                 </div>
             </div>   
             <div class="section-main">
@@ -70,7 +70,7 @@
                     <?= $this->Html->link($this->Html->image('staticmap.png'), '#', array('escape' => false))?>
                 </div>
                 <div class="redirect-opinion">
-                    <a href="#" class="section-btn">Kontakt</a>  
+                    <?php echo $this->Html->link('Kontakt', array('controller' => 'things', 'action' => 'contact'),array('class' => 'section-btn', 'escape' => false)); ?>
                 </div>
             </div>   
             <div class="section-main">
@@ -88,7 +88,7 @@
                     </div>
                 </div>
                 <div class="redirect-opinion">
-                    <a href="#" class="section-btn">Galeria</a>  
+                    <?php echo $this->Html->link('Galeria', array('controller' => 'things', 'action' => 'gallery'),array('class' => 'section-btn', 'escape' => false)); ?>
                 </div>
             </div>   
 <!--            <div class="section curly">
