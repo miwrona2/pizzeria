@@ -7,103 +7,74 @@
         <div class="content-header">
             <h2>Galeria</h2>
         </div>
-
         <div class="content gallery">  
             <div class="content-content">
-                <div class="media">
-                <?= $this->Html->image('minigal1.jpg', array('class' => 'media-object', 'onclick' => "displayModal();showThisPhoto(0)"))?>
-                </div>
-                <div class="media">
-                <?= $this->Html->image('minigal2.jpg', array('class' => 'media-object', 'onclick' => "displayModal();showThisPhoto(1)"))?>
-                </div>
-                <div class="media">
-                <?= $this->Html->image('minigal3.jpg', array('class' => 'media-object', 'onclick' => "displayModal();showThisPhoto(2)"))?>
+                <div class="thumbnails">
+                    <div><?= $this->Html->image('dennis-klein-123631.jpg')?></div>
+                    <div><?= $this->Html->image('obrazek3.jpg')?></div>
+                    <div><?= $this->Html->image('pizza.jpg')?></div>
+                    <div><?= $this->Html->image('opinions.jpg')?></div>
+                    <div><?= $this->Html->image('joanna-boj-17158.jpg') ?></div>
+                    <div><?= $this->Html->image('alex-jones-1246.jpg') ?></div>
+                    <div><?= $this->Html->image('Alley-Street-with-Overhanging-Plants.jpg') ?></div>
+                    <div><?= $this->Html->image('baehaki-hariri-364652.jpg') ?></div>                                   
+                    <div><?= $this->Html->image('obrazek3.jpg')?></div>
+                    <div><?= $this->Html->image('pizza.jpg')?></div>
+                    <div><?= $this->Html->image('opinions.jpg')?></div>
+                    <div><?= $this->Html->image('joanna-boj-17158.jpg') ?></div>
+                    <div><?= $this->Html->image('alex-jones-1246.jpg') ?></div>                                                           
                 </div>
             </div>
         </div>
     </div>
 </section> 
 
-
-
-
-<div id="theModal" class="Modal">
-    <div class="modal-content">
-        <div class="underlay">
-            <span class="close-modal" onclick="hideModal()">&times;</span>
-
-            <?= $this->Html->image('gal1.jpg', array('class' => 'mainPhoto', 'alt' => 'papryka'))?>
-            <?= $this->Html->image('gal2.jpg', array('class' => 'mainPhoto', 'alt' => 'pomidor'))?>
-            <?= $this->Html->image('gal3.jpg', array('class' => 'mainPhoto', 'alt' => 'bazylia'))?>
-
-            <a class="arrow-next" onclick="nextSlide(1)">&gg;</a>
-            <a class="arrow-before" onclick="nextSlide(-1)">&ll;</a>
-
-            <div class="caption"><p id="caption">Name of current picture</p></div>
-            <div class="preview-photo"><?= $this->Html->image('minigal1.jpg', array('onclick' => "showThisPhoto(0)"))?></div>
-            <div class="preview-photo"><?= $this->Html->image('minigal2.jpg', array('onclick' => "showThisPhoto(1)"))?></div>
-            <div class="preview-photo"><?= $this->Html->image('minigal3.jpg', array('onclick' => "showThisPhoto(2)"))?></div>
-        </div>
-    </div>
+<div id="theModal" class="Modal"  onclick="hideModal()">
 </div>
+<div class="modal-content" id="overlay">
+    <span class="close-modal" onclick="hideModal()">&times;</span>
+    <?= $this->Html->image('obrazek3.jpg')?>
+    <?= $this->Html->image('dennis-klein-123631.jpg')?>
+    <?= $this->Html->image('pizza.jpg')?>
+    <?= $this->Html->image('opinions.jpg')?>
+    <?= $this->Html->image('joanna-boj-17158.jpg') ?>
+    <?= $this->Html->image('alex-jones-1246.jpg') ?>
+    <?= $this->Html->image('Alley-Street-with-Overhanging-Plants.jpg') ?>
+    <?= $this->Html->image('baehaki-hariri-364652.jpg') ?>  
+</div>
+
 <script>
-    var slide = document.getElementsByClassName("mainPhoto");
-    var tile = document.getElementsByClassName("preview-photo");
-    var caption = document.getElementById("caption");
-    var slideIndex = 1;
-    showPhoto(slideIndex);
     
-    function displayModal() {
-        document.getElementById("theModal").style.display = "block";
-    }
+    showModal();
     
-    function showThisPhoto(n) {
-        showPhoto(slideIndex = n);
-    }
-    
-    function showPhoto(n){
-        if (n > (slide.length - 1)){
-            n = 0; 
-        }
-        if (n < 0) {
-            n = (slide.length-1);}
-        hideOtherSlides();
-        slide[n].style.display = "block";
-        dimOthers();
-        highlight(n);
-        caption_photo(n);
-        return slideIndex = n;
-    }
-    
-    function nextSlide(incr) {
-        slideIndex = slideIndex + incr;
-        showPhoto(slideIndex);
-    }
-    
-    function highlight(n){
-        tile[n].style.opacity = 1;
-        tile[n].style.border = "solid 1px #666";
-    }
-    
-    function caption_photo(n){
-        caption.innerHTML = (slide[n].alt);
-    }
-    
-    function hideOtherSlides() {
-        for (i=0; i<slide.length; i++) {
-            slide[i].style.display = "none";
-            tile[i].style.border = "none";
+    function showModal() {
+        var mod_cont = document.querySelectorAll(".modal-content img");
+        var thumbs = document.querySelectorAll(".thumbnails  div  img");
+        for (var t = 0; t < thumbs.length; t++) {
+            thumbs[t].addEventListener("click",function() {
+                displayModalandContent();
+
+                for (var i=0; i<mod_cont.length; i++) {
+                    mod_cont[i].style.display = "none";
+                    if (this.src === mod_cont[i].src) {
+                        mod_cont[i].style.display = "block";   
+                    }
+                }
+            });
         }
     }
     
-    function dimOthers() {
-        for (i=0; i<slide.length; i++) {
-            tile[i].style.opacity = 0.9;
-        }
+    var overlay, theModal;
+    theModal = document.getElementById("theModal");
+    overlay = document.querySelector("#overlay");
+    
+    function displayModalandContent() {
+        theModal.style.display = "block";
+        overlay.style.display = "block";
     }
     
     function hideModal() {
-        document.getElementById("theModal").style.display = "none";
+        theModal.style.display = "none";
+        overlay.style.display = "none";
     }
 </script>
-  
