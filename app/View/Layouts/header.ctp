@@ -16,6 +16,7 @@
     </div>
 </div>  
 
+<div class="toTop"><i class="fa fa-angle-up fa-5x" aria-hidden="true"></i></div>
 
 <script>
 function markElement(evt) {
@@ -41,4 +42,21 @@ function markElementOnLoad(){
 }
 
 window.onload = markElementOnLoad();
+
+var toTop = $('.toTop');
+$(window).scroll(function(){
+    var bodyScroll = $(window).scrollTop();
+    if (bodyScroll > 20) {
+        toTop.css('opacity', '1');
+    }
+    else {
+        toTop.css('opacity', '0');
+    }
+});
+
+toTop.click(function(){
+    $('html, body').animate({
+        scrollTop : 0
+    }, 1500);
+});
 </script>

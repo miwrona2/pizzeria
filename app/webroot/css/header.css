@@ -81,3 +81,23 @@
     border: 1px white solid;
     padding: 0 15px;
 }
+
+.toTop {
+    position: fixed;
+    z-index: 1000;
+    right: 60px;
+    bottom: 10px;
+    color: #6e6e6e;
+    padding: 0 10px;
+    background: rgba(255, 255, 255, 0.6);
+    opacity: 0;
+    border: 1px solid #8e8989;
+    transition: transform 1s;
+    transition-timing-function: ease-out;
+}
+
+.toTop:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+}
