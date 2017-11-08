@@ -41,26 +41,31 @@
     <?= $this->Html->image('alex-jones-1246.jpg') ?>
     <?= $this->Html->image('Alley-Street-with-Overhanging-Plants.jpg') ?>
     <?= $this->Html->image('baehaki-hariri-364652.jpg') ?>  
+    <a class="arrow-next" onclick="nextSlide(1)">&gg;</a>
+    <a class="arrow-before" onclick="nextSlide(-1)">&ll;</a>
 </div>
 
 <script>
-    
+
     showModal();
     
     function showModal() {
-        var mod_cont = document.querySelectorAll(".modal-content img");
-        var thumbs = document.querySelectorAll(".thumbnails  div  img");
+        var thumbs = document.querySelectorAll(".thumbnails > div > img");
         for (var t = 0; t < thumbs.length; t++) {
-            thumbs[t].addEventListener("click",function() {
+            thumbs[t].addEventListener("click",function(e) {
                 displayModalandContent();
-
-                for (var i=0; i<mod_cont.length; i++) {
-                    mod_cont[i].style.display = "none";
-                    if (this.src === mod_cont[i].src) {
-                        mod_cont[i].style.display = "block";   
-                    }
-                }
+                showClickedImg(this.src);
             });
+        }
+    }
+    
+    function showClickedImg(srcOfClickedThumb) {
+        var images = document.querySelectorAll(".modal-content > img");
+        for (var i = 0; i < images.length; i++) {
+            images[i].style.display = "none";
+            if (srcOfClickedThumb === images[i].src) {
+                images[i].style.display = "block";   
+            }
         }
     }
     
