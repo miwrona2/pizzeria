@@ -17,14 +17,7 @@ class ThingsController extends AppController {
         $this->loadModel('Pizza');
         $pizzas = $this->Pizza->find('all');
         $this->set('pizzas', $pizzas); 
-
-        $this->loadModel('CartItem');
-        $counter = $this->CartItem->find('count');
-        $this->set('counter', $counter);
-
-        //dzia�a ale to jest do poprawki
-        //$mealsInCart = $this->CartItem->find('all');
-        //$this->set('mealsInCart', $mealsInCart); 
+ 
         $mealsInCart = $this->beforeFilter('array');
         $this->set('mealsInCart', $mealsInCart); 
     }

@@ -27,11 +27,9 @@
         echo $this->Html->css('footer');
         echo $this->Html->css('gallery');
         echo $this->Html->css('things');
-        echo $this->Html->css('delivery');
         echo $this->Html->css('opinions');
         echo $this->Html->css('menu');
         echo $this->Html->css('contact');
-        echo $this->Html->css('cart');
         echo $this->Html->css('cart');
         echo $this->Html->script('jquery-3.2.1');
         echo $this->fetch('meta');
