@@ -7,7 +7,7 @@
 <div id="m-section">
 
     <div class="restaurant-menu">
-        <div class="m-flex-layout">
+
 <!--            <div class="m-flex-layout__aside">
                 <ul>
                     <li><a href="#">Pizza</a></li>
@@ -19,7 +19,6 @@
                     <li><a href="#">Napoje</a></li>
                 </ul>
             </div>-->
-            <div class="m-flex-layout__content">
                 <div id="cart_navbar" class="navbar">
                     <div class="container-fluid">
                         <ul class="nav navbar-nav pull-left">
@@ -31,7 +30,7 @@
                             <div class="parent">
                                 <?php include 'cart.ctp';?>
                             </div>
-                            <li><i class="fa fa-phone" aria-hidden="true"></i><a> 81 454... <small>więcej</small></a></li>
+                            <!--<li><i class="fa fa-phone" aria-hidsden="true"></i><a> 81 454... <small>więcej</small></a></li>-->
                             <li><a>Koszyk jest pusty</a></li>
                             <li><?php echo $this->Html->link(
                                     '<i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp; Koszyk'. '<span class="item-counter">'.$count.'</span>',
@@ -41,6 +40,18 @@
                                 )?>
                             </li>
                     </div>
+                </div>
+            <div class="m-flex-layout__content">
+                <div id="menu-nav">
+                    <ul>
+                        <li><a>Menu</a></li>
+                        <li><a href="#">Pizza</a></li>
+                        <li><a href="#">Sałatki</a></li>
+                        <li><a href="#">Kebab</a></li>
+                        <li><a href="#">Dodatki</a></li>
+                        <li><a href="#">Sosy</a></li>
+                        <li><a href="#">Napoje</a></li>
+                    </ul>
                 </div>
                 <div class="m-group">
                     <div class="m-list m-list--header">
@@ -119,7 +130,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+
     </div>
 </div>
 <section class="module parallax parallax-3">
