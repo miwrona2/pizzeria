@@ -54,6 +54,10 @@
                     </ul>
                 </div>
                 <div class="m-group">
+                    <div class="pizza-header">
+                        <p>Pizza</p>
+                        <?= $this->Html->image('masthead_mainmenu.jpg') ?>
+                    </div>
                     <div class="m-list m-list--header">
                         <!--<div class="m-list__featured"><?= $this->Html->image('pizza2.jpg') ?></div>-->
                         <div class="m-list__list">
