@@ -1,11 +1,10 @@
 <section class="module parallax parallax-1" id="hero">
   <div class="kontener">
-    <span id="arrow-down" onclick="scrollDown()"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span>
+    <span id="arrow-down"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span>
     <h1>Menu</h1>
   </div>
 </section>
 <div id="m-section">
-
     <div class="restaurant-menu">
         <div class="m-flex-layout">
 <!--            <div class="m-flex-layout__aside">
@@ -212,14 +211,14 @@
             });
         });
     });
-      
-function scrollDown(){
-    var hero =  document.getElementById("hero");
-    $(document).ready(function(){
-          $('#viewport').animate({
-            scrollTop: hero.scrollHeight
-          }, 2000, function(){
-          });
+
+    var arrow_down = $('#arrow-down');
+    arrow_down.click(function(){
+    var hero = $('#hero');
+        $('html, body').animate({
+            scrollTop : hero[0].scrollHeight    
+        }, 1500);
+        console.log(hero[0].scrollHeight);
     });
-}
+
 </script>
