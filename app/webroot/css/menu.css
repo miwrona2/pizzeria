@@ -28,7 +28,7 @@
 
 #cart_navbar {
     color: #fff;
-    background-color: #009345;
+    background-color: #f5f8fa;
 }
 
 .affixed {
@@ -188,7 +188,7 @@
 }
 
 .btn-group a {
-    background-color: rgba(255, 64, 0, 0.68);
+    background-color: rgb(117, 80, 153);
     display: block;
 }
 
@@ -212,7 +212,7 @@
 }
 
 .add-button:hover{
-    background-color: #ff4000;
+    background-color: rgb(91, 62, 121);
     border-radius: 5px;
 }
 
@@ -233,14 +233,12 @@
 }
 
 #m-section {
-    margin: 0 300px 50px 100px ;
+    margin: 0 150px 50px 50px ;
 }
 
 .item-counter{
-    background: #8e181c;
+    background: #f5f8fa;
     position: relative;
-/*    top: 160px;
-    right: 22px;*/
     top: -10px;
     left: 4px;
     padding: 1px 5px;
