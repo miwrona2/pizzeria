@@ -14,9 +14,13 @@ class ThingsController extends AppController {
     public function menu() {
         $this->layout = 'things';
 
-        $this->loadModel('Pizza');
+        $this->loadModel('Pizza', 'Salad');
         $pizzas = $this->Pizza->find('all');
-        $this->set('pizzas', $pizzas); 
+        $this->set('pizzas', $pizzas);
+        
+        $this->loadModel('Salad');
+        $salads = $this->Salad->find('all');
+        $this->set('salads', $salads); 
  
         $mealsInCart = $this->beforeFilter('array');
         $this->set('mealsInCart', $mealsInCart); 
