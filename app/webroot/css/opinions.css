@@ -40,7 +40,7 @@
     display: inline-block;
     width: 900px;
     border: none;
-    border-top: 1px solid #105d5a;
+    border-top: 1px solid #9b9b9b;
     max-width: 80%;
     margin: 0 10px 0 0;
     vertical-align: middle;
@@ -50,7 +50,7 @@
     width: 75px;
     height: 75px;
     float: left;
-    border: 1px solid #105d5a;
+    border: 1px solid #9b9b9b;
     margin-right: 15px;
 }
 
@@ -104,7 +104,7 @@
 
 .nickname {
     font-weight: bold;
-    color: #009345;
+    color: #593b77;
     text-transform: capitalize;
     padding: 5px 0;
 }
