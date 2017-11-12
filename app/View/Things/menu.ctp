@@ -6,31 +6,18 @@
 </section>
 <div id="m-section">
     <div class="restaurant-menu">
-        <div class="m-flex-layout">
-<!--            <div class="m-flex-layout__aside">
-                <ul>
-                    <li><a href="#">Pizza</a></li>
-                    <li><a href="#">Zestawy Promocyjne z Pizzą</a></li>
-                    <li><a href="#">Sałatki</a></li>
-                    <li><a href="#">Kebab</a></li>
-                    <li><a href="#">Dodatki</a></li>
-                    <li><a href="#">Sosy</a></li>
-                    <li><a href="#">Napoje</a></li>
-                </ul>
-            </div>-->
-            <div class="m-flex-layout__content">
                 <div id="cart_navbar" class="navbar">
                     <div class="container-fluid">
                         <ul class="nav navbar-nav pull-left">
                             <li class="visible">
-                                <h4>Salsa Lublin</h4>
+                                <h4>Catania</h4>
                             </li>
                         </ul>
                         <ul class="nav navbar-nav pull-right list-inline">
                             <div class="parent">
                                 <?php include 'cart.ctp';?>
                             </div>
-                            <li><i class="fa fa-phone" aria-hidden="true"></i><a> 81 454... <small>więcej</small></a></li>
+                            <!--<li><i class="fa fa-phone" aria-hidsden="true"></i><a> 81 454... <small>więcej</small></a></li>-->
                             <li><a>Koszyk jest pusty</a></li>
                             <li><?php echo $this->Html->link(
                                     '<i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp; Koszyk'. '<span class="item-counter">'.$count.'</span>',
@@ -41,89 +28,292 @@
                             </li>
                     </div>
                 </div>
+            <div class="m-flex-layout__content">
+                <div id="menu-nav">
+                    <ul>
+                        <li><a>Menu</a></li>
+                        <li><a href="#pizza">Pizza</a></li>
+                        <li><a href="#pasta">Pasty</a></li>
+                        <li><a href="#salads">Sałatki</a></li>
+                        <li><a href="#additions">Dodatki</a></li>
+                        <li><a href="#sauces">Sosy</a></li>
+                        <li><a href="#drinks">Napoje</a></li>
+                    </ul>
+                </div>
                 <div class="m-group">
-                    <div class="m-list m-list--header">
-                        <!--<div class="m-list__featured"><?= $this->Html->image('pizza2.jpg') ?></div>-->
-                        <div class="m-list__list">
-                            <div class="m-list__item m-list__item--header" style="background: #fff;">
-                                <div class="m-item m-item--list">
-                                    <div class="m-item__row">
-                                        <div class="m-item__col-header">
-                                        </div>
-                                        <div class="m-item__col-group-info m-item__col-group-info--secondary">
-                                            <div class="m-item__size-info"><span class="muted"><mark>30 cm</mark></span></div>
-                                        </div>
-                                        <div class="m-item__col-group-info m-item__col-group-info--secondary">
-                                            <div class="m-item__size-info"><mark><span class="muted">42 cm</span></mark></div>
-                                        </div>
-                                        <div class="m-item__col m-item__col--secondary">
-                                            <div class="m-item__size-info"></div>
+                    <div id="pizza">
+                        <div class="menu-section-header">
+                            <h5><mark>Pizza</mark></h5>
+                            <?php // echo $this->Html->image('masthead_mainmenu.jpg') ?>
+                        </div>
+                        <div class="m-list m-list--header">
+                            <!--<div class="m-list__featured"><?= $this->Html->image('pizza2.jpg') ?></div>-->
+                            <div class="m-list__list">
+                                <div class="m-list__item m-list__item--header" style="background: #fff;">
+                                    <div class="m-item m-item--list">
+                                        <div class="m-item__row">
+                                            <div class="m-item__col-header">
+                                            </div>
+                                            <div class="m-item__col-group-info m-item__col-group-info--secondary">
+                                                <div class="m-item__size-info"><span class="muted"><mark>32 cm</mark></span></div>
+                                            </div>
+                                            <div class="m-item__col-group-info m-item__col-group-info--secondary">
+                                                <div class="m-item__size-info"><mark><span class="muted">45 cm</span></mark></div>
+                                            </div>
+                                            <div class="m-item__col m-item__col--secondary">
+                                                <div class="m-item__size-info"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="m-list m-list--list">
-                        <ul class="m-list__list">
-                            <?php foreach ($pizzas as $pizza) : ?>
-                                <li class="m-list__item">
-                                    <div class="m-item m-item--list pizza">
-                                        <div class="m-item__row">
-                                            <div class="m-item__col-header ">
-                                                <div><div class="m-item__header"><h4 class="m-item__title"><mark><?= $pizza['Pizza']['id'] ?>-<?= $pizza['Pizza']['name'] ?></mark></h4></div></div>
-                                                <div class="m-item__description"><span class="muted"><mark class="inside-muted"><?= $pizza['Pizza']['ingredients']; ?></mark></span></div>
-                                            </div>
-                                            <div class="m-item__col-group-info m-item__col-group-info--secondary price">
-                                                <mark><span class="m-item__price"><?= $pizza['Pizza']['sprice']; ?> zł</span></mark>
-                                            </div>
-                                            <div class="m-item__col-group-info m-item__col-group-info--secondary price">
-                                                <mark><span class="m-item__price"><?= $pizza['Pizza']['bprice']; ?> zł</span></mark>
-                                            </div>
-                                            <div class="m-item__col m-item__col--secondary actions">
-                                                <div class="btn-group">
-                                                    <?php
-                                                        echo $this->Html->link('Do koszyka <span class="caret"></span>',
-                                                                array('action' => false),
-                                                                array('class' => 'btn add-button',
-                                                                    'id' => $pizza['Pizza']['id'],
-                                                                    'onclick' => "togglePizzaSize('".$pizza['Pizza']['id']."')",
-                                                                    'escape' => false))
-                                                    ?>
-                                                    <ul class="pizza-size-list" id="id_<?php echo $pizza['Pizza']['id'] ?>">
-                                                        <li><?php echo $this->Form->create('Thing',array('id'=>'add-form-action', 'class'=> 'callFunctionAddToBoxSession','url'=>array('controller'=>'things','action'=>'addToBoxSession')));?>
-                                                            <?php echo $this->Form->hidden('product_id',array('value'=> $pizza['Pizza']['id']))?>
-                                                            <?php echo $this->Form->hidden('item_name',array('value'=> $pizza['Pizza']['name']))?>
-                                                            <?php echo $this->Form->hidden('price',array('value'=> $pizza['Pizza']['sprice']))?>
-                                                            <?php echo $this->Form->hidden('size',array('value'=> 1))?>
-                                                            <?php echo $this->Form->submit('Duża - 30 cm - '.$pizza['Pizza']['sprice'].'',array('class'=>'btnAddToCart'));?>
-                                                            <?php echo $this->Form->end();?>
-                                                        </li>
-                                                        <li><?php echo $this->Form->create('Thing',array('id'=>'add-form-action', 'class'=> 'callFunctionAddToBoxSession','url'=>array('controller'=>'things','action'=>'addToBoxSession')));?>
-                                                            <?php echo $this->Form->hidden('product_id',array('value'=> $pizza['Pizza']['id']))?>
-                                                            <?php echo $this->Form->hidden('item_name',array('value'=> $pizza['Pizza']['name']))?>
-                                                            <?php echo $this->Form->hidden('price',array('value'=> $pizza['Pizza']['bprice']))?>
-                                                            <?php echo $this->Form->hidden('size',array('value'=> 2))?>
-                                                            <?php echo $this->Form->submit('Max - 42 cm - '.$pizza['Pizza']['bprice'].'',array('class'=>'btnAddToCart'));?>
-                                                            <?php echo $this->Form->end();?>
-                                                        </li>
-                                                    </ul>
+                        <div class="m-list m-list--list">
+                            <ul class="m-list__list">
+                                <?php foreach ($pizzas as $pizza) : ?>
+                                    <li class="m-list__item">
+                                        <div class="m-item m-item--list pizza">
+                                            <div class="m-item__row">
+                                                <div class="m-item__col-header ">
+                                                    <div><div class="m-item__header"><h4 class="m-item__title"><mark><?= $pizza['Pizza']['id'] ?>-<?= $pizza['Pizza']['name'] ?></mark></h4></div></div>
+                                                    <div class="m-item__description"><span class="muted"><mark class="inside-muted"><?= $pizza['Pizza']['ingredients']; ?></mark></span></div>
+                                                </div>
+                                                <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+                                                    <mark><span class="m-item__price"><?= $pizza['Pizza']['sprice']; ?> zł</span></mark>
+                                                </div>
+                                                <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+                                                    <mark><span class="m-item__price"><?= $pizza['Pizza']['bprice']; ?> zł</span></mark>
+                                                </div>
+                                                <div class="m-item__col m-item__col--secondary actions">
+                                                    <div class="btn-group">
+                                                        <?php
+                                                            echo $this->Html->link('Do koszyka <span class="caret"></span>',
+                                                                    array('action' => false),
+                                                                    array('class' => 'btn add-button',
+                                                                        'id' => $pizza['Pizza']['id'],
+                                                                        'onclick' => "togglePizzaSize('".$pizza['Pizza']['id']."')",
+                                                                        'escape' => false))
+                                                        ?>
+                                                        <ul class="pizza-size-list" id="id_<?php echo $pizza['Pizza']['id'] ?>">
+                                                            <li><?php echo $this->Form->create('Thing',array('id'=>'add-form-action', 'class'=> 'callFunctionAddToBoxSession','url'=>array('controller'=>'things','action'=>'addToBoxSession')));?>
+                                                                <?php echo $this->Form->hidden('product_id',array('value'=> $pizza['Pizza']['id']))?>
+                                                                <?php echo $this->Form->hidden('item_name',array('value'=> $pizza['Pizza']['name']))?>
+                                                                <?php echo $this->Form->hidden('price',array('value'=> $pizza['Pizza']['sprice']))?>
+                                                                <?php echo $this->Form->hidden('size',array('value'=> 1))?>
+                                                                <?php echo $this->Form->submit('Duża - 30 cm - '.$pizza['Pizza']['sprice'].'',array('class'=>'btnAddToCart'));?>
+                                                                <?php echo $this->Form->end();?>
+                                                            </li>
+                                                            <li><?php echo $this->Form->create('Thing',array('id'=>'add-form-action', 'class'=> 'callFunctionAddToBoxSession','url'=>array('controller'=>'things','action'=>'addToBoxSession')));?>
+                                                                <?php echo $this->Form->hidden('product_id',array('value'=> $pizza['Pizza']['id']))?>
+                                                                <?php echo $this->Form->hidden('item_name',array('value'=> $pizza['Pizza']['name']))?>
+                                                                <?php echo $this->Form->hidden('price',array('value'=> $pizza['Pizza']['bprice']))?>
+                                                                <?php echo $this->Form->hidden('size',array('value'=> 2))?>
+                                                                <?php echo $this->Form->submit('Max - 42 cm - '.$pizza['Pizza']['bprice'].'',array('class'=>'btnAddToCart'));?>
+                                                                <?php echo $this->Form->end();?>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="pasta">
+                        <div class="menu-section-header">
+                            <h5><mark>Pasty</mark></h5>
+                        </div>
+                        <div class="m-list m-list--list">
+                            <ul class="m-list__list">
+                                <?php foreach ($pastas as $pasta) : ?>
+                                    <li class="m-list__item">
+                                        <div class="m-item m-item--list pizza">
+                                            <div class="m-item__row">
+                                                <div class="m-item__col-header ">
+                                                    <div><div class="m-item__header"><h4 class="m-item__title"><mark><?= $pasta['Pasta']['id'] ?>-<?= $pasta['Pasta']['name'] ?></mark></h4></div></div>
+                                                    <div class="m-item__description"><span class="muted"><mark class="inside-muted"><?= $pasta['Pasta']['ingredients']; ?></mark></span></div>
+                                                </div>
+                                                <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+                                                    <mark><span class="m-item__price"><?= $pasta['Pasta']['price']; ?> zł</span></mark>
+                                                </div>
+                                                <div class="m-item__col m-item__col--secondary actions">
+                                                    <div class="btn-group">
+                                                        <?php
+                                                            echo $this->Html->link('Do koszyka',
+                                                                    array('action' => false),
+                                                                    array('class' => 'btn add-button',
+                                                                        'id' => $pizza['Pizza']['id'],
+                                                                        'onclick' => "togglePizzaSize('".$pizza['Pizza']['id']."')",
+                                                                        'escape' => false))
+                                                        ?>
+     
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="salads">
+                        <div class="menu-section-header">
+                            <h5><mark>Sałatki</mark></h5>
+                        </div>
+                        <div class="m-list m-list--list">
+                            <ul class="m-list__list">
+                                <?php foreach ($salads as $salad) : ?>
+                                    <li class="m-list__item">
+                                        <div class="m-item m-item--list pizza">
+                                            <div class="m-item__row">
+                                                <div class="m-item__col-header ">
+                                                    <div><div class="m-item__header"><h4 class="m-item__title"><mark><?= $salad['Salad']['id'] ?>-<?= $salad['Salad']['name'] ?></mark></h4></div></div>
+                                                    <div class="m-item__description"><span class="muted"><mark class="inside-muted"><?= $salad['Salad']['ingredients']; ?></mark></span></div>
+                                                </div>
+                                                <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+                                                    <mark><span class="m-item__price"><?= $salad['Salad']['price']; ?> zł</span></mark>
+                                                </div>
+                                                <div class="m-item__col m-item__col--secondary actions">
+                                                    <div class="btn-group">
+                                                        <?php
+                                                            echo $this->Html->link('Do koszyka',
+                                                                    array('action' => false),
+                                                                    array('class' => 'btn add-button',
+                                                                        'id' => $pizza['Pizza']['id'],
+                                                                        'onclick' => "togglePizzaSize('".$pizza['Pizza']['id']."')",
+                                                                        'escape' => false))
+                                                        ?>
+     
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="additions">
+                        <div class="menu-section-header">
+                            <h5><mark>Dodatki</mark></h5>
+                        </div>
+                        <div class="m-list m-list--list">
+                            <ul class="m-list__list">
+                                <?php foreach ($additions as $addition) : ?>
+                                    <li class="m-list__item">
+                                        <div class="m-item m-item--list pizza">
+                                            <div class="m-item__row">
+                                                <div class="m-item__col-header ">
+                                                    <div><div class="m-item__header"><h4 class="m-item__title"><mark><?= $addition['Addition']['id'] ?>-<?= $addition['Addition']['name'] ?></mark></h4></div></div>
+                                                    <div class="m-item__description"><span class="muted"><mark class="inside-muted"><?= $addition['Addition']['ingredients']; ?></mark></span></div>
+                                                </div>
+                                                <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+                                                    <mark><span class="m-item__price"><?= $addition['Addition']['price']; ?> zł</span></mark>
+                                                </div>
+                                                <div class="m-item__col m-item__col--secondary actions">
+                                                    <div class="btn-group">
+                                                        <?php
+                                                            echo $this->Html->link('Do koszyka',
+                                                                    array('action' => false),
+                                                                    array('class' => 'btn add-button',
+                                                                        'id' => $pizza['Pizza']['id'],
+                                                                        'onclick' => "togglePizzaSize('".$pizza['Pizza']['id']."')",
+                                                                        'escape' => false))
+                                                        ?>
+     
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="sauces">
+                        <div class="menu-section-header">
+                            <h5><mark>Sosy</mark></h5>
+                        </div>
+                        <div class="m-list m-list--list">
+                            <ul class="m-list__list">
+                                <?php foreach ($sauces as $sauce) : ?>
+                                    <li class="m-list__item">
+                                        <div class="m-item m-item--list pizza">
+                                            <div class="m-item__row">
+                                                <div class="m-item__col-header ">
+                                                    <div><div class="m-item__header"><h4 class="m-item__title"><mark><?= $sauce['Sauce']['id'] ?>-<?= $sauce['Sauce']['name'] ?></mark></h4></div></div>
+                                                    <div class="m-item__description"><span class="muted"><mark class="inside-muted"><?= $sauce['Sauce']['ingredients']; ?></mark></span></div>
+                                                </div>
+                                                <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+                                                    <mark><span class="m-item__price"><?= $sauce['Sauce']['price']; ?> zł</span></mark>
+                                                </div>
+                                                <div class="m-item__col m-item__col--secondary actions">
+                                                    <div class="btn-group">
+                                                        <?php
+                                                            echo $this->Html->link('Do koszyka',
+                                                                    array('action' => false),
+                                                                    array('class' => 'btn add-button',
+                                                                        'id' => $pizza['Pizza']['id'],
+                                                                        'onclick' => "togglePizzaSize('".$pizza['Pizza']['id']."')",
+                                                                        'escape' => false))
+                                                        ?>
+     
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="drinks">
+                        <div class="menu-section-header">
+                            <h5><mark>Napoje</mark></h5>
+                        </div>
+                        <div class="m-list m-list--list">
+                            <ul class="m-list__list">
+                                <?php foreach ($drinks as $drink) : ?>
+                                    <li class="m-list__item">
+                                        <div class="m-item m-item--list pizza">
+                                            <div class="m-item__row">
+                                                <div class="m-item__col-header ">
+                                                    <div><div class="m-item__header"><h4 class="m-item__title"><mark><?= $drink['Drink']['id'] ?>-<?= $drink['Drink']['name'] ?></mark></h4></div></div>
+                                                    <div class="m-item__description"><span class="muted"><mark class="inside-muted"><?= $drink['Drink']['ingredients']; ?></mark></span></div>
+                                                </div>
+                                                <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+                                                    <mark><span class="m-item__price"><?= $drink['Drink']['price']; ?> zł</span></mark>
+                                                </div>
+                                                <div class="m-item__col m-item__col--secondary actions">
+                                                    <div class="btn-group">
+                                                        <?php
+                                                            echo $this->Html->link('Do koszyka',
+                                                                    array('action' => false),
+                                                                    array('class' => 'btn add-button',
+                                                                        'id' => $pizza['Pizza']['id'],
+                                                                        'onclick' => "togglePizzaSize('".$pizza['Pizza']['id']."')",
+                                                                        'escape' => false))
+                                                        ?>
+     
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+
     </div>
 </div>
 <section class="module parallax parallax-3">
   <div class="kontener">
-    <h1>The End</h1>
+    <h1></h1>
   </div>
 </section>
 
@@ -211,6 +401,7 @@
             });
         });
     });
+
 
     var arrow_down = $('#arrow-down');
     arrow_down.click(function(){
