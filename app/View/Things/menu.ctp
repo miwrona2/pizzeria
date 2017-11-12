@@ -11,7 +11,7 @@
                     <div class="container-fluid">
                         <ul class="nav navbar-nav pull-left">
                             <li class="visible">
-                                <h4>Salsa Lublin</h4>
+                                <h4>Catania</h4>
                             </li>
                         </ul>
                         <ul class="nav navbar-nav pull-right list-inline">
@@ -34,6 +34,7 @@
                     <ul>
                         <li><a>Menu</a></li>
                         <li><a href="#pizza">Pizza</a></li>
+                        <li><a href="#pasta">Pasty</a></li>
                         <li><a href="#salads">Sałatki</a></li>
                         <li><a href="#additions">Dodatki</a></li>
                         <li><a href="#sauces">Sosy</a></li>
@@ -43,8 +44,8 @@
                 <div class="m-group">
                     <div id="pizza">
                         <div class="menu-section-header">
-                            <p>Pizza</p>
-                            <?= $this->Html->image('masthead_mainmenu.jpg') ?>
+                            <h5><mark>Pizza</mark></h5>
+                            <?php // echo $this->Html->image('masthead_mainmenu.jpg') ?>
                         </div>
                         <div class="m-list m-list--header">
                             <!--<div class="m-list__featured"><?= $this->Html->image('pizza2.jpg') ?></div>-->
@@ -121,10 +122,46 @@
                             </ul>
                         </div>
                     </div>
+                    <div id="pasta">
+                        <div class="menu-section-header">
+                            <h5><mark>Pasty</mark></h5>
+                        </div>
+                        <div class="m-list m-list--list">
+                            <ul class="m-list__list">
+                                <?php foreach ($pastas as $pasta) : ?>
+                                    <li class="m-list__item">
+                                        <div class="m-item m-item--list pizza">
+                                            <div class="m-item__row">
+                                                <div class="m-item__col-header ">
+                                                    <div><div class="m-item__header"><h4 class="m-item__title"><mark><?= $pasta['Pasta']['id'] ?>-<?= $pasta['Pasta']['name'] ?></mark></h4></div></div>
+                                                    <div class="m-item__description"><span class="muted"><mark class="inside-muted"><?= $pasta['Pasta']['ingredients']; ?></mark></span></div>
+                                                </div>
+                                                <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+                                                    <mark><span class="m-item__price"><?= $pasta['Pasta']['price']; ?> zł</span></mark>
+                                                </div>
+                                                <div class="m-item__col m-item__col--secondary actions">
+                                                    <div class="btn-group">
+                                                        <?php
+                                                            echo $this->Html->link('Do koszyka',
+                                                                    array('action' => false),
+                                                                    array('class' => 'btn add-button',
+                                                                        'id' => $pizza['Pizza']['id'],
+                                                                        'onclick' => "togglePizzaSize('".$pizza['Pizza']['id']."')",
+                                                                        'escape' => false))
+                                                        ?>
+     
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </div>
                     <div id="salads">
                         <div class="menu-section-header">
-                            <p>Salads</p>
-                            <?= $this->Html->image('masthead_mainmenu.jpg') ?>
+                            <h5><mark>Sałatki</mark></h5>
                         </div>
                         <div class="m-list m-list--list">
                             <ul class="m-list__list">
@@ -160,13 +197,115 @@
                         </div>
                     </div>
                     <div id="additions">
-                        additions
+                        <div class="menu-section-header">
+                            <h5><mark>Dodatki</mark></h5>
+                        </div>
+                        <div class="m-list m-list--list">
+                            <ul class="m-list__list">
+                                <?php foreach ($additions as $addition) : ?>
+                                    <li class="m-list__item">
+                                        <div class="m-item m-item--list pizza">
+                                            <div class="m-item__row">
+                                                <div class="m-item__col-header ">
+                                                    <div><div class="m-item__header"><h4 class="m-item__title"><mark><?= $addition['Addition']['id'] ?>-<?= $addition['Addition']['name'] ?></mark></h4></div></div>
+                                                    <div class="m-item__description"><span class="muted"><mark class="inside-muted"><?= $addition['Addition']['ingredients']; ?></mark></span></div>
+                                                </div>
+                                                <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+                                                    <mark><span class="m-item__price"><?= $addition['Addition']['price']; ?> zł</span></mark>
+                                                </div>
+                                                <div class="m-item__col m-item__col--secondary actions">
+                                                    <div class="btn-group">
+                                                        <?php
+                                                            echo $this->Html->link('Do koszyka',
+                                                                    array('action' => false),
+                                                                    array('class' => 'btn add-button',
+                                                                        'id' => $pizza['Pizza']['id'],
+                                                                        'onclick' => "togglePizzaSize('".$pizza['Pizza']['id']."')",
+                                                                        'escape' => false))
+                                                        ?>
+     
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
                     </div>
                     <div id="sauces">
-                        sauces
+                        <div class="menu-section-header">
+                            <h5><mark>Sosy</mark></h5>
+                        </div>
+                        <div class="m-list m-list--list">
+                            <ul class="m-list__list">
+                                <?php foreach ($sauces as $sauce) : ?>
+                                    <li class="m-list__item">
+                                        <div class="m-item m-item--list pizza">
+                                            <div class="m-item__row">
+                                                <div class="m-item__col-header ">
+                                                    <div><div class="m-item__header"><h4 class="m-item__title"><mark><?= $sauce['Sauce']['id'] ?>-<?= $sauce['Sauce']['name'] ?></mark></h4></div></div>
+                                                    <div class="m-item__description"><span class="muted"><mark class="inside-muted"><?= $sauce['Sauce']['ingredients']; ?></mark></span></div>
+                                                </div>
+                                                <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+                                                    <mark><span class="m-item__price"><?= $sauce['Sauce']['price']; ?> zł</span></mark>
+                                                </div>
+                                                <div class="m-item__col m-item__col--secondary actions">
+                                                    <div class="btn-group">
+                                                        <?php
+                                                            echo $this->Html->link('Do koszyka',
+                                                                    array('action' => false),
+                                                                    array('class' => 'btn add-button',
+                                                                        'id' => $pizza['Pizza']['id'],
+                                                                        'onclick' => "togglePizzaSize('".$pizza['Pizza']['id']."')",
+                                                                        'escape' => false))
+                                                        ?>
+     
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
                     </div>
                     <div id="drinks">
-                        drinks
+                        <div class="menu-section-header">
+                            <h5><mark>Napoje</mark></h5>
+                        </div>
+                        <div class="m-list m-list--list">
+                            <ul class="m-list__list">
+                                <?php foreach ($drinks as $drink) : ?>
+                                    <li class="m-list__item">
+                                        <div class="m-item m-item--list pizza">
+                                            <div class="m-item__row">
+                                                <div class="m-item__col-header ">
+                                                    <div><div class="m-item__header"><h4 class="m-item__title"><mark><?= $drink['Drink']['id'] ?>-<?= $drink['Drink']['name'] ?></mark></h4></div></div>
+                                                    <div class="m-item__description"><span class="muted"><mark class="inside-muted"><?= $drink['Drink']['ingredients']; ?></mark></span></div>
+                                                </div>
+                                                <div class="m-item__col-group-info m-item__col-group-info--secondary price">
+                                                    <mark><span class="m-item__price"><?= $drink['Drink']['price']; ?> zł</span></mark>
+                                                </div>
+                                                <div class="m-item__col m-item__col--secondary actions">
+                                                    <div class="btn-group">
+                                                        <?php
+                                                            echo $this->Html->link('Do koszyka',
+                                                                    array('action' => false),
+                                                                    array('class' => 'btn add-button',
+                                                                        'id' => $pizza['Pizza']['id'],
+                                                                        'onclick' => "togglePizzaSize('".$pizza['Pizza']['id']."')",
+                                                                        'escape' => false))
+                                                        ?>
+     
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -269,7 +408,7 @@ function scrollDown(){
     $(document).ready(function(){
           $('#viewport').animate({
             scrollTop: hero.scrollHeight
-          }, 2000, function(){
+          }, 1000, function(){
           });
     });
 }

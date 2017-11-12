@@ -146,9 +146,57 @@
 }
 
 .menu-section-header {
-    /*background-image: url('../img/masthead_mainmenu.jpg');*/
-    /*height: 100%;*/
+    background-image: url('../img/masthead_mainmenu.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 190px;
 }
+
+#pasta .menu-section-header{
+    background-image: url('../img/jonathan-pielmayer-40070.jpg');
+    background-position: 0;
+}
+
+#pizza .menu-section-header{
+    background-image: url('../img/pizza-time-picjumbo-com.jpg');
+    background-position: right center;
+}
+
+#salads .menu-section-header{
+    background-image: url('../img/travis-yewell-381664.jpg');
+    background-position: right bottom;
+}
+
+#drinks .menu-section-header{
+    background-image: url('../img/tim-wright-299895.jpg');
+    background-position: center center;
+}
+
+#additions .menu-section-header{
+    background-image: url('../img/dan-counsell-365538.jpg');
+    background-position: center top;
+}
+
+#sauces .menu-section-header{
+    background-image: url('../img/dennis-klein-129931.jpg');
+    background-position: center center;
+}
+
+#drinks .menu-section-header{
+    background-image: url('../img/tim-wright-299895.jpg');
+    background-position: center center;
+}
+
+.menu-section-header > h5 {
+    line-height: 170px;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+}
+.menu-section-header > h5 > mark {
+    color: #888;
+}
+
 #menu-nav {
     background-color: #fff;
     width: 20%;

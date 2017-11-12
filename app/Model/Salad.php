@@ -1,7 +1,7 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * Pizza Model
+ * Salad Model
  *
  */
 class Salad extends AppModel {

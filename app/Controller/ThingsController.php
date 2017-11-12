@@ -18,9 +18,25 @@ class ThingsController extends AppController {
         $pizzas = $this->Pizza->find('all');
         $this->set('pizzas', $pizzas);
         
+        $this->loadModel('Pasta');
+        $pastas = $this->Pasta->find('all');
+        $this->set('pastas', $pastas); 
+        
         $this->loadModel('Salad');
         $salads = $this->Salad->find('all');
         $this->set('salads', $salads); 
+        
+        $this->loadModel('Addition');
+        $additions = $this->Addition->find('all');
+        $this->set('additions', $additions); 
+        
+        $this->loadModel('Sauce');
+        $sauces = $this->Sauce->find('all');
+        $this->set('sauces', $sauces); 
+        
+        $this->loadModel('Drink');
+        $drinks = $this->Drink->find('all');
+        $this->set('drinks', $drinks); 
  
         $mealsInCart = $this->beforeFilter('array');
         $this->set('mealsInCart', $mealsInCart); 
