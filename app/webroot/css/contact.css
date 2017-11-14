@@ -15,21 +15,57 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-.getting-here>h2 {
-    font-size: 30px;
-}
-.getting-here>h3 {
-    font-size: 24px;
+.flex-box {
+    display: inline-flex;
+    padding: 10px;
+    width: 100%;
 }
 
-.map {
-    margin-bottom: 20px;
-    width: 1100px;
-    height: 351px;
+.details {
+    display: flex;
+    justify-content: center;
+    width: 35%;;
+    margin: 0 20px;
+    background: #d9e1e4;
+}
+
+.address {
+    margin-top: 70px;
 }
 
 .street-view {
-    width: 1100px;
-    height: 550px;
+    width: 65%;
+    margin: 0 20px; 
 }
 
+.sv-description {
+    font-size: 20px;
+    padding: 8px 0;
+}
+
+.name_of_pizzeria {
+    font-size: 30px;
+    color: rgb(43, 29, 58);
+}
+
+.contact-strong {
+    font-size: 18px;
+    color: rgb(43, 29, 58);
+}
+
+.opening-hours {
+    padding-top: 15px;
+}
+
+.cont-details {
+    padding-top: 15px;
+}
+
+.map {
+    padding: 0 30px;
+}
+
+.map-description {
+    font-size: 24px;
+    padding: 8px 0;
+}
