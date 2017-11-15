@@ -42,23 +42,33 @@
     <?= $this->Html->image('Alley-Street-with-Overhanging-Plants.jpg') ?>
     <?= $this->Html->image('baehaki-hariri-364652.jpg') ?>  
     <a class="arrow-next" >&gg;</a>
-    <a class="arrow-before" onclick="nextSlide(-1)">&ll;</a>
+    <a class="arrow-before">&ll;</a>
 </div>
 <script>
 
     showModal();
+    forceNext();
+    forcePrevious();
     
-    function force(){
-        showClickedImg(false, 5);
+    function forceNext(){
+        document.querySelector(".arrow-next").addEventListener("click", function(e){
+            for (var i=0; i<this.parentNode.children.length; i++) {
+                if (this.parentNode.children[i].getAttribute("style") === "display: block;") {
+                    return showClickedImg(false, i);
+                } 
+            }
+        });
     }
     
-    document.querySelector(".arrow-next").addEventListener("click", function(e){
-        for (var i=0; i<this.parentNode.children.length; i++) {
-            if (this.parentNode.children[i].getAttribute("style") === "display: block;") {
-                return showClickedImg(false, i);
-            } 
-        }
-    });
+    function forcePrevious(){
+        document.querySelector(".arrow-before").addEventListener("click", function(e){
+            for (var i=0; i<this.parentNode.children.length; i++) {
+                if (this.parentNode.children[i].getAttribute("style") === "display: block;") {
+                    return showClickedImg(false, i-2);
+                } 
+            }
+        });
+    }
     
     function showModal() {
         var nr = 1;
@@ -78,7 +88,8 @@
             if (srcOfClickedThumb === images[i].src) {
                 images[i].style.display = "block";   
             } else if (srcOfClickedThumb === false){
-                if(nr>(images.length-1)) nr =1;
+                if(nr>(images.length-1)) nr = 1;
+                if (nr < 1) nr = images.length - 1 ;
                 images[nr].style.display = "block";   
             }
         }
