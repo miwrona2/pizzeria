@@ -10,8 +10,8 @@
         <div class="content gallery">  
             <div class="content-content">
                 <div class="thumbnails">
-                    <div><?= $this->Html->image('dennis-klein-123631.jpg')?></div>
                     <div><?= $this->Html->image('obrazek3.jpg')?></div>
+                    <div><?= $this->Html->image('dennis-klein-123631.jpg')?></div>
                     <div><?= $this->Html->image('pizza.jpg')?></div>
                     <div><?= $this->Html->image('opinions.jpg')?></div>
                     <div><?= $this->Html->image('joanna-boj-17158.jpg') ?></div>
@@ -41,32 +41,51 @@
     <?= $this->Html->image('alex-jones-1246.jpg') ?>
     <?= $this->Html->image('Alley-Street-with-Overhanging-Plants.jpg') ?>
     <?= $this->Html->image('baehaki-hariri-364652.jpg') ?>  
-    <a class="arrow-next" onclick="nextSlide(1)">&gg;</a>
+    <a class="arrow-next" >&gg;</a>
     <a class="arrow-before" onclick="nextSlide(-1)">&ll;</a>
 </div>
-
 <script>
 
     showModal();
     
+    function force(){
+        showClickedImg(false, 5);
+    }
+    
+    document.querySelector(".arrow-next").addEventListener("click", function(e){
+        for (var i=0; i<this.parentNode.children.length; i++) {
+            if (this.parentNode.children[i].getAttribute("style") === "display: block;") {
+                return showClickedImg(false, i);
+            } 
+        }
+    });
+    
     function showModal() {
+        var nr = 1;
         var thumbs = document.querySelectorAll(".thumbnails > div > img");
         for (var t = 0; t < thumbs.length; t++) {
             thumbs[t].addEventListener("click",function(e) {
                 displayModalandContent();
-                showClickedImg(this.src);
+                showClickedImg(this.src, nr);
             });
         }
     }
     
-    function showClickedImg(srcOfClickedThumb) {
+    function showClickedImg(srcOfClickedThumb, nr) {
         var images = document.querySelectorAll(".modal-content > img");
         for (var i = 0; i < images.length; i++) {
             images[i].style.display = "none";
             if (srcOfClickedThumb === images[i].src) {
                 images[i].style.display = "block";   
+            } else if (srcOfClickedThumb === false){
+                if(nr>(images.length-1)) nr =1;
+                images[nr].style.display = "block";   
             }
         }
+    }
+    
+    function nextSlide(nr, images) {
+        console.log(images[nr]);
     }
     
     var overlay, theModal;
