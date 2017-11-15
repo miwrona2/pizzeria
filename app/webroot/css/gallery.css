@@ -59,10 +59,88 @@
     font-weight: normal;
 }
 
-.highlight{
-    color: #337ab7;
+.Modal {
+    background-color: rgba(0,0,0, 0.93);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 101;
+    display: none;
 }
 
-.gallery .media a.highlight {
-    margin: 20px;
+
+
+.modal-content{
+    margin: auto;
+    max-width: 50%;
+    top: 22vh;
+    left: 25%;
+    position: fixed;
+    border: 2px white solid;
+    z-index: 102;
+    display: none;
+}
+
+.arrow-before,
+.arrow-next {
+    cursor: pointer;
+    position: absolute;
+    top: 36%;
+    font-size: 36px;
+    color: #fff;
+    padding: 10px;
+}
+
+.arrow-next {
+    right: 0;
+}
+
+.arrow-before:hover,
+.arrow-next:hover {
+    background: rgba(153, 153, 153, 0.6);
+}
+
+.close-modal {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: -40px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.close-modal:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+.thumbnails {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center; 
+}
+
+.thumbnails > div {
+    width: 33%;
+    padding: 15px;
+}
+.thumbnails > div > img {
+    max-height: 300px;
+}
+
+.thumbnails > div > img:hover {
+    cursor: pointer;
+}
+
+#differentModal {
+    z-index: 102;
+}
+
+#differentModal:hover { 
+    cursor: pointer;
 }

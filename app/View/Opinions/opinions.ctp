@@ -46,7 +46,7 @@
     
     <div class="content">  
         <div class="content-header">
-            <h2>Dodaj opinię</h2>
+            <h2>Dodaj Opinię</h2>
         </div>
         <div class="content-content">
             <div class="form-center">
