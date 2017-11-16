@@ -69,7 +69,13 @@
                 </div>   
                 <div class="section-content section-content-contact">
                     <?= $this->Html->image('street.bmp', array('class' => 'map-img')) ?>
-                    <div class="wrapper"><span class="contact-content">Przyjdź do naszego lokalu w Montpellier na ulicy Rue Saint-Guilhem 3</span></div>
+                    <div class="wrapper">
+                        <ul class="contact-list">
+                            <li class="contact-list-el">Przyjdź do naszego lokalu w Montpellier na ulicy Rue Saint-Guilhem 3</li>
+                            <li class="contact-list-el">Zamów telefonicznie pod nr 435234454</li>
+                            <li class="contact-list-el">Zamów online w zakładce 'Menu'</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="redirect-opinion">
                     <?php echo $this->Html->link('Kontakt', array('controller' => 'things', 'action' => 'contact'),array('class' => 'section-btn', 'escape' => false)); ?>

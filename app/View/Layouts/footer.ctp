@@ -11,7 +11,10 @@
                     <strong class="opening-hours__heading">Godziny otwarcia: </strong>
                     <ul class="list-unstyled">
                         <li>
-                            pon. - niedz. 11:00 - 23:00
+                            pon. - pt. 11:00 - 23:00
+                        </li>
+                        <li>
+                            sob. - niedz. 11:00 - 24:00
                         </li>
                     </ul>
                 </div>
