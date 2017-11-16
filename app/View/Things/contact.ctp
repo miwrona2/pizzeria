@@ -1,5 +1,5 @@
 <section class="common-part">
-    <h1>kontakt</h1>
+
 </section>
 <div class="section-common">
     <div class="content delivery">  
@@ -7,7 +7,6 @@
             <h2>Kontakt</h2>
         </div>
 
-        <div class="content-content">
             <div class="restaurant-contact">
 
                 <div class="flex-box">                
@@ -15,8 +14,9 @@
                         <div class="address">
                             <p class="name_of_pizzeria"><strong>Pizzeria Catania</strong></p>
                             <div class='post-address'>
-                                20-552 Lublin<br>
-                                ul. Kawaleryjska 4 A<br>
+                                <strong class="contact-strong">Adres: </strong>
+                                <p>20-552 Lublin</p>
+                                <p>ul. Kawaleryjska 4 A</p>
                             </div>
                             <div class="opening-hours">
                                 <strong class="contact-strong">Godziny otwarcia: </strong>
@@ -50,6 +50,5 @@
                 </div>
 
             </div>
-        </div>
     </div>
 </div>
