@@ -4,8 +4,8 @@
             <div class="col1">  
                 <p class="footer-header">Pizzeria Catania</p>
                 <div class='post-address'>
-                        20-552 Lublin<br>
-                        ul. Kawaleryjska 4 A<br>
+                        <p>34000 Montpellier, Francja</p>
+                        <p>Rue Saint-Guilhem 3</p>
                 </div>
                 <div class="opening-hours">
                     <strong class="opening-hours__heading">Godziny otwarcia: </strong>
@@ -22,7 +22,7 @@
             <div class="col2">  
                 <p class="footer-header">Skontaktuj się z nami</p>
                 <p>Nr tel: 892 232 983</p>
-                <p>Adres e-mail: pizzeria_catania@wp.pl</p>
+                <p>Adres e-mail: pizzeria_catania@gmail.com</p>
                 <div class="social">
                     <i class="fa fa-tripadvisor fa-2x" aria-hidden="true"></i>
                     <i class="fa fa-snapchat fa-2x" aria-hidden="true"></i>

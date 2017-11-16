@@ -3,6 +3,37 @@
 </section>
  
 <div class="section-common">
+    
+    <div class="content">  
+        <div class="content-header">
+            <h2>Dodaj Opinię</h2>
+        </div>
+        <div class="content-content">
+            <div class="form-center">
+                <?= $this->Form->create('Opinion',array('inputDefaults' => array('label' => false))); ?>
+                
+                <?= $this->Form->input('id'); ?>
+                <?= $this->Form->label(null, 'Komentarz: ', 'm-form_label'); ?>
+                
+                <?= $this->Form->input('content', array('class' => 'form-control', 'cols' => '140', 'rows' => '5')); ?>
+                <?= $this->Form->label(null, 'Ocena: ', 'm-form_label'); ?>
+                
+                <?= $this->Form->input('rate',  array('class'=> 'form-control', 'type' => 'select',
+                    'options' => array(1, 2, 3, 4, 5),
+                    'empty' => '(choose one)')); ?>
+                <?= $this->Form->label(null, 'Imię / Nick: ', 'm-form_label'); ?>
+               
+                <?= $this->Form->input('nickname', array('class' => 'form-control')); ?>
+                
+                <?php echo $this->Recaptcha->display();
+                if (isset($error_bot)) {
+                    echo '<div class="error-message">' . $error_bot . '</div>';
+                } ?>
+                
+                <?php echo $this->Form->end(array('label' => 'Wyślij', 'class' => 'btn btn-opinion')); ?>
+            </div>
+        </div>
+    </div>
     <div class="content">  
         <div class="content-header">
             <h2>Opinie</h2>
@@ -41,37 +72,6 @@
                     </div>
                 <?php endforeach; ?>
             </div>  
-        </div>
-    </div>
-    
-    <div class="content">  
-        <div class="content-header">
-            <h2>Dodaj Opinię</h2>
-        </div>
-        <div class="content-content">
-            <div class="form-center">
-                <?= $this->Form->create('Opinion',array('inputDefaults' => array('label' => false))); ?>
-                
-                <?= $this->Form->input('id'); ?>
-                <?= $this->Form->label(null, 'Komentarz: ', 'm-form_label'); ?>
-                
-                <?= $this->Form->input('content', array('class' => 'form-control', 'cols' => '140', 'rows' => '5')); ?>
-                <?= $this->Form->label(null, 'Ocena: ', 'm-form_label'); ?>
-                
-                <?= $this->Form->input('rate',  array('class'=> 'form-control', 'type' => 'select',
-                    'options' => array(1, 2, 3, 4, 5),
-                    'empty' => '(choose one)')); ?>
-                <?= $this->Form->label(null, 'Imię / Nick: ', 'm-form_label'); ?>
-               
-                <?= $this->Form->input('nickname', array('class' => 'form-control')); ?>
-                
-                <?php echo $this->Recaptcha->display();
-                if (isset($error_bot)) {
-                    echo '<div class="error-message">' . $error_bot . '</div>';
-                } ?>
-                
-                <?php echo $this->Form->end(array('label' => 'Wyślij', 'class' => 'btn btn-opinion')); ?>
-            </div>
         </div>
     </div>
 </div>

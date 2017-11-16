@@ -15,25 +15,35 @@
                             <p class="name_of_pizzeria"><strong>Pizzeria Catania</strong></p>
                             <div class='post-address'>
                                 <strong class="contact-strong">Adres: </strong>
-                                <p>20-552 Lublin</p>
-                                <p>ul. Kawaleryjska 4 A</p>
+                                <p>34000 Montpellier, Francja</p>
+                                <p>Rue Saint-Guilhem 3</p>
                             </div>
                             <div class="opening-hours">
                                 <strong class="contact-strong">Godziny otwarcia: </strong>
                                 <ul class="list-unstyled">
                                     <li>
-                                        pon. - niedz. 11:00 - 23:00
+                                        pon. - pt. 11:00 - 23:00
+                                    </li>
+                                    <li>
+                                        sob. - niedz. 11:00 - 24:00
                                     </li>
                                 </ul>
                             </div>
                             <div class="cont-details">
                                 <strong class="contact-strong">Skontaktuj się z nami</strong>
                                 <p>Nr tel: 892 232 983</p>
-                                <p>Adres e-mail: pizzeria_catania@wp.pl</p>
+                                <p>Adres e-mail: pizzeria_catania@gmail.com</p>
                             </div>
                             <div class="cont-details">
                                 <strong class="contact-strong">Zamówinia online i telefoniczne</strong>
-                                <p>pon. - niedz. 11:00 - 22:45</p>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        pon. - pt. 11:00 - 22:30
+                                    </li>
+                                    <li>
+                                        sob. - niedz. 11:00 - 23:30
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -45,7 +55,7 @@
                 </div>
 
                 <div class="map">
-                    <h2 class="map-description">Sprawdź jak do nas dojechać</h2>
+                    <p class="map-description">Sprawdź jak do nas dojechać</p>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d722.2067595701911!2d3.8762191263893127!3d43.61014277847799!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2spl!4v1510582920945" width="100%" height="900" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
 

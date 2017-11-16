@@ -72,7 +72,7 @@
                     <div class="wrapper">
                         <ul class="contact-list">
                             <li class="contact-list-el">Przyjdź do naszego lokalu w Montpellier na ulicy Rue Saint-Guilhem 3</li>
-                            <li class="contact-list-el">Zamów telefonicznie pod nr 435234454</li>
+                            <li class="contact-list-el">Zamów telefonicznie pod nr 892 232 983</li>
                             <li class="contact-list-el">Zamów online w zakładce 'Menu'</li>
                         </ul>
                     </div>
