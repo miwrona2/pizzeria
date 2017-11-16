@@ -45,6 +45,7 @@
                         <?= $this->Html->image('dennis-klein-123631.jpg') ?>
                     </div>
                 </div>
+                    <p>Zamów posiłek telefonicznie lub online - przejdź do menu</p>
                 <div class="redirect-opinion">
                     <?php echo $this->Html->link('Przejdź do menu', array('controller' => 'things', 'action' => 'menu'),array('class' => 'section-btn', 'escape' => false)); ?>
                 </div>
@@ -66,8 +67,9 @@
                 <div class="section-header"> 
                 <h2>Jak do nas trafić</h2>  
                 </div>   
-                <div class="section-content">
-                    <?= $this->Html->link($this->Html->image('staticmap.png'), '#', array('escape' => false))?>
+                <div class="section-content section-content-contact">
+                    <?= $this->Html->image('street.bmp', array('class' => 'map-img')) ?>
+                    <div class="wrapper"><span class="contact-content">Przyjdź do naszego lokalu w Montpellier na ulicy Rue Saint-Guilhem 3</span></div>
                 </div>
                 <div class="redirect-opinion">
                     <?php echo $this->Html->link('Kontakt', array('controller' => 'things', 'action' => 'contact'),array('class' => 'section-btn', 'escape' => false)); ?>
