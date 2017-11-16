@@ -17,16 +17,6 @@
                     <li class="demo" onclick="currentDiv(5)" style="cursor:pointer;"></li>
                 </ol>
             </div>
-<!--                <div class="section testimonials">
-                    <div class="section-header">
-                        <h2 class="pull-left">Co mówią nasi klienci</h2>
-                        <a class="pull-right">zobacz więcej opini...</a>
-                    </div>
-                    <blockquote>
-                        <p><?= $displayLastOpinion['Opinion']['content']; ?></p>
-                        <cite class="pull-right"><?= $displayLastOpinion['Opinion']['nickname'];?></cite>
-                    </blockquote>
-                </div>-->
             <div class="section-main">
                 <div class="section-header"> 
                 <h2>Oferujemy</h2>  
@@ -57,10 +47,10 @@
                 <div class="section-content">
                     <span class="nickname"><?= $displayLastOpinion['Opinion']['nickname'];?></span>
                     <time class="post-date pull-right"><?= $displayLastOpinion['Opinion']['modified'];?></time>
-                    <p class="post-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p class="post-content"><?= $displayLastOpinion['Opinion']['content'];?></p>
                 </div>
                 <div class="redirect-opinion">
-                    <?php echo $this->Html->link('Zobacz Wszystkie Opinie', array('controller' => 'opinions', 'action' => 'opinions'),array('class' => 'section-btn', 'escape' => false)); ?>
+                    <?php echo $this->Html->link('Zobacz wszystkie opinie', array('controller' => 'opinions', 'action' => 'opinions'),array('class' => 'section-btn', 'escape' => false)); ?>
                 </div>
             </div>   
             <div class="section-main">
@@ -99,46 +89,6 @@
                     <?php echo $this->Html->link('Galeria', array('controller' => 'things', 'action' => 'gallery'),array('class' => 'section-btn', 'escape' => false)); ?>
                 </div>
             </div>   
-<!--            <div class="section curly">
-                <div class="row">
-                    <div class="box-column col-md-4">
-                        <h3>NOWY SPOSÓB ZAMAWIANIA!</h3><br>
-                        <?= $this->Html->image('pizza3.jpg') ?>
-                        <p>Teraz możecie Państwo zamówić telefonicznie i przez Internet. Jesteśmy pionierami w Polsce... zapraszamy!</p>
-                    </div>
-                    <div class="box-column col-md-4">
-                        <h3>30-45 MINUT I JESTEŚMY!<br>
-                            ...z gorącym posiłkiem</h3>
-                        <?= $this->Html->image('delivery.jpg') ?>
-                        <p>Masz ochotę na coś dobrego i chcesz zjeść u siebie? Zamów ulubione potrawy telefonicznie lub online</p>
-                    </div>
-                    <div class="box-column col-md-4">
-                        <h3>BRAK GOTÓWKI?<br>
-                            ...to żaden kłopot</h3>
-                        <?= $this->Html->image('section-reservation.png') ?>
-                        <p>Możesz zamówić online i zapłacić kartą lub szybkim przelewem. Poczuj komfort zamawiania przez Internet!</p>
-                    </div>
-                </div>
-            </div>-->
-<!--            <div class="section">
-                <div class="section-header">
-                    <h2 class="pull-left">Nasze promocje:</h2>
-                    <a class="pull-right">zobacz wszystkie promocje...</a>
-                </div>
-                <div class="box white">
-                    <?= $this->Html->image('salatka1.jpg', array('class' => 'pull-left')) ?>
-                    <div class="promotion-content clearfix">
-                        <div class="float-left">
-                            <h3>Rabat 5,00 zł !</h3>
-                            <p style="width:800px;">Do pierwszego zamówienia</p>
-                            <p>Promocja obowiązuje w: <strong>Tylko dostawa</strong></p>
-                        </div>
-                    </div>
-                    <div class="btn">
-                        <a class="pull-right button">Zobacz promocje</a>
-                    </div>
-                </div>
-            </div>-->
         </div>   
     </div>
 </div>
