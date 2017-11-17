@@ -4,17 +4,17 @@
             <div class="carousel">
                 <span class="carousel-left">&ll;</span>
                 <span class="carousel-right">&gg;</span>
-                <?= $this->Html->image('jeremy-bishop-151467.jpg', array('class' => 'mySlides', 'style' => 'width:100%')) ?>
-                <?= $this->Html->image('slider/2.jpg', array('class' => 'mySlides', 'style' => 'width:100%')) ?>
-                <?= $this->Html->image('slider/3.jpg', array('class' => 'mySlides', 'style' => 'width:100%')) ?>
-                <?= $this->Html->image('slider/4.jpg', array('class' => 'mySlides', 'style' => 'width:100%')) ?>
-                <?= $this->Html->image('slider/5.jpg', array('class' => 'mySlides', 'style' => 'width:100%')) ?>
+                <?= $this->Html->image('jeremy-bishop-151467.jpg', array('class' => 'mainImg')) ?>
+                <?= $this->Html->image('slider/2.jpg', array('class' => 'mainImg')) ?>
+                <?= $this->Html->image('slider/3.jpg', array('class' => 'mainImg')) ?>
+                <?= $this->Html->image('slider/4.jpg', array('class' => 'mainImg')) ?>
+                <?= $this->Html->image('slider/5.jpg', array('class' => 'mainImg')) ?>
                 <ol class="carousel-indicators">
-                    <li class="demo" onclick="currentDiv(1)" style="cursor:pointer;"></li>
-                    <li class="demo" onclick="currentDiv(2)" style="cursor:pointer;"></li>
-                    <li class="demo" onclick="currentDiv(3)" style="cursor:pointer;"></li>
-                    <li class="demo" onclick="currentDiv(4)" style="cursor:pointer;"></li>
-                    <li class="demo" onclick="currentDiv(5)" style="cursor:pointer;"></li>
+                    <li onclick="pointSlide(1)"></li>
+                    <li onclick="pointSlide(2)"></li>
+                    <li onclick="pointSlide(3)"></li>
+                    <li onclick="pointSlide(4)"></li>
+                    <li onclick="pointSlide(5)"></li>
                 </ol>
             </div>
             <div class="section-main">
@@ -93,27 +93,44 @@
     </div>
 </div>
 <script>
-var slideIndex = 1;
-showDivs(slideIndex);
+      
+var nr_of_slide = 0;
+showMainImg(nr_of_slide);
+plusSlide();
+minusSlide();
 
-function currentDiv(n) {
-  showDivs(slideIndex = n);
+function plusSlide(){
+    document.querySelector('.carousel-right').addEventListener('click', function(){
+        nr_of_slide++;
+        showMainImg(nr_of_slide);
+    });
 }
 
-function showDivs(n) {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("demo");
-    if (n > x.length) {slideIndex = 1}    
-    if (n < 1) {slideIndex = x.length}
-    for (i = 0; i < x.length; i++) {
-            $(x[i]).hide();
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" w3-white", "");
-        $(x[slideIndex-1]).show();
-    }
+function minusSlide(){
+    document.querySelector('.carousel-left').addEventListener('click', function(){
+        nr_of_slide--;
+        showMainImg(nr_of_slide);
+    });
+}
 
-    dots[slideIndex-1].className += " w3-white";
+function pointSlide(a) {
+    nr_of_slide = a-1;
+    showMainImg(nr_of_slide);
+}
+
+function showMainImg(n) {
+    var allImages = document.querySelectorAll('.carousel img');
+    var indicators = document.querySelectorAll('.carousel-indicators li');
+
+    if (n > allImages.length-1) {nr_of_slide = 0; }
+    if (n < 0) {nr_of_slide = allImages.length-1;}
+     
+    for (var i=0; i < allImages.length; i++) {
+        allImages[i].style.display = 'none';
+        indicators[i].classList.remove("active");
+    }
+    
+    allImages[nr_of_slide].style.display = "block";
+    indicators[nr_of_slide].classList.add("active");
 }
 </script>

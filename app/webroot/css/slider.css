@@ -24,12 +24,17 @@
     height: 100vh;
 }
 
+.mainImg {
+    width:100%;
+}
+
 .carousel-left, .carousel-right {
     position: absolute;
     top: 50%;
     color: #fff;
     transform: translateY(-50%);
     font-size: 35px;
+    cursor: pointer;
 }
 
 .carousel-left {
@@ -65,16 +70,16 @@
     width: 10px;
     height: 10px;
     margin: 1px;
-    /*text-indent: -999px;*/
     border-radius: 10px;
     border: 1px solid #fff;
 }
 
 .carousel-indicators li:hover{
     background: white;
+    cursor: pointer;
 }
 
-.carousel-indicators li:active{
+.active{
     background: gray;
 }
 
