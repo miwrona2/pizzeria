@@ -30,15 +30,14 @@
     color: #3d2951;
     background-color: #fff;
     border-radius: 4px;
-    margin: 15px 0;
+    margin: 2px 0;
     border: .4px solid #a5a5a5;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .affixed {
-    position: fixed;
+    position: sticky;
     top: 0px;
-    left: 0px;
     width: 100%;
 }
 
@@ -197,6 +196,7 @@
     color: #888;
 }
 
+
 #menu-nav {
     background-color: #fff;
     width: 20%;
@@ -205,10 +205,11 @@
     border: .4px solid #a5a5a5;
     border-radius: 4px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
 }
-#menu-nav {
-    /*flex: 0 0 23%;*/
-    /*max-width: 280px;*/
+.menu-nav-affixed {
+    position: sticky;
+    top: 60px;
 }
 
 #menu-nav ul {

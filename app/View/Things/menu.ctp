@@ -325,15 +325,18 @@
         sticky_cart_navbar();
         prevent_add_btn_Link_Redirect();
         $(".pizza-size-list").hide();
+        scrollDown();
     }
 
     function sticky_cart_navbar(){
         $(document).ready(function () {
             $(window).scroll(function () {
-                if ($(document).scrollTop() > 750) {
+                if ($(document).scrollTop() > 780) {
                     $("#cart_navbar").addClass("affixed");
+                    $("#menu-nav").addClass("menu-nav-affixed");
                 } else {
                     $("#cart_navbar").removeClass("affixed");
+                    $("#menu-nav").removeClass("menu-nav-affixed");
                 }
             });
         });
@@ -402,14 +405,14 @@
         });
     });
 
-
-    var arrow_down = $('#arrow-down');
-    arrow_down.click(function(){
-    var hero = $('#hero');
-        $('html, body').animate({
-            scrollTop : hero[0].scrollHeight    
-        }, 1500);
-        console.log(hero[0].scrollHeight);
-    });
-
+    function scrollDown() {
+        var arrow_down = $('#arrow-down');
+        var hero = $('#hero');
+        
+        arrow_down.click(function(){
+            $('html, body').animate({
+                scrollTop : hero[0].scrollHeight    
+            }, 1000);
+        });
+    }
 </script>
