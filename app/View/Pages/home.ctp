@@ -2,8 +2,8 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="carousel">
-                <span class="carousel-left">&ll;</span>
-                <span class="carousel-right">&gg;</span>
+                <span onclick="previous()" class="carousel-left">&ll;</span>
+                <span onclick="next()" class="carousel-right">&gg;</span>
                 <?= $this->Html->image('jeremy-bishop-151467.jpg', array('class' => 'mainImg')) ?>
                 <?= $this->Html->image('slider/2.jpg', array('class' => 'mainImg')) ?>
                 <?= $this->Html->image('slider/3.jpg', array('class' => 'mainImg')) ?>
@@ -93,44 +93,86 @@
     </div>
 </div>
 <script>
-      
-var nr_of_slide = 0;
-showMainImg(nr_of_slide);
-plusSlide();
-minusSlide();
+window.onload = slide_change(nr=0);
+        var timer1 = 0;
 
-function plusSlide(){
-    document.querySelector('.carousel-right').addEventListener('click', function(){
-        nr_of_slide++;
-        showMainImg(nr_of_slide);
-    });
-}
 
-function minusSlide(){
-    document.querySelector('.carousel-left').addEventListener('click', function(){
-        nr_of_slide--;
-        showMainImg(nr_of_slide);
-    });
-}
+    function force_slide(slide_nr)
+    {
+        console.log(timer1);
+            clearTimeout(timer1);
+            nr = slide_nr;
 
-function pointSlide(a) {
-    nr_of_slide = a-1;
-    showMainImg(nr_of_slide);
-}
+            slide_change(nr);
+    }
+    
+    function previous(){
+            force_slide(nr-2);
+    }
+    
+    function next(){
+            force_slide(nr);
+    }
 
-function showMainImg(n) {
+ function slide_change() {
+
     var allImages = document.querySelectorAll('.carousel img');
     var indicators = document.querySelectorAll('.carousel-indicators li');
+//         if (nr>4) nr=0;
+    if (nr > allImages.length-1) nr = 0; 
 
-    if (n > allImages.length-1) {nr_of_slide = 0; }
-    if (n < 0) {nr_of_slide = allImages.length-1;}
+    if (nr < 0) {nr = allImages.length-1;}
      
     for (var i=0; i < allImages.length; i++) {
         allImages[i].style.display = 'none';
         indicators[i].classList.remove("active");
     }
     
-    allImages[nr_of_slide].style.display = "block";
-    indicators[nr_of_slide].classList.add("active");
+    allImages[nr].style.display = "block";
+    indicators[nr].classList.add("active");
+    timer1 = setTimeout("slide_change()", 4000);
+    nr++;
 }
+ 
+ 
+//var nr_of_slide = 0;   
+//showMainImg(nr_of_slide);
+//plusSlide();
+//minusSlide();
+//
+//
+//function plusSlide(){
+//    document.querySelector('.carousel-right').addEventListener('click', function(){
+//        nr_of_slide++;
+//        showMainImg(nr_of_slide);
+//    });
+//}
+//
+//function minusSlide(){
+//    document.querySelector('.carousel-left').addEventListener('click', function(){
+//        nr_of_slide--;
+//        showMainImg(nr_of_slide);
+//    });
+//}
+//
+//function pointSlide(a) {
+//    nr_of_slide = a-1;
+//    showMainImg(nr_of_slide);
+//}
+//
+//function showMainImg(n) {
+//    var allImages = document.querySelectorAll('.carousel img');
+//    var indicators = document.querySelectorAll('.carousel-indicators li');
+//
+//    if (n > allImages.length-1) {nr_of_slide = 0; }
+//    if (n < 0) {nr_of_slide = allImages.length-1;}
+//     
+//    for (var i=0; i < allImages.length; i++) {
+//        allImages[i].style.display = 'none';
+//        indicators[i].classList.remove("active");
+//    }
+//    
+//    allImages[nr_of_slide].style.display = "block";
+//    indicators[nr_of_slide].classList.add("active");
+//}
 </script>
