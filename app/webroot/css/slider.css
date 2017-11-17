@@ -79,7 +79,7 @@
     cursor: pointer;
 }
 
-.active{
+.marked{
     background: gray;
 }
 
