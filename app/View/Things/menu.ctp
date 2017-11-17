@@ -334,11 +334,9 @@
                 if ($(document).scrollTop() > 780) {
                     $("#cart_navbar").addClass("affixed");
                     $("#menu-nav").addClass("menu-nav-affixed");
-                    $(".m-group").addClass("m-group-affixed");
                 } else {
                     $("#cart_navbar").removeClass("affixed");
                     $("#menu-nav").removeClass("menu-nav-affixed");
-                    $(".m-group").removeClass("m-group-affixed");
                 }
             });
         });
