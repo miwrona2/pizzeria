@@ -415,4 +415,14 @@
             }, 1000);
         });
     }
+    
+    function anim() {
+        $(document).ready(function(){
+             $( '#arrow-down' ).animate({top: "95vh"}, 2000, function(){
+                 $( '#arrow-down' ).animate({top: "100vh"}, 2000);
+                setTimeout(anim(), 1000);
+             });
+        });
+    }
+    anim();
 </script>

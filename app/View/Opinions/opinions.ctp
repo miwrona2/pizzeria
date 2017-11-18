@@ -58,12 +58,6 @@
                             </span>
                         </div>
                         <div class="review-image"><?= $this->Html->image('avatar1.png')?></div>
-<!--                        <div class="review-calendar">
-                            <span class="wday">Piątek</span>
-                            <i class="fa fa-calendar-o icon-3x" aria-hidden="true"></i>
-                            <span class="day">09</span>
-                            <span class="month-year">czerwiec'17</span>
-                        </div>-->
                         <div class="review-contetn">
                             <p class="nickname"><?php echo $kom['Opinion']['nickname']; ?></p>
                             <time class="post-date">Opublikowano: <?php echo $kom['Opinion']['modified']; ?></time>
