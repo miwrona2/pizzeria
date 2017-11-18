@@ -12,9 +12,11 @@ class OpinionsController extends AppController {
         $record = $this->Opinion->find('first');
         $this->set('record', $record);
     
-        $records = $this->Opinion->find('all');
+        $records = $this->Opinion->find('all', array(
+                    'order' => array('Opinion.modified' => 'desc')
+                    ));
         $this->set('records', $records);
-        
+              
         if ($this->request->is('post')){
             $this->Opinion->set($this->request->data);
             if ($this->Recaptcha->verify() && ($this->Opinion->save($this->request->data))) {  
