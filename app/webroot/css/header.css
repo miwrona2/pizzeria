@@ -18,10 +18,10 @@
 .logo-container {
     position: absolute;
     z-index: 1;
-    top: 15px;
-    left: 50%;
+    top: 31px;
+    left: 10%;
     transform: scale(1.5);
-    transform: translate(-50%);
+    /*transform: translate(-50%);*/
 }
 
 .logo {

@@ -1,10 +1,10 @@
 
 <div id="header">
     <div class="header-wrapper">
-        <div class="navigation">
-            <div class="logo-container"><?php echo $this->Html->link($this->Html->image('logo.png', array('class' => 'logo')), 
+            <div class="logo-container"><?php echo $this->Html->link($this->Html->image('logo121.png', array('class' => 'logo')), 
                             array('controller' => 'pages', 'action' => 'home'), array('escape' => false)); ?>
             </div>   
+        <div class="navigation">
             <ul>
                 <li><?php echo $this->Html->link('STRONA GŁÓWNA', array('controller' => 'pages', 'action' => 'home'),array('class' => 'elements', 'onclick' => "markElement(event)")); ?></li>
                 <li list_el_numb="second"><?php echo $this->Html->link('MENU', array('controller' => 'things', 'action' => 'menu'),array('class' => 'elements', 'onclick' => "markElement(event)")); ?></li>
