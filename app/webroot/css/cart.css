@@ -163,12 +163,12 @@ h5{
 }
 
 .cart-summary > button {
-    background: #8e181c;
+    background: rgb(117, 80, 153);
     color: #fff;
     border-radius: 5px;
 }
 .cart-summary > button:hover {
-    background: #721518;
+    background: rgb(91, 62, 121);
     color: #fff;
     cursor: pointer;
     border-radius: 5px;

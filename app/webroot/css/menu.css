@@ -347,7 +347,7 @@
 
 .pizza-size-list {
     position: absolute;
-    right: 330px;
+    right: 165px;
     list-style-type: none;
     padding: 5px 0;
     background: #fff;
@@ -386,7 +386,7 @@
 }
 
 .btnAddToCart:hover {
-    background: #9c3627;
+    background: rgb(91, 62, 121);
     cursor: pointer;
     color: #fff;
     width: 100%;
