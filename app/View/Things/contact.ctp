@@ -2,7 +2,7 @@
 
 </section>
 <div class="section-common">
-    <div class="content delivery">  
+    <div class="content">  
         <div class="content-header">
             <h2>Kontakt</h2>
         </div>
