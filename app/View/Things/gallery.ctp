@@ -7,7 +7,6 @@
         <div class="content-header">
             <h2>Galeria</h2>
         </div>
-        <div class="content gallery">  
             <div class="content-content">
                 <div class="thumbnails">
                     <div><?= $this->Html->image('obrazek3.jpg')?></div>
@@ -25,7 +24,6 @@
                     <div><?= $this->Html->image('alex-jones-1246.jpg') ?></div>                                                           
                 </div>
             </div>
-        </div>
     </div>
 </section> 
 
