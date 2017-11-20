@@ -17,7 +17,7 @@
 
 .flex-box {
     display: inline-flex;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     width: 100%;
 }
 
@@ -27,7 +27,8 @@
     width: 35%;;
     margin-right: 5px;
     background: #fff;
-    box-shadow: 0 1px 1px rgba(0,0,0,.3);
+    border: .4px solid #a5a5a5;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .street-view {
@@ -35,7 +36,8 @@
     background: #fff;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 1px 1px rgba(0,0,0,.3);
+    border: .4px solid #a5a5a5;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .sv-description {
@@ -66,7 +68,8 @@
 .map {
     padding: 0 30px;
     background: #fff;
-    box-shadow: 0 1px 1px rgba(0,0,0,.3);
+    border: .4px solid #a5a5a5;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .map-description {

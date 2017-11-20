@@ -17,61 +17,62 @@
                     <li onclick="pointSlide(5)"></li>
                 </ol>
             </div>
-            <div class="section-main">
-                <div class="section-header"> 
-                <h2>Oferujemy</h2>  
+            <div class="section-common">
+                <div class="section-main">
+                    <div class="section-header"> 
+                    <h2>Oferujemy</h2>  
+                    </div>   
+                    <div class="section-content mp-thumbnails">
+                        <div class="mp-thumbnail">
+                            <h3>Pizze</h3>
+                            <?= $this->Html->image('pizza.jpg') ?>
+                        </div>
+                        <div class="mp-thumbnail">
+                            <h3>Pasty</h3>
+                            <?= $this->Html->image('pasta.jpg') ?>
+                        </div>
+                        <div class="mp-thumbnail">
+                            <h3>Sałatki</h3>
+                            <?= $this->Html->image('dennis-klein-123631.jpg') ?>
+                        </div>
+                    </div>
+                        <p>Zamów posiłek telefonicznie lub online - przejdź do menu</p>
+                    <div class="redirect-opinion">
+                        <?php echo $this->Html->link('Przejdź do menu', array('controller' => 'things', 'action' => 'menu'),array('class' => 'section-btn', 'escape' => false)); ?>
+                    </div>
                 </div>   
-                <div class="section-content mp-thumbnails">
-                    <div class="mp-thumbnail">
-                        <h3>Pizze</h3>
-                        <?= $this->Html->image('pizza.jpg') ?>
+                <div class="section-main">
+                    <div class="section-header"> 
+                    <h2>opinie o nas</h2>  
+                    </div>   
+                    <div class="section-content">
+                        <span class="nickname"><?= $displayLastOpinion['Opinion']['nickname'];?></span>
+                        <time class="post-date pull-right"><?= $displayLastOpinion['Opinion']['modified'];?></time>
+                        <p class="post-content"><?= $displayLastOpinion['Opinion']['content'];?></p>
                     </div>
-                    <div class="mp-thumbnail">
-                        <h3>Pasty</h3>
-                        <?= $this->Html->image('pasta.jpg') ?>
+                    <div class="redirect-opinion">
+                        <?php echo $this->Html->link('Zobacz wszystkie opinie', array('controller' => 'opinions', 'action' => 'opinions'),array('class' => 'section-btn', 'escape' => false)); ?>
                     </div>
-                    <div class="mp-thumbnail">
-                        <h3>Sałatki</h3>
-                        <?= $this->Html->image('dennis-klein-123631.jpg') ?>
-                    </div>
-                </div>
-                    <p>Zamów posiłek telefonicznie lub online - przejdź do menu</p>
-                <div class="redirect-opinion">
-                    <?php echo $this->Html->link('Przejdź do menu', array('controller' => 'things', 'action' => 'menu'),array('class' => 'section-btn', 'escape' => false)); ?>
-                </div>
-            </div>   
-            <div class="section-main">
-                <div class="section-header"> 
-                <h2>opinie o nas</h2>  
                 </div>   
-                <div class="section-content">
-                    <span class="nickname"><?= $displayLastOpinion['Opinion']['nickname'];?></span>
-                    <time class="post-date pull-right"><?= $displayLastOpinion['Opinion']['modified'];?></time>
-                    <p class="post-content"><?= $displayLastOpinion['Opinion']['content'];?></p>
-                </div>
-                <div class="redirect-opinion">
-                    <?php echo $this->Html->link('Zobacz wszystkie opinie', array('controller' => 'opinions', 'action' => 'opinions'),array('class' => 'section-btn', 'escape' => false)); ?>
-                </div>
-            </div>   
-            <div class="section-main">
-                <div class="section-header"> 
-                <h2>Jak do nas trafić</h2>  
-                </div>   
-                <div class="section-content section-content-contact">
-                    <?= $this->Html->image('street.bmp', array('class' => 'map-img')) ?>
-                    <div class="wrapper">
-                        <ul class="contact-list">
-                            <li class="contact-list-el">Przyjdź do naszego lokalu w Montpellier na ulicy Rue Saint-Guilhem 3</li>
-                            <li class="contact-list-el">Zamów telefonicznie pod nr 892 232 983</li>
-                            <li class="contact-list-el">Zamów online w zakładce 'Menu'</li>
-                        </ul>
+                <div class="section-main">
+                    <div class="section-header"> 
+                    <h2>Jak do nas trafić</h2>  
+                    </div>   
+                    <div class="section-content section-content-contact">
+                        <?= $this->Html->image('street.bmp', array('class' => 'map-img')) ?>
+                        <div class="wrapper">
+                            <ul class="contact-list">
+                                <li class="contact-list-el">Przyjdź do naszego lokalu w Montpellier na ulicy Rue Saint-Guilhem 3</li>
+                                <li class="contact-list-el">Zamów telefonicznie pod nr 892 232 983</li>
+                                <li class="contact-list-el">Zamów online w zakładce 'Menu'</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="redirect-opinion">
-                    <?php echo $this->Html->link('Kontakt', array('controller' => 'things', 'action' => 'contact'),array('class' => 'section-btn', 'escape' => false)); ?>
-                </div>
-            </div>   
-            <div class="section-main">
+                    <div class="redirect-opinion">
+                        <?php echo $this->Html->link('Kontakt', array('controller' => 'things', 'action' => 'contact'),array('class' => 'section-btn', 'escape' => false)); ?>
+                    </div>
+                </div>   
+                <div class="section-main">
                 <div class="section-header"> 
                 <h2>Zdjęcia</h2>  
                 </div>   
@@ -88,6 +89,7 @@
                 <div class="redirect-opinion">
                     <?php echo $this->Html->link('Galeria', array('controller' => 'things', 'action' => 'gallery'),array('class' => 'section-btn', 'escape' => false)); ?>
                 </div>
+            </div>   
             </div>   
         </div>   
     </div>
