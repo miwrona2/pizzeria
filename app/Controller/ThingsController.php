@@ -4,9 +4,6 @@ App::uses('AppController', 'Controller');
 
 class ThingsController extends AppController {
     
-//public $uses = array('Thing');
-
-
     public function index() {
         $this->redirect(array('controller' => 'pages', 'action' => 'home'));
     }
@@ -46,10 +43,6 @@ class ThingsController extends AppController {
         $this->layout = 'things';
     }
     
-    public function delivery() {
-        $this->layout = 'things';
-    }
-    
     public function contact() {
         $this->layout = 'things';
     }
@@ -57,11 +50,6 @@ class ThingsController extends AppController {
     public function gallery() {
         $this->layout = 'things';
     }
-    
-    public function allergens() {
-
-//        $this->layout = 'admin';
-    } 
    
     public function addToBoxSession() {
             $this->autoRender = false;
@@ -84,7 +72,6 @@ class ThingsController extends AppController {
     $this->Thing->clearSessionInModel();
     $this->redirect('menu');
     }
-    
 
     public function incrementController($id, $price, $size) {
         $this->autoRender = false;

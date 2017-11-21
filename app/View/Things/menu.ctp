@@ -7,7 +7,7 @@
 <div id="m-section">
     <div class="restaurant-menu">
                 <div id="cart_navbar" class="navbar">
-                    <div class="container-fluid">
+                    <div class="menu-cart-heading">
                         <ul class="nav navbar-nav pull-left">
                             <li class="visible">
                                 <h4>Catania</h4>
@@ -17,8 +17,6 @@
                             <div class="parent">
                                 <?php include 'cart.ctp';?>
                             </div>
-                            <!--<li><i class="fa fa-phone" aria-hidsden="true"></i><a> 81 454... <small>więcej</small></a></li>-->
-                            <li><a>Koszyk jest pusty</a></li>
                             <li><?php echo $this->Html->link(
                                     '<i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp; Koszyk'. '<span class="item-counter">'.$count.'</span>',
                                     array('action' => 'menu'),
@@ -44,12 +42,10 @@
                     <div id="pizza">
                         <div class="menu-section-header">
                             <h5><mark>Pizza</mark></h5>
-                            <?php // echo $this->Html->image('masthead_mainmenu.jpg') ?>
                         </div>
                         <div class="m-list m-list--header">
-                            <!--<div class="m-list__featured"><?= $this->Html->image('pizza2.jpg') ?></div>-->
                             <div class="m-list__list">
-                                <div class="m-list__item m-list__item--header" style="background: #fff;">
+                                <div class="m-list__item m-list__item--header">
                                     <div class="m-item m-item--list">
                                         <div class="m-item__row">
                                             <div class="m-item__col-header">
@@ -368,7 +364,7 @@
         $('.callFunctionAddToBoxSession').submit(function(e){
             e.preventDefault();
             $.post($(this).attr('action'),$(this).serialize(),function(dataFromRequest){
-
+                    console.log((dataFromRequest));
                     var decrement = "<a onclick=\"decrementAjax("+dataFromRequest.id+", "+dataFromRequest.price+", "+dataFromRequest.size+")\" class=\"decrement appendedElements\">-&nbsp</a>";
                     var inputAmount = "<div class=\"input text\"><input name=\"data[amount]\" class=\"cartInput\" id=\"prefix"+dataFromRequest.id+dataFromRequest.size+"\" value=\"<?= 1 ?>\" type=\"text\"/></div>";
                     var increment = "<a onclick=\"incrementAjax("+dataFromRequest.id+", "+dataFromRequest.price+", "+dataFromRequest.size+")\"  class=\"increment appendedElements\">&nbsp+</a>";

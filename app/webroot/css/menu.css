@@ -50,27 +50,27 @@
     clear: both;
 }
 
-.container-fluid h4 {
+.menu-cart-heading h4 {
     font-size: 18px;
     font-weight: 500;
 }
 
-.container-fluid ul {
+.menu-cart-heading ul {
     padding-left: 15px;
     padding-right: 15px;
 }
     
-.container-fluid ul {
+.menu-cart-heading ul {
     display: block;
     list-style-type: none;
 }
 
-.container-fluid ul li {
+.menu-cart-heading ul li {
     float: left;
     margin: 17px 0 10px;
 }
 
-.container-fluid ul li a {
+.menu-cart-heading ul li a {
     color: #3d2951;
     margin-left: 15px;
     margin-right: 15px;
