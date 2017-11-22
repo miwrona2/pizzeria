@@ -136,15 +136,13 @@
                                                 </div>
                                                 <div class="m-item__col m-item__col--secondary actions">
                                                     <div class="btn-group">
-                                                        <?php
-                                                            echo $this->Html->link('Do koszyka',
-                                                                    array('action' => false),
-                                                                    array('class' => 'btn add-button',
-                                                                        'id' => $pizza['Pizza']['id'],
-                                                                        'onclick' => "togglePizzaSize('".$pizza['Pizza']['id']."')",
-                                                                        'escape' => false))
-                                                        ?>
-     
+                                                        <?php echo $this->Form->create('Thing',array('id'=>'add-form-action', 'class'=> 'callFunctionAddToBoxSession','url'=>array('controller'=>'things','action'=>'addToBoxSession')));?>
+                                                        <?php echo $this->Form->hidden('product_id',array('value'=> $pasta['Pasta']['id']))?>
+                                                        <?php echo $this->Form->hidden('item_name',array('value'=> $pasta['Pasta']['name']))?>
+                                                        <?php echo $this->Form->hidden('price',array('value'=> $pasta['Pasta']['price']))?>
+                                                        <?php echo $this->Form->hidden('size',array('value'=> 3))?>
+                                                        <?php echo $this->Form->submit('Do koszyka',array('class'=>'single-btn'));?>
+                                                        <?php echo $this->Form->end();?>
                                                     </div>
                                                 </div>
                                             </div>
@@ -173,15 +171,13 @@
                                                 </div>
                                                 <div class="m-item__col m-item__col--secondary actions">
                                                     <div class="btn-group">
-                                                        <?php
-                                                            echo $this->Html->link('Do koszyka',
-                                                                    array('action' => false),
-                                                                    array('class' => 'btn add-button',
-                                                                        'id' => $pizza['Pizza']['id'],
-                                                                        'onclick' => "togglePizzaSize('".$pizza['Pizza']['id']."')",
-                                                                        'escape' => false))
-                                                        ?>
-     
+                                                        <?php echo $this->Form->create('Thing',array('id'=>'add-form-action', 'class'=> 'callFunctionAddToBoxSession','url'=>array('controller'=>'things','action'=>'addToBoxSession')));?>
+                                                        <?php echo $this->Form->hidden('product_id',array('value'=> $salad['Salad']['id']))?>
+                                                        <?php echo $this->Form->hidden('item_name',array('value'=> $salad['Salad']['name']))?>
+                                                        <?php echo $this->Form->hidden('price',array('value'=> $salad['Salad']['price']))?>
+                                                        <?php echo $this->Form->hidden('size',array('value'=> 4))?>
+                                                        <?php echo $this->Form->submit('Do koszyka',array('class'=>'single-btn'));?>
+                                                        <?php echo $this->Form->end();?>
                                                     </div>
                                                 </div>
                                             </div>
@@ -210,15 +206,13 @@
                                                 </div>
                                                 <div class="m-item__col m-item__col--secondary actions">
                                                     <div class="btn-group">
-                                                        <?php
-                                                            echo $this->Html->link('Do koszyka',
-                                                                    array('action' => false),
-                                                                    array('class' => 'btn add-button',
-                                                                        'id' => $pizza['Pizza']['id'],
-                                                                        'onclick' => "togglePizzaSize('".$pizza['Pizza']['id']."')",
-                                                                        'escape' => false))
-                                                        ?>
-     
+                                                        <?php echo $this->Form->create('Thing',array('id'=>'add-form-action', 'class'=> 'callFunctionAddToBoxSession','url'=>array('controller'=>'things','action'=>'addToBoxSession')));?>
+                                                        <?php echo $this->Form->hidden('product_id',array('value'=> $addition['Addition']['id']))?>
+                                                        <?php echo $this->Form->hidden('item_name',array('value'=> $addition['Addition']['name']))?>
+                                                        <?php echo $this->Form->hidden('price',array('value'=> $addition['Addition']['price']))?>
+                                                        <?php echo $this->Form->hidden('size',array('value'=> 5))?>
+                                                        <?php echo $this->Form->submit('Do koszyka',array('class'=>'single-btn'));?>
+                                                        <?php echo $this->Form->end();?>
                                                     </div>
                                                 </div>
                                             </div>
@@ -247,15 +241,13 @@
                                                 </div>
                                                 <div class="m-item__col m-item__col--secondary actions">
                                                     <div class="btn-group">
-                                                        <?php
-                                                            echo $this->Html->link('Do koszyka',
-                                                                    array('action' => false),
-                                                                    array('class' => 'btn add-button',
-                                                                        'id' => $pizza['Pizza']['id'],
-                                                                        'onclick' => "togglePizzaSize('".$pizza['Pizza']['id']."')",
-                                                                        'escape' => false))
-                                                        ?>
-     
+                                                        <?php echo $this->Form->create('Thing',array('id'=>'add-form-action', 'class'=> 'callFunctionAddToBoxSession','url'=>array('controller'=>'things','action'=>'addToBoxSession')));?>
+                                                        <?php echo $this->Form->hidden('product_id',array('value'=> $sauce['Sauce']['id']))?>
+                                                        <?php echo $this->Form->hidden('item_name',array('value'=> $sauce['Sauce']['name']))?>
+                                                        <?php echo $this->Form->hidden('price',array('value'=> $sauce['Sauce']['price']))?>
+                                                        <?php echo $this->Form->hidden('size',array('value'=> 6))?>
+                                                        <?php echo $this->Form->submit('Do koszyka',array('class'=>'single-btn'));?>
+                                                        <?php echo $this->Form->end();?>
                                                     </div>
                                                 </div>
                                             </div>
@@ -284,15 +276,13 @@
                                                 </div>
                                                 <div class="m-item__col m-item__col--secondary actions">
                                                     <div class="btn-group">
-                                                        <?php
-                                                            echo $this->Html->link('Do koszyka',
-                                                                    array('action' => false),
-                                                                    array('class' => 'btn add-button',
-                                                                        'id' => $pizza['Pizza']['id'],
-                                                                        'onclick' => "togglePizzaSize('".$pizza['Pizza']['id']."')",
-                                                                        'escape' => false))
-                                                        ?>
-     
+                                                        <?php echo $this->Form->create('Thing',array('id'=>'add-form-action', 'class'=> 'callFunctionAddToBoxSession','url'=>array('controller'=>'things','action'=>'addToBoxSession')));?>
+                                                        <?php echo $this->Form->hidden('product_id',array('value'=> $drink['Drink']['id']))?>
+                                                        <?php echo $this->Form->hidden('item_name',array('value'=> $drink['Drink']['name']))?>
+                                                        <?php echo $this->Form->hidden('price',array('value'=> $drink['Drink']['price']))?>
+                                                        <?php echo $this->Form->hidden('size',array('value'=> 7))?>
+                                                        <?php echo $this->Form->submit('Do koszyka',array('class'=>'single-btn'));?>
+                                                        <?php echo $this->Form->end();?>
                                                     </div>
                                                 </div>
                                             </div>
@@ -373,8 +363,9 @@
 
                     var size;
                     if(Number(dataFromRequest.size) === 1){size="Duża";}
-                    else if (Number(dataFromRequest.size) === 2)
-                    {size = "Max";} else {size = "Undefined size of pizza!";}
+                    else if (Number(dataFromRequest.size) === 2){size = "Max";} 
+                    else if (Number(dataFromRequest.size) > 2 && Number(dataFromRequest.size) <=7){size = "";} 
+                    else {size = "Undefined size of pizza!";}
 
                     if(dataFromRequest.whetherItemInCart === true){
                         //item already exists in cart

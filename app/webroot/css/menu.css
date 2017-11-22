@@ -316,9 +316,23 @@
     
 }
 
-.btn-group a {
+.btn-group .add-button {
     background-color: rgb(117, 80, 153);
     display: block;
+}
+
+.single-btn {
+    background-color: rgb(117, 80, 153);
+    border: none;
+    color: #fff;
+    padding: 6px 12px;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+.single-btn:hover {
+    cursor: pointer;
+    background-color: rgb(91, 62, 121);
 }
 
 .m-item--list .m-item__col--secondary{
@@ -343,6 +357,7 @@
 .add-button:hover{
     background-color: rgb(91, 62, 121);
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .pizza-size-list {

@@ -29,7 +29,9 @@
                                 <?php  
                                 if($mealInCart['size'] == 1){echo 'Duża';}
                                 else if($mealInCart['size'] == 2){echo 'Max';}
+                                else if ($mealInCart['size'] > 2 && $mealInCart['size'] <=7){echo "";} 
                                 else {echo 'UNDEFINED SIZE OF PIZZA';}
+
                                 ?>
                                 <?php echo $this->Html->link('remove', array('action' => 'removeController', $mealInCart['id']), array('class' => 'IdChroniony'));?>
                             </div>
