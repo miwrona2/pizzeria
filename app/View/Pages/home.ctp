@@ -20,7 +20,7 @@
             <div class="section-common">
                 <div class="section-main">
                     <div class="section-header"> 
-                    <h2>Oferujemy</h2>  
+                        <h2>Oferujemy</h2>  
                     </div>   
                     <div class="section-content mp-thumbnails">
                         <div class="mp-thumbnail">
@@ -36,27 +36,13 @@
                             <?= $this->Html->image('dennis-klein-123631.jpg') ?>
                         </div>
                     </div>
-                        <p>Zamów posiłek telefonicznie lub online - przejdź do menu</p>
                     <div class="redirect-opinion">
-                        <?php echo $this->Html->link('Przejdź do menu', array('controller' => 'things', 'action' => 'menu'),array('class' => 'section-btn', 'escape' => false)); ?>
+                        <?php echo $this->Html->link('Przejdź do menu', array('controller' => 'mains', 'action' => 'menu'),array('class' => 'section-btn', 'escape' => false)); ?>
                     </div>
                 </div>   
                 <div class="section-main">
                     <div class="section-header"> 
-                    <h2>opinie o nas</h2>  
-                    </div>   
-                    <div class="section-content">
-                        <span class="nickname"><?= $displayLastOpinion['Opinion']['nickname'];?></span>
-                        <time class="post-date pull-right"><?= $displayLastOpinion['Opinion']['modified'];?></time>
-                        <p class="post-content"><?= $displayLastOpinion['Opinion']['content'];?></p>
-                    </div>
-                    <div class="redirect-opinion">
-                        <?php echo $this->Html->link('Zobacz wszystkie opinie', array('controller' => 'opinions', 'action' => 'opinions'),array('class' => 'section-btn', 'escape' => false)); ?>
-                    </div>
-                </div>   
-                <div class="section-main">
-                    <div class="section-header"> 
-                    <h2>Jak do nas trafić</h2>  
+                        <h2>Jak do nas trafić</h2>  
                     </div>   
                     <div class="section-content section-content-contact">
                         <?= $this->Html->image('street.bmp', array('class' => 'map-img')) ?>
@@ -69,27 +55,40 @@
                         </div>
                     </div>
                     <div class="redirect-opinion">
-                        <?php echo $this->Html->link('Kontakt', array('controller' => 'things', 'action' => 'contact'),array('class' => 'section-btn', 'escape' => false)); ?>
+                        <?php echo $this->Html->link('Kontakt', array('controller' => 'mains', 'action' => 'contact'),array('class' => 'section-btn', 'escape' => false)); ?>
                     </div>
                 </div>   
                 <div class="section-main">
-                <div class="section-header"> 
-                <h2>Zdjęcia</h2>  
-                </div>   
-                <div class="section-content mp-thumbnails">
-                    <div class="mp-thumbnail">
-                        <?= $this->Html->image('joanna-boj-17158.jpg') ?>
-                        <?= $this->Html->image('alex-jones-1246.jpg') ?>
-                        <?= $this->Html->image('Alley-Street-with-Overhanging-Plants.jpg') ?>
-                        <?= $this->Html->image('baehaki-hariri-364652.jpg') ?>
-                        <?= $this->Html->image('clem-onojeghuo-175917.jpg') ?>
-                        <?= $this->Html->image('darren-coleshill-178479.jpg') ?>
+                    <div class="section-header"> 
+                        <h2>Opinie o nas</h2>  
+                    </div>   
+                    <div class="section-content">
+                        <span class="nickname"><?= $displayLastOpinion['Opinion']['nickname'];?></span>
+                        <time class="post-date pull-right"><?= $displayLastOpinion['Opinion']['modified'];?></time>
+                        <p class="post-content"><?= $displayLastOpinion['Opinion']['content'];?></p>
                     </div>
-                </div>
-                <div class="redirect-opinion">
-                    <?php echo $this->Html->link('Galeria', array('controller' => 'things', 'action' => 'gallery'),array('class' => 'section-btn', 'escape' => false)); ?>
-                </div>
-            </div>   
+                    <div class="redirect-opinion">
+                        <?php echo $this->Html->link('Zobacz wszystkie opinie', array('controller' => 'opinions', 'action' => 'opinions'),array('class' => 'section-btn', 'escape' => false)); ?>
+                    </div>
+                </div>   
+                <div class="section-main">
+                    <div class="section-header"> 
+                        <h2>Zdjęcia</h2>  
+                    </div>   
+                    <div class="section-content mp-thumbnails">
+                        <div class="mp-thumbnail">
+                            <?= $this->Html->image('joanna-boj-17158.jpg') ?>
+                            <?= $this->Html->image('alex-jones-1246.jpg') ?>
+                            <?= $this->Html->image('Alley-Street-with-Overhanging-Plants.jpg') ?>
+                            <?= $this->Html->image('baehaki-hariri-364652.jpg') ?>
+                            <?= $this->Html->image('clem-onojeghuo-175917.jpg') ?>
+                            <?= $this->Html->image('darren-coleshill-178479.jpg') ?>
+                        </div>
+                    </div>
+                    <div class="redirect-opinion">
+                        <?php echo $this->Html->link('Galeria', array('controller' => 'mains', 'action' => 'gallery'),array('class' => 'section-btn', 'escape' => false)); ?>
+                    </div>
+                </div>   
             </div>   
         </div>   
     </div>
