@@ -33,10 +33,10 @@
             <div class="col3">  
                 <p class="footer-header">Mapa Strony</p>     
                 <?php echo $this->Html->link('<p>Strona Główna</p>', array('controller' => 'pages', 'action' => 'home'),array('class' => 'subpage', 'escape' => false)); ?>
-                <?php echo $this->Html->link('<p>Menu</p>', array('controller' => 'things', 'action' => 'menu'),array('class' => 'subpage', 'escape' => false)); ?>
+                <?php echo $this->Html->link('<p>Menu</p>', array('controller' => 'mains', 'action' => 'menu'),array('class' => 'subpage', 'escape' => false)); ?>
                 <?php echo $this->Html->link('<p>Opinie</p>', array('controller' => 'opinions', 'action' => 'opinions'),array('class' => 'subpage', 'escape' => false)); ?>
-                <?php echo $this->Html->link('<p>Kontakt</p>', array('controller' => 'things', 'action' => 'contact'),array('class' => 'subpage', 'escape' => false)); ?>
-                <?php echo $this->Html->link('<p>Galeria</p>', array('controller' => 'things', 'action' => 'gallery'),array('class' => 'subpage', 'escape' => false)); ?>            
+                <?php echo $this->Html->link('<p>Kontakt</p>', array('controller' => 'mains', 'action' => 'contact'),array('class' => 'subpage', 'escape' => false)); ?>
+                <?php echo $this->Html->link('<p>Galeria</p>', array('controller' => 'mains', 'action' => 'gallery'),array('class' => 'subpage', 'escape' => false)); ?>            
             </div>
             <div class="col4"> 
                 <p class="footer-header">Dołącz do newslettera</p>
