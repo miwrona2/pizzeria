@@ -28,7 +28,7 @@
         echo $this->Html->css('slider');
         echo $this->Html->css('home');
         echo $this->Html->css('gallery');
-        echo $this->Html->css('things');
+        echo $this->Html->css('main');
         echo $this->Html->css('font-awesome.min');
         echo $this->Html->script('jquery-3.2.1');
 

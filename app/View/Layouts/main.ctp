@@ -26,7 +26,7 @@
         echo $this->Html->css('header');
         echo $this->Html->css('footer');
         echo $this->Html->css('gallery');
-        echo $this->Html->css('things');
+        echo $this->Html->css('main');
         echo $this->Html->css('opinions');
         echo $this->Html->css('menu');
         echo $this->Html->css('contact');

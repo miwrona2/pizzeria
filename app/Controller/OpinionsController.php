@@ -6,7 +6,7 @@ class OpinionsController extends AppController {
         public $components = array('Recaptcha.Recaptcha');
 
         public function opinions() {
-        $this->layout = 'things';
+        $this->layout = 'main';
           
         $this->loadmodel('Opinion');
         $record = $this->Opinion->find('first');

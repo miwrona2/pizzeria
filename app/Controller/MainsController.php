@@ -9,7 +9,7 @@ class MainsController extends AppController {
     }
     
     public function menu() {
-        $this->layout = 'things';
+        $this->layout = 'main';
 
         $this->loadModel('Pizza', 'Salad');
         $pizzas = $this->Pizza->find('all');
@@ -40,15 +40,15 @@ class MainsController extends AppController {
     }
      
     public function discount() {
-        $this->layout = 'things';
+        $this->layout = 'main';
     }
     
     public function contact() {
-        $this->layout = 'things';
+        $this->layout = 'main';
     }
     
     public function gallery() {
-        $this->layout = 'things';
+        $this->layout = 'main';
     }
    
     public function addToBoxSession() {
