@@ -75,14 +75,16 @@
                     <div class="section-header"> 
                         <h2>Zdjęcia</h2>  
                     </div>   
-                    <div class="section-content mp-thumbnails">
-                        <div class="mp-thumbnail">
-                            <?= $this->Html->image('joanna-boj-17158.jpg') ?>
-                            <?= $this->Html->image('alex-jones-1246.jpg') ?>
-                            <?= $this->Html->image('Alley-Street-with-Overhanging-Plants.jpg') ?>
-                            <?= $this->Html->image('baehaki-hariri-364652.jpg') ?>
-                            <?= $this->Html->image('clem-onojeghuo-175917.jpg') ?>
-                            <?= $this->Html->image('darren-coleshill-178479.jpg') ?>
+                    <div class="section-content">
+                        <div class="mp-thumbnails-gal">
+                            <div class="mp-thumbnail-gal"><?= $this->Html->image('darren-coleshill-178479.jpg') ?></div>
+                            <div class="mp-thumbnail-gal"><?= $this->Html->image('joanna-boj-17158.jpg') ?></div>
+                            <div class="mp-thumbnail-gal"><?= $this->Html->image('alex-jones-1246.jpg') ?></div>
+                            <div class="mp-thumbnail-gal"><?= $this->Html->image('Alley-Street-with-Overhanging-Plants.jpg') ?></div>
+                            <div class="mp-thumbnail-gal"><?= $this->Html->image('baehaki-hariri-364652.jpg') ?></div>
+                            <div class="mp-thumbnail-gal"><?= $this->Html->image('clem-onojeghuo-175917.jpg') ?></div>
+                            <div class="mp-thumbnail-gal"><?= $this->Html->image('darren-coleshill-178479.jpg') ?></div>
+                            <div class="mp-thumbnail-gal"><?= $this->Html->image('joanna-boj-17158.jpg') ?></div>
                         </div>
                     </div>
                     <div class="redirect-opinion">
