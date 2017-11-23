@@ -2,7 +2,7 @@
 App::uses('AppModel', 'Model');
 App::uses('CakeSession', 'Model/Datasource');
 
-class Thing extends AppModel {
+class Main extends AppModel {
 
     public $useTable = false; 
     

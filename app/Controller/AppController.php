@@ -36,13 +36,13 @@ class AppController extends Controller {
         public function beforeFilter() {
                 $this->addMail();
             
-		$this->loadModel('Thing');
+		$this->loadModel('Main');
                 
-                $finalOrderPrice = $this->Thing->countTotatalOrderPrice();
+                $finalOrderPrice = $this->Main->countTotatalOrderPrice();
                 $this->set('finalOrderPrice', json_encode($finalOrderPrice));
                         
-		$this->set('count',$this->Thing->getCount());
-                $array = $this->Thing->readArray();
+		$this->set('count',$this->Main->getCount());
+                $array = $this->Main->readArray();
 		$this->set('array', $array);
                 return $array;
 	}

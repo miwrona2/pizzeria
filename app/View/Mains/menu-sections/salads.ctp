@@ -17,7 +17,7 @@
                             </div>
                             <div class="m-item__col m-item__col--secondary actions">
                                 <div class="btn-group">
-                                    <?php echo $this->Form->create('Thing',array('id'=>'add-form-action', 'class'=> 'callFunctionAddToBoxSession','url'=>array('controller'=>'things','action'=>'addToBoxSession')));?>
+                                    <?php echo $this->Form->create('Main',array('id'=>'add-form-action', 'class'=> 'callFunctionAddToBoxSession','url'=>array('controller'=>'mains','action'=>'addToBoxSession')));?>
                                     <?php echo $this->Form->hidden('product_id',array('value'=> $salad['Salad']['id']))?>
                                     <?php echo $this->Form->hidden('item_name',array('value'=> $salad['Salad']['name']))?>
                                     <?php echo $this->Form->hidden('price',array('value'=> $salad['Salad']['price']))?>

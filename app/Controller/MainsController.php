@@ -2,7 +2,7 @@
 
 App::uses('AppController', 'Controller');
 
-class ThingsController extends AppController {
+class MainsController extends AppController {
     
     public function index() {
         $this->redirect(array('controller' => 'pages', 'action' => 'home'));
@@ -54,39 +54,39 @@ class ThingsController extends AppController {
     public function addToBoxSession() {
             $this->autoRender = false;
            if ($this->request->is('post')) {
-                    $id = $this->request->data['Thing']['product_id'];
-                    $name = $this->request->data['Thing']['item_name'];
-                    $price = $this->request->data['Thing']['price'];
-                    $size = $this->request->data['Thing']['size'];
-                    $this->Thing->addProduct($id);
-                    $putItemInSession = $this->Thing->putItemInSession($id, $name, $price, $size);
+                    $id = $this->request->data['Main']['product_id'];
+                    $name = $this->request->data['Main']['item_name'];
+                    $price = $this->request->data['Main']['price'];
+                    $size = $this->request->data['Main']['size'];
+                    $this->Main->addProduct($id);
+                    $putItemInSession = $this->Main->putItemInSession($id, $name, $price, $size);
             } 
 
-            $getCount = $this->Thing->getCount();
+            $getCount = $this->Main->getCount();
             $arrayPizza = array("counter" => $getCount, "id" => $id, "name" => $name, "price" => $price, "size" => $size, "whetherItemInCart" => $putItemInSession);
             return json_encode($arrayPizza);
     }
       
     public function clearSession() {
     $this->autoRender = false;
-    $this->Thing->clearSessionInModel();
+    $this->Main->clearSessionInModel();
     $this->redirect('menu');
     }
 
     public function incrementController($id, $price, $size) {
         $this->autoRender = false;
-        $valueAfterIncrement = $this->Thing->increment($id, $size);
-        $this->Thing->addProduct($id);
-        $count = $this->Thing->getCount();
+        $valueAfterIncrement = $this->Main->increment($id, $size);
+        $this->Main->addProduct($id);
+        $count = $this->Main->getCount();
         
         return json_encode(array("amount" => $valueAfterIncrement, "count" => $count, "price" => $price ));
     }
             
     public function decrementController($id, $price, $size) {
         $this->autoRender = false;
-        $valueAfterDecrement = $this->Thing->decrement($id, $size);
-        $this->Thing->subtractProduct($id);
-        $count = $this->Thing->getCount();
+        $valueAfterDecrement = $this->Main->decrement($id, $size);
+        $this->Main->subtractProduct($id);
+        $count = $this->Main->getCount();
         if($valueAfterDecrement === 0 ){$this->removeInController($id, $size);}
         
         return json_encode(array("amount" => $valueAfterDecrement, "count" => $count, "price" => $price ));
@@ -94,7 +94,7 @@ class ThingsController extends AppController {
     
     public function readUpdatedArrayFromSession($id, $size){
     $this->autoRender = false;
-    $updatedArray = $this->Thing->readArray();
+    $updatedArray = $this->Main->readArray();
     $itemsAmountInCart = count($updatedArray);
 
 
@@ -111,13 +111,13 @@ class ThingsController extends AppController {
         
     public function removeInController($id, $size){
         $this->autoRender = false;
-        $this->Thing->removeRecordFromArray($id, $size);
-        $this->Thing->sortById($this->Thing->readArray());
+        $this->Main->removeRecordFromArray($id, $size);
+        $this->Main->sortById($this->Main->readArray());
     }
         
     public function total() {
         $this->autoRender = false;
-        return json_encode(number_format($this->Thing->countTotatalOrderPrice(),2));
+        return json_encode(number_format($this->Main->countTotatalOrderPrice(),2));
     }
 }
 

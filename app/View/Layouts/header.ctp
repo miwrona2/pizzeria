@@ -7,10 +7,10 @@
         <div class="navigation">
             <ul>
                 <li><?php echo $this->Html->link('STRONA GŁÓWNA', array('controller' => 'pages', 'action' => 'home'),array('class' => 'elements', 'onclick' => "markElement(event)")); ?></li>
-                <li list_el_numb="second"><?php echo $this->Html->link('MENU', array('controller' => 'things', 'action' => 'menu'),array('class' => 'elements', 'onclick' => "markElement(event)")); ?></li>
+                <li list_el_numb="second"><?php echo $this->Html->link('MENU', array('controller' => 'mains', 'action' => 'menu'),array('class' => 'elements', 'onclick' => "markElement(event)")); ?></li>
                 <li><?php echo $this->Html->link('OPINIE', array('controller' => 'opinions', 'action' => 'opinions'),array('class' => 'elements', 'onclick' => "markElement(event)")); ?></li>
-                <li><?php echo $this->Html->link('KONTAKT', array('controller' => 'things', 'action' => 'contact'),array('class' => 'elements', 'onclick' => "markElement(event)")); ?></li>
-                <li><?php echo $this->Html->link('GALERIA', array('controller' => 'things', 'action' => 'gallery'),array('class' => 'elements', 'onclick' => "markElement(event)")); ?></li>
+                <li><?php echo $this->Html->link('KONTAKT', array('controller' => 'mains', 'action' => 'contact'),array('class' => 'elements', 'onclick' => "markElement(event)")); ?></li>
+                <li><?php echo $this->Html->link('GALERIA', array('controller' => 'mains', 'action' => 'gallery'),array('class' => 'elements', 'onclick' => "markElement(event)")); ?></li>
             </ul>
         </div>
     </div>
