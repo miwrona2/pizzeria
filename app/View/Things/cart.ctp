@@ -33,7 +33,6 @@
                                 else {echo 'UNDEFINED SIZE OF PIZZA';}
 
                                 ?>
-                                <?php echo $this->Html->link('remove', array('action' => 'removeController', $mealInCart['id']), array('class' => 'IdChroniony'));?>
                             </div>
                             <div class="quantity">
                                 <?= $this->Html->link('-&nbsp', array('action' => false), array('onclick'=>"decrementAjax('".$mealInCart['id']."', '".$mealInCart['price']."', '".$mealInCart['size']."')",'id'=>'prefix'.$mealInCart['id'], 'class' => 'decrement', 'escape' => false)); ?>
@@ -49,7 +48,6 @@
                 ?>
             </div>
         </div>
-        <div class="delivery"><?php echo $this->Html->link('Zamów', array('controller' => 'orders', 'action' => 'create'), array('class' => '')); ?></div>
             <?php if(!empty($mealsInCart)): ?>
                 <div class="cart-summary" style="display: flex;">
                 <?php echo $this->Html->link('Ukryj koszyk', false, 

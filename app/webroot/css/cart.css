@@ -118,14 +118,6 @@ h5{
     color: aqua;
 }
 
-.delivery{
-    border-top: 1px solid rgba(0,0,0,.1);
-    border-bottom: 1px dotted #d3d3d3;
-    /*        min-height: 30px;*/
-    display: block;
-    padding: 10px 20px
-}
-
 .delivery a{
     color: #337ab7;
     font-family: 'Open Sans', "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;

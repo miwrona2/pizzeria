@@ -99,4 +99,52 @@ function arrow_animation() {
          });
     });
 }
+
+/*
+ * 2 parallel functions works while adding/removing items from cart
+ * addToBoxAjax()
+ * and
+ * addToBoxSession()
+ */
+$(document).ready(function addToBoxAjax(){
+    $('.callFunctionAddToBoxSession').submit(function(e){
+        e.preventDefault();
+        $.post($(this).attr('action'),$(this).serialize(),function(dataFromRequest){
+                
+                var decrement = "<a onclick=\"decrementAjax("+dataFromRequest.id+", "+dataFromRequest.price+", "+dataFromRequest.size+")\" class=\"decrement appendedElements\">-&nbsp</a>";
+                var inputAmount = "<div class=\"input text\"><input name=\"data[amount]\" class=\"cartInput\" id=\"prefix"+dataFromRequest.id+dataFromRequest.size+"\" value=\"<?= 1 ?>\" type=\"text\"/></div>";
+                var increment = "<a onclick=\"incrementAjax("+dataFromRequest.id+", "+dataFromRequest.price+", "+dataFromRequest.size+")\"  class=\"increment appendedElements\">&nbsp+</a>";
+
+                $('.item-counter').text(dataFromRequest.counter);
+
+                var size;
+                if(Number(dataFromRequest.size) === 1){size="Duża";}
+                else if (Number(dataFromRequest.size) === 2){size = "Max";} 
+                else if (Number(dataFromRequest.size) > 2 && Number(dataFromRequest.size) <=7){size = "";} 
+                else {size = "Undefined size of pizza!";}
+
+                if(dataFromRequest.whetherItemInCart === true){
+                    //item already exists in cart
+                    updateInputValue(dataFromRequest.id, dataFromRequest.size);
+                    displayOrderButton();
+                }
+                else if(dataFromRequest.whetherItemInCart === false) {
+                    //display new item inside the cart
+                    displayOrderButton();
+                    emptyCartInfoDisappear();
+                    $('#inCart').append("<div class=\"dishName\" id=\"dishId"+dataFromRequest.id+dataFromRequest.size+"\"><div class='info'><strong>"+dataFromRequest.id+"-"+dataFromRequest.name+"</strong>&nbsp;"+size+
+                        "</div><div class=\"quantity\">"+decrement+inputAmount+increment+"</div><div class='subtotal'>"+dataFromRequest.price+"</div></div>");
+                }
+                else {
+                    alert("Sorry! Something went wrong.Try to put product in cart later");
+                }
+        },"json");
+        $(document).ready(function(){
+            $(".pizza-size-list").hide();
+        });
+        $(document).ready(function(){
+            $(".box").fadeIn();
+        });
+    });
+});
 </script>
