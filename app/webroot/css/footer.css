@@ -79,7 +79,6 @@
 .footer-header {
     font-size: 25px;
     color: grey;
-    font-family: "Verdana";
 }
 
 .col1 {
@@ -126,4 +125,9 @@
 
 .subpage {
     color: #fff;
+}
+
+.author {
+    font-weight: 500;
+    color: lightseagreen;
 }

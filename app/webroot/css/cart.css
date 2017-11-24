@@ -27,7 +27,6 @@
 .quantity {
     display: flex;
     flex: 1;
-    /*width: 70px;*/
 }
 
 .subtotal {
@@ -49,7 +48,6 @@
     position: absolute; 
     top: 25px;
     right: 65px;
-    font-family: sans-serif;
     display: none;
     z-index:1;
     border-radius: 10px;
@@ -120,7 +118,6 @@ h5{
 
 .delivery a{
     color: #337ab7;
-    font-family: 'Open Sans', "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 400;
     font-size: 14px;
 }
@@ -141,7 +138,6 @@ h5{
     display: block;
     padding: 6px 12px;
     margin: 5px;
-    font-family: 'Open Sans', "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 400;
     font-size: 14px;
     border-radius: 5px;

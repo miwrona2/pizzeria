@@ -15,11 +15,10 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 .muted {
-        display: block;
+    display: block;
 }
 .inside-muted {
-       color: black;
-    
+    color: black;
 }
 
 .appendedElements {
@@ -81,7 +80,6 @@
     flex-wrap: wrap;
     background-color: #9c3627;
     color: #fff;
-
 }
 
 .menu-promotions-item {
@@ -103,36 +101,9 @@
     line-height: 1.1;
 }
 
-.restaurant-menu .m-flex-layout__content {
-    /*background-color: #fff;*/
-}
-
 .m-flex-layout {
     display: flex;
 }
-
-/*.m-flex-layout__aside {
-    flex: 0 0 23%;
-    max-width: 280px;
-}
-
-.m-flex-layout__aside ul {
-    list-style-type: none;
-}
-
-.m-flex-layout__aside ul li {
-    background-color: #b31f24;
-}
-
-.m-flex-layout__aside ul li a {
-    color: #fff;
-    padding: .7em 1.2em;
-    display: block;
-}
-
-.m-flex-layout__aside ul li:hover {
-    background-color: #2c1107;
-}*/
 
 .m-flex-layout__content {
     display: flex;
@@ -145,7 +116,6 @@
 }
 
 .menu-section-header {
-    background-image: url('../img/masthead_mainmenu.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 190px;
@@ -434,7 +404,7 @@ section.module.parallax {
  
 section.module.parallax h1 {
   color: rgba(255, 255, 255, 0.7);
-  font-size: 48px;
+  font-size: 15vh;
   line-height: 100vh;
   font-weight: 700;
   text-align: center;

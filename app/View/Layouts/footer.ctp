@@ -48,5 +48,5 @@
             </div>
         </div>
     </div>
-        <div id="footer_bottom" class="center"><p>2017. Made by adrimerie@interia.pl</p></div>
+    <div id="footer_bottom" class="center"><p>2017. Made by <span class="author">miWrona2@interia.pl</span></p></div>
 </div>

@@ -22,7 +22,6 @@ mark {
 .salsa{
     width: 60px;
     height: 60px;
-    /*background-color: #fff;*/ 
     position: absolute;
     top: 10px;
     left: 10px;
@@ -36,13 +35,10 @@ mark {
 }
 
 body{
-    /*background-color: #252624;*/
     background-color: #f5f8fa;
-    /*background: url('../img/pattern.png');*/
-    /*background-image: url('../img/opinions.jpg');*/
     background-repeat: no-repeat;
     background-size: 100% 100%;  
-    font-family: 'Open Sans', "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Barlow Semi Condensed', sans-serif;
     font-size: 14px;
     color: #333;
     line-height: 1.42857;
@@ -116,20 +112,6 @@ strong {
     margin: 0;
 }
 
-/*.header .logo-container a{
-    display: block;
-    position: absolute;
-    top: 30px;
-    left: 20px;
-    padding: 10px;
-    border: 1px solid;
-    z-index: 100;
-    box-shadow: 0 0 8px rgba(0,0,0,.3);
-    background: #fff;
-}*/
-
-
-
 .row{
     position: relative;
 }
@@ -145,7 +127,6 @@ strong {
     margin-left: 2px;
     vertical-align: middle;
     border-top: 4px dashed;
-    /*border-top: 4px solid\9;*/
     border-right: 4px solid transparent;
     border-left: 4px solid transparent;
 }

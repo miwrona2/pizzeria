@@ -36,6 +36,8 @@
         echo $this->fetch('css');
         echo $this->fetch('script');
         ?>
+        <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Lobster+Two" rel="stylesheet"> 
+
     </head>
     <body>
         <?php include 'header.ctp'; ?>
