@@ -34,14 +34,18 @@
     transform: translateY(-50%);
     font-size: 35px;
     cursor: pointer;
+    padding: 10px 25px;
 }
-
+.carousel-left:hover, .carousel-right:hover {
+    background: rgba(153, 153, 153, 0.7);
+    padding: 10px 25px;
+}
 .carousel-left {
-    left: 4vw;
+    left: 2vw;
 }
 
 .carousel-right {
-    right: 4vw;
+    right: 2vw;
 }
 
 .carousel-inner img{
@@ -66,8 +70,8 @@
 .carousel-indicators li{
     color: #fff; 
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     margin: 1px;
     border-radius: 10px;
     border: 1px solid #fff;
@@ -79,7 +83,7 @@
 }
 
 .marked{
-    background: gray;
+    background: #b0b4ba;
 }
 
 

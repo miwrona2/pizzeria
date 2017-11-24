@@ -98,7 +98,8 @@ label {
 
 .common-part {
     height: 500px;
-    background-image: url("../img/brisbane-night-skyline-1562764-1277x537.jpg");
+    background-image: url("../img/clem-onojeghuo-175917.jpg");
+    background-position: right 20%;
     background-size: cover;
 }
 

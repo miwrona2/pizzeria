@@ -17,7 +17,6 @@
 
 .section{
     margin-bottom: 40px;
-    /*background-color: background;*/
 }
 
 .testimonials{
@@ -241,18 +240,21 @@ left: 980px;
 .mp-thumbnails-gal {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    margin-top: 30px;
 }
 
 .mp-thumbnail-gal {
-    max-width: 30%;
-    padding: 10px 0;
-    padding-right: 20px;
+    width: 400px;
+    height: 250px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .mp-thumbnail-gal > img {
     max-height: 230px;
+    align-self: center;
 }
 
 .mp-thumbnail-gal > h3 {

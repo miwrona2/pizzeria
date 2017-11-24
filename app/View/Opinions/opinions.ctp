@@ -1,5 +1,4 @@
 <section class="common-part">
-    <h1>opinie</h1>
 </section>
  
 <div class="section-common">

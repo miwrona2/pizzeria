@@ -2,13 +2,13 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="carousel">
-                <span onclick="previous()" class="carousel-left">&ll;</span>
-                <span onclick="next()" class="carousel-right">&gg;</span>
-                <?= $this->Html->image('jeremy-bishop-151467.jpg', array('class' => 'mainImg')) ?>
-                <?= $this->Html->image('slider/2.jpg', array('class' => 'mainImg')) ?>
-                <?= $this->Html->image('slider/3.jpg', array('class' => 'mainImg')) ?>
-                <?= $this->Html->image('slider/4.jpg', array('class' => 'mainImg')) ?>
-                <?= $this->Html->image('slider/5.jpg', array('class' => 'mainImg')) ?>
+                <span onclick="previous()" class="carousel-left"><i class="fa fa-angle-left fa-2x" aria-hidden="true"></i></span>
+                <span onclick="next()" class="carousel-right"><i class="fa fa-angle-right fa-2x" aria-hidden="true"></i></span>
+                <?= $this->Html->image('slider/dogancan-ozturan-395.jpg', array('class' => 'mainImg')) ?>
+                <?= $this->Html->image('slider/fresh-pizza-1508087186BXk.jpg', array('class' => 'mainImg')) ?>
+                <?= $this->Html->image('slider/Alley-Street-with-Overhanging-Plants.jpg', array('class' => 'mainImg')) ?>
+                <?= $this->Html->image('slider/david-nuescheler-140505.jpg', array('class' => 'mainImg')) ?>
+                <?= $this->Html->image('slider/john-towner-125993.jpg', array('class' => 'mainImg')) ?>
                 <ol class="carousel-indicators">
                     <li onclick="pointSlide(1)"></li>
                     <li onclick="pointSlide(2)"></li>
@@ -77,14 +77,14 @@
                     </div>   
                     <div class="section-content">
                         <div class="mp-thumbnails-gal">
-                            <div class="mp-thumbnail-gal"><?= $this->Html->image('darren-coleshill-178479.jpg') ?></div>
+                            <div class="mp-thumbnail-gal"><?= $this->Html->image('salami-2645403_1920.jpg') ?></div>
                             <div class="mp-thumbnail-gal"><?= $this->Html->image('joanna-boj-17158.jpg') ?></div>
                             <div class="mp-thumbnail-gal"><?= $this->Html->image('alex-jones-1246.jpg') ?></div>
                             <div class="mp-thumbnail-gal"><?= $this->Html->image('Alley-Street-with-Overhanging-Plants.jpg') ?></div>
                             <div class="mp-thumbnail-gal"><?= $this->Html->image('baehaki-hariri-364652.jpg') ?></div>
                             <div class="mp-thumbnail-gal"><?= $this->Html->image('clem-onojeghuo-175917.jpg') ?></div>
-                            <div class="mp-thumbnail-gal"><?= $this->Html->image('darren-coleshill-178479.jpg') ?></div>
                             <div class="mp-thumbnail-gal"><?= $this->Html->image('joanna-boj-17158.jpg') ?></div>
+                            <div class="mp-thumbnail-gal"><?= $this->Html->image('tomato.jpg') ?></div>
                         </div>
                     </div>
                     <div class="redirect-opinion">
