@@ -30,7 +30,7 @@
                 <div id="menu-nav">
                     <ul>
                         <li><a>Menu</a></li>
-                        <li><a href="#pizza">Pizza</a></li>
+                        <li><a href="#pizza">Pizze</a></li>
                         <li><a href="#pasta">Pasty</a></li>
                         <li><a href="#salads">Sałatki</a></li>
                         <li><a href="#additions">Dodatki</a></li>
@@ -50,7 +50,7 @@
 
     </div>
 </div>
-<section class="module parallax parallax-3">
+<section class="module parallax parallax-2">
   <div class="kontener">
     <h1></h1>
   </div>
@@ -102,9 +102,9 @@ function arrow_animation() {
 
 /*
  * 2 parallel functions works while adding/removing items from cart
- * addToBoxAjax()
+ * addToBoxAjax() - without reloading website
  * and
- * addToBoxSession()
+ * addToBoxSession() - on the server side, added items saving in SESSION
  */
 $(document).ready(function addToBoxAjax(){
     $('.callFunctionAddToBoxSession').submit(function(e){

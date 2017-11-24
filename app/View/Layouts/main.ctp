@@ -36,7 +36,7 @@
         echo $this->fetch('css');
         echo $this->fetch('script');
         ?>
-        <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Lobster+Two" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Pacifico" rel="stylesheet"> 
     </head>
     <body>
         <div class="overlay" id="viewport">

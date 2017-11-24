@@ -12,7 +12,7 @@
                 <div class="flex-box">                
                     <div class="details">
                         <div class="address">
-                            <p class="name_of_pizzeria"><strong>Pizzeria Catania</strong></p>
+                            <p class="name_of_pizzeria"><span>Pizzeria Catania</span></p>
                             <div class='post-address'>
                                 <strong class="contact-strong">Adres: </strong>
                                 <p>34000 Montpellier, Francja</p>
@@ -49,7 +49,7 @@
                     </div>
 
                     <div class="street-view">
-                        <p class="sv-description">Widok z poziomu ulicy przed lokalem</p>
+                        <p class="sv-description">Widok z ulicy przed lokalem</p>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m0!4v1510582434270!6m8!1m7!1sEicy0nRfgkHZoXo0aFaSCw!2m2!1d43.61012137940395!2d3.876061409324564!3f85.87!4f4.900000000000006!5f0.7820865974627469" width="100%" height="370" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                 </div>

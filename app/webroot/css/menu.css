@@ -295,9 +295,10 @@
     background-color: rgb(117, 80, 153);
     border: none;
     color: #fff;
-    padding: 6px 12px;
+    padding: 6px 20px;
     font-weight: 700;
     border-radius: 5px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
 .single-btn:hover {
@@ -417,11 +418,7 @@ section.module.parallax-1 {
 }
  
 section.module.parallax-2 {
-  background-image: url('../img/obrazek3.jpg');
-}
- 
-section.module.parallax-3 {
-  background-image: url('../img/obrazek2.jpg');
+  background-image: url('../img/luca-bravo-287775.jpg');
 }
 
 #arrow-down {

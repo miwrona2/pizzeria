@@ -1,6 +1,6 @@
 <div id="pizza">
     <div class="menu-section-header">
-        <h5><mark>Pizza</mark></h5>
+        <h5><mark>Pizze</mark></h5>
     </div>
     <div class="m-list m-list--header">
         <div class="m-list__list">
