@@ -378,22 +378,12 @@
     width: 100%;
 }
 
-
-
-
-
-
-
-.kontener {
+.start-page {
   max-width: 1000px;
   margin: 0 auto;
   position: relative;
 }
  
-section.module.treść {
-  padding: 60px 0;
-  text-align: left;
-}
  
 section.module.parallax {
   height: 100vh;
