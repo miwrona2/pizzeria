@@ -131,7 +131,7 @@ $(document).ready(function addToBoxAjax(){
                     //display new item inside the cart
                     displayOrderButton();
                     emptyCartInfoDisappear();
-                    $('#inCart').append("<div class=\"dishName\" id=\"dishId"+dataFromRequest.id+dataFromRequest.size+"\"><div class='info'><strong>"+dataFromRequest.id+"-"+dataFromRequest.name+"</strong>&nbsp;"+size+
+                    $('#inCart').append("<div class=\"dishName\" id=\"dishId"+dataFromRequest.id+dataFromRequest.size+"\"><div class='info'><strong>"+dataFromRequest.name+"</strong>&nbsp;"+size+
                         "</div><div class=\"quantity\">"+decrement+inputAmount+increment+"</div><div class='subtotal'>"+dataFromRequest.price+"</div></div>");
                 }
                 else {

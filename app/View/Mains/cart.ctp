@@ -25,7 +25,7 @@
                     foreach ($mealsInCart as $mealInCart):?>
                         <div class="dishName" id="dishId<?= $mealInCart['id'].$mealInCart['size'];?>">
                             <div class="info">
-                                <strong><?= $mealInCart['id'].'-';?><?= $mealInCart['itemName'];?></strong>
+                                <strong><?= $mealInCart['itemName'];?></strong>
                                 <?php  
                                 if($mealInCart['size'] == 1){echo 'Średnia';}
                                 else if($mealInCart['size'] == 2){echo 'Duża';}
