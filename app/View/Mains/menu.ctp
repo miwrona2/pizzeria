@@ -118,8 +118,8 @@ $(document).ready(function addToBoxAjax(){
                 $('.item-counter').text(dataFromRequest.counter);
 
                 var size;
-                if(Number(dataFromRequest.size) === 1){size="Duża";}
-                else if (Number(dataFromRequest.size) === 2){size = "Max";} 
+                if(Number(dataFromRequest.size) === 1){size="Średnia";}
+                else if (Number(dataFromRequest.size) === 2){size = "Duża";} 
                 else if (Number(dataFromRequest.size) > 2 && Number(dataFromRequest.size) <=7){size = "";} 
                 else {size = "Undefined size of pizza!";}
 

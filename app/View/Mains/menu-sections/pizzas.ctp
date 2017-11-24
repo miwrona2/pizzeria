@@ -55,7 +55,7 @@
                                             <?php echo $this->Form->hidden('item_name',array('value'=> $pizza['Pizza']['name']))?>
                                             <?php echo $this->Form->hidden('price',array('value'=> $pizza['Pizza']['sprice']))?>
                                             <?php echo $this->Form->hidden('size',array('value'=> 1))?>
-                                            <?php echo $this->Form->submit('Duża - 30 cm - '.$pizza['Pizza']['sprice'].'',array('class'=>'btnAddToCart'));?>
+                                            <?php echo $this->Form->submit('Średnia - 32 cm - '.$pizza['Pizza']['sprice'].'',array('class'=>'btnAddToCart'));?>
                                             <?php echo $this->Form->end();?>
                                         </li>
                                         <li><?php echo $this->Form->create('Main',array('id'=>'add-form-action', 'class'=> 'callFunctionAddToBoxSession','url'=>array('controller'=>'mains','action'=>'addToBoxSession')));?>
@@ -63,7 +63,7 @@
                                             <?php echo $this->Form->hidden('item_name',array('value'=> $pizza['Pizza']['name']))?>
                                             <?php echo $this->Form->hidden('price',array('value'=> $pizza['Pizza']['bprice']))?>
                                             <?php echo $this->Form->hidden('size',array('value'=> 2))?>
-                                            <?php echo $this->Form->submit('Max - 42 cm - '.$pizza['Pizza']['bprice'].'',array('class'=>'btnAddToCart'));?>
+                                            <?php echo $this->Form->submit('Duża - 45 cm - '.$pizza['Pizza']['bprice'].'',array('class'=>'btnAddToCart'));?>
                                             <?php echo $this->Form->end();?>
                                         </li>
                                     </ul>

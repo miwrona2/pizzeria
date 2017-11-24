@@ -27,8 +27,8 @@
                             <div class="info">
                                 <strong><?= $mealInCart['id'].'-';?><?= $mealInCart['itemName'];?></strong>
                                 <?php  
-                                if($mealInCart['size'] == 1){echo 'Duża';}
-                                else if($mealInCart['size'] == 2){echo 'Max';}
+                                if($mealInCart['size'] == 1){echo 'Średnia';}
+                                else if($mealInCart['size'] == 2){echo 'Duża';}
                                 else if ($mealInCart['size'] > 2 && $mealInCart['size'] <=7){echo "";} 
                                 else {echo 'UNDEFINED SIZE OF PIZZA';}
 
