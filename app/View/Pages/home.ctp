@@ -62,7 +62,7 @@
                     <div class="section-header"> 
                         <h2>Opinie o nas</h2>  
                     </div>   
-                    <div class="section-content">
+                    <div class="section-content section-content-opinion">
                         <span class="nickname"><?= $displayLastOpinion['Opinion']['nickname'];?></span>
                         <time class="post-date pull-right"><?= $displayLastOpinion['Opinion']['modified'];?></time>
                         <p class="post-content"><?= $displayLastOpinion['Opinion']['content'];?></p>

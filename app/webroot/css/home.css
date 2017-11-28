@@ -52,7 +52,8 @@ blockquote{
 
 .section-header h2{
     padding: 20px 0;
-    
+    font-size: 28px;
+    text-align: center;
 }
 
 .section-content {
@@ -225,11 +226,59 @@ left: 980px;
 
 .mp-thumbnails {
     display: flex;
+    flex-wrap: wrap;
+}
+
+.mp-thumbnail {
+    max-width: 33%;
+}
+
+@media all and (max-width:1050px) {
+    
+    .navigation {
+        display: none;
+    }
+    
+    .hamburger {
+        display:block;
+    }
+    
+    .logo {
+        max-width: 50px;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    
+    .mp-thumbnail > img {
+        padding: 0 !important;
+    }
+    
+    .mp-thumbnail {   
+        max-width:100%;
+    }
+    
+    .section-main {
+        padding: 0;
+        margin: 0;
+    }
+
+    .section-content {
+        padding: 10px 0;
+    };
+
 }
 
 .mp-thumbnail > img {
     padding: 10px;
-    max-height: 400px;
+    /*max-height: 265px;*/
+}
+@media (max-width:400px) {
+
+    .section-content-opinion {
+        padding: 10px;
+    }
+    
 }
 
 .mp-thumbnail > h3 {
