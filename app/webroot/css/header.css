@@ -114,7 +114,7 @@
 }
 
 #side-menu {
-  display: flex;
+  display: none;
   box-sizing: border-box;
   position: absolute;
   height: 100%;
@@ -122,12 +122,14 @@
   padding: 0;
   background: #4a4d6d;
   transition: 0.3s transform ease-in-out;
+  transition: 1s display linear;
   right: -200px;
   z-index: 100;
 }
 
 .side-menu-on {
     transform: translateX(-200px);
+    display: flex !important;
 }
 
 .menu-nav-close:hover {

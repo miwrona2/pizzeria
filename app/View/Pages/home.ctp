@@ -33,7 +33,7 @@
                         </div>
                         <div class="mp-thumbnail">
                             <h3>Sałatki</h3>
-                            <?= $this->Html->image('dennis-klein-123631.jpg') ?>
+                            <?= $this->Html->image('travis-yewell-381664.jpg') ?>
                         </div>
                     </div>
                     <div class="redirect-button">
