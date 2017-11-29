@@ -67,9 +67,11 @@ function launch_functions_onload(){
 }
 
 function sticky_cart_navbar(){
+    var heroHigh = document.getElementById("hero").offsetHeight;
+    
     $(document).ready(function () {
         $(window).scroll(function () {
-            if ($(document).scrollTop() > 780) {
+            if ($(document).scrollTop() > heroHigh) {
                 $("#cart_navbar").addClass("affixed");
                 $("#menu-nav").addClass("menu-nav-affixed");
             } else {

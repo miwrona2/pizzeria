@@ -209,7 +209,7 @@ left: 980px;
 }
 
 .map-img {
-    height: 300px;
+    max-height: 300px;
 }
 
 .redirect-button {

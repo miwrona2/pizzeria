@@ -21,6 +21,7 @@
 
 .carousel img {
     height: 100vh;
+    object-fit: cover;
 }
 
 .mainImg {
@@ -98,10 +99,4 @@
 .w3-white{
     color: #000!important;
     background-color: #fff!important;
-}
-
-@media (max-width: 1000px) {
-    .carousel img {
-        height: 100%;
-    }
 }
