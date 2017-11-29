@@ -36,7 +36,7 @@
                             <?= $this->Html->image('dennis-klein-123631.jpg') ?>
                         </div>
                     </div>
-                    <div class="redirect-opinion">
+                    <div class="redirect-button">
                         <?php echo $this->Html->link('Przejdź do menu', array('controller' => 'mains', 'action' => 'menu'),array('class' => 'section-btn', 'escape' => false)); ?>
                     </div>
                 </div>   
@@ -45,7 +45,9 @@
                         <h2>Jak do nas trafić</h2>  
                     </div>   
                     <div class="section-content section-content-contact">
-                        <?= $this->Html->image('street.bmp', array('class' => 'map-img')) ?>
+                        <div class="map-wrapper">
+                            <?= $this->Html->image('street.bmp', array('class' => 'map-img')) ?>
+                        </div>
                         <div class="wrapper">
                             <ul class="contact-list">
                                 <li class="contact-list-el">Przyjdź do naszego lokalu w Montpellier na ulicy Rue Saint-Guilhem 3</li>
@@ -54,7 +56,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="redirect-opinion">
+                    <div class="redirect-button">
                         <?php echo $this->Html->link('Kontakt', array('controller' => 'mains', 'action' => 'contact'),array('class' => 'section-btn', 'escape' => false)); ?>
                     </div>
                 </div>   
@@ -67,7 +69,7 @@
                         <time class="post-date pull-right"><?= $displayLastOpinion['Opinion']['modified'];?></time>
                         <p class="post-content"><?= $displayLastOpinion['Opinion']['content'];?></p>
                     </div>
-                    <div class="redirect-opinion">
+                    <div class="redirect-button">
                         <?php echo $this->Html->link('Zobacz wszystkie opinie', array('controller' => 'opinions', 'action' => 'opinions'),array('class' => 'section-btn', 'escape' => false)); ?>
                     </div>
                 </div>   
@@ -87,7 +89,7 @@
                             <div class="mp-thumbnail-gal"><?= $this->Html->image('tomato.jpg') ?></div>
                         </div>
                     </div>
-                    <div class="redirect-opinion">
+                    <div class="redirect-button">
                         <?php echo $this->Html->link('Galeria', array('controller' => 'mains', 'action' => 'gallery'),array('class' => 'section-btn', 'escape' => false)); ?>
                     </div>
                 </div>   
