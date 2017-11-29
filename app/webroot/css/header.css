@@ -82,6 +82,7 @@
 }
 
 .hamburger {
+    display: none;
     position: absolute;
     z-index: 1000;
     right: 50px;
@@ -182,3 +183,18 @@
     background-color: #696e9e;
 }
 
+
+@media all and (max-width:1050px) {
+    
+    .navigation {
+        display: none;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+    
+    .logo {
+        max-width: 50px;
+    }
+}

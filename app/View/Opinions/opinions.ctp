@@ -14,7 +14,7 @@
                 <?= $this->Form->input('id'); ?>
                 <?= $this->Form->label(null, 'Komentarz: ', 'm-form_label'); ?>
                 
-                <?= $this->Form->input('content', array('class' => 'form-control', 'cols' => '140', 'rows' => '5')); ?>
+                <?= $this->Form->input('content', array('class' => 'form-control textarea', 'cols' => '140', 'rows' => '5')); ?>
                 <?= $this->Form->label(null, 'Ocena: ', 'm-form_label'); ?>
                 
                 <?= $this->Form->input('rate',  array('class'=> 'form-control', 'type' => 'select',
@@ -39,28 +39,30 @@
         </div>
         <div class="content-content">
             <div class="reviews">
-                <?php foreach ($records as $kom): ?>
+                <?php foreach ($records as $comment): ?>
                     <div class="review">
-                        <div class="review-rating">
+                        <div class="line-space">
                             <hr>
-                            <span class="rating">
-                                <small>Ocena klienta</small>
-                                <span class="stars">
-                                    <i class="icon-star"></i>
-                                    <?php for($s = 0; $s < $kom['Opinion']['rate']; $s++): ?>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <?php endfor; ?>
-                                    <?php for($s = 0; $s < 5 - $kom['Opinion']['rate']; $s++): ?>
-                                    <i class="fa fa-star-o" aria-hidden="true"></i>
-                                    <?php endfor; ?>
-                                </span>
-                            </span>
                         </div>
                         <div class="review-image"><?= $this->Html->image('avatar1.png')?></div>
                         <div class="review-contetn">
-                            <p class="nickname"><?php echo $kom['Opinion']['nickname']; ?></p>
-                            <time class="post-date">Opublikowano: <?php echo $kom['Opinion']['modified']; ?></time>
-                            <p><?php echo $kom['Opinion']['content'].'<br>'; ?></p>
+                            <div class="line">
+                                <p class="nickname"><?php echo $comment['Opinion']['nickname']; ?></p>
+                                <span class="rating">
+                                    <small>Ocena klienta</small>
+                                    <span class="stars">
+                                        <i class="icon-star"></i>
+                                        <?php for($s = 0; $s < $comment['Opinion']['rate']; $s++): ?>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <?php endfor; ?>
+                                        <?php for($s = 0; $s < 5 - $comment['Opinion']['rate']; $s++): ?>
+                                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        <?php endfor; ?>
+                                    </span>
+                                </span>
+                            </div>
+                            <time class="post-date">Opublikowano: <?php echo $comment['Opinion']['modified']; ?></time>
+                            <p><?php echo $comment['Opinion']['content'].'<br>'; ?></p>
                         </div>
                     </div>
                 <?php endforeach; ?>
