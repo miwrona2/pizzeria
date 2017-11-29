@@ -9,11 +9,11 @@
                     <div class="m-item m-item--list pizza">
                         <div class="m-item__row">
                             <div class="m-item__col-header ">
-                                <div><div class="m-item__header"><h4 class="m-item__title"><mark><?= $addition['Addition']['id'] ?>-<?= $addition['Addition']['name'] ?></mark></h4></div></div>
-                                <div class="m-item__description"><span class="muted"><mark class="inside-muted"><?= $addition['Addition']['ingredients']; ?></mark></span></div>
+                                <div><div class="m-item__header"><h4 class="m-item__title"><?= $addition['Addition']['id'] ?>-<?= $addition['Addition']['name'] ?></h4></div></div>
+                                <div class="m-item__description"><span class="muted"><?= $addition['Addition']['ingredients']; ?></span></div>
                             </div>
                             <div class="m-item__col-group-info m-item__col-group-info--secondary price">
-                                <mark><span class="m-item__price"><?= $addition['Addition']['price']; ?> zł</span></mark>
+                                <span class="m-item__price"><?= $addition['Addition']['price']; ?> zł</span>
                             </div>
                             <div class="m-item__col m-item__col--secondary actions">
                                 <div class="btn-group">

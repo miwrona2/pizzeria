@@ -24,6 +24,7 @@
                                 'escape' => false)
                         )?>
                     </li>
+                </ul>
             </div>
         </div>
         <div class="m-flex-layout__content">

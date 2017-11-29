@@ -10,10 +10,10 @@
                         <div class="m-item__col-header">
                         </div>
                         <div class="m-item__col-group-info m-item__col-group-info--secondary">
-                            <div class="m-item__size-info"><span class="muted"><mark>32 cm</mark></span></div>
+                            <div class="m-item__size-info"><span class="muted">32 cm</span></div>
                         </div>
                         <div class="m-item__col-group-info m-item__col-group-info--secondary">
-                            <div class="m-item__size-info"><mark><span class="muted">45 cm</span></mark></div>
+                            <div class="m-item__size-info"><span class="muted">45 cm</span></div>
                         </div>
                         <div class="m-item__col m-item__col--secondary">
                             <div class="m-item__size-info"></div>
@@ -30,14 +30,14 @@
                     <div class="m-item m-item--list pizza">
                         <div class="m-item__row">
                             <div class="m-item__col-header ">
-                                <div><div class="m-item__header"><h4 class="m-item__title"><mark><?= $pizza['Pizza']['id'] ?>-<?= $pizza['Pizza']['name'] ?></mark></h4></div></div>
-                                <div class="m-item__description"><span class="muted"><mark class="inside-muted"><?= $pizza['Pizza']['ingredients']; ?></mark></span></div>
+                                <div><div class="m-item__header"><h4 class="m-item__title"><?= $pizza['Pizza']['id'] ?>-<?= $pizza['Pizza']['name'] ?></h4></div></div>
+                                <div class="m-item__description"><span class="muted"><?= $pizza['Pizza']['ingredients']; ?></span></div>
                             </div>
                             <div class="m-item__col-group-info m-item__col-group-info--secondary price">
-                                <mark><span class="m-item__price"><?= $pizza['Pizza']['sprice']; ?> zł</span></mark>
+                                <span class="m-item__price"><?= $pizza['Pizza']['sprice']; ?> zł</span>
                             </div>
                             <div class="m-item__col-group-info m-item__col-group-info--secondary price">
-                                <mark><span class="m-item__price"><?= $pizza['Pizza']['bprice']; ?> zł</span></mark>
+                                <span class="m-item__price"><?= $pizza['Pizza']['bprice']; ?> zł</span>
                             </div>
                             <div class="m-item__col m-item__col--secondary actions">
                                 <div class="btn-group">
