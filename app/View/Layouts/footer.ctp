@@ -1,7 +1,7 @@
 <div id="footer">
     <div class="footer-content">
         <div id="full">
-            <div class="col1">  
+            <div class="footer-col col1">  
                 <p class="footer-header">Pizzeria Catania</p>
                 <div class='post-address'>
                         <p>34000 Montpellier, Francja</p>
@@ -19,7 +19,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col2">  
+            <div class="footer-col col2">  
                 <p class="footer-header">Skontaktuj się z nami</p>
                 <p>Nr tel: 892 232 983</p>
                 <p>Adres e-mail: pizzeria_catania@gmail.com</p>
@@ -30,7 +30,7 @@
                     <i class="fa fa-google-plus fa-2x" aria-hidden="true"></i>
                 </div>
             </div>               
-            <div class="col3">  
+            <div class="footer-col col3">  
                 <p class="footer-header">Mapa Strony</p>     
                 <?php echo $this->Html->link('<p>Strona Główna</p>', array('controller' => 'pages', 'action' => 'home'),array('class' => 'subpage', 'escape' => false)); ?>
                 <?php echo $this->Html->link('<p>Menu</p>', array('controller' => 'mains', 'action' => 'menu'),array('class' => 'subpage', 'escape' => false)); ?>
@@ -38,11 +38,11 @@
                 <?php echo $this->Html->link('<p>Kontakt</p>', array('controller' => 'mains', 'action' => 'contact'),array('class' => 'subpage', 'escape' => false)); ?>
                 <?php echo $this->Html->link('<p>Galeria</p>', array('controller' => 'mains', 'action' => 'gallery'),array('class' => 'subpage', 'escape' => false)); ?>            
             </div>
-            <div class="col4"> 
+            <div class="footer-col col4"> 
                 <p class="footer-header">Dołącz do newslettera</p>
                 <?= $this->Form->create('Newsletter'); ?>
 
-                <?= $this->Form->input('email', array('label'=> false ,'class' => 'form-control', 'cols' => '40', 'rows' => '1', 'value' => 'mail@gmail.com')); ?>
+                <?= $this->Form->input('email', array('label'=> false ,'class' => 'form-control', 'cols' => '25', 'rows' => '1', 'value' => 'mail@gmail.com')); ?>
                 
                 <?php echo $this->Form->end(array('label' => 'Wyślij', 'class' => 'footer-btn')); ?>
             </div>

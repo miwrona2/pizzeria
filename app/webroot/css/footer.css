@@ -58,22 +58,19 @@
 
 .social>i {
     color: lightslategray;
-    padding: 10px;
-    border: 1px solid white;
     margin-right: 14px;
 }
 
 .social>i:hover {
     color: lightseagreen;
     cursor: pointer;
-    border: 1px solid lightseagreen;
 }
 
 #full {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     padding: 30px 80px;
-    
 }
 
 .footer-header {
@@ -130,4 +127,39 @@
 .author {
     font-weight: 500;
     color: lightseagreen;
+}
+
+
+@media only screen and (max-width:600px) {
+    .col1 {
+    width: 100%;
+    }
+
+    .col2 {
+        width: 100%;
+    }
+
+    .col3 {
+        width: 100%
+    }
+
+    .col4 {
+        width: 100%;
+    }
+
+    #full {
+        padding: 30px 20px;
+    }
+    
+    .footer-col {
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+        border-bottom: #4a4d6d dotted 1px;
+        text-align: center;
+    }
+    .footer-col:last-of-type {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: none;
+    }
 }
