@@ -80,3 +80,27 @@
     padding: 8px 0;
     text-align: center;
 }
+
+@media (max-width: 600px) {
+    
+    .flex-box {
+        flex-wrap: wrap;
+    }
+    
+    .details {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .address {
+        padding-bottom: 20px;
+    }
+    
+    .street-view {
+        margin-top: 10px;
+        width: 100%;
+    }
+    .map > iframe {
+        height: 300px;
+    }
+}
