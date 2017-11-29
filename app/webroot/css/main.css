@@ -163,6 +163,6 @@ label {
 @media (max-width:600px) {
     .common-part {
         height: 430px;
-        background-position: 55% 20%;
+        background-position: 45% 20%;
     }
 }

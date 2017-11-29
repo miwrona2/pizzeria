@@ -23,11 +23,6 @@
     height: 150px;
 }
 
-.content-content{
-    background-color: #fff;
-    padding: 20px;
-}
-
 .media{
     margin-top: 25px;
 }
@@ -143,4 +138,14 @@
 
 #differentModal:hover { 
     cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    
+    .thumbnails > div {
+        width: 100%;
+        padding: 0px;
+        padding-bottom: 10px;
+    }
+
 }
