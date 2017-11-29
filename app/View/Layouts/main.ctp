@@ -53,10 +53,5 @@
             </div>
             <?php include 'footer.ctp'; ?>
         </div>
-        <?php
-	echo $this->Js->writeBuffer(); // Write cached scripts
-	echo $this->fetch('scriptBottom');  // fetch our scritBottom
-        //	echo $this->element('sql_dump');  // dump the SQL queries
-        ?>
     </body>
 </html>

@@ -15,34 +15,6 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-.page-header .background.pizza {
-    /*background: url(../img/pizza1.jpg) center center no-repeat;*/
-}
-
-.page-header .background {
-    height: 150px;
-}
-
-.media{
-    margin-top: 25px;
-}
-
-.media-object{
-    border: 1px solid #105d5a;
-    vertical-align: bottom; 
-}
-
-.media>[class*=float-][class*="-left"] {
-    padding-right: 15px;
-}
-.media>[class*=float-] {
-    display: inline-block;
-}
-
-.media-body{
-    display: table-cell;
-    width: 10000px;
-}
 
 .float-sm-left{
     float: left!important;
@@ -62,8 +34,6 @@
     z-index: 101;
     display: none;
 }
-
-
 
 .modal-content{
     margin: auto;

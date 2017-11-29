@@ -282,7 +282,7 @@ left: 980px;
     font-weight: 500;
 }
 
-@media only screen and (max-width:600px) {
+@media (max-width:600px) {
     
     
     .hamburger {
@@ -308,7 +308,7 @@ left: 980px;
 
 }
 
-@media (max-width:400px) {
+@media (max-width:600px) {
 
     .section-content-opinion {
         padding: 10px;

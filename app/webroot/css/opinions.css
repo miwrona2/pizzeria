@@ -109,3 +109,8 @@
     padding-top: 10px;
 }
 
+@media (max-width: 600px) {
+    .line {
+        display: block;
+    }
+}
