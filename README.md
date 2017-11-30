@@ -12,7 +12,9 @@ Needed any local server (for example xampp or wamp).
 Download or clone repo and put in your localhost direction 
 (for example `c:/xampp/htdocs/` default for xampp )
 
+
 **MySQL configuration**   
+
 Open your "http://localhost/phpmyadmin/" panel and create new databese by coping and pasting contents of `salsa.sql` (you can find it in main folder of my project)
 change credentials for database in ```app/Config/database.php``` lines 72-74
 
