@@ -34,8 +34,8 @@ default for xampp:
 
 **ReCaptcha configruration**
 
-Google reCaptcha in Subpage ‘OPINION’ is assigned to domain name, so you shold change it if you are using different than `localhost/` [here: ]
-(https://www.google.com/recaptcha/intro/android.html) -> `Get reCaptcha`.  
+Google reCaptcha in Subpage ‘OPINION’ is assigned to domain name, so you shold change it if you are using different than `localhost/` 
+[here: ](https://www.google.com/recaptcha/intro/android.html) -> `Get reCaptcha`.  
 Just check reCAPTCHA V2, fill in field `Domains`  with your domain name, accept terms and register.
 Now you can use `Site Key` and `Secret Key` in project.  
 In `app/Config/bootstrap.php` (lines 98-99) change  
