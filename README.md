@@ -14,14 +14,14 @@ with shopping cart (using AJAX, jQuery)
 ## Installation
 
 
-Needed any local server (for example xampp or wamp).  
+Needed any local server (for example Xampp or Wamp).  
 Download or clone repo and put in your localhost direction 
 (for example `c:/xampp/htdocs/` default for xampp )
 
 
 **MySQL configuration**   
 
-Open your [http://localhost/phpmyadmin/](http://localhost/phpmyadmin/) panel and create new databese by coping and pasting contents of `salsa.sql` (you can find it in main folder of my project)
+Open your [http://localhost/phpmyadmin/](http://localhost/phpmyadmin/) panel and create new databese 'salsa' by coping and pasting contents of `salsa.sql` (you can find it in main folder of my project)
 change credentials for database in ```app/Config/database.php``` lines 72-75
 
 default for xampp: 
@@ -32,7 +32,7 @@ default for xampp:
 'database' => 'salsa',
 ```
 
-**ReCaptcha configruration**
+**ReCaptcha configuration**
 
 Google reCaptcha in Subpage ‘OPINION’ is assigned to domain name, so you shold change it if you are using different than `localhost/` 
 here: [https://www.google.com/recaptcha/intro/android.html](https://www.google.com/recaptcha/intro/android.html) -> `Get reCaptcha`.  
