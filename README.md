@@ -39,4 +39,4 @@ Google reCaptcha in Subpage ‘OPINION’ is assigned to domain name, so you sho
 Just check reCAPTCHA V2, fill in field `Domains`  with your domain name, accept terms and register.
 Now you can use `Site Key` and `Secret Key` in project.  
 In `app/Config/bootstrap.php` (lines 98-99) change  
-'Recaptcha.publicKey', and 'Recaptcha.privateKey', by placing there respectively `Site Key` and `Secret Key`
+``'Recaptcha.publicKey'``, and ``'Recaptcha.privateKey'``, by placing there respectively `Site Key` and `Secret Key`
