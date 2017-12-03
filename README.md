@@ -22,13 +22,14 @@ Download or clone repo and put in your localhost direction
 **MySQL configuration**   
 
 Open your "http://localhost/phpmyadmin/" panel and create new databese by coping and pasting contents of `salsa.sql` (you can find it in main folder of my project)
-change credentials for database in ```app/Config/database.php``` lines 72-74
+change credentials for database in ```app/Config/database.php``` lines 72-75
 
 default for xampp: 
 ```
 'host' => 'localhost',
 'login' => 'root',
-'password' => ''
+'password' => '',
+'database' => 'salsa',
 ```
 
 **ReCaptcha configruration
