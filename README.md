@@ -3,7 +3,13 @@
 Interactive webpage of restaurant based od CakePHP 2.9.6
 with shopping cart (using AJAX, jQuery)
 
+## Subpages
 
+*	MAIN PAGE with full screen carousel (written in JS)
+*	MENU with shopping cart (using AJAX, jQuery, Session); a few tables with items for menu stored in MySQL database
+*	OPINIONS – you can add your opinion about restaurant and choose rate 1-5 or read users’ opinions (stored in database)
+*	CONTACT -  ‘iframe’ with  google maps and street view
+*	GALLERY – JS modal-slider
 
 ## Installation
 
