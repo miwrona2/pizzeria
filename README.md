@@ -32,7 +32,7 @@ default for xampp:
 'database' => 'salsa',
 ```
 
-##ReCaptcha configruration
+## ReCaptcha configruration
 
 Google reCaptcha in Subpage ‘OPINION’ is assigned to domain name, so you shold change it if you are using different than ‘localhost/’ here: 
 "https://www.google.com/recaptcha/intro/android.html" -> „Get reCaptch”.  
