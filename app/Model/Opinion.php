@@ -20,7 +20,7 @@ class Opinion extends AppModel {
             ),
             'rate' => array(
                 'rule' => array('inList', array('0','1','2','3','4','5')),
-                'message' => "Rate can by only a number between 1 and 5!",
+                'message' => "Rate can by only a number between 0 and 5!",
             ), 
             'nickname' => array(
                 'rule' => array('minLength' , '4'),

@@ -18,7 +18,7 @@
                 <?= $this->Form->label(null, 'Ocena: ', 'm-form_label'); ?>
                 
                 <?= $this->Form->input('rate',  array('class'=> 'form-control', 'type' => 'select',
-                    'options' => array(1, 2, 3, 4, 5),
+                    'options' => array(0, 1, 2, 3, 4, 5),
                     'empty' => '(choose one)')); ?>
                 <?= $this->Form->label(null, 'Imię / Nick: ', 'm-form_label'); ?>
                
