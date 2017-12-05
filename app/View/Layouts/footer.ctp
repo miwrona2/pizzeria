@@ -42,7 +42,7 @@
                 <p class="footer-header">Dołącz do newslettera</p>
                 <?= $this->Form->create('Newsletter'); ?>
 
-                <?= $this->Form->input('email', array('label'=> false ,'class' => 'form-control', 'cols' => '25', 'rows' => '1', 'value' => 'mail@gmail.com')); ?>
+                <?= $this->Form->input('email', array('label'=> false ,'class' => 'form-control', 'cols' => '25', 'rows' => '1', 'value' => '', 'placeholder' => 'e-mail:')); ?>
                 
                 <?php echo $this->Form->end(array('label' => 'Wyślij', 'class' => 'footer-btn')); ?>
             </div>
