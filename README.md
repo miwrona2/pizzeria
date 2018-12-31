@@ -1,6 +1,6 @@
 # Pizzeria Catania
 
-Interactive webpage of restaurant based od CakePHP 2.9.6
+Interactive webpage of restaurant based on CakePHP 2.9.6
 with shopping cart (using AJAX, jQuery)
 
 ## Subpages
